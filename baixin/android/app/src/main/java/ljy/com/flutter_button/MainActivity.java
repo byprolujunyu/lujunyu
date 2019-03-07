@@ -47,6 +47,8 @@ public class MainActivity extends FlutterActivity {
                     int id = query.getColumnIndex("_id");
                     int id2 = query.getInt(id);
                     map.put("_id", id2);
+                    int count = query.getInt(query.getColumnIndex("_count"));
+                    map.put("_count",count);
                     ms.add(map);
                 }
                 setResult(ms);
@@ -60,7 +62,8 @@ public class MainActivity extends FlutterActivity {
                     String name = (String) map.get("goodsName");
                     String imageuri = (String) map.get("image");
                     Double price = (Double) map.get("presentPrice");
-                    int i = DbUtils.getInstance(MainActivity.this).add(name, imageuri, price.toString());
+                    int count = (int) map.get("count");
+                    int i = DbUtils.getInstance(MainActivity.this).add(name, imageuri, price.toString(),count);
                     System.out.println(i);
                     result.success("ok");
                 } catch (Exception e) {

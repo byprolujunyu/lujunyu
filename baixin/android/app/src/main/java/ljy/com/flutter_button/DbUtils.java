@@ -46,12 +46,13 @@ public class DbUtils extends SQLiteOpenHelper {
     }
 
 
-    public int add(String name,String imageuri,String price){
+    public int add(String name,String imageuri,String price,int count){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("_name",name);
         values.put("_imageuri",imageuri);
         values.put("_price",price);
+        values.put("_count",count);
         return (int) db.insert("carttab",null,values);
     }
 

@@ -8,6 +8,7 @@ import 'package:flutter_button/model/cart_new.dart';
 import 'package:flutter_button/data/cart.dart';
 import 'package:flutter_button/model/count.dart';
 import 'package:flutter_button/page/index_main.dart';
+import 'package:flutter_button/pay/multi_pay.dart';
 import 'package:flutter_button/utils/screen_util.dart';
 import 'package:scoped_model/scoped_model.dart';
 
@@ -44,7 +45,7 @@ class _CartTestState extends State<CartTest> {
     for (var json in list) {
       CartItemModelNew item = CartItemModelNew(
         price: json['_price'],
-        count: 1,
+        count: json['_count'],
         imageUrl: json['_imageuri'],
         productName: json['_naem'],
         isDeleted: false,
@@ -81,7 +82,7 @@ class _CartTestState extends State<CartTest> {
                         refresh: _query,
                         context: context,
                       ),
-                      CartBottomWidget(),
+                      CartBottomWidget(dmoldel),
                     ],
                   ),
                 ),
@@ -188,6 +189,7 @@ class CartListWidget extends StatelessWidget {
               child: new Text('取消'),
               onPressed: () {
                 Navigator.pop(context);
+
               },
             ),
           ],
@@ -380,6 +382,10 @@ class CartItemWidget extends StatelessWidget {
 }
 
 class CartBottomWidget extends StatelessWidget {
+  final CartListModelNew model;
+
+  CartBottomWidget(this.model);
+
   @override
   Widget build(BuildContext context) {
     return ScopedModelDescendant<CartListModelNew>(
@@ -426,16 +432,23 @@ class CartBottomWidget extends StatelessWidget {
             ),
             InkWell(
               child: Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.only(left: 10),
-                  color: KColorConstant.goPayBtBgColor,
-                  width: ScreenUtil().setWidth(300),
-                  height: ScreenUtil().setWidth(100),
-                  child: Text(
-                    '${KString.goPayTxt}(${model.totalCount})',
-                    style: TextStyle(color: KColorConstant.goPayBtTxtColor),
-                  )),
-            )
+                alignment: Alignment.center,
+                margin: EdgeInsets.only(left: 10),
+                color: KColorConstant.goPayBtBgColor,
+                width: ScreenUtil().setWidth(300),
+                height: ScreenUtil().setWidth(100),
+                child: Text(
+                  '${KString.goPayTxt}(${model.totalCount})',
+                  style: TextStyle(color: KColorConstant.goPayBtTxtColor),
+                ),
+              ),
+              onTap: () {
+//                Navigator.of(context)
+//                    .push(MaterialPageRoute(builder: (BuildContext ctx) {
+//                  return MutliPayPage(model: model);
+//                }));
+              },
+            ),
           ],
         ),
       );

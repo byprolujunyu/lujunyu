@@ -103,7 +103,7 @@ class _DetailPageState extends State<DetailPage> {
                       SingleChildScrollView(
                         child: Container(
                           margin: EdgeInsets.all(20.0),
-                          height: ScreenUtil().setHeight(300),
+                          height: ScreenUtil().setHeight(150),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
@@ -121,9 +121,7 @@ class _DetailPageState extends State<DetailPage> {
                                   // mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
                                     GestureDetector(
-                                      onTap: () => {
-                                            _dix_count(),
-                                          },
+                                      onTap: () => {_dix_count()},
                                       child: Container(
                                         width: ScreenUtil().setWidth(50),
                                         height: ScreenUtil().setHeight(50),
@@ -143,7 +141,7 @@ class _DetailPageState extends State<DetailPage> {
                                                     .cartItemCountTxtColor,
                                                 width: 1)),
                                         child: Text(
-                                          '$count',
+                                          '${count}',
                                           style: TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeight.bold,
@@ -151,9 +149,7 @@ class _DetailPageState extends State<DetailPage> {
                                                   .cartItemCountTxtColor),
                                         )),
                                     GestureDetector(
-                                      onTap: () => {
-                                            _add_count(),
-                                          },
+                                      onTap: () => {_add_count()},
                                       child: Container(
                                         alignment: Alignment.center,
                                         width: ScreenUtil().setWidth(50),
@@ -172,7 +168,11 @@ class _DetailPageState extends State<DetailPage> {
                                       color: Colors.green,
                                       child: InkWell(
                                         onTap: () {
-                                          add.invokeMethod("add", widget.map);
+                                          Map m=widget.map;
+                                          //添加新元素 给不存在的key ,赋值
+                                          m.putIfAbsent("count", ()=> count );
+                                          print(m);
+                                          add.invokeMethod("add", m);
                                           Navigator.of(context).push(
                                             MaterialPageRoute(
                                               builder: (BuildContext ctx) {
@@ -237,15 +237,15 @@ class _DetailPageState extends State<DetailPage> {
     );
   }
 
-  Future _add_count() async {
+  void _add_count() {
     setState(() {
-      count = count + 1;
+     ++ count;
     });
   }
 
-  Future _dix_count() async {
+  void _dix_count() {
     setState(() {
-      count = count - 1;
+     -- count;
     });
   }
 
