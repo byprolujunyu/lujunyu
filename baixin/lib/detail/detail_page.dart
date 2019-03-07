@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_button/cart_test.dart';
+import 'package:flutter_button/address/address_manage.dart';
+import 'package:flutter_button/page/cart_test.dart';
 import 'package:flutter_button/constants/color.dart';
 import 'package:flutter_button/page/cart_page.dart';
 import 'package:flutter_button/page/index_main.dart';
@@ -38,6 +39,17 @@ class _DetailPageState extends State<DetailPage> {
       appBar: AppBar(
         title: Text(widget.map['goodsName']),
         elevation: 0.0,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.account_balance),
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                return AddressPage();
+              }));
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(

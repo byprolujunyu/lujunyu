@@ -69,6 +69,7 @@ class _CartTestState extends State<CartTest> {
     return Scaffold(
       appBar: AppBar(
         title: Text('购物车'),
+        elevation: 0.0,
       ),
       body: dmoldel == null
           ? Container()
