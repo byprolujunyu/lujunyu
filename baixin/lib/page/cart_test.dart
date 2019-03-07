@@ -284,67 +284,82 @@ class CartItemWidget extends StatelessWidget {
             margin: EdgeInsets.only(
                 left: ScreenUtil().setWidth(10),
                 right: ScreenUtil().setWidth(8)),
-            width: ScreenUtil().setWidth(74),
-            height: ScreenUtil().setWidth(74),
+            width: ScreenUtil().setWidth(100),
+            height: ScreenUtil().setWidth(100),
             child: Image.network(data.imageUrl, fit: BoxFit.fill),
+            decoration: BoxDecoration(
+              border: Border(
+                top: BorderSide(width: 1, color: Colors.black12),
+                right: BorderSide(width: 1, color: Colors.black12),
+                left: BorderSide(width: 1, color: Colors.black12),
+                bottom: BorderSide(width: 1, color: Colors.black12),
+              ),
+            ),
           ),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text(data.productName),
+                Container(
+                  margin:EdgeInsets.only(top: 15.0),
+                  child: Text(data.productName),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
+
                     Text(
                       '￥${data.price}',
                       style: TextStyle(
                           fontSize: 14, color: KColorConstant.priceColor),
                     ),
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        GestureDetector(
-                          onTap: () => data.count > 1 && downCount(index),
-                          child: Container(
-                            width: ScreenUtil().setWidth(50),
-                            height: ScreenUtil().setWidth(50),
-                            decoration:
-                                BoxDecoration(border: _getRemoveBtBorder()),
-                            child: Icon(Icons.remove,
-                                color: _getRemovebuttonColor()),
-                          ),
-                        ),
-                        Container(
-                            alignment: Alignment.center,
-                            width: ScreenUtil().setWidth(50),
-                            height: ScreenUtil().setWidth(50),
-                            decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: KColorConstant.cartItemCountTxtColor,
-                                    width: 1)),
-                            child: Text(
-                              data.count.toString(),
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.bold,
-                                  color: KColorConstant.cartItemCountTxtColor),
-                            )),
-                        GestureDetector(
-                          onTap: () =>
-                              data.count < data.buyLimit && addCount(index),
-                          child: Container(
-                            alignment: Alignment.center,
-                            width: ScreenUtil().setWidth(50),
-                            height: ScreenUtil().setWidth(50),
-                            decoration:
-                                BoxDecoration(border: _getAddBtBorder()),
-                            child: Icon(Icons.add, color: _getAddbuttonColor()),
-                          ),
-                        ),
-                      ],
-                    )
+                   Container(
+                     margin: EdgeInsets.only(right: 20.0),
+                     child:  Row(
+                       mainAxisSize: MainAxisSize.min,
+                       children: <Widget>[
+                         GestureDetector(
+                           onTap: () => data.count > 1 && downCount(index),
+                           child: Container(
+                             width: ScreenUtil().setWidth(50),
+                             height: ScreenUtil().setWidth(50),
+                             decoration:
+                             BoxDecoration(border: _getRemoveBtBorder()),
+                             child: Icon(Icons.remove,
+                                 color: _getRemovebuttonColor()),
+                           ),
+                         ),
+                         Container(
+                             alignment: Alignment.center,
+                             width: ScreenUtil().setWidth(50),
+                             height: ScreenUtil().setWidth(50),
+                             decoration: BoxDecoration(
+                                 border: Border.all(
+                                     color: KColorConstant.cartItemCountTxtColor,
+                                     width: 1)),
+                             child: Text(
+                               data.count.toString(),
+                               style: TextStyle(
+                                   fontSize: 13,
+                                   fontWeight: FontWeight.bold,
+                                   color: KColorConstant.cartItemCountTxtColor),
+                             )),
+                         GestureDetector(
+                           onTap: () =>
+                           data.count < data.buyLimit && addCount(index),
+                           child: Container(
+                             alignment: Alignment.center,
+                             width: ScreenUtil().setWidth(50),
+                             height: ScreenUtil().setWidth(50),
+                             decoration:
+                             BoxDecoration(border: _getAddBtBorder()),
+                             child: Icon(Icons.add, color: _getAddbuttonColor()),
+                           ),
+                         ),
+                       ],
+                     ),
+                   ),
                   ],
                 )
               ],

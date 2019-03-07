@@ -1,8 +1,12 @@
 import 'dart:convert';
+import 'dart:io';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_button/config/service_url.dart';
 import 'package:flutter_button/page/category_page.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
+import 'package:flutter_button/widget/hot_below.dart';
 import '../service/service_method.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -21,6 +25,14 @@ class _HomePageState extends State<HomePage>
         appBar: AppBar(
           title: Text('百姓生活+'),
           elevation: 0.0,
+          actions: <Widget>[
+            IconButton(icon: Icon(Icons.hot_tub), onPressed: (){
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                return HotUI();
+              }));
+            },),
+          ],
         ),
         body: FutureBuilder(
           future: getHomePageContent(),
@@ -43,9 +55,10 @@ class _HomePageState extends State<HomePage>
               Map fp2 = data['data']['floor2Pic'];
               Map fp1 = data['data']['floor1Pic'];
 
-              String integralMallPic =  data['data']['integralMallPic']['PICTURE_ADDRESS'];
-              String newUser =  data['data']['newUser']['PICTURE_ADDRESS'];
-              String saoma =  data['data']['saoma']['PICTURE_ADDRESS'];
+              String integralMallPic =
+                  data['data']['integralMallPic']['PICTURE_ADDRESS'];
+              String newUser = data['data']['newUser']['PICTURE_ADDRESS'];
+              String saoma = data['data']['saoma']['PICTURE_ADDRESS'];
 
               if (navigatorList.length > 10) {
                 navigatorList.removeRange(10, navigatorList.length);
@@ -67,9 +80,10 @@ class _HomePageState extends State<HomePage>
                     LeaderView(
                       leaderInfo: leaderInfo,
                     ),
-
                     MiddleAd(
-                      saoma: saoma,integralMallPic: integralMallPic,newUser: newUser,
+                      saoma: saoma,
+                      integralMallPic: integralMallPic,
+                      newUser: newUser,
                     ),
                     RecommendUI(
                       recommendList: recommendList,
@@ -86,6 +100,8 @@ class _HomePageState extends State<HomePage>
                       floorPic: fp3,
                     ),
                     Floor(floor: floor3),
+                   // HotUI(),
+                   // HotUI(),
                   ],
                 ),
               );
@@ -136,7 +152,7 @@ class TopNavigator extends StatelessWidget {
   Widget _gridViewItemUI(BuildContext context, item) {
     return InkWell(
       onTap: () {
-        jump(item['mallCategoryName'],context);
+        jump(item['mallCategoryName'], context);
       },
       child: Column(
         children: <Widget>[
@@ -167,67 +183,87 @@ class TopNavigator extends StatelessWidget {
     );
   }
 
-  void jump(str,BuildContext context) {
-    switch(str){
+  void jump(str, BuildContext context) {
+    switch (str) {
       case "白酒":
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (BuildContext ctx) {
-              return CategoryPage(item: 0,);
-            }));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (BuildContext ctx) {
+          return CategoryPage(
+            item: 0,
+          );
+        }));
         break;
       case "啤酒":
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (BuildContext ctx) {
-              return CategoryPage(item: 1,);
-            }));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (BuildContext ctx) {
+          return CategoryPage(
+            item: 1,
+          );
+        }));
         break;
       case "葡萄酒":
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (BuildContext ctx) {
-              return CategoryPage(item: 2,);
-            }));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (BuildContext ctx) {
+          return CategoryPage(
+            item: 2,
+          );
+        }));
         break;
       case "清酒洋酒":
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (BuildContext ctx) {
-              return CategoryPage(item: 3,);
-            }));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (BuildContext ctx) {
+          return CategoryPage(
+            item: 3,
+          );
+        }));
         break;
       case "保健酒":
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (BuildContext ctx) {
-              return CategoryPage(item: 4,);
-            }));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (BuildContext ctx) {
+          return CategoryPage(
+            item: 4,
+          );
+        }));
         break;
       case "预调酒":
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (BuildContext ctx) {
-              return CategoryPage(item: 5,);
-            }));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (BuildContext ctx) {
+          return CategoryPage(
+            item: 5,
+          );
+        }));
         break;
       case "下酒小菜":
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (BuildContext ctx) {
-              return CategoryPage(item: 6,);
-            }));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (BuildContext ctx) {
+          return CategoryPage(
+            item: 6,
+          );
+        }));
         break;
       case "饮料":
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (BuildContext ctx) {
-              return CategoryPage(item: 7,);
-            }));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (BuildContext ctx) {
+          return CategoryPage(
+            item: 7,
+          );
+        }));
         break;
       case "乳制品":
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (BuildContext ctx) {
-              return CategoryPage(item: 8,);
-            }));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (BuildContext ctx) {
+          return CategoryPage(
+            item: 8,
+          );
+        }));
         break;
       case "休闲零食":
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (BuildContext ctx) {
-              return CategoryPage(item: 9,);
-            }));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (BuildContext ctx) {
+          return CategoryPage(
+            item: 9,
+          );
+        }));
         break;
     }
   }
@@ -300,7 +336,7 @@ class RecommendUI extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Container(
-          margin: EdgeInsets.all( ScreenUtil().setWidth(15)),
+          margin: EdgeInsets.all(ScreenUtil().setWidth(15)),
           child: Text(
             '商品推荐',
             style: TextStyle(
@@ -444,17 +480,4 @@ class MiddleAd extends StatelessWidget {
 }
 
 
-class HotUI extends StatefulWidget {
-  @override
-  _HotUIState createState() => _HotUIState();
-}
 
-class _HotUIState extends State<HotUI> {
-
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
