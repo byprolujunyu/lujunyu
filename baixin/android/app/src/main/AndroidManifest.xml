@@ -11,6 +11,7 @@
          FlutterApplication and put your custom class here.
     -->
     <application
+
         android:name="io.flutter.app.FlutterApplication"
         android:icon="@mipmap/shenghuo"
         android:label="百姓生活">

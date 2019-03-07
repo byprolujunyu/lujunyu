@@ -82,14 +82,14 @@ class _AddressPageState extends State<AddressPage> {
           '收货地址',
         ),
         elevation: 0.0,
-//        actions: <Widget>[
-//          IconButton(
-//            icon: Icon(Icons.add),
-//            onPressed: () {
-//              _add();
-//            },
-//          ),
-//        ],
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () {
+              _add();
+            },
+          ),
+        ],
       ),
       body: datas.length == 0
           ? Empty(add: _jump,)

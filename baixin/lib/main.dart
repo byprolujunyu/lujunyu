@@ -18,8 +18,28 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:IndexPage(index: 0,),
+      home:IndexPage(),
       theme: ThemeData(primaryColor: Colors.pink),
+    );
+  }
+}
+class Demo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Scaffold(
+        appBar: AppBar(),
+        drawer: Drawer(
+            child:GestureDetector(child: Icon(Icons.add),
+              onTap: (){
+                Navigator.pop(context);
+              },)
+        ),
+        floatingActionButton: FloatingActionButton(onPressed: (){
+          Navigator.pop(context);
+        },
+          child: Icon(Icons.map),),
+      ),
     );
   }
 }
