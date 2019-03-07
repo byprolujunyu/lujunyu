@@ -1,1 +1,429 @@
-<resources></resources>
+<resources>
+
+    <string name="app_name">搜箱</string>
+    <string name="anim_time">500</string>
+    <string name="anim_short">300</string>
+
+    <!--P3登录-->
+    <string name="login_title">登录</string>
+    <string name="login_phone_hint">请输入手机号</string>
+    <string name="login_pwd_hint">请输入密码</string>
+    <string name="login_remember_pwd">记住密码</string>
+    <string name="login_want_logon">新用户注册</string>
+    <string name="login_forget_pwd">忘记密码</string>
+    <string name="login_login">登录</string>
+
+    <!--P3_1注册-->
+    <string name="register_title">注册</string>
+    <string name="register_phone_hint">请输入手机号</string>
+    <string name="register_code_hint">请输入验证码</string>
+    <string name="register_code_get">获取验证码</string>
+    <string name="register_code_tip">(请在60秒内完成验证, 超时请点击重新发送)</string>
+    <string name="register_pwd1_hint">请输入密码 (6–12个字符)</string>
+    <string name="register_pwd2_hint">请再次输入密码 (6–12个字符)</string>
+    <string name="register_i_agree">我同意</string>
+    <string name="register_agreement">《注册协议》</string>
+    <string name="register_next">下一步</string>
+
+    <!--P3_2注册协议-->
+    <string name="agreement_title">注册协议</string>
+
+    <!--P3_3身份认证-->
+    <string name="identification_title">身份认证</string>
+    <string name="identification_usertype">用户类型:</string>
+    <string name="identification_usertype1">买家(只能买箱)</string>
+    <string name="identification_usertype2">卖家(含买卖功能)</string>
+    <string name="identification_identitytype">身份类型:</string>
+    <string name="identification_identitytype1">个人商户</string>
+    <string name="identification_identitytype2">企业商户</string>
+    <string name="identification_country">所在国家</string>
+    <string name="identification_country_choose">请选择所在国家</string>
+    <string name="identification_city">所在城市</string>
+    <string name="identification_city_choose">请选择所在城市</string>
+    <string name="identification_user_id">用户ID</string>
+    <string name="identification_user_name">姓名</string>
+    <string name="identification_user_name_hint">请输入姓名</string>
+    <string name="identification_user_phone">联系方式</string>
+    <string name="identification_user_phone_hint">请输入手机号码</string>
+    <string name="identification_user_address">联系地址</string>
+    <string name="identification_user_address_hint">请输入联系地址</string>
+    <string name="identification_bank_id">银行账号</string>
+    <string name="identification_bank_id_hint">请仔细输入银行账号</string>
+    <string name="identification_bank">开户银行</string>
+    <string name="identification_bank_hint">请输入开户银行</string>
+    <string name="identification_bank_name">银行账户名</string>
+    <string name="identification_bank_name_hint">请输入账户名</string>
+    <string name="identification_weixin">微信号</string>
+    <string name="identification_weixin_hint">请输入微信号</string>
+    <string name="identification_qq">QQ</string>
+    <string name="identification_qq_hint">请输入QQ</string>
+    <string name="identification_company_name">公司名称</string>
+    <string name="identification_company_name_hint">请输入营业执照上公司名称</string>
+    <string name="identification_company_phone">公司电话</string>
+    <string name="identification_company_phone_hint">请输入公司(区号)固定电话</string>
+    <string name="identification_company_address">公司地址</string>
+    <string name="identification_company_address_hint">请输入营业执照上公司地址</string>
+    <string name="identification_company_person">公司负责人</string>
+    <string name="identification_company_person_hint">请输入公司负责人姓名</string>
+    <string name="identification_company_legalperson">公司法人名</string>
+    <string name="identification_company_legalperson_hint">请输入法人姓名</string>
+    <string name="identification_maincity">主营城市</string>
+    <string name="identification_add">添加</string>
+    <string name="identification_delete">删除</string>
+    <string name="identification_tip1">注: 请选择您的主营城市, 选择完城市, 将收到对应城市的求购信息. 注册完成后, 可在个人中心中进行修改.</string>
+    <string name="identification_tip2">注: 您的证件信息不会被公开</string>
+    <string name="identification_register">实名注册</string>
+
+    <!--P3_4忘记密码-->
+    <!--中文大量复用注册界面-->
+    <string name="forgetpwd_title">忘记密码</string>
+    <string name="forgetpwd_sure">确定</string>
+
+    <!--城市选择-->
+    <string name="city_title">城市选择</string>
+
+    <!--P4首页-->
+    <string name="main_title">集装箱</string>
+    <string name="main_tab1">首页</string>
+    <string name="main_tab2">交易市场</string>
+    <string name="main_tab3">讨论区</string>
+    <string name="main_tab4">我的</string>
+    <string name="main_left_text">我的买箱订单</string>
+    <string name="main_buy">我要买箱</string>
+    <string name="main_sale">我要卖箱</string>
+    <string name="main_buy_info">最新买箱信息</string>
+    <string name="main_sale_info">最新卖箱信息</string>
+    <string name="main_type">箱型:</string>
+    <string name="main_deel_money">报价金额:</string>
+    <string name="main_deel_num">数量:</string>
+    <string name="main_people">人围观</string>
+
+    <!--P5交易市场-->
+    <string name="market_search_hint">输入您要搜索的内容</string>
+    <string name="market_search_button">搜索</string>
+    <string name="market_tab_buy">买箱信息</string>
+    <string name="market_tab_sale">卖箱信息</string>
+    <string name="market_condition1">城市</string>
+    <string name="market_condition2">箱型</string>
+    <string name="market_condition3">价格</string>
+    <string name="market_condition4">箱况</string>
+    <!--<string name="market_tips_buy">注:出售方可以对商品进行投标，只能出五次价格</string>-->
+    <string name="market_tips_buy">注:如有疑问,请关注微信公众号:搜箱findcontainer</string>
+    <string name="market_tips_saler">注:购买方可以对商品进行投标，只能出五次价格</string>
+    <string name="market_floating_tip1">发布集装箱</string>
+    <string name="market_floating_tip2">求购信息</string>
+    <string name="market_floating_tip3">出售信息</string>
+
+    <!--P5_1发布信息(求购)-->
+    <string name="sendbuyinfo_title">发布买箱信息</string>
+    <string name="sendbuyinfo_country">所在国家</string>
+    <string name="sendbuyinfo_country_hint">请选择国家</string>
+    <string name="sendbuyinfo_city">集装箱所在城市</string>
+    <string name="sendbuyinfo_city_hint">请选择城市</string>
+    <string name="sendbuyinfo_type">箱型</string>
+    <string name="sendbuyinfo_type_hint">请选择箱型</string>
+    <string name="sendbuyinfo_status">箱况</string>
+    <string name="sendbuyinfo_status_hint">请选择箱况</string>
+    <string name="sendbuyinfo_num">数量</string>
+    <string name="sendbuyinfo_num_tip">最多99个</string>
+    <string name="sendbuyinfo_tip">交易类型选择为"出售"的话,需要填写报价金额但不用选择有效时间.\n交易类型选择为"投标"的话,不需要填写报价金额但需要选择投标有效时间.</string>
+    <string name="sendbuyinfo_time">投标时间</string>
+    <string name="sendbuyinfo_time_hint">请选择时间</string>
+    <string name="sendbuyinfo_requre_hint">为了卖家更好的了解信息，请备注好箱子的特殊要求（如改铭牌费、订箱号）及其他卖点（如箱子颜色、箱子的成新等）</string>
+
+    <!--P5_1发布信息(出售)-->
+    <string name="sendsaleinfo_title">发布卖箱信息</string>
+    <string name="sendsaleinfo_money">报价金额</string>
+    <string name="sendsaleinfo_money_hint">元</string>
+    <string name="sendsaleinfo_money_hint_">元(总价)</string>
+    <string name="sendsaleinfo_time">有效时间</string>
+    <string name="sendsaleinfo_time_hint">请选择时间</string>
+    <string name="sendsaleinfo_requre">特殊要求</string>
+    <string name="sendsaleinfo_requre1">有特殊费用</string>
+    <string name="sendsaleinfo_requre2">无特殊费用</string>
+    <string name="sendsaleinfo_invoice">是否含发票</string>
+    <string name="sendsaleinfo_invoice1">提供发票</string>
+    <string name="sendsaleinfo_invoice2">无法提供发票</string>
+    <string name="sendsaleinfo_update">上传照片</string>
+    <string name="sendsaleinfo_pic1">CSC PLATE图片</string>
+    <string name="sendsaleinfo_pic2">正面图片</string>
+    <string name="sendsaleinfo_pic3">后面图片</string>
+    <string name="sendsaleinfo_pic4">侧面(左)图片</string>
+    <string name="sendsaleinfo_pic5">侧面(右)图片</string>
+    <string name="sendsaleinfo_pic6">箱子内部图片</string>
+    <string name="sendsaleinfo_total">合计:</string>
+    <string name="sendsaleinfo_send">发布</string>
+
+    <!--P6 讨论区-->
+    <string name="discuss_title">讨论区</string>
+    <string name="discuss_all_shrink">全部</string>
+    <string name="discuss_all_expand">收起</string>
+
+    <!--P6_1 发帖-->
+    <string name="send_title">发帖子</string>
+    <string name="send_hint">请输入内容</string>
+    <string name="send_pic_tip">发布照片</string>
+    <string name="send_pic_send">发布</string>
+
+    <!--P7 个人中心-->
+    <string name="personal_title">个人中心</string>
+    <string name="personal_name">账户名:</string>
+    <string name="personal_id">开户支行:</string>
+    <string name="personal_bank">银行账号:</string>
+    <string name="personal_ok">成功交易:</string>
+    <string name="personal_cancel">取消交易:</string>
+    <string name="personal_unit">单</string>
+    <string name="personal_realname">姓名</string>
+    <string name="personal_usrid">会员卡号</string>
+    <string name="personal_myphone">电话</string>
+    <string name="personal_username">用户名</string>
+    <string name="personal_posting">我的帖子</string>
+    <string name="personal_order">我的买箱订单</string>
+    <string name="personal_salerorder">我的卖箱订单</string>
+    <string name="personal_buyinfo">我的买箱信息</string>
+    <string name="personal_saleinfo">我的卖箱信息</string>
+    <string name="personal_message">系统消息</string>
+    <string name="personal_callback">意见反馈</string>
+
+    <!--P7_1 修改个人信息(个人)-->
+    <string name="change_personal_info_title">修改个人信息</string>
+    <string name="change_personal_info_face">头像</string>
+    <string name="change_personal_info_name">用户名</string>
+    <string name="change_personal_info_name_hint">请输入姓名</string>
+    <string name="change_personal_info_address">联系地址</string>
+    <string name="change_personal_info_address_hint">请输入联系地址</string>
+    <string name="change_personal_info_tip">是否接收卖家发布的信息推送</string>
+    <string name="change_personal_info_id">银行账号</string>
+    <string name="change_personal_info_id_hint">请输入账号</string>
+    <string name="change_personal_info_bank">开户银行</string>
+    <string name="change_personal_info_bank_hint">请选择开户银行</string>
+    <string name="change_personal_info_bank_hint_two">请选择开户银行</string>
+    <string name="change_personal_info_bank_name">银行账户名</string>
+    <string name="change_personal_info_bank_name_hint">请输入账户名</string>
+    <string name="change_personal_info_bank_tip">注:请选择您的主营城市,选择完城市,将收到对应城市的求购信息.</string>
+    <string name="change_personal_info_bank_sure">确认</string>
+
+    <!--P7_1 修改个人信息(公司)-->
+    <string name="change_company_info_title">修改公司信息</string>
+    <string name="change_company_info_face">头像</string>
+    <string name="change_company_info_name">公司名称</string>
+    <string name="change_company_info_name_hint">请输入公司名称</string>
+    <string name="change_company_info_phone">公司电话</string>
+    <string name="change_company_info_phone_hint">请输入公司固定电话</string>
+    <string name="change_company_info_address">公司地址</string>
+    <string name="change_company_info_address_hint">请输入公司地址</string>
+    <string name="change_company_info_charge">公司负责人</string>
+    <string name="change_company_info_charge_hint">请输入公司负责人姓名</string>
+    <string name="change_company_info_tip">是否接收卖家发布的信息推送</string>
+
+    <!--P7_2 我的帖子-->
+    <string name="myposting_title">我的帖子</string>
+
+    <!--P7_3 我的订单-->
+    <string name="myorder_title">我的买箱订单</string>
+    <string name="myorder_tab1">全部</string>
+    <string name="myorder_tab2">待付款</string>
+    <string name="myorder_tab3">已付款</string>
+    <string name="myorder_tab4">待提货</string>
+    <string name="myorder_tab5">已完成</string>
+    <string name="myorder_orderid">订单编号:</string>
+    <string name="myorder_total">共计数量:</string>
+    <string name="myorder_unit">件</string>
+    <string name="myorder_cunt">合计:</string>
+
+    <!--P7_3_1 待付款订单详情-->
+    <!--P7_3_2 已付款订单详情-->
+    <!--P7_3_3 待提货订单详情-->
+    <!--P7_3_4 已完成订单详情-->
+    <!--P7_4_1 已付款订单详情-->
+    <!--P7_4_2 待提货订单详情-->
+    <string name="order_title">订单详情</string>
+    <string name="order_time1">下单时间:</string>
+    <string name="order_time2">支付时间:</string>
+    <string name="order_time3">收货时间:</string>
+    <string name="order_pay">支付方式:</string>
+    <string name="order_invoice">发票信息</string>
+    <string name="order_person">个人</string>
+    <string name="order_company">单位</string>
+    <string name="order_invoice_top">发票抬头:</string>
+    <string name="order_invoice_content">发票明细:</string>
+    <string name="order_invoice_content_two">纳税人识别号:</string>
+    <string name="order_invoice_phone">收票人手机:</string>
+    <string name="order_tip1">注:提货单内容填写有误的话,请及时联系后台客服人员,她们将为您解决所有问题.</string>
+    <string name="order_tip2">*提货单如填写有误,请关注微信公众号：搜箱findcontainer及时联系后台客服人员</string>
+
+    <!--P7_3 我的订单-->
+    <string name="salerorder_title">我的卖箱订单</string>
+    <string name="salerorder_tab1">全部</string>
+    <string name="salerorder_tab2">待填写</string>
+    <string name="salerorder_tab3">已填写</string>
+
+    <!--P7_5 我的买箱信息-->
+    <string name="sbuyerinfo_title">我的买箱信息</string>
+    <string name="sbuyerinfo_amount">求购数量:</string>
+
+    <!--P7_6 我的卖箱信息-->
+    <string name="salerinfo_title">我的卖箱信息</string>
+    <string name="salerinfo_amount">销售数量:</string>
+
+    <!--P7_7 系统消息-->
+    <string name="message_title">系统消息</string>
+
+    <!--P7_8 意见反馈-->
+    <string name="feedback_title">意见反馈</string>
+    <string name="feedback_history">历史</string>
+    <string name="feedback_name_hint">请输入您的姓名</string>
+    <string name="feedback_phone_hint">请输入您的电话号码</string>
+    <string name="feedback_content_hint">请输入问题描述</string>
+    <string name="feedback_submit">确认提交</string>
+    <!--P7_8_1 意见反馈历史-->
+    <string name="feedback_history_title">意见反馈历史</string>
+
+    <!--P8 设置-->
+    <string name="setting_title">设置</string>
+    <string name="setting_changpwd">修改密码</string>
+    <string name="setting_introduction">APP介绍及声明</string>
+    <string name="setting_phone">客服热线:</string>
+    <string name="setting_exit">退出当前账号</string>
+
+    <!--P8_1 修改密码-->
+    <string name="change_title">修改密码</string>
+    <string name="change_hint1">请输入原始密码 (6–12个字符)</string>
+    <string name="change_hint2">请输入新密码 (6–12个字符)</string>
+    <string name="change_hint3">请再次输入密码 (6–12个字符)</string>
+    <string name="change_sure">确定</string>
+
+    <!--P8_2 APP介绍及声明-->
+    <string name="introduction_title">APP介绍及声明</string>
+
+    <!--P7_3_3_1 填写提货单-->
+    <!--P7_3_4_1 查看提货单-->
+    <!--P7_4_1_1 填写提货单-->
+    <!--P7_4_2_1 查看提货单-->
+    <string name="billoflading_title">填写提货单</string>
+    <string name="billoflading_model">卖家填写提箱通知单</string>
+    <!--<string name="billoflading_model3">提箱公司注意项目</string>-->
+    <string name="billoflading_model3">买家填写提箱信息</string>
+
+    <string name="billoflading_input0">订单编号</string>
+    <string name="billoflading_input1">箱号</string>
+    <string name="billoflading_input2">箱型</string>
+    <string name="billoflading_input3">数量</string>
+    <string name="billoflading_input4">堆场放箱单号</string>
+    <string name="billoflading_input5">堆场名称</string>
+    <string name="billoflading_input6">堆场电话</string>
+    <string name="billoflading_input7">堆场地址</string>
+    <string name="billoflading_input8">预计提箱时间</string>
+    <string name="billoflading_input9">堆场邮箱地址</string>
+
+    <string name="billoflading_hint0">请输入编号</string>
+    <string name="billoflading_hint1">请输入箱号</string>
+    <string name="billoflading_hint2">请输入箱型</string>
+    <string name="billoflading_hint3">请输入数量</string>
+    <string name="billoflading_hint4">请输入堆场放箱单号</string>
+    <string name="billoflading_hint5">请输入堆场名称</string>
+    <string name="billoflading_hint6">请输入堆场电话</string>
+    <string name="billoflading_hint7">请输入堆场地址</string>
+    <string name="billoflading_hint8">请选择时间</string>
+    <string name="billoflading_hint9">请输入邮箱地址</string>
+    <!--<string name="billoflading_input10">提箱公司名称</string>-->
+    <string name="billoflading_input10">买家(个人/公司)名称</string>
+    <!--<string name="billoflading_hint10">请输入公司名称</string>-->
+    <string name="billoflading_hint10">请输入买家(个人/公司)名称</string>
+    <string name="billoflading_info">车队信息</string>
+    <string name="billoflading_add">添加车队</string>
+    <string name="billoflading_delete">删除</string>
+    <string name="billoflading_input11">车队名称</string>
+    <string name="billoflading_hint11">请输入车队名称</string>
+    <string name="billoflading_input12">联系人电话</string>
+    <string name="billoflading_hint12">请输入联系人电话</string>
+    <string name="billoflading_input13">提箱数量</string>
+    <string name="billoflading_hint13">请输入提箱数量</string>
+    <string name="billoflading_input14">预计提箱日期</string>
+    <string name="billoflading_hint14">请输入日期</string>
+    <string name="billoflading_input15">车牌号码</string>
+    <string name="billoflading_hint15">请输入车牌号</string>
+    <string name="billoflading_check">特殊要求</string>
+    <string name="billoflading_check0">有特殊费用</string>
+    <string name="billoflading_check1">无特殊费用</string>
+    <string name="billoflading_input16">提箱公司邮箱地址</string>
+    <string name="billoflading_hint16">请输入邮箱</string>
+
+    <string name="billoflading_tip">内容过多的话,请联系客服,由客服人员帮您完成记录的填写.</string>
+    <string name="billoflading_tip2">备注:\n1. 请运输提箱前和柜场联系,确定好提箱时间,在此提箱单上加盖贵司车队正本图章提箱,并把车牌号,驾驶员姓名写于此单上,一单一箱.\n2.
+        所提集装箱必须用于出口,否则产生的后果将于用箱人负责;此放箱单免堆期七天,七天后我司将按照￥7/20DV,￥14/40DV收取堆存.\n3.
+        驾驶员提箱时务必检查箱况及箱型,有问题当场联系解决,出场后如发现箱子有问题,我司不承担任何责任.提箱请与我司联系,谢谢!
+    </string>
+
+    <!--P7_3_3_2 提货单二维码界面-->
+    <string name="qr_title">填写提货单</string>
+    <string name="qr_download">下载二维码</string>
+
+    <!--P5_4 选择支付方式-->
+    <string name="pay_title">选择支付方式</string>
+    <string name="pay_forpay">待支付:</string>
+    <string name="pay_weixin">微信</string>
+    <string name="pay_alipay">支付宝</string>
+    <string name="pay_yinlian">银联支付</string>
+    <string name="pay_tip">支付金额如超出支付上限，请联系客服</string>
+    <string name="pay_sure">确认支付</string>
+
+    <!--P5_5 支付成功-->
+    <string name="success_title">支付</string>
+    <string name="success_success">支付成功</string>
+    <string name="success_tip1">支付成功后,系统通过推送的方式,</string>
+    <string name="success_tip2">将提示信息分别推送给买家和卖家.</string>
+    <string name="success_left_button">返回首页</string>
+    <string name="success_right_button">返回我的买箱订单</string>
+
+    <!--P5_2_1 商品出价界面(求购模块)正在进行（卖家出价界面）-->
+    <string name="purchase_title">商品详情</string>
+    <string name="purchase_title2">商品详情</string>
+    <string name="purchase_type">箱 型:</string>
+    <string name="purchase_status">箱 况:</string>
+    <string name="purchase_num">求购数量:</string>
+    <string name="purchase_sale_num">销售数量:</string>
+    <string name="purchase_money_ok">报价金额:</string>
+    <string name="purchase_require">特殊要求:</string>
+    <!-- <string name="purchase_amount">可提供数量:</string>-->
+    <string name="purchase_amount">卖家提供数量:</string>
+    <string name="purchase_money">卖家出价:</string>
+    <string name="purchase_history">出价记录</string>
+    <string name="purchase_tip">注:请按图片规则上传,您将得到0.5%的服务费优惠.卖家可以对求购商品进行出价,最多可以出1次价格.</string>
+    <string name="purchase_tip2">(卖家上传的图片将在商品详情中显示)</string>
+    <string name="purchase_tip3">注:买家可以对出售商品进行出价,最多可以出1次价格</string>
+    <string name="purchase_item1">出价人</string>
+    <string name="purchase_item2">价格(元)</string>
+    <!--<string name="purchase_item3">卖家提供数量(个)</string>-->
+    <string name="purchase_item3">出价时间</string>
+    <string name="purchase_item4">图片</string>
+    <string name="purchase_item5">发票</string>
+    <string name="purchase_more"></string>
+    <string name="purchase_up">返回商品界面</string>
+    <string name="purchase_buy">立即购买</string>
+
+
+    <!--  校验提示字体 -->
+    <string name="verify_not_register">请登录后再试</string>
+    <string name="verify_phone_empty">请输入手机号</string>
+    <string name="verify_phone_right">手机号不正确</string>
+    <string name="verify_pwd_empty">请输入密码</string>
+    <string name="verify_pwd_right">密码为6–12位字符</string>
+    <string name="verify_code_text">获取验证码</string>
+    <string name="verify_code_sended">验证码已发送</string>
+    <string name="verify_code_empty">请输入验证码</string>
+    <string name="verify_code_right">验证码不正确</string>
+    <string name="verify_pwd2_empty">请再次输入密码</string>
+    <string name="verify_pwd2_right">两次输入密码不一致</string>
+    <string name="verify_agreement_checked">请先认真查看注册协议,点击“我同意”按钮即可进行下一步操作.</string>
+    <string name="verify_city_empty">请选择主营城市</string>
+    <string name="purchase_information">
+        搜箱为第三方交易平台及互联网信息服务提供者，搜箱（含网站、客户端等）所展示的商品服务的标题、价格、详情等信息内容系均有搜想注册用户发布，其真实性、准确性和合法性均由用户自己负责。搜箱提醒买家购买商品前注意谨慎核实。如对卖家发布的商品的标题、价格、详情等任何信息有任何疑问的，请在购买前与搜箱客服联系以帮你审查核实信息准确性和有效性。买家在购买前请悉知自己的权利和义务（参考APP注册条款中买卖方责任限制和范围），如发生任何权义问题，搜箱不承担任何责任，请买卖双方协商解决。
+    </string>
+    <string name="app_purchase_information">交易须知</string>
+    <string name="tianjiaxianghao">填写箱号</string>
+    <string name="usage_text">
+        1.我的帖子------------------可以查看自己在APP内发布帖子内容\n2.我的买箱订单------------------买家产看自己所有的购买订单信息\n3.卖家提货单--------------
+        卖家卖箱后在这里填写提货单\n4.我的买箱信息---------------买家这里查看自己的买箱信息和发布的求购买箱信息\n5.我的卖箱信息---------------卖家可以查看自己发布的卖箱信息和参加的卖箱信息
+    </string>
+</resources>

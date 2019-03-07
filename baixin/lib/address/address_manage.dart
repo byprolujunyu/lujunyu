@@ -25,6 +25,10 @@ class _AddressPageState extends State<AddressPage> {
     _query();
   }
 
+  Future _jump() async {
+    await jumptoAddress.invokeMethod('jumptoAddress');
+  }
+
   show(id) {
     showDialog<Null>(
       context: context,
@@ -71,25 +75,28 @@ class _AddressPageState extends State<AddressPage> {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)
-      ..init(context);
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
           '收货地址',
         ),
         elevation: 0.0,
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.add),
-            onPressed: () {
-              _add();
-            },
-          ),
-        ],
+//        actions: <Widget>[
+//          IconButton(
+//            icon: Icon(Icons.add),
+//            onPressed: () {
+//              _add();
+//            },
+//          ),
+//        ],
       ),
-      body: datas.length == 0 ? Empty() : HaveData(
-        datas: datas, delete: _delete,),
+      body: datas.length == 0
+          ? Empty(add: _jump,)
+          : HaveData(
+              datas: datas,
+              delete: _delete,
+            ),
     );
   }
 
@@ -99,14 +106,44 @@ class _AddressPageState extends State<AddressPage> {
 }
 
 class Empty extends StatelessWidget {
+
+  final Function add;
+
+  Empty({this.add});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text(
-          '没数据...',
+          child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              child: Text(
+                '还没有收货地址哦',
+                style: TextStyle(color: Colors.black26),
+              ),
+              margin: EdgeInsets.all(5.0),
+            ),
+            Container(
+              alignment: Alignment.center,
+              width: ScreenUtil().setWidth(150),
+              height: ScreenUtil().setHeight(50),
+              color: Colors.red,
+              child: InkWell(
+                child:Text(
+                  '快去添加',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: (){
+                  add();
+                },
+              ),
+            ),
+          ],
         ),
-      ),
+      )),
     );
   }
 }
@@ -216,7 +253,7 @@ class HaveData extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
         children: datas.map((map) {
-          return getItem(context, map);
-        }).toList());
+      return getItem(context, map);
+    }).toList());
   }
 }

@@ -1,9 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+
+<LinearLayout
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddressActivity">
+    android:background="@color/background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/razzmatazz"
+        android:orientation="horizontal"
+        android:layout_height="45dp">
+        <ImageView
+            android:onClick="goback"
+            android:layout_width="20dp"
+            android:src="@mipmap/icon_back"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_height="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="地址管理"
+            android:textSize="15sp"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#ffffff"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/block_height"
+        android:layout_marginLeft="@dimen/margin_littile"
+        android:layout_marginRight="@dimen/margin_littile"
+        android:background="@drawable/round_corner_white_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="@dimen/margin_littile"
+        android:paddingRight="@dimen/margin_littile">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="姓  名:"/>
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_littile"
+            android:layout_marginRight="40dp"
+            android:background="@color/transparent"
+            android:hint="请输入收货人姓名"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLength="11"
+            android:textColor="@color/grey_deep"
+            android:textColorHint="@color/grey_light"
+            android:textSize="@dimen/text_3"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/block_height"
+        android:layout_marginLeft="@dimen/margin_littile"
+        android:layout_marginRight="@dimen/margin_littile"
+        android:background="@drawable/round_corner_white_bg"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/margin_littile"
+        android:paddingRight="@dimen/margin_littile">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电  话:"/>
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_littile"
+            android:layout_marginRight="40dp"
+            android:background="@color/transparent"
+            android:hint="@string/login_phone_hint"
+            android:inputType="phone"
+            android:lines="1"
+            android:maxLength="11"
+            android:textColor="@color/grey_deep"
+            android:textColorHint="@color/grey_light"
+            android:textSize="@dimen/text_3"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/block_height"
+        android:layout_marginLeft="@dimen/margin_littile"
+        android:layout_marginRight="@dimen/margin_littile"
+        android:background="@drawable/round_corner_white_bg"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/margin_littile"
+        android:paddingRight="@dimen/margin_littile">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="地址:"/>
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_littile"
+            android:layout_marginRight="40dp"
+            android:background="@color/transparent"
+            android:hint="点击收货地址"
+            android:lines="1"
+            android:maxLength="11"
+            android:textColor="@color/grey_deep"
+            android:textColorHint="@color/grey_light"
+            android:textSize="@dimen/text_3"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/block_height"
+        android:layout_marginLeft="@dimen/margin_littile"
+        android:layout_marginRight="@dimen/margin_littile"
+        android:background="@drawable/round_corner_white_bg"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/margin_littile"
+        android:paddingRight="@dimen/margin_littile">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="门牌号:"/>
+
+        <EditText
+            android:id="@+id/roomNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_littile"
+            android:layout_marginRight="40dp"
+            android:background="@color/transparent"
+            android:hint="请输入门牌号"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLength="11"
+            android:textColor="@color/grey_deep"
+            android:textColorHint="@color/grey_light"
+            android:textSize="@dimen/text_3"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       android:layout_margin="10dp"
+        >
+    <Button
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="提交地址"
+        android:onClick="submit"
+        android:textColor="#ffffff"
+        android:background="#ff0000"/>
+
+
+    </RelativeLayout>
+</LinearLayout>

@@ -25,6 +25,7 @@ apply plugin: 'com.android.application'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
+
     compileSdkVersion 28
 
     lintOptions {
@@ -41,6 +42,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
@@ -48,6 +50,7 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
 }
 
 flutter {
