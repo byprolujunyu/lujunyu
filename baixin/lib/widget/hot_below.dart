@@ -39,7 +39,7 @@ class _HotUIState extends State<HotUI> {
       var result = response.data;
       var data = json.decode(result.toString());
       setState(() {
-        datas = data['data'];
+        datas.addAll(data['data']);
         init = true;
       });
     }
