@@ -26,8 +26,6 @@ class _DetailPageState extends State<DetailPage> {
   String CHANNEL1 = "cart/add";
   String CHANNEL2 = "cart/update";
 
-  int count = 1;
-
   static const query = const MethodChannel("cart/query");
   static const add = const MethodChannel("cart/add");
   static const add_count = const MethodChannel("cart/count");
@@ -100,100 +98,7 @@ class _DetailPageState extends State<DetailPage> {
                   onTap: () {
                     showBottomWidget(
                       context,
-                      SingleChildScrollView(
-                        child: Container(
-                          margin: EdgeInsets.all(20.0),
-                          height: ScreenUtil().setHeight(150),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Container(
-                                margin: EdgeInsets.all(1.0),
-                                child: Text(
-                                  '购买数量',
-                                ),
-                              ),
-                              Container(
-                                child: Divider(),
-                              ),
-                              Container(
-                                child: Row(
-                                  // mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    GestureDetector(
-                                      onTap: () => {_dix_count()},
-                                      child: Container(
-                                        width: ScreenUtil().setWidth(50),
-                                        height: ScreenUtil().setHeight(50),
-                                        decoration: BoxDecoration(
-                                            border: _getRemoveBtBorder()),
-                                        child: Icon(Icons.remove,
-                                            color: _getRemovebuttonColor()),
-                                      ),
-                                    ),
-                                    Container(
-                                        alignment: Alignment.center,
-                                        width: ScreenUtil().setWidth(50),
-                                        height: ScreenUtil().setHeight(50),
-                                        decoration: BoxDecoration(
-                                            border: Border.all(
-                                                color: KColorConstant
-                                                    .cartItemCountTxtColor,
-                                                width: 1)),
-                                        child: Text(
-                                          '${count}',
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold,
-                                              color: KColorConstant
-                                                  .cartItemCountTxtColor),
-                                        )),
-                                    GestureDetector(
-                                      onTap: () => {_add_count()},
-                                      child: Container(
-                                        alignment: Alignment.center,
-                                        width: ScreenUtil().setWidth(50),
-                                        height: ScreenUtil().setHeight(50),
-                                        decoration: BoxDecoration(
-                                            border: _getAddBtBorder()),
-                                        child: Icon(Icons.add,
-                                            color: _getAddbuttonColor()),
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(left: 10.0),
-                                      width: ScreenUtil().setWidth(210),
-                                      height: ScreenUtil().setHeight(60),
-                                      alignment: Alignment.center,
-                                      color: Colors.green,
-                                      child: InkWell(
-                                        onTap: () {
-                                          Map m=widget.map;
-                                          //添加新元素 给不存在的key ,赋值
-                                          m.putIfAbsent("count", ()=> count );
-                                          print(m);
-                                          add.invokeMethod("add", m);
-                                          Navigator.of(context).push(
-                                            MaterialPageRoute(
-                                              builder: (BuildContext ctx) {
-                                                return CartTest();
-                                              },
-                                            ),
-                                          );
-                                        },
-                                        child: Text(
-                                          '确认加入购物车',
-                                          style: TextStyle(color: Colors.white),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      SelectCountWidget(map: widget.map),
                     );
                   },
                   child: Container(
@@ -236,16 +141,133 @@ class _DetailPageState extends State<DetailPage> {
       ),
     );
   }
+}
+
+class SelectCountWidget extends StatefulWidget {
+  final Map map;
+
+  SelectCountWidget({Key key, @required this.map}) : super(key: key);
+
+  @override
+  _SelectCountWidgetState createState() => _SelectCountWidgetState();
+}
+
+class _SelectCountWidgetState extends State<SelectCountWidget> {
+  int count = 1;
+
+  String CHANNEL = "cart/query";
+  String CHANNEL1 = "cart/add";
+  String CHANNEL2 = "cart/update";
+
+  static const query = const MethodChannel("cart/query");
+  static const add = const MethodChannel("cart/add");
+  static const add_count = const MethodChannel("cart/count");
+  static const update = const MethodChannel("cart/update");
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: SingleChildScrollView(
+        child: Container(
+          margin: EdgeInsets.all(20.0),
+          height: ScreenUtil().setHeight(150),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.all(1.0),
+                child: Text(
+                  '购买数量',
+                ),
+              ),
+              Container(
+                child: Divider(),
+              ),
+              Container(
+                child: Row(
+                  // mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    GestureDetector(
+                      onTap: () => {_dix_count()},
+                      child: Container(
+                        width: ScreenUtil().setWidth(50),
+                        height: ScreenUtil().setHeight(50),
+                        decoration: BoxDecoration(border: _getRemoveBtBorder()),
+                        child:
+                            Icon(Icons.remove, color: _getRemovebuttonColor()),
+                      ),
+                    ),
+                    Container(
+                        alignment: Alignment.center,
+                        width: ScreenUtil().setWidth(50),
+                        height: ScreenUtil().setHeight(50),
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                                color: KColorConstant.cartItemCountTxtColor,
+                                width: 1)),
+                        child: Text(
+                          '${count}',
+                          style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                              color: KColorConstant.cartItemCountTxtColor),
+                        )),
+                    GestureDetector(
+                      onTap: () => {_add_count()},
+                      child: Container(
+                        alignment: Alignment.center,
+                        width: ScreenUtil().setWidth(50),
+                        height: ScreenUtil().setHeight(50),
+                        decoration: BoxDecoration(border: _getAddBtBorder()),
+                        child: Icon(Icons.add, color: _getAddbuttonColor()),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 10.0),
+                      width: ScreenUtil().setWidth(210),
+                      height: ScreenUtil().setHeight(60),
+                      alignment: Alignment.center,
+                      color: Colors.green,
+                      child: InkWell(
+                        onTap: () {
+                          Map m = widget.map;
+                          //添加新元素 给不存在的key ,赋值
+                          m.putIfAbsent("count", () => count);
+                          print(m);
+                          add.invokeMethod("add", m);
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext ctx) {
+                                return CartTest();
+                              },
+                            ),
+                          );
+                        },
+                        child: Text(
+                          '确认加入购物车',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
   void _add_count() {
     setState(() {
-     ++ count;
+      ++count;
     });
   }
 
   void _dix_count() {
     setState(() {
-     -- count;
+      --count;
     });
   }
 
