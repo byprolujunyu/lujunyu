@@ -271,6 +271,13 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
     );
   }
 
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    Navigator.pop(context);
+  }
+
   void _add_count() {
     setState(() {
       ++count;

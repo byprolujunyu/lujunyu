@@ -13,10 +13,22 @@ class MutliPayPage extends StatefulWidget {
 }
 
 class _MutliPayPageState extends State<MutliPayPage> {
+  List<CartItemModelNew> datas = [];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+//    _getList();
+  }
+
+  List<CartItemModelNew> demodata = [
+    // http://images.baixingliangfan.cn/compressedPic/20190128183933_79.jpg
+  ];
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -25,35 +37,26 @@ class _MutliPayPageState extends State<MutliPayPage> {
         elevation: 0.0,
       ),
       body: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              MyDivider(
-                height: ScreenUtil().setHeight(20),
-                color: Color.fromARGB(255, 240, 238, 238),
+        margin: EdgeInsets.all(0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            MyDivider(
+              height: 10,
+              color: Colors.black26,
+            ),
+          Expanded(
+              child:
+              PList(
+                ms: widget.model.items,
               ),
-//              ProductListInfo(
-//                datas: _getList(),
-//              ),
-              MyDivider(
-                height: ScreenUtil().setHeight(20),
-                color: Color.fromARGB(255, 240, 238, 238),
-              ),
-              PayList(price: widget.model.sumTotal),
-            ],
-          ),
+            ),
+            CountWidget(model: widget.model,),
+          ],
         ),
       ),
     );
-  }
-
-  List<CartItemModelNew> _getList() {
-    CartListModelNew model = widget.model;
-    List<CartItemModelNew> ms = [];
-    for (var m in model.items) {
-      ms.add(m);
-    }
-    return ms;
   }
 }
 
@@ -65,67 +68,14 @@ class ProductListInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: ListView(
-        children: datas.map((map) {
-          return getItemUi(context, map);
-        }).toList(),
-      ),
-    );
-  }
-
-  Widget getItemUi(BuildContext context, CartItemModelNew map) {
-    return Container(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Container(
-            margin: EdgeInsets.only(left: 10.0),
-            width: ScreenUtil().setWidth(90),
-            height: ScreenUtil().setHeight(90),
-            child: Image.network(map.imageUrl),
-            decoration: BoxDecoration(
-              border: Border(
-                top: BorderSide(width: 1, color: Colors.black12),
-                right: BorderSide(width: 1, color: Colors.black12),
-                left: BorderSide(width: 1, color: Colors.black12),
-                bottom: BorderSide(width: 1, color: Colors.black12),
-              ),
-            ),
-          ),
-          Container(
-            width: ScreenUtil().setWidth(300),
-            margin: EdgeInsets.only(left: 10.0),
-            child: Text(
-              map.productName,
-              style: TextStyle(fontSize: ScreenUtil().setSp(25)),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(right: 10.0),
-            child: Column(
-              children: <Widget>[
-                Container(
-                  child: Text(
-                    '￥ ${map.price}0',
-                    style: TextStyle(
-                      fontSize: ScreenUtil().setSp(20),
-                    ),
-                  ),
-                ),
-                Container(
-                  child: Text(
-                    'X ${map.count}',
-                    style: TextStyle(
-                      fontSize: ScreenUtil().setSp(20),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+      child: ListView.builder(
+          itemCount: datas.length,
+          itemBuilder: (BuildContext context, int index) {
+            CartItemModelNew m = datas[index];
+            return Container(
+              child: Image.network(m.imageUrl),
+            );
+          }),
     );
   }
 }
@@ -143,21 +93,24 @@ class PayList extends StatelessWidget {
           Container(
             child: ListTile(
               title: Text("商品金额"),
-              trailing: Text('￥ ${price.toString().split(".")[1].substring(0,1)}0'),
+              trailing:
+                  Text('￥ ${price.toString().split(".")[1].substring(0, 1)}0'),
             ),
           ),
           Divider(),
           Container(
             child: ListTile(
               title: Text("运费"),
-              trailing: Text('￥ ${price.toString().split(".")[1].substring(0,1)}0'),
+              trailing:
+                  Text('￥ ${price.toString().split(".")[1].substring(0, 1)}0'),
             ),
           ),
           Divider(),
           Container(
             child: ListTile(
               title: Text("实付金额"),
-              trailing: Text('￥ ${price.toString().split(".")[1].substring(0,1)}0'),
+              trailing:
+                  Text('￥ ${price.toString().split(".")[1].substring(0, 1)}0'),
             ),
           ),
           Divider(),
@@ -180,6 +133,114 @@ class PayList extends StatelessWidget {
               ),
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class PList extends StatelessWidget {
+  final List<CartItemModelNew> ms;
+
+  PList({Key key, @required this.ms}) : super(key: key);
+
+  Widget getItemUi(BuildContext context, CartItemModelNew map) {
+    var c;
+    try {
+      c = Container(
+        margin: EdgeInsets.only(top: 20),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(left: 10.0),
+              width: ScreenUtil().setWidth(90),
+              height: ScreenUtil().setHeight(90),
+              child: Image.network(map.imageUrl),
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(width: 1, color: Colors.black12),
+                  right: BorderSide(width: 1, color: Colors.black12),
+                  left: BorderSide(width: 1, color: Colors.black12),
+                  bottom: BorderSide(width: 1, color: Colors.black12),
+                ),
+              ),
+            ),
+            Container(
+              width: ScreenUtil().setWidth(300),
+              margin: EdgeInsets.only(left: 10.0),
+              child: Text(
+                map.productName,
+                style: TextStyle(fontSize: ScreenUtil().setSp(30)),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 10.0),
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    child: Text(
+                      '￥ ${map.price}0',
+                      style: TextStyle(
+                        fontSize: ScreenUtil().setSp(25),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child: Text(
+                      'X ${map.count}',
+                      style: TextStyle(
+                        fontSize: ScreenUtil().setSp(25),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Divider(),
+          ],
+        ),
+      );
+    } catch (e) {
+      print(e);
+    }
+    return c;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: ListView(
+        children: ms.map((map) {
+          return getItemUi(context, map);
+        }).toList(),
+      ),
+    );
+  }
+}
+
+class CountWidget extends StatelessWidget {
+  final CartListModelNew model;
+
+  CountWidget({Key key,this.model}):super(key:key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+
+      height: ScreenUtil().setHeight(100),
+      color: Colors.blue,
+      width: ScreenUtil.screenWidth,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Container( margin: EdgeInsets.only(left: 10),child: Text('共${model.itemsCount}件商品',style: TextStyle(color: Colors.white,
+          fontSize: ScreenUtil().setSp(30)),),),
+          Container( margin: EdgeInsets.only(right: 10),child: Text('小计  : ￥${model.sumTotal}',style: TextStyle(color: Colors.white,
+              fontSize: ScreenUtil().setSp(30)),),),
         ],
       ),
     );

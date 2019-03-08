@@ -14,7 +14,6 @@ class MyDivider extends StatelessWidget {
       width: ScreenUtil.screenWidth,
       height: height,
       color: color,
-      margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
     );
   }
 }
