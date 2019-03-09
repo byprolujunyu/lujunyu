@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,11 +34,23 @@ public class MainActivity extends FlutterActivity {
 
     private MethodChannel jumptoAddress;
 
+   private MethodChannel jump;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         GeneratedPluginRegistrant.registerWith(this);
-
+        jump = new MethodChannel(getFlutterView(),"detail/jump");
+        jump.setMethodCallHandler(new MethodChannel.MethodCallHandler() {
+            @Override
+            public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {
+                HashMap map= (HashMap) methodCall.arguments;
+                System.out.println(map);
+                Intent intent = new Intent(MainActivity.this,DetailActivity.class);
+                intent.putExtra("map",(Serializable)map);
+                startActivity(intent);
+            }
+        });
         query = new MethodChannel(getFlutterView(), CHANNEL);
         query.setMethodCallHandler(new MethodChannel.MethodCallHandler() {
             @Override

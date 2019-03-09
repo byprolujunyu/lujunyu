@@ -12,7 +12,7 @@ import '../service/service_method.dart';
 class DetailPage extends StatefulWidget {
   final Map map;
 
-  DetailPage({Key key, this.map}) : super(key: key);
+  DetailPage({Key key,@required this.map}) : super(key: key);
 
   @override
   _DetailPageState createState() => _DetailPageState();

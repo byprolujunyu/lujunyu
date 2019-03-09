@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_button/detail/datail_page_new.dart';
 import 'package:flutter_button/detail/detail_page.dart';
 import 'dart:async';
 import 'dart:convert';
@@ -99,7 +100,11 @@ class _CategoryPageState extends State<CategoryPage> {
       );
     }
   }
+  static const MethodChannel jump = MethodChannel("detail/jump");
 
+  Future _jumpFun (json) async {
+    await jump.invokeMethod('jump', json);
+  }
   //得到商品列表数据的方法
   void _getGoodsList() {
     _refreshController.sendBack(true, RefreshStatus.idle);
@@ -181,17 +186,31 @@ class _CategoryPageState extends State<CategoryPage> {
     );
   }
 
+
+  Future netWork(String goodId) async {
+    Response response;
+    Dio dio = new Dio();
+    dio.options.contentType =
+        ContentType.parse("application/x-www-form-urlencoded");
+    var formData = {'goodId':goodId};
+    response = await dio.post(servicePath['shopGoodsDetailImg'], data: formData);
+    if (response.statusCode == 200) {
+     return json.decode(response.data);
+    }
+  }
+
   Widget _goodsItem(Map goodsItem) {
     return SingleChildScrollView(
       physics: new NeverScrollableScrollPhysics(),
       child: InkWell(
         onTap: () {
           print('点击了商品');
+//          var map = netWork(goodsItem['goodsId']);
+//          print(map);
+//          _jumpFun(netWork(goodsItem['goodsId']));
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (BuildContext ctx) {
-            return DetailPage(
-              map: goodsItem,
-            );
+            return DetailPage(map: goodsItem,);
           }));
         },
         child: Container(

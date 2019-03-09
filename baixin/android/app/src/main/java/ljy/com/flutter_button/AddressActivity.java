@@ -28,15 +28,21 @@ public class AddressActivity extends Activity {
         address = (TextView) findViewById(R.id.address);
         roomNo = (EditText) findViewById(R.id.roomNo);
 
+        address.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
     }
 
 
     public void submit(View view) {
-        if (TextUtils.isEmpty(name.getText().toString())){
-
-        }else if(TextUtils.isEmpty(phone.getText().toString())){
-
-        }
+        String name = this.name.getText().toString();
+        String phone = this.phone.getText().toString();
+        String roomNo = this.roomNo.getText().toString();
     }
 
     public void goback(View view) {

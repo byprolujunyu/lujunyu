@@ -3,6 +3,7 @@
     package="ljy.com.flutter_button">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <!--
      io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -11,7 +12,6 @@
          FlutterApplication and put your custom class here.
     -->
     <application
-
         android:name="io.flutter.app.FlutterApplication"
         android:icon="@mipmap/shenghuo"
         android:label="百姓生活">
@@ -39,7 +39,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddressActivity"></activity>
+        <activity android:name=".AddressActivity" />
+        <activity android:name=".DetailActivity"></activity>
     </application>
 
 </manifest>

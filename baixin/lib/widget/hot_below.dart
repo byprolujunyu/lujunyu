@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_button/config/service_url.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
 import 'package:flutter_button/utils/screen_util.dart';
-
+import '../service/service_method.dart';
 class HotUI extends StatefulWidget {
   @override
   _HotUIState createState() => _HotUIState();
@@ -29,10 +29,10 @@ class _HotUIState extends State<HotUI> {
   @override
   void initState() {
     super.initState();
-    homePageBelowConten(page);
+    homePageBelowConten();
   }
 
-  Future homePageBelowConten(int page) async {
+  void homePageBelowConten() async {
     var response =
         await Dio().post(servicePath['homePageBelowConten'], data: page);
     if (response.statusCode == 200) {
@@ -59,14 +59,14 @@ class _HotUIState extends State<HotUI> {
                   page = 1;
                 });
 
-                homePageBelowConten(page);
+                homePageBelowConten();
               },
               loadMore: () async {
                 setState(() {
                   page = page + 1;
                 });
 
-                homePageBelowConten(page);
+                homePageBelowConten();
               },
               refreshHeader: ClassicsHeader(
                 key: _headerKeyGrid,
