@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_button/address/address_manage.dart';
+import 'package:flutter_button/db/db_helper.dart';
+import 'package:flutter_button/model/cart_model.dart';
+import 'package:flutter_button/page/cart_ios_page.dart';
 import 'package:flutter_button/page/cart_test.dart';
 import 'package:flutter_button/constants/color.dart';
 import 'package:flutter_button/page/cart_page.dart';
@@ -170,11 +173,15 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
   String CHANNEL = "cart/query";
   String CHANNEL1 = "cart/add";
   String CHANNEL2 = "cart/update";
-
+  var db = new DataBaseHelper();
   static const query = const MethodChannel("cart/query");
   static const add = const MethodChannel("cart/add");
   static const add_count = const MethodChannel("cart/count");
   static const update = const MethodChannel("cart/update");
+  Future _add(User user) async {
+    int saveuser = await db.saveUser(user);
+    print(saveuser);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -243,14 +250,15 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
                       child: InkWell(
                         onTap: () {
                           Map m = widget.map;
-                          //添加新元素 给不存在的key ,赋值
-                          m.putIfAbsent("count", () => count);
-                          print(m);
-                          add.invokeMethod("add", m);
+//                          //添加新元素 给不存在的key ,赋值
+//                          m.putIfAbsent("count", () => count);
+//                          print(m);
+//                          add.invokeMethod("add", m);
+                          _add(new User(name: m['goodsName'],image: m['image'],count: count,price: m['presentPrice']));
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (BuildContext ctx) {
-                                return CartTest();
+                                return CartIosPage();
                               },
                             ),
                           );

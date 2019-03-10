@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_button/page/cart_ios_page.dart';
 import 'package:flutter_button/page/cart_test.dart';
 
 import 'home_page.dart';
@@ -17,7 +18,7 @@ class IndexPage extends StatefulWidget {
 }
 
 class _IndexPageState extends State<IndexPage> {
-  final List tabBodies = [HomePage(), CategoryPage(), CartTest(), MemberPage()];
+  final List tabBodies = [HomePage(), CategoryPage(), CartIosPage(), MemberPage()];
 
   int currentIndex = 0;
   var currentPage;

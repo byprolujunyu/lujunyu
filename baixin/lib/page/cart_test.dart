@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_button/constants/index.dart';
+import 'package:flutter_button/db/db_helper.dart';
 import 'package:flutter_button/db/db_util.dart';
 import 'package:flutter_button/model/cart_new.dart';
 import 'package:flutter_button/model/cart_new.dart';
@@ -31,23 +32,23 @@ class _CartTestState extends State<CartTest> {
     super.initState();
 
     _query();
-    query.setMethodCallHandler((MethodCall call) {
-      var map = call.arguments;
-      setState(() {
-        data = map;
-        dmoldel = fromJson(data);
-      });
-    });
+//    query.setMethodCallHandler((MethodCall call) {
+//      var map = call.arguments;
+//      setState(() {
+//        data = map;
+//        dmoldel = fromJson(data);
+//      });
+//    });
   }
 
   CartListModelNew fromJson(List list) {
     List<CartItemModelNew> items = [];
-    for (var json in list) {
+    for (Map json in list) {
       CartItemModelNew item = CartItemModelNew(
         price: json['_price'],
         count: json['_count'],
-        imageUrl: json['_imageuri'],
-        productName: json['_naem'],
+        imageUrl: json['_image'],
+        productName: json['_name'],
         isDeleted: false,
         isSelected: true,
         buyLimit: 99,
@@ -59,8 +60,21 @@ class _CartTestState extends State<CartTest> {
     return CartListModelNew(items: items);
   }
 
+  var db = new DataBaseHelper();
+
   Future _query() async {
-    await query.invokeMethod("query");
+//    await query.invokeMethod("query");
+
+    try {
+      var list = await db.getAllUsers();
+      print(list);
+      var model = fromJson(list);
+      setState(() {
+        dmoldel = model;
+      });
+    }catch (e) {
+      return print('ERROR:======>${e}');
+    }
   }
 
   @override
@@ -184,6 +198,7 @@ class CartListWidget extends StatelessWidget {
               child: new Text('确定'),
               onPressed: () {
                 _delete(id);
+
               },
             ),
             new FlatButton(
@@ -198,8 +213,11 @@ class CartListWidget extends StatelessWidget {
     ).then((val) {});
   }
 
+  var db = new DataBaseHelper();
+
   Future _delete(id) async {
-    await delete.invokeMethod("delete", id);
+    //await delete.invokeMethod("delete", id);
+    await db.deleteUser(id);
     refresh();
     Navigator.pop(context);
   }
