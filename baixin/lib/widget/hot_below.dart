@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:flutter_button/detail/detail_page.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_button/config/service_url.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
 import 'package:flutter_button/utils/screen_util.dart';
 import '../service/service_method.dart';
+
 class HotUI extends StatefulWidget {
   @override
   _HotUIState createState() => _HotUIState();
@@ -74,10 +76,15 @@ class _HotUIState extends State<HotUI> {
                 textColor: Colors.black,
               ),
               refreshFooter: ClassicsFooter(
-                  key: _footerKeyGrid,
-                  loadHeight: 50.0,
-                  textColor: Colors.black,
-                  bgColor: Colors.transparent),
+                key: _footerKeyGrid,
+                loadHeight: 50.0,
+                textColor: Colors.black,
+                bgColor: Colors.transparent,
+                showMore: true,
+                noMoreText: '',
+                moreInfo: '加载中。。。',
+                loadReadyText: '上拉加载',
+              ),
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
@@ -85,49 +92,61 @@ class _HotUIState extends State<HotUI> {
                   Map m = datas[index];
                   return SingleChildScrollView(
                     physics: NeverScrollableScrollPhysics(),
-                    child: Container(
-                      child: Column(
-                        children: <Widget>[
-                          Container(
-                              width: ScreenUtil.screenWidth / 2,
-                              height: ScreenUtil().setHeight(300),
-                              child: Image.network(
-                                '${m['image']}',
-                                fit: BoxFit.fill,
-                              )),
-                          Container(
-                            child: Center(
-                              child: Text(
-                                m['name'],
-                                style: TextStyle(color: Colors.pink),
+                    child: InkWell(
+                      child: Container(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                                width: ScreenUtil.screenWidth / 2,
+                                height: ScreenUtil().setHeight(300),
+                                child: Image.network(
+                                  '${m['image']}',
+                                  fit: BoxFit.fill,
+                                )),
+                            Container(
+                              child: Center(
+                                child: Text(
+                                  m['name'],
+                                  style: TextStyle(color: Colors.pink),
+                                ),
                               ),
                             ),
-                          ),
-                          Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: <Widget>[
-                                Container(
-                                  margin: EdgeInsets.only(left: 10.0),
-                                  child: Text(
-                                    '￥${m['mallPrice']}',
-                                    style: TextStyle(color: Colors.black),
+                            Container(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: <Widget>[
+                                  Container(
+                                    margin: EdgeInsets.only(left: 10.0),
+                                    child: Text(
+                                      '￥${m['mallPrice']}',
+                                      style: TextStyle(color: Colors.black),
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(left: 30.0),
-                                  child: Text(
-                                    '￥${m['price']}',
-                                    style: TextStyle(
-                                        decoration: TextDecoration.lineThrough,
-                                        color: Colors.grey),
+                                  Container(
+                                    margin: EdgeInsets.only(left: 30.0),
+                                    child: Text(
+                                      '￥${m['price']}',
+                                      style: TextStyle(
+                                          decoration:
+                                              TextDecoration.lineThrough,
+                                          color: Colors.grey),
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
+                      onTap: (){
+
+                        Map newM = mapToMap2(m);
+
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                          return DetailPage(map: newM,);
+                        }));
+                      },
                     ),
                   );
                 },
@@ -137,5 +156,15 @@ class _HotUIState extends State<HotUI> {
               child: Loading(),
             ),
     );
+  }
+
+  Map mapToMap2(Map m) {
+      Map newM = Map();
+    newM.putIfAbsent("goodsName", () => m['name']);
+    newM.putIfAbsent("image", () => m['image']);
+    newM.putIfAbsent("presentPrice", () => m['mallPrice']);
+    newM.putIfAbsent("oriPrice", () => m['price']);
+    newM.putIfAbsent("goodsId", () => '火爆商品');
+    return newM;
   }
 }
