@@ -18,10 +18,11 @@ import io.flutter.plugins.GeneratedPluginRegistrant;
 public class MainActivity extends FlutterActivity {
 
     private void addsomeaddress() {
-        AddressDbUtils.getInstance(this).add("杨霖","14782002531","静安区阳城路101弄41号101",1);
-        AddressDbUtils.getInstance(this).add("何晓萍","13564389123","上海市松江区九亭街道10号402室",0);
-        AddressDbUtils.getInstance(this).add("杨霖","17602134437","上海市松江区泗凯路875弄1号502室",0);
+        AddressDbUtils.getInstance(this).add("杨霖", "14782002531", "静安区阳城路101弄41号101", 1);
+        AddressDbUtils.getInstance(this).add("何晓萍", "13564389123", "上海市松江区九亭街道10号402室", 0);
+        AddressDbUtils.getInstance(this).add("杨霖", "17602134437", "上海市松江区泗凯路875弄1号502室", 0);
     }
+
     private static final String CHANNEL = "cart/query";
     private static final String CHANNEL1 = "cart/add";
     private static final String CHANNEL2 = "cart/update";
@@ -34,20 +35,20 @@ public class MainActivity extends FlutterActivity {
 
     private MethodChannel jumptoAddress;
 
-   private MethodChannel jump;
+    private MethodChannel jump;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         GeneratedPluginRegistrant.registerWith(this);
-        jump = new MethodChannel(getFlutterView(),"detail/jump");
+        jump = new MethodChannel(getFlutterView(), "detail/jump");
         jump.setMethodCallHandler(new MethodChannel.MethodCallHandler() {
             @Override
             public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {
-                HashMap map= (HashMap) methodCall.arguments;
+                HashMap map = (HashMap) methodCall.arguments;
                 System.out.println(map);
-                Intent intent = new Intent(MainActivity.this,DetailActivity.class);
-                intent.putExtra("map",(Serializable)map);
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                intent.putExtra("map", (Serializable) map);
                 startActivity(intent);
             }
         });
@@ -105,7 +106,7 @@ public class MainActivity extends FlutterActivity {
             }
         });
 
-        queryAddress = new MethodChannel(getFlutterView(),"address/queryAddress");
+        queryAddress = new MethodChannel(getFlutterView(), "address/queryAddress");
 
         queryAddress.setMethodCallHandler(new MethodChannel.MethodCallHandler() {
             @Override
@@ -128,15 +129,15 @@ public class MainActivity extends FlutterActivity {
                     int id2 = query.getInt(id);
                     map.put("_id", id2);
                     int aDefault = query.getInt(query.getColumnIndex("_default"));
-                    map.put("isSelected",aDefault);
+                    map.put("isSelected", aDefault);
                     ms.add(map);
                 }
 
-               setResultAdd(ms);
+                setResultAdd(ms);
             }
         });
 
-        deleteAddress = new MethodChannel(getFlutterView(),"address/deleteAddress");
+        deleteAddress = new MethodChannel(getFlutterView(), "address/deleteAddress");
 
         deleteAddress.setMethodCallHandler(new MethodChannel.MethodCallHandler() {
             @Override
@@ -148,7 +149,7 @@ public class MainActivity extends FlutterActivity {
             }
         });
 
-        addAddress = new MethodChannel(getFlutterView(),"address/addAddress");
+        addAddress = new MethodChannel(getFlutterView(), "address/addAddress");
 
         addAddress.setMethodCallHandler(new MethodChannel.MethodCallHandler() {
             @Override
@@ -177,22 +178,23 @@ public class MainActivity extends FlutterActivity {
             }
         });
 
-        jumptoAddress = new MethodChannel(getFlutterView(),"address/jumptoAddress");
+        jumptoAddress = new MethodChannel(getFlutterView(), "address/jumptoAddress");
 
         jumptoAddress.setMethodCallHandler(new MethodChannel.MethodCallHandler() {
             @Override
             public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {
-                Intent intent = new Intent(MainActivity.this,AddressActivity.class);
+                Intent intent = new Intent(MainActivity.this, AddressActivity.class);
                 startActivity(intent);
             }
         });
     }
 
 
-
     private void setResult(List<Map> ms) {
         query.invokeMethod("queryback", ms);
     }
 
-    private void setResultAdd(List<Map> ms){ queryAddress.invokeMethod("queryaddressback", ms);}
+    private void setResultAdd(List<Map> ms) {
+        queryAddress.invokeMethod("queryaddressback", ms);
+    }
 }
