@@ -11,7 +11,7 @@ import 'package:flutter/cupertino.dart';
 void main() {
   //实例化数据库对象
 
-  _add();
+
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(MyApp());

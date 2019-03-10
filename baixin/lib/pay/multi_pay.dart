@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_button/db/db_helper.dart';
+import 'package:flutter_button/model/cart_model.dart';
 import 'package:flutter_button/model/cart_new.dart';
 import 'package:flutter_button/widget/my_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,6 +21,8 @@ class _MutliPayPageState extends State<MutliPayPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
+    _update();
 //    _getList();
   }
 
@@ -42,21 +46,35 @@ class _MutliPayPageState extends State<MutliPayPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            MyDivider(
-              height: 10,
-              color: Colors.black26,
-            ),
-          Expanded(
-              child:
-              PList(
+            Expanded(
+              child: PList(
                 ms: widget.model.items,
               ),
             ),
-            CountWidget(model: widget.model,),
+            CountWidget(
+              model: widget.model,
+            ),
           ],
         ),
       ),
     );
+  }
+
+  var db = new DataBaseHelper();
+
+  Future _update() async {
+    var items = widget.model.items;
+    await items.map((item) {
+      db.updateUser(get(item));
+    });
+  }
+
+  User get(CartItemModelNew item) {
+    return User(
+        name: item.productName,
+        image: item.imageUrl,
+        count: item.count,
+        price: item.price);
   }
 }
 
@@ -225,22 +243,33 @@ class PList extends StatelessWidget {
 class CountWidget extends StatelessWidget {
   final CartListModelNew model;
 
-  CountWidget({Key key,this.model}):super(key:key);
+  CountWidget({Key key, this.model}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-
       height: ScreenUtil().setHeight(100),
       color: Colors.blue,
       width: ScreenUtil.screenWidth,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Container( margin: EdgeInsets.only(left: 10),child: Text('共${model.itemsCount}件商品',style: TextStyle(color: Colors.white,
-          fontSize: ScreenUtil().setSp(30)),),),
-          Container( margin: EdgeInsets.only(right: 10),child: Text('小计  : ￥${model.sumTotal}',style: TextStyle(color: Colors.white,
-              fontSize: ScreenUtil().setSp(30)),),),
+          Container(
+            margin: EdgeInsets.only(left: 10),
+            child: Text(
+              '共${model.totalCount}件商品',
+              style: TextStyle(
+                  color: Colors.white, fontSize: ScreenUtil().setSp(30)),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(right: 10),
+            child: Text(
+              '小计  : ￥${model.sumTotal}',
+              style: TextStyle(
+                  color: Colors.white, fontSize: ScreenUtil().setSp(30)),
+            ),
+          ),
         ],
       ),
     );

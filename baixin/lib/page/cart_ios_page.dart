@@ -62,6 +62,15 @@ class _CartIosPageState extends State<CartIosPage> {
     }
   }
 
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+
+
+  }
+
+
   CartListModelNew fromJson(List<Map> list) {
     List<CartItemModelNew> items = [];
     for (Map json in list) {

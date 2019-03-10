@@ -24,27 +24,6 @@ Future getHomePageContent() async {
     return print('ERROR:======>${e}');
   }
 }
-
-Future shopGoodsDetailImg(@required String goodId) async {
-  try {
-
-    Response response;
-    Dio dio = new Dio();
-    dio.options.contentType =
-        ContentType.parse("application/x-www-form-urlencoded");
-    var formData = {'goodId':goodId};
-    response = await dio.post(servicePath['shopGoodsDetailImg'], data: formData);
-    if (response.statusCode == 200) {
-      return response.data;
-    } else {
-      throw Exception('后端接口出现异常，请检测代码和服务器情况.........');
-    }
-  } catch (e) {
-    return print('ERROR:======>${e}');
-  }
-}
-
-
 Future request(url,formData)async{
   try{
     print('开始获取数据...............');
@@ -65,6 +44,26 @@ Future request(url,formData)async{
     return print('ERROR:======>${e}');
   }
 }
+Future shopGoodsDetailImg(@required String goodId) async {
+  try {
+
+    Response response;
+    Dio dio = new Dio();
+    dio.options.contentType =
+        ContentType.parse("application/x-www-form-urlencoded");
+    var formData = {'goodId':goodId};
+    response = await dio.post(servicePath['shopGoodsDetailImg'], data: formData);
+    if (response.statusCode == 200) {
+      return response.data;
+    } else {
+      throw Exception('后端接口出现异常，请检测代码和服务器情况.........');
+    }
+  } catch (e) {
+    return print('ERROR:======>${e}');
+  }
+}
+
+
 
 void showShortToast(str) {
   Fluttertoast.showToast(
