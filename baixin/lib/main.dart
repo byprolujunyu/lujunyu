@@ -17,16 +17,17 @@ void main() {
 
 class MyApp extends StatelessWidget {
   showLoadingPage() {
-    return LoadingPage();
+    return Scaffold(
+      body: LoadingPage(),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:showLoadingPage(),
+      home: showLoadingPage(),
       theme: ThemeData(primaryColor: Colors.pink),
     );
   }
 }
-
