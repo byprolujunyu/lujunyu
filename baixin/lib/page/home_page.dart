@@ -8,6 +8,7 @@ import 'package:flutter_button/detail/detail_page.dart';
 import 'package:flutter_button/page/category_page.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
 import 'package:flutter_button/widget/hot_below.dart';
+import 'package:flutter_button/widget/my_widget.dart';
 import '../service/service_method.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -35,6 +36,7 @@ class _HomePageState extends State<HomePage>
       });
     });
   }
+
   Map mapToMap2(Map m) {
     Map newM = Map();
     newM.putIfAbsent("goodsName", () => m['name']);
@@ -44,6 +46,7 @@ class _HomePageState extends State<HomePage>
     newM.putIfAbsent("goodsId", () => '火爆商品');
     return newM;
   }
+
   Widget hotTitle = Container(
     margin: EdgeInsets.only(top: 10.0),
     padding: EdgeInsets.all(5.0),
@@ -51,12 +54,13 @@ class _HomePageState extends State<HomePage>
     decoration: BoxDecoration(
         color: Colors.white,
         border: Border(bottom: BorderSide(width: 0.5, color: Colors.black12))),
-    child: Text('火爆专区'),
+    child: Text('火爆专区',style: TextStyle(color:Colors.pink),),
   );
   GlobalKey<RefreshHeaderState> _headerKeyGrid =
-  new GlobalKey<RefreshHeaderState>();
+      new GlobalKey<RefreshHeaderState>();
   GlobalKey<RefreshFooterState> _footerKeyGrid =
-  new GlobalKey<RefreshFooterState>();
+      new GlobalKey<RefreshFooterState>();
+
   Widget _wrapList() {
     if (hotGoodsList.length != 0) {
       List<Widget> listWidget = hotGoodsList.map((val) {
@@ -66,7 +70,9 @@ class _HomePageState extends State<HomePage>
 
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                return DetailPage(map: newM,);
+                return DetailPage(
+                  map: newM,
+                );
               }));
             },
             child: Container(
@@ -107,7 +113,7 @@ class _HomePageState extends State<HomePage>
         children: listWidget,
       );
     } else {
-      return Text(' ');
+      return Center(child: Loading(),);
     }
   }
 
@@ -125,13 +131,12 @@ class _HomePageState extends State<HomePage>
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Scaffold(
         appBar: AppBar(
           title: Text('百姓生活+'),
           elevation: 0.0,
-          actions: <Widget>[
-
-          ],
+          actions: <Widget>[],
         ),
         body: FutureBuilder(
           future: getHomePageContent(),
@@ -164,6 +169,7 @@ class _HomePageState extends State<HomePage>
               }
               // 顶部轮播组件数
               //页面顶部轮播组件
+
               return EasyRefresh(
                 child: ListView(
                   children: <Widget>[
@@ -173,6 +179,7 @@ class _HomePageState extends State<HomePage>
                     TopNavigator(
                       navigatorList: navigatorList,
                     ),
+
                     AdBanner(
                       adPicture: adPicture,
                     ),
@@ -204,19 +211,16 @@ class _HomePageState extends State<HomePage>
                     _hotGoods(),
                   ],
                 ),
-
                 refreshFooter: ClassicsFooter(
-                    key:_footerKeyGrid,
-                    bgColor:Colors.white,
+                    key: _footerKeyGrid,
+                    bgColor: Colors.white,
                     textColor: Colors.pink,
                     moreInfoColor: Colors.pink,
                     showMore: true,
                     noMoreText: '',
                     moreInfo: '加载中',
-                    loadReadyText:'上拉加载....'
-                ),
-
-                loadMore: ()async{
+                    loadReadyText: '上拉加载....'),
+                loadMore: () async {
                   _getHotGoods();
                 },
               );
@@ -242,7 +246,6 @@ class SwiperDiy extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Container(
       height: ScreenUtil().setHeight(333),
       width: ScreenUtil().setWidth(750),
@@ -285,8 +288,7 @@ class TopNavigator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenUtil().setHeight(350),
-      padding: EdgeInsets.all(3.0),
+      height: ScreenUtil().setHeight(320),
       child: GridView.count(
         physics: new NeverScrollableScrollPhysics(),
         crossAxisCount: 5,
