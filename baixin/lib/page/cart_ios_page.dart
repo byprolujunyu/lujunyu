@@ -1,31 +1,8 @@
-import 'package:dio/dio.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_button/db/db_helper.dart';
-import 'package:flutter_button/db/todo.dart';
-import 'package:flutter_button/model/cart_model.dart';
 import 'package:flutter_button/page/cart_test.dart';
-import 'package:flutter_button/constants/index.dart';
-import 'package:flutter_button/db/db_util.dart';
 import 'package:flutter_button/model/cart_new.dart';
-import 'package:flutter_button/model/cart_new.dart';
-import '../service/service_method.dart';
-import 'package:flutter_button/data/cart.dart';
-import 'package:flutter_button/model/count.dart';
-import 'package:flutter_button/page/index_main.dart';
-import 'package:flutter_button/utils/screen_util.dart';
-import 'package:scoped_model/scoped_model.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_button/constants/index.dart';
-import 'package:flutter_button/db/db_util.dart';
-import 'package:flutter_button/model/cart_new.dart';
-import 'package:flutter_button/model/cart_new.dart';
-import 'package:flutter_button/data/cart.dart';
-import 'package:flutter_button/model/count.dart';
-import 'package:flutter_button/page/index_main.dart';
-import 'package:flutter_button/pay/multi_pay.dart';
 import 'package:flutter_button/utils/screen_util.dart';
 import 'package:scoped_model/scoped_model.dart';
 

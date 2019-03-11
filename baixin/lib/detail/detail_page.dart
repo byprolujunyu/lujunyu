@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_button/address/address_ios_page.dart';
 import 'package:flutter_button/address/address_manage.dart';
 import 'package:flutter_button/db/db_helper.dart';
 import 'package:flutter_button/model/cart_model.dart';
@@ -48,7 +49,7 @@ class _DetailPageState extends State<DetailPage> {
             onPressed: () {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                return AddressPage();
+                return NewAddressPage();
               }));
             },
           ),
