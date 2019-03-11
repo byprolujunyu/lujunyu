@@ -250,10 +250,6 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
                       child: InkWell(
                         onTap: () {
                           Map m = widget.map;
-//                          //添加新元素 给不存在的key ,赋值
-//                          m.putIfAbsent("count", () => count);
-//                          print(m);
-//                          add.invokeMethod("add", m);
                           _add(new User(name: m['goodsName'],image: m['image'],count: count,price: m['presentPrice']));
                           Navigator.of(context).push(
                             MaterialPageRoute(

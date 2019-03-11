@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_button/config/service_url.dart';
+import 'package:flutter_button/detail/datail_page_new.dart';
 import 'package:flutter_button/detail/detail_page.dart';
 import 'package:flutter_button/page/category_page.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
@@ -54,7 +55,10 @@ class _HomePageState extends State<HomePage>
     decoration: BoxDecoration(
         color: Colors.white,
         border: Border(bottom: BorderSide(width: 0.5, color: Colors.black12))),
-    child: Text('火爆专区',style: TextStyle(color:Colors.pink),),
+    child: Text(
+      '火爆专区',
+      style: TextStyle(color: Colors.pink),
+    ),
   );
   GlobalKey<RefreshHeaderState> _headerKeyGrid =
       new GlobalKey<RefreshHeaderState>();
@@ -113,7 +117,9 @@ class _HomePageState extends State<HomePage>
         children: listWidget,
       );
     } else {
-      return Center(child: Loading(),);
+      return Center(
+        child: Loading(),
+      );
     }
   }
 
@@ -493,7 +499,22 @@ class FloorPic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Image.network(floorPic['PICTURE_ADDRESS']),
+      child: InkWell(
+        child: Image.network(
+          floorPic['PICTURE_ADDRESS'],
+        ),
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (BuildContext ctx) {
+              return CategoryPage(
+                item: floorPic['TO_PLACE'] == '4'
+                    ? 0
+                    : floorPic['TO_PLACE'] != '4' ? 0 : 1,
+              );
+            }),
+          );
+        },
+      ),
     );
   }
 }
@@ -503,6 +524,15 @@ class Floor extends StatelessWidget {
 
   Floor({Key key, this.floor}) : super(key: key);
 
+  void jumpDetail(context, String goodsid) {
+//    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext ctx) {
+//      return DetailPageNew(
+//        goodsId: goodsid,
+//      );
+//    }));
+  }
+
+//DetailPageNew
   @override
   Widget build(BuildContext context) {
     int width = ScreenUtil.getInstance().width;
@@ -513,17 +543,25 @@ class Floor extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Container(
-                  height: ScreenUtil().setHeight(400),
-                  child: Image.network(
-                    floor[0]['image'],
-                  ),
-                ),
+                    height: ScreenUtil().setHeight(400),
+                    child: InkWell(
+                      child: Image.network(
+                        floor[0]['image'],
+                      ),
+                      onTap: () {
+                        jumpDetail(context, floor[0]['goodsId']);
+                      },
+                    )),
                 Container(
-                  height: ScreenUtil().setHeight(200),
-                  child: Image.network(
-                    floor[1]['image'],
-                  ),
-                ),
+                    height: ScreenUtil().setHeight(200),
+                    child: InkWell(
+                      child: Image.network(
+                        floor[1]['image'],
+                      ),
+                      onTap: () {
+                        jumpDetail(context, floor[1]['goodsId']);
+                      },
+                    )),
               ],
             ),
           ),
@@ -531,27 +569,39 @@ class Floor extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Container(
-                  padding: EdgeInsets.zero,
-                  height: ScreenUtil().setHeight(200),
-                  child: Image.network(
-                    floor[2]['image'],
-                  ),
-                ),
+                    padding: EdgeInsets.zero,
+                    height: ScreenUtil().setHeight(200),
+                    child: InkWell(
+                      child: Image.network(
+                        floor[2]['image'],
+                      ),
+                      onTap: () {
+                        jumpDetail(context, floor[2]['goodsId']);
+                      },
+                    )),
                 Container(
-                  padding: EdgeInsets.zero,
-                  height: ScreenUtil().setHeight(200),
-                  child: Image.network(
-                    floor[3]['image'],
-                  ),
-                ),
+                    padding: EdgeInsets.zero,
+                    height: ScreenUtil().setHeight(200),
+                    child: InkWell(
+                      child: Image.network(
+                        floor[3]['image'],
+                      ),
+                      onTap: () {
+                        jumpDetail(context, floor[3]['goodsId']);
+                      },
+                    )),
                 Container(
-                  padding: EdgeInsets.zero,
-                  height: ScreenUtil().setHeight(200),
-                  width: width.toDouble() / 2,
-                  child: Image.network(
-                    floor[4]['image'],
-                  ),
-                ),
+                    padding: EdgeInsets.zero,
+                    height: ScreenUtil().setHeight(200),
+                    width: width.toDouble() / 2,
+                    child: InkWell(
+                      child: Image.network(
+                        floor[4]['image'],
+                      ),
+                      onTap: () {
+                        jumpDetail(context, floor[4]['goodsId']);
+                      },
+                    )),
               ],
             ),
           ),

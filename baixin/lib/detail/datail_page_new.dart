@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_button/address/address_manage.dart';
+import 'package:flutter_button/detail/detail_page.dart';
 import 'package:flutter_button/page/cart_test.dart';
 import 'package:flutter_button/constants/color.dart';
 import 'package:flutter_button/page/cart_page.dart';
@@ -18,55 +19,37 @@ import '../service/service_method.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 class DetailPageNew extends StatefulWidget {
+  final String goodsId;
 
-  final Map map;
+  DetailPageNew({Key key, @required this.goodsId}) : super(key: key);
 
-  DetailPageNew({Key key, this.map}) : super(key: key);
   @override
   _DetailPageNewState createState() => _DetailPageNewState();
 }
 
 class _DetailPageNewState extends State<DetailPageNew> {
-
-  List<Widget> _pagelist = [];
+  Map shopInfo;
 
   @override
   Widget build(BuildContext context) {
-    Map map = widget.map;
     return FutureBuilder(
-        future: shopGoodsDetailImg(map['goodsId']),
+        future: shopGoodsDetailImg(widget.goodsId),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             var data = json.decode(snapshot.data.toString());
 
-            Map shopInfo = data['data']['goodInfo'];
+            shopInfo = data['data']['goodInfo'];
 
-            setState(() {
-              _pagelist = [
-                DetailTabWidget(
-                  uri: shopInfo['goodsDetail'],
-                ),
-                CommTabWidget(),
-              ];
-            });
-
-            return DefaultTabController(
-              length: 2,
-              initialIndex: 0,
-              child: Scaffold(
-                appBar: AppBar(
-                  title: Text(map['goodsName']),
-                  elevation: 0.0,
-                ),
-                body: Column(
+            return Scaffold(
+              appBar: AppBar(
+                title: Text(shopInfo['goodsName']),
+                elevation: 0.0,
+              ),
+              body: SingleChildScrollView(
+                child: Column(
                   children: <Widget>[
                     DetailPageInfo(map: shopInfo),
-                    KTabBarWidget(),
-                    Expanded(
-                      child: TabBarView(
-                        children: _pagelist,
-                      ),
-                    ),
+                    getCashWidget(),
                   ],
                 ),
               ),
@@ -77,6 +60,57 @@ class _DetailPageNewState extends State<DetailPageNew> {
             );
           }
         });
+  }
+
+  Widget getCashWidget() {
+    return Container(
+      margin: EdgeInsets.only(top: ScreenUtil().setHeight(100)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          InkWell(
+            onTap: () {
+              showBottomWidget(
+                context,
+                SelectCountWidget(map: shopInfo),
+              );
+            },
+            child: Container(
+              width: ScreenUtil().setHeight(180),
+              height: ScreenUtil().setHeight(60),
+              color: Colors.green,
+              child: Center(
+                child: Text(
+                  '加入购物车',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                return PayPage(
+                  map: shopInfo,
+                );
+              }));
+            },
+            child: Container(
+              width: ScreenUtil().setHeight(180),
+              height: ScreenUtil().setHeight(60),
+              color: Colors.red,
+              child: Center(
+                child: Text(
+                  '立即购买',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
 
