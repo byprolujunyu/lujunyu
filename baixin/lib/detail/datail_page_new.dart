@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_button/address/address_manage.dart';
 import 'package:flutter_button/detail/detail_page.dart';
+import 'package:flutter_button/model/good_detail.dart';
 import 'package:flutter_button/page/cart_test.dart';
 import 'package:flutter_button/constants/color.dart';
 import 'package:flutter_button/page/cart_page.dart';
@@ -29,7 +30,7 @@ class DetailPageNew extends StatefulWidget {
 
 class _DetailPageNewState extends State<DetailPageNew> {
   Map shopInfo;
-
+  GoodDetail goodDetail;
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -40,7 +41,9 @@ class _DetailPageNewState extends State<DetailPageNew> {
 
             shopInfo = data['data']['goodInfo'];
 
-            return Scaffold(
+            goodDetail = GoodDetail.fromMap(shopInfo);
+
+           return Scaffold(
               appBar: AppBar(
                 title: Text(shopInfo['goodsName']),
                 elevation: 0.0,
