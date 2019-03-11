@@ -72,7 +72,7 @@ flutter:
        - images/wallpapers/wallpaper1.jpg
        - images/wallpapers/wallpaper2.jpg
        - images/wallpapers/wallpaper3.jpg
-
+       - images/bg_loading.jpg
        - images/douyu/Img_orange.png
        - images/douyu/home_header_hot.png
        - images/douyu/home_header_normal.png
