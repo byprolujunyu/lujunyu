@@ -2,17 +2,17 @@
 flutter-百姓生活
 
 预览图
-![Github](/1.jpg "title")
-![Github](/2.jpg "title")
-![Github](/3.jpg "title")
-![Github](/10.jpg "title")
-![Github](/11.jpg "title")
-![Github](/4.jpg "title")
-![Github](/5.jpg "title")
-![Github](/6.jpg "title")
-![Github](/8.jpg "title")
-![Github](/9.jpg "title")
-![Github](/7.jpg "title")
+![Github](/snapshot/1.jpg "title")
+![Github](/snapshot/2.jpg "title")
+![Github](/snapshot/3.jpg "title")
+![Github](/snapshot/10.jpg "title")
+![Github](/snapshot/11.jpg "title")
+![Github](/snapshot/4.jpg "title")
+![Github](/snapshot/5.jpg "title")
+![Github](/snapshot/6.jpg "title")
+![Github](/snapshot/8.jpg "title")
+![Github](/snapshot/9.jpg "title")
+![Github](/snapshot/7.jpg "title")
 
 
 功能
