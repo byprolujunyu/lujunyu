@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage>
   //火爆商品接口
   void _getHotGoods() {
     var formPage = {'page': page};
-    request('homePageBelowConten', formPage).then((val) {
+    request('homePageBelowConten', formData: formPage).then((val) {
       var data = json.decode(val.toString());
       List<Map> newGoodsList = (data['data'] as List).cast();
       setState(() {

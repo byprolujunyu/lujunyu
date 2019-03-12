@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import "package:dio/dio.dart";
+import 'package:flutter_button/model/category_model.dart';
 import 'dart:async';
 import 'dart:io';
 import '../config/service_url.dart';
@@ -24,7 +27,7 @@ Future getHomePageContent() async {
     return print('ERROR:======>${e}');
   }
 }
-Future request(url,formData)async{
+Future request(url,{formData})async{
   try{
     print('开始获取数据...............');
     Response response;
@@ -44,6 +47,15 @@ Future request(url,formData)async{
     return print('ERROR:======>${e}');
   }
 }
+
+void _getCategory()async{
+  await request('getCategory').then((val){
+    var data = json.decode(val.toString());
+    CategoryBigListModel list = CategoryBigListModel.formJson(data['data']);
+    list.data.forEach((item)=>print(item.mallCategoryName));
+  });
+}
+
 Future shopGoodsDetailImg(@required String goodId) async {
   try {
 

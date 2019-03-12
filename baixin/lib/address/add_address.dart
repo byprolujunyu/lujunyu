@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_button/address/address_ios_page.dart';
+import 'package:flutter_button/address/address_map.dart';
 import 'package:flutter_button/db/db_helper_address.dart';
 import 'package:flutter_button/model/address.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
@@ -72,6 +73,10 @@ class _AddAddressPageState extends State<AddAddressPage> {
                           style: TextStyle(
                               color: Colors.white, fontWeight: FontWeight.bold),
                         ),
+                        onTap: (){
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => AddressMap()));
+                        },
                       ),
                       height: ScreenUtil().setHeight(80),
                       width: ScreenUtil().setWidth(300),

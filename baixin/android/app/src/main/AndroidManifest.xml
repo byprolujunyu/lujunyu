@@ -33,6 +33,12 @@
                 android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
                 android:value="true" />
 
+
+                <meta-data
+                    android:name="com.amap.api.v2.apikey"
+                    android:value="85d56aba351bcf59ed262d8cdc49f5cf"/>
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>io.flutter.embedded_views_preview</key>
+	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -48,5 +50,16 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    	<string>导航SDK需要您的定位服务，否则可能无法使用，如果您需要使用后台导航功能请选择“始终允许”。</string>
+    	<key>NSLocationAlwaysUsageDescription</key>
+    	<string>导航SDK需要您的定位服务，否则可能无法使用。</string>
+    	<key>NSLocationWhenInUseUsageDescription</key>
+    	<string>导航SDK需要您的定位服务，否则可能无法使用。</string>
+
+    	<key>UIBackgroundModes</key>
+        	<array>
+        		<string>location</string>
+        	</array>
 </dict>
 </plist>

@@ -4,12 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_button/address/address_manage.dart';
 import 'package:flutter_button/detail/detail_page.dart';
 import 'package:flutter_button/model/good_detail.dart';
-import 'package:flutter_button/page/cart_test.dart';
-import 'package:flutter_button/constants/color.dart';
-import 'package:flutter_button/page/cart_page.dart';
-import 'package:flutter_button/page/command_bottom.dart';
-import 'package:flutter_button/page/detail_bottom.dart';
-import 'package:flutter_button/page/index_main.dart';
+
 import 'package:flutter_button/pay/pay_page.dart';
 import 'package:flutter_button/tabbar.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
