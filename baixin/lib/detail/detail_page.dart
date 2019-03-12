@@ -16,7 +16,7 @@ import '../service/service_method.dart';
 class DetailPage extends StatefulWidget {
   final Map map;
 
-  DetailPage({Key key,@required this.map}) : super(key: key);
+  DetailPage({Key key, @required this.map}) : super(key: key);
 
   @override
   _DetailPageState createState() => _DetailPageState();
@@ -179,6 +179,7 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
   static const add = const MethodChannel("cart/add");
   static const add_count = const MethodChannel("cart/count");
   static const update = const MethodChannel("cart/update");
+
   Future _add(User user) async {
     int saveuser = await db.saveUser(user);
     print(saveuser);
@@ -251,7 +252,11 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
                       child: InkWell(
                         onTap: () {
                           Map m = widget.map;
-                          _add(new User(name: m['goodsName'],image: m['image'],count: count,price: m['presentPrice']));
+                          _add(new User(
+                              name: m['goodsName'],
+                              image: m['image'],
+                              count: count,
+                              price: m['presentPrice']));
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (BuildContext ctx) {

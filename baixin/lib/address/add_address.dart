@@ -134,14 +134,10 @@ class _AddAddressPageState extends State<AddAddressPage> {
                           ),
                           onTap: () async {
                             try {
-                              setState(() {
-                                init = false;
-                              });
                               _add();
-                              Navigator.of(context).pushAndRemoveUntil(
-                                  MaterialPageRoute(
-                                      builder: (context) => NewAddressPage()),
-                                  (route) => route == null);
+
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => NewAddressPage()));
                             } catch (e) {
                               print(e);
                             }
@@ -160,16 +156,17 @@ class _AddAddressPageState extends State<AddAddressPage> {
   }
 
   Future _add() async {
-    await db.saveAddress(Address(
-      name: _nameController.text,
-      phone: _phoneController.text,
-      address: '上海市浦东新区',
-      num: _numController.text,
-      isSelected: isSelected ? 1 : 0,
-    )).then((onvalue){
-      setState(() {
-        init = true;
-      });
-    });
+
+    var name = _nameController.text;
+    var ohone = _phoneController.text;
+    var num = _numController.text;
+    await db
+        .saveAddress(Address(
+          name: name,
+          phone: ohone,
+          address: '上海市浦东新区',
+          num:num ,
+          isSelected: isSelected ? 1 : 0,
+        ));
   }
 }
