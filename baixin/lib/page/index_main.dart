@@ -42,7 +42,7 @@ class _IndexPageState extends State<IndexPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return WillPopScope(child: Scaffold(
       backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -56,6 +56,8 @@ class _IndexPageState extends State<IndexPage> {
         },
       ),
       body: currentPage,
-    );
+    ), onWillPop: (){
+      print("pop");
+    });
   }
 }

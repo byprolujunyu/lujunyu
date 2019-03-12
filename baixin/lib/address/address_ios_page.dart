@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_button/address/add_address.dart';
 import 'package:flutter_button/db/db_helper_address.dart';
 import 'package:flutter_button/model/address.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -92,6 +93,11 @@ class _NewAddressPageState extends State<NewAddressPage> {
 
   Future _jump() async {
     print('setAddress');
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (BuildContext ctx) {
+      return AddAddressPage();
+    }));
+
   }
 
   Future _delete(id) async {
@@ -108,12 +114,13 @@ class _NewAddressPageState extends State<NewAddressPage> {
         ),
         elevation: 0.0,
         actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.add),
-            onPressed: () {
-              _add();
-            },
-          ),
+          IconButton(onPressed: (){
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (BuildContext ctx) {
+              return AddAddressPage();
+            }));
+          },
+          icon: Icon(Icons.add),),
         ],
       ),
       body: datas.length == 0

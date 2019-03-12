@@ -104,10 +104,9 @@ class LoadingPageState extends State<LoadingPage>
             ),
 
             onTap: (){
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                return IndexPage();
-              }));
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => IndexPage()),
+                      (route) => route == null);
             },
           ),
         ),

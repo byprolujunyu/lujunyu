@@ -114,13 +114,13 @@ class EmptyWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
-              width: ScreenUtil().setWidth(300),
-              height: ScreenUtil().setHeight(300),
+              width: ScreenUtil().setWidth(100), margin: EdgeInsets.all(10.0),
+              height: ScreenUtil().setHeight(100),
               child: Image.network(
                 'http://116.62.168.251:8090/empty_cart.png',
               ),
             ),
-            Container(
+            Container( margin: EdgeInsets.all(10.0),
               child: Text(
                 '购物车还是空的,快去挑选商品吧',
               ),
@@ -139,12 +139,9 @@ class EmptyWidget extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                    return IndexPage(
-                      index: 0,
-                    );
-                  }));
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (context) => IndexPage()),
+                          (route) => route == null);
                 },
               ),
             ),
