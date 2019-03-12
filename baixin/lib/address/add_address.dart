@@ -132,8 +132,11 @@ class _AddAddressPageState extends State<AddAddressPage> {
                             '提交地址',
                             style: TextStyle(color: Colors.white),
                           ),
-                          onTap: () {
+                          onTap: () async {
                             try {
+                              setState(() {
+                                init = false;
+                              });
                               _add();
                               Navigator.of(context).pushAndRemoveUntil(
                                   MaterialPageRoute(
@@ -157,18 +160,16 @@ class _AddAddressPageState extends State<AddAddressPage> {
   }
 
   Future _add() async {
-    setState(() {
-      init = false;
-    });
     await db.saveAddress(Address(
       name: _nameController.text,
       phone: _phoneController.text,
       address: '上海市浦东新区',
       num: _numController.text,
       isSelected: isSelected ? 1 : 0,
-    ));
-    setState(() {
-      init = true;
+    )).then((onvalue){
+      setState(() {
+        init = true;
+      });
     });
   }
 }
