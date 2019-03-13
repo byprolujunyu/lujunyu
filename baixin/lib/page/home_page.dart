@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage>
     with AutomaticKeepAliveClientMixin {
   int page = 1;
   List<Map> hotGoodsList = [];
+  TextEditingController _numController = TextEditingController();
 
   //火爆商品接口
   void _getHotGoods() {
@@ -36,6 +37,53 @@ class _HomePageState extends State<HomePage>
         page++;
       });
     });
+  }
+
+  Widget searchBar() {
+    try {
+      return Container(
+        color: Colors.red,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Container(
+                    width: ScreenUtil().setWidth(50),
+                    height: ScreenUtil().setHeight(50),
+                    margin:
+                        EdgeInsets.only(top: 15.0, left: 15.0, bottom: 15.0),
+                    child: Image.asset('images/location.png')),
+                Container(
+                  margin: EdgeInsets.only(top: 15.0, left: 15.0, bottom: 15.0),
+                  child: Text(
+                    '搜素喜欢的商品',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.only(right: 15.0),
+              width: ScreenUtil().setWidth(80),
+              height: ScreenUtil().setHeight(60),
+              child: Text(
+                '搜索',
+                style: TextStyle(color: Colors.pink),
+              ),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(3.0),
+                border: Border.all(color: Colors.white, width: 1.0),
+              ),
+            ),
+          ],
+        ),
+      );
+    } catch (e) {
+      print(e);
+    }
   }
 
   Map mapToMap2(Map m) {
@@ -178,6 +226,7 @@ class _HomePageState extends State<HomePage>
               return EasyRefresh(
                 child: ListView(
                   children: <Widget>[
+                    searchBar(),
                     SwiperDiy(
                       swiperDataList: swiperDataList,
                     ),
