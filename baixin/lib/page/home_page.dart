@@ -458,11 +458,11 @@ class RecommendUI extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Container(
-          margin: EdgeInsets.all(ScreenUtil().setWidth(15)),
+          margin: EdgeInsets.all(ScreenUtil().setWidth(30)),
           child: Text(
             '商品推荐',
             style: TextStyle(
-              fontSize: ScreenUtil().setSp(18),
+              fontSize: ScreenUtil().setSp(25),
               fontWeight: FontWeight.bold,
               color: Colors.pink,
             ),
