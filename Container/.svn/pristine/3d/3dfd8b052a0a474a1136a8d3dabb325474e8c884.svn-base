@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/topbar"
+            layout="@layout/topbar_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="11dp"
+                    android:orientation="horizontal">
+
+
+
+                    <LinearLayout
+                        android:id="@+id/tab_buy"
+                        android:layout_width="120dp"
+                        android:layout_height="38dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/tab_left_uncheck">
+
+
+                        <TextView
+                            android:id="@+id/tv_one"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/market_tab_buy"
+                            android:textColor="@color/colorPrimary"/>
+
+                        <View
+                            android:id="@+id/view_one"
+                            android:layout_width="60dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@color/white"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tab_sale"
+                        android:layout_width="120dp"
+                        android:layout_height="38dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/tab_right_checked">
+
+                        <TextView
+                            android:id="@+id/tv_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/market_tab_sale"
+                            android:textColor="@color/white"/>
+
+                        <View
+                            android:id="@+id/view_two"
+                            android:layout_width="60dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@color/white"/>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/chooose_city"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/city"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="@string/market_condition1"
+                            android:textColorHint="@color/black"
+                            android:textSize="@dimen/text_3"/>
+
+
+                        <ImageView
+                            android:id="@+id/city_direction"
+                            android:layout_width="8dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@id/city"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/down"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/chooose_type"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="@string/market_condition2"
+                            android:textColorHint="@color/black"
+                            android:textSize="@dimen/text_3"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"/>
+
+
+                        <ImageView
+                            android:id="@+id/type_direction"
+                            android:layout_width="8dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@id/type"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/down"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/chooose_status"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:hint="@string/market_condition4"
+                            android:textColorHint="@color/black"
+                            android:textSize="@dimen/text_3"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"/>
+
+
+                        <ImageView
+                            android:id="@+id/type_status"
+                            android:layout_width="8dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@id/tv_status"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/down"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/chooose_money"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:visibility="invisible">
+
+                        <TextView
+                            android:id="@+id/money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:text="@string/market_condition3"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_3"/>
+
+
+                        <ImageView
+                            android:id="@+id/money_direction"
+                            android:layout_width="8dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@id/money"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/down"/>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin_littile"
+                    android:layout_marginRight="@dimen/margin_littile"
+                    android:background="@color/background">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+
+                </android.support.v4.widget.SwipeRefreshLayout>
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/float_model"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="20dp"
+                android:background="@drawable/circle_blue">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:elevation="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/market_floating_tip1"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_2"/>
+
+                    <TextView
+                        android:id="@+id/float_button_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/market_floating_tip2"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_2"/>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,82 @@
+[
+  {
+    "merged": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/res/merged/release/color/abc_primary_text_disable_only_material_light.xml",
+    "source": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_primary_text_disable_only_material_light.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/ucrop/build/intermediates/res/merged/release/color/ucrop_scale_text_view_selector.xml",
+    "source": "/Users/lujunyu/video-add/ucrop/src/main/res/color/ucrop_scale_text_view_selector.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/res/merged/release/color/abc_primary_text_material_dark.xml",
+    "source": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_primary_text_material_dark.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/res/merged/release/color/abc_secondary_text_material_dark.xml",
+    "source": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_secondary_text_material_dark.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/res/merged/release/color/abc_search_url_text.xml",
+    "source": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_search_url_text.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/res/merged/release/color/abc_primary_text_disable_only_material_dark.xml",
+    "source": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_primary_text_disable_only_material_dark.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/ucrop/build/intermediates/res/merged/release/color/abc_primary_text_material_light.xml",
+    "source": "/Users/lujunyu/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_primary_text_material_light.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/res/merged/release/color/switch_thumb_material_light.xml",
+    "source": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/switch_thumb_material_light.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/ucrop/build/intermediates/res/merged/release/color/abc_secondary_text_material_light.xml",
+    "source": "/Users/lujunyu/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_secondary_text_material_light.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/ucrop/build/intermediates/res/merged/release/color/abc_primary_text_material_dark.xml",
+    "source": "/Users/lujunyu/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_primary_text_material_dark.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/ucrop/build/intermediates/res/merged/release/color/switch_thumb_material_light.xml",
+    "source": "/Users/lujunyu/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/switch_thumb_material_light.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/ucrop/build/intermediates/res/merged/release/color/abc_primary_text_disable_only_material_dark.xml",
+    "source": "/Users/lujunyu/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_primary_text_disable_only_material_dark.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/ucrop/build/intermediates/res/merged/release/color/abc_primary_text_disable_only_material_light.xml",
+    "source": "/Users/lujunyu/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_primary_text_disable_only_material_light.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/res/merged/release/color/switch_thumb_material_dark.xml",
+    "source": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/switch_thumb_material_dark.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/ucrop/build/intermediates/res/merged/release/color/switch_thumb_material_dark.xml",
+    "source": "/Users/lujunyu/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/switch_thumb_material_dark.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/ucrop/build/intermediates/res/merged/release/color/abc_secondary_text_material_dark.xml",
+    "source": "/Users/lujunyu/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_secondary_text_material_dark.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/ucrop/build/intermediates/res/merged/release/color/abc_search_url_text.xml",
+    "source": "/Users/lujunyu/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_search_url_text.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/res/merged/release/color/abc_primary_text_material_light.xml",
+    "source": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_primary_text_material_light.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/res/merged/release/color/ucrop_scale_text_view_selector.xml",
+    "source": "/Users/lujunyu/Desktop/video-add/ucrop/src/main/res/color/ucrop_scale_text_view_selector.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/res/merged/release/color/abc_secondary_text_material_light.xml",
+    "source": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_secondary_text_material_light.xml"
+  }
+]

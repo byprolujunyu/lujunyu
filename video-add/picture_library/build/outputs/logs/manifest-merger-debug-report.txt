@@ -1,0 +1,165 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:2:1-64:12
+INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:2:1-64:12
+INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:2:1-64:12
+INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:2:1-64:12
+INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:2:1-64:12
+INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:2:1-64:12
+INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:2:1-64:12
+	package
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:3:11-41
+		INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml
+		INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:2:1-64:12
+		INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:2:1-64:12
+		INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:5:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:6:5-80
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:6:22-78
+uses-permission#android.permission.CAMERA
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:7:5-64
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:7:22-62
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:8:5-83
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:8:22-81
+uses-permission#android.permission.INTERNET
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:9:5-66
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:9:22-64
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:10:5-72
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:10:22-70
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:11:5-75
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:11:22-73
+uses-permission#android.permission.WRITE_MEDIA_STORAGE
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:12:5-77
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:12:22-75
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:13:5-78
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:13:22-76
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:14:5-70
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:14:22-68
+application
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:16:5-62:19
+	android:supportsRtl
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:18:13-39
+	android:allowBackup
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:17:13-39
+provider#com.luck.picture.lib.PictureFileProvider
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:19:9-27:20
+	android:grantUriPermissions
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:23:17-51
+	android:authorities
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:21:17-64
+	android:exported
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:22:17-41
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:20:17-72
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:24:13-26:57
+	android:resource
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:26:21-55
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:25:21-71
+activity#com.luck.picture.lib.PictureSelectorActivity
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:29:9-33:58
+	android:screenOrientation
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:31:17-53
+	android:windowSoftInputMode
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:33:17-56
+	android:theme
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:32:17-54
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:30:17-56
+activity#com.luck.picture.lib.PictureBaseActivity
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:34:9-36:55
+	android:screenOrientation
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:36:17-53
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:35:17-52
+activity#com.luck.picture.lib.PicturePreviewActivity
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:37:9-40:56
+	android:screenOrientation
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:39:17-53
+	android:theme
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:40:17-54
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:38:17-55
+activity#com.luck.picture.lib.PictureVideoPlayActivity
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:41:9-45:56
+	android:screenOrientation
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:44:17-51
+	android:configChanges
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:43:17-78
+	android:theme
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:45:17-54
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:42:17-57
+activity#com.luck.picture.lib.PictureExternalPreviewActivity
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:46:9-49:56
+	android:screenOrientation
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:48:17-53
+	android:theme
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:49:17-54
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:47:17-63
+activity#com.yalantis.ucrop.UCropActivity
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:50:9-53:75
+	android:screenOrientation
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:52:17-53
+	android:theme
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:53:17-73
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:51:17-64
+activity#com.yalantis.ucrop.PictureMultiCuttingActivity
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:54:9-57:75
+	android:screenOrientation
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:56:17-53
+	android:theme
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:57:17-73
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:55:17-78
+activity#com.luck.picture.lib.PicturePlayAudioActivity
+ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:58:9-61:75
+	android:screenOrientation
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:60:17-53
+	android:theme
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:61:17-73
+	android:name
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml:59:17-57
+uses-sdk
+INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml
+INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml
+INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml
+INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml
+		INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml
+		ADDED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml
+		INJECTED from /Users/lujunyu/Desktop/video-add/picture_library/src/main/AndroidManifest.xml

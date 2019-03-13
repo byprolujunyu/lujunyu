@@ -1,0 +1,1999 @@
+[
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597753896000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 486176808\nnon_heap_memory_usage: 323514216\nloaded_class_count: 29509\nthread_count: 30\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597753988000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 504120056\nnon_heap_memory_usage: 323482400\nloaded_class_count: 29510\nthread_count: 40\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597753989000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 504120056\nnon_heap_memory_usage: 323482400\nloaded_class_count: 29510\nthread_count: 40\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597754078000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 521364872\nnon_heap_memory_usage: 323474328\nloaded_class_count: 29510\nthread_count: 40\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597754085000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 522800440\nnon_heap_memory_usage: 323474328\nloaded_class_count: 29510\nthread_count: 40\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597754091000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 523518232\nnon_heap_memory_usage: 323484696\nloaded_class_count: 29510\nthread_count: 40\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597754091001,
+    "args": {
+      "JVM stats": "heap_memory_usage: 523518232\nnon_heap_memory_usage: 323484696\nloaded_class_count: 29510\nthread_count: 40\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597754092000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 523518232\nnon_heap_memory_usage: 323484696\nloaded_class_count: 29510\nthread_count: 40\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597754093000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 523518232\nnon_heap_memory_usage: 323484696\nloaded_class_count: 29510\nthread_count: 40\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597754094000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 523518232\nnon_heap_memory_usage: 323484696\nloaded_class_count: 29510\nthread_count: 40\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597754094001,
+    "args": {
+      "JVM stats": "heap_memory_usage: 523518232\nnon_heap_memory_usage: 323484696\nloaded_class_count: 29510\nthread_count: 40\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597754469000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 596329784\nnon_heap_memory_usage: 324105472\nloaded_class_count: 29515\nthread_count: 49\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597754470000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 596329784\nnon_heap_memory_usage: 324105472\nloaded_class_count: 29515\nthread_count: 49\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597754476000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 597432848\nnon_heap_memory_usage: 324106240\nloaded_class_count: 29515\nthread_count: 49\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597754476001,
+    "args": {
+      "JVM stats": "heap_memory_usage: 597432848\nnon_heap_memory_usage: 324106240\nloaded_class_count: 29515\nthread_count: 49\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597755589000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 648213200\nnon_heap_memory_usage: 324260120\nloaded_class_count: 29515\nthread_count: 49\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597755589001,
+    "args": {
+      "JVM stats": "heap_memory_usage: 648930920\nnon_heap_memory_usage: 324260120\nloaded_class_count: 29515\nthread_count: 49\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597755644000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 653237928\nnon_heap_memory_usage: 324305944\nloaded_class_count: 29515\nthread_count: 49\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597755654000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 656109352\nnon_heap_memory_usage: 324305944\nloaded_class_count: 29515\nthread_count: 49\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597755659000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 658263584\nnon_heap_memory_usage: 324305944\nloaded_class_count: 29515\nthread_count: 49\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597759769000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 639380184\nnon_heap_memory_usage: 331436328\nloaded_class_count: 30099\nthread_count: 49\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 3\n  gc_time: 113\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597759771000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 642097536\nnon_heap_memory_usage: 331436328\nloaded_class_count: 30099\nthread_count: 49\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597759772000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 642097536\nnon_heap_memory_usage: 331436328\nloaded_class_count: 30099\nthread_count: 49\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597759772001,
+    "args": {
+      "JVM stats": "heap_memory_usage: 642097536\nnon_heap_memory_usage: 331436328\nloaded_class_count: 30099\nthread_count: 49\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597759777000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 644760264\nnon_heap_memory_usage: 331436904\nloaded_class_count: 30099\nthread_count: 49\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597760109000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 632012816\nnon_heap_memory_usage: 331670952\nloaded_class_count: 30110\nthread_count: 50\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 2\n  gc_time: 31\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597760116000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 636281504\nnon_heap_memory_usage: 331672680\nloaded_class_count: 30110\nthread_count: 50\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597760117000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 636281504\nnon_heap_memory_usage: 331672680\nloaded_class_count: 30110\nthread_count: 50\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597761594000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 686714128\nnon_heap_memory_usage: 331786128\nloaded_class_count: 30112\nthread_count: 50\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597762897000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 871304128\nnon_heap_memory_usage: 331764944\nloaded_class_count: 30115\nthread_count: 49\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597763107000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 599980432\nnon_heap_memory_usage: 331849648\nloaded_class_count: 30133\nthread_count: 50\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 1\n  gc_time: 11\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597763119000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 604747720\nnon_heap_memory_usage: 331849648\nloaded_class_count: 30133\nthread_count: 50\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597763120000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 604747720\nnon_heap_memory_usage: 331849648\nloaded_class_count: 30133\nthread_count: 50\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597763122000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 604747720\nnon_heap_memory_usage: 331849648\nloaded_class_count: 30133\nthread_count: 50\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597763142000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 610307096\nnon_heap_memory_usage: 331852320\nloaded_class_count: 30133\nthread_count: 50\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597763143000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 610307096\nnon_heap_memory_usage: 331852320\nloaded_class_count: 30133\nthread_count: 50\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597763161000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 610881488\nnon_heap_memory_usage: 331854720\nloaded_class_count: 30133\nthread_count: 50\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597763162000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 610881488\nnon_heap_memory_usage: 331854720\nloaded_class_count: 30133\nthread_count: 50\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597763411000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 851833016\nnon_heap_memory_usage: 332024664\nloaded_class_count: 30146\nthread_count: 56\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597763414000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 852971536\nnon_heap_memory_usage: 332024512\nloaded_class_count: 30146\nthread_count: 56\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597763415000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 853172616\nnon_heap_memory_usage: 332024512\nloaded_class_count: 30146\nthread_count: 56\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597763416000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 853276008\nnon_heap_memory_usage: 332024512\nloaded_class_count: 30146\nthread_count: 56\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597763417000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 853276008\nnon_heap_memory_usage: 332029888\nloaded_class_count: 30146\nthread_count: 56\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597763418000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 853412136\nnon_heap_memory_usage: 332042496\nloaded_class_count: 30146\nthread_count: 56\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597763664000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 870386432\nnon_heap_memory_usage: 332141696\nloaded_class_count: 30147\nthread_count: 56\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597765139000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 677542760\nnon_heap_memory_usage: 333507128\nloaded_class_count: 30154\nthread_count: 56\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 6\n  gc_time: 65\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597765495000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 661638576\nnon_heap_memory_usage: 333667432\nloaded_class_count: 30155\nthread_count: 57\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 1\n  gc_time: 9\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597765496000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 665446608\nnon_heap_memory_usage: 333667432\nloaded_class_count: 30155\nthread_count: 57\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597765501000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 665790440\nnon_heap_memory_usage: 333682512\nloaded_class_count: 30156\nthread_count: 57\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597765900000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 791259480\nnon_heap_memory_usage: 333382584\nloaded_class_count: 30218\nthread_count: 70\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597765902000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 791423112\nnon_heap_memory_usage: 333382584\nloaded_class_count: 30218\nthread_count: 70\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597766592000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 745283896\nnon_heap_memory_usage: 333544840\nloaded_class_count: 30223\nthread_count: 57\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 2\n  gc_time: 17\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597766593000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 747717752\nnon_heap_memory_usage: 333544840\nloaded_class_count: 30223\nthread_count: 57\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597766593001,
+    "args": {
+      "JVM stats": "heap_memory_usage: 747717752\nnon_heap_memory_usage: 333544840\nloaded_class_count: 30223\nthread_count: 57\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597766594000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 747717752\nnon_heap_memory_usage: 333544840\nloaded_class_count: 30223\nthread_count: 57\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 0,
+    "ph": "i",
+    "name": "Memory sample",
+    "ts": 1539597766603000,
+    "args": {
+      "JVM stats": "heap_memory_usage: 749204424\nnon_heap_memory_usage: 333552504\nloaded_class_count: 30223\nthread_count: 47\ngarbage_collection_stats {\n  name: \"PS Scavenge\"\n  gc_collections: 0\n  gc_time: 0\n}\ngarbage_collection_stats {\n  name: \"PS MarkSweep\"\n  gc_collections: 0\n  gc_time: 0\n}\n"
+    }
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 2,
+    "name": "base plugin project configure",
+    "args": {
+      "span_id": "2",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n"
+    },
+    "ph": "X",
+    "ts": 1539597753896000,
+    "dur": 6000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 3,
+    "name": "base plugin project base extension creation",
+    "args": {
+      "span_id": "3",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n"
+    },
+    "ph": "X",
+    "ts": 1539597753902000,
+    "dur": 6000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 5,
+    "name": "task manager create tasks",
+    "args": {
+      "span_id": "5",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n"
+    },
+    "ph": "X",
+    "ts": 1539597753908000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 4,
+    "name": "base plugin project tasks creation",
+    "args": {
+      "span_id": "4",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n"
+    },
+    "ph": "X",
+    "ts": 1539597753908000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 8,
+    "name": "variant manager create variants",
+    "args": {
+      "span_id": "8",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n"
+    },
+    "ph": "X",
+    "ts": 1539597753923000,
+    "dur": 2000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 9,
+    "name": "variant manager create tests tasks",
+    "args": {
+      "span_id": "9",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n"
+    },
+    "ph": "X",
+    "ts": 1539597753925000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 11,
+    "name": "app task manager create merge manifest task",
+    "args": {
+      "span_id": "11",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753927000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 12,
+    "name": "app task manager create generate res values task",
+    "args": {
+      "span_id": "12",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753928000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 13,
+    "name": "app task manager create create renderscript task",
+    "args": {
+      "span_id": "13",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753928000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 14,
+    "name": "app task manager create merge resources task",
+    "args": {
+      "span_id": "14",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753928000,
+    "dur": 3000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 15,
+    "name": "app task manager create merge assets task",
+    "args": {
+      "span_id": "15",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753931000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 16,
+    "name": "app task manager create build config task",
+    "args": {
+      "span_id": "16",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753931000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 17,
+    "name": "app task manager create process res task",
+    "args": {
+      "span_id": "17",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753931000,
+    "dur": 2000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 18,
+    "name": "app task manager create aidl task",
+    "args": {
+      "span_id": "18",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753933000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 19,
+    "name": "app task manager create shader task",
+    "args": {
+      "span_id": "19",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753934000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 20,
+    "name": "app task manager create ndk task",
+    "args": {
+      "span_id": "20",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753934000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 21,
+    "name": "app task manager create external native build task",
+    "args": {
+      "span_id": "21",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753934000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 22,
+    "name": "app task manager create merge jnilibs folders task",
+    "args": {
+      "span_id": "22",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753934000,
+    "dur": 2000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 23,
+    "name": "app task manager create compile task",
+    "args": {
+      "span_id": "23",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753936000,
+    "dur": 6000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 24,
+    "name": "app task manager create packaging task",
+    "args": {
+      "span_id": "24",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753948000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 25,
+    "name": "app task manager create lint task",
+    "args": {
+      "span_id": "25",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753949000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 10,
+    "name": "variant manager create tasks for variant",
+    "args": {
+      "span_id": "10",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597753925000,
+    "dur": 25000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 26,
+    "name": "variant manager create tasks for variant",
+    "args": {
+      "span_id": "26",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n"
+    },
+    "ph": "X",
+    "ts": 1539597753950000,
+    "dur": 4000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 27,
+    "name": "variant manager create tasks for variant",
+    "args": {
+      "span_id": "27",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n"
+    },
+    "ph": "X",
+    "ts": 1539597753954000,
+    "dur": 10000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 7,
+    "name": "variant manager create android tasks",
+    "args": {
+      "span_id": "7",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n"
+    },
+    "ph": "X",
+    "ts": 1539597753923000,
+    "dur": 43000
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 28,
+    "name": "variant manager external native config values",
+    "args": {
+      "span_id": "28",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n"
+    },
+    "ph": "X",
+    "ts": 1539597753967000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 6,
+    "name": "base plugin create android tasks",
+    "args": {
+      "span_id": "6",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n"
+    },
+    "ph": "X",
+    "ts": 1539597753921000,
+    "dur": 46000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 29,
+    "name": "task: build info loader",
+    "args": {
+      "span_id": "29",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 7\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597753985000,
+    "dur": 3000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 30,
+    "name": "task: unknown task type",
+    "args": {
+      "span_id": "30",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "task": "type: 0\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597753989000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 31,
+    "name": "task: app pre build",
+    "args": {
+      "span_id": "31",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 92\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597753989000,
+    "dur": 89000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 32,
+    "name": "task: aidl compile",
+    "args": {
+      "span_id": "32",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 1\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597754078000,
+    "dur": 7000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 33,
+    "name": "task: renderscript compile",
+    "args": {
+      "span_id": "33",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 54\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597754086000,
+    "dur": 5000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 34,
+    "name": "task: check manifest",
+    "args": {
+      "span_id": "34",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 8\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597754091000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 35,
+    "name": "task: generate build config",
+    "args": {
+      "span_id": "35",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 24\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597754091000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 36,
+    "name": "task: prepare lint jar",
+    "args": {
+      "span_id": "36",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "task": "type: 119\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597754092000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 37,
+    "name": "task: generate res values",
+    "args": {
+      "span_id": "37",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 26\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597754093000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 38,
+    "name": "task: unknown task type",
+    "args": {
+      "span_id": "38",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "task": "type: 0\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597754094000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 39,
+    "name": "task: merge resources",
+    "args": {
+      "span_id": "39",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 40\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597754095000,
+    "dur": 374000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 40,
+    "name": "task: compatible screens manifest",
+    "args": {
+      "span_id": "40",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 9\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597754469000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 41,
+    "name": "task: merge manifests",
+    "args": {
+      "span_id": "41",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 39\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597754470000,
+    "dur": 6000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 42,
+    "name": "task: splits discovery",
+    "args": {
+      "span_id": "42",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 87\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597754476000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 43,
+    "name": "task: process android resources",
+    "args": {
+      "span_id": "43",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 51\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597754477000,
+    "dur": 1112000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 44,
+    "name": "task: unknown task type",
+    "args": {
+      "span_id": "44",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "task": "type: 0\ndid_work: false\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597755589000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 45,
+    "name": "task: data binding export build info",
+    "args": {
+      "span_id": "45",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "task": "type: 11\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597755589000,
+    "dur": 54000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 46,
+    "name": "task: java pre compile",
+    "args": {
+      "span_id": "46",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 76\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597755644000,
+    "dur": 10000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 47,
+    "name": "task: transform",
+    "args": {
+      "span_id": "47",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597755654000,
+    "dur": 5000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 48,
+    "name": "task: android java compile",
+    "args": {
+      "span_id": "48",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "task": "type: 3\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597755659000,
+    "dur": 4110000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 49,
+    "name": "task: merge source set folders",
+    "args": {
+      "span_id": "49",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 41\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597759770000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 50,
+    "name": "task: shader compile",
+    "args": {
+      "span_id": "50",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 55\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597759771000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 51,
+    "name": "task: unknown task type",
+    "args": {
+      "span_id": "51",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "task": "type: 0\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597759772000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 52,
+    "name": "task: merge source set folders",
+    "args": {
+      "span_id": "52",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 41\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597759772000,
+    "dur": 5000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 53,
+    "name": "task: package application",
+    "args": {
+      "span_id": "53",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 45\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597759778000,
+    "dur": 331000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 54,
+    "name": "task: check manifest in instant run mode",
+    "args": {
+      "span_id": "54",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 72\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597760110000,
+    "dur": 6000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 55,
+    "name": "task: transform",
+    "args": {
+      "span_id": "55",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597760116000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 17,
+    "id": 57,
+    "name": "transform prep: unknown transform type",
+    "args": {
+      "span_id": "57",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 0\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597760163000,
+    "dur": 3000
+  },
+  {
+    "pid": 1,
+    "tid": 17,
+    "id": 58,
+    "name": "transform: unknown transform type",
+    "args": {
+      "span_id": "58",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 0\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597760166000,
+    "dur": 1388000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 56,
+    "name": "task: transform",
+    "args": {
+      "span_id": "56",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597760117000,
+    "dur": 1477000
+  },
+  {
+    "pid": 1,
+    "tid": 17,
+    "id": 60,
+    "name": "transform prep: unknown transform type",
+    "args": {
+      "span_id": "60",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 0\nis_incremental: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597761684000,
+    "dur": 5000
+  },
+  {
+    "pid": 1,
+    "tid": 17,
+    "id": 61,
+    "name": "transform: unknown transform type",
+    "args": {
+      "span_id": "61",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 0\nis_incremental: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597761689000,
+    "dur": 1146000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 59,
+    "name": "task: transform",
+    "args": {
+      "span_id": "59",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597761595000,
+    "dur": 1302000
+  },
+  {
+    "pid": 1,
+    "tid": 17,
+    "id": 63,
+    "name": "transform prep: instant run verifier",
+    "args": {
+      "span_id": "63",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 20\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597762947000,
+    "dur": 3000
+  },
+  {
+    "pid": 1,
+    "tid": 17,
+    "id": 65,
+    "name": "task file verification",
+    "args": {
+      "span_id": "65",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n"
+    },
+    "ph": "X",
+    "ts": 1539597762951000,
+    "dur": 8000
+  },
+  {
+    "pid": 1,
+    "tid": 17,
+    "id": 64,
+    "name": "transform: instant run verifier",
+    "args": {
+      "span_id": "64",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 20\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597762950000,
+    "dur": 124000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 62,
+    "name": "task: transform",
+    "args": {
+      "span_id": "62",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597762898000,
+    "dur": 209000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 66,
+    "name": "task: transform",
+    "args": {
+      "span_id": "66",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597763107000,
+    "dur": 12000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 67,
+    "name": "task: ndk compile",
+    "args": {
+      "span_id": "67",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 43\ndid_work: false\nskipped: true\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597763120000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 68,
+    "name": "task: merge source set folders",
+    "args": {
+      "span_id": "68",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 41\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597763121000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 69,
+    "name": "task: transform",
+    "args": {
+      "span_id": "69",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597763123000,
+    "dur": 19000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 70,
+    "name": "task: unknown task type",
+    "args": {
+      "span_id": "70",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "task": "type: 0\ndid_work: false\nskipped: true\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597763143000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 71,
+    "name": "task: transform",
+    "args": {
+      "span_id": "71",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597763143000,
+    "dur": 18000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 72,
+    "name": "task: transform",
+    "args": {
+      "span_id": "72",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597763161000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 17,
+    "id": 74,
+    "name": "transform prep: instant run",
+    "args": {
+      "span_id": "74",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 5\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597763224000,
+    "dur": 19000
+  },
+  {
+    "pid": 1,
+    "tid": 17,
+    "id": 75,
+    "name": "transform: instant run",
+    "args": {
+      "span_id": "75",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 5\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597763243000,
+    "dur": 127000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 73,
+    "name": "task: transform",
+    "args": {
+      "span_id": "73",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597763162000,
+    "dur": 249000
+  },
+  {
+    "pid": 1,
+    "tid": 17,
+    "id": 77,
+    "name": "transform prep: instant run dex",
+    "args": {
+      "span_id": "77",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 3\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597763412000,
+    "dur": 2000
+  },
+  {
+    "pid": 1,
+    "tid": 17,
+    "id": 78,
+    "name": "transform: instant run dex",
+    "args": {
+      "span_id": "78",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 3\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597763414000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 76,
+    "name": "task: transform",
+    "args": {
+      "span_id": "76",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597763411000,
+    "dur": 3000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 79,
+    "name": "task: unknown task type",
+    "args": {
+      "span_id": "79",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "task": "type: 0\ndid_work: false\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597763414000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 80,
+    "name": "task: pre cold swap",
+    "args": {
+      "span_id": "80",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 48\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597763415000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 81,
+    "name": "task: fast deploy runtime extractor",
+    "args": {
+      "span_id": "81",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 21\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597763416000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 82,
+    "name": "task: generate instant run app info",
+    "args": {
+      "span_id": "82",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 25\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597763417000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 18,
+    "id": 84,
+    "name": "transform prep: instant run slicer",
+    "args": {
+      "span_id": "84",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 4\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597763480000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 18,
+    "id": 85,
+    "name": "transform: instant run slicer",
+    "args": {
+      "span_id": "85",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 4\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597763481000,
+    "dur": 139000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 83,
+    "name": "task: transform",
+    "args": {
+      "span_id": "83",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597763419000,
+    "dur": 245000
+  },
+  {
+    "pid": 1,
+    "tid": 18,
+    "id": 87,
+    "name": "transform prep: dex archive builder",
+    "args": {
+      "span_id": "87",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 29\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597763749000,
+    "dur": 3000
+  },
+  {
+    "pid": 1,
+    "tid": 18,
+    "id": 88,
+    "name": "transform: dex archive builder",
+    "args": {
+      "span_id": "88",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 29\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597763752000,
+    "dur": 1354000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 86,
+    "name": "task: transform",
+    "args": {
+      "span_id": "86",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597763665000,
+    "dur": 1474000
+  },
+  {
+    "pid": 1,
+    "tid": 18,
+    "id": 90,
+    "name": "transform prep: dex merger",
+    "args": {
+      "span_id": "90",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 30\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597765160000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 18,
+    "id": 91,
+    "name": "transform: dex merger",
+    "args": {
+      "span_id": "91",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 30\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597765161000,
+    "dur": 313000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 89,
+    "name": "task: transform",
+    "args": {
+      "span_id": "89",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597765140000,
+    "dur": 355000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 92,
+    "name": "task: validate signing",
+    "args": {
+      "span_id": "92",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 67\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597765496000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 18,
+    "id": 94,
+    "name": "transform prep: instant run dependencies apk builder",
+    "args": {
+      "span_id": "94",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 23\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597765498000,
+    "dur": 2000
+  },
+  {
+    "pid": 1,
+    "tid": 18,
+    "id": 95,
+    "name": "transform: instant run dependencies apk builder",
+    "args": {
+      "span_id": "95",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 23\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597765500000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 93,
+    "name": "task: transform",
+    "args": {
+      "span_id": "93",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597765496000,
+    "dur": 5000
+  },
+  {
+    "pid": 1,
+    "tid": 18,
+    "id": 97,
+    "name": "transform prep: instant run slice split apk builder",
+    "args": {
+      "span_id": "97",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 24\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597765503000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 18,
+    "id": 98,
+    "name": "transform: instant run slice split apk builder",
+    "args": {
+      "span_id": "98",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "transform": "type: 24\nis_incremental: true\n"
+    },
+    "ph": "X",
+    "ts": 1539597765504000,
+    "dur": 395000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 96,
+    "name": "task: transform",
+    "args": {
+      "span_id": "96",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597765502000,
+    "dur": 398000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 99,
+    "name": "task: transform",
+    "args": {
+      "span_id": "99",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 65\ndid_work: false\nskipped: true\nup_to_date: true\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597765900000,
+    "dur": 2000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 100,
+    "name": "task: package application",
+    "args": {
+      "span_id": "100",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 45\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597765902000,
+    "dur": 689000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 101,
+    "name": "task: build info writer",
+    "args": {
+      "span_id": "101",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "variant": "id: 1\nis_debug: true\nminify_enabled: false\nuse_multidex: true\nuse_legacy_multidex: true\nvariant_type: APPLICATION\nannotation_processors {\n  spec: \"realm-annotations-processor.jar (io.realm:realm-annotations-processor:3.0.0)\"\n}\nannotation_processors {\n  spec: \"compiler.jar (com.android.databinding:compiler:3.0.1)\"\n}\njava8_lang_support: RETROLAMBDA\nmin_sdk_version {\n  api_level: 14\n}\ntarget_sdk_version {\n  api_level: 21\n}\ndex_builder: DX_DEXER\ndex_merger: DX_MERGER\n",
+      "task": "type: 70\ndid_work: true\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597766592000,
+    "dur": 1000
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 102,
+    "name": "task: unknown task type",
+    "args": {
+      "span_id": "102",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "task": "type: 0\ndid_work: false\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597766593000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 0,
+    "id": 103,
+    "name": "task: unknown task type",
+    "args": {
+      "span_id": "103",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n",
+      "task": "type: 0\ndid_work: false\nskipped: false\nup_to_date: false\nfailed: false\n"
+    },
+    "ph": "X",
+    "ts": 1539597766594000,
+    "dur": 100
+  },
+  {
+    "pid": 1,
+    "tid": 16,
+    "id": 104,
+    "name": "base plugin build finished",
+    "args": {
+      "span_id": "104",
+      "project": "id: 1\nandroid_plugin_version: \"3.0.1\"\nandroid_plugin: APPLICATION\nplugin_generation: FIRST\nbuild_tools_version: \"27.0.3\"\ncompile_sdk: \"android-24\"\nsplits {\n}\n"
+    },
+    "ph": "X",
+    "ts": 1539597766598000,
+    "dur": 100
+  }
+]

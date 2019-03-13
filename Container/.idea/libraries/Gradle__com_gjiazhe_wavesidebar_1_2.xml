@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.gjiazhe:wavesidebar-1.2">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/wavesidebar-1.2.aar/5c14450f291f0d6b61d791730ae1f4d9/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/wavesidebar-1.2.aar/5c14450f291f0d6b61d791730ae1f4d9/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.gjiazhe/wavesidebar/1.2/312fd1b1c72ac28472405a130d0147ba60c1be4d/wavesidebar-1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

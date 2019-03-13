@@ -1,0 +1,12 @@
+/Users/lujunyu/Desktop/vos/src/main/java/com/lujy/vos/result/Result.java
+/Users/lujunyu/Desktop/vos/src/main/java/com/lujy/vos/VosApplication.java
+/Users/lujunyu/Desktop/vos/src/main/java/com/lujy/vos/bean/TVideoExample.java
+/Users/lujunyu/Desktop/vos/src/main/java/com/lujy/vos/bean/PageBean.java
+/Users/lujunyu/Desktop/vos/src/main/java/com/lujy/vos/result/CodeMsg.java
+/Users/lujunyu/Desktop/vos/src/main/java/com/lujy/vos/bean/Role_List.java
+/Users/lujunyu/Desktop/vos/src/main/java/com/lujy/vos/controller/VideoController.java
+/Users/lujunyu/Desktop/vos/src/main/java/com/lujy/vos/service/IVideoService.java
+/Users/lujunyu/Desktop/vos/src/main/java/com/lujy/vos/service/VideoServiceImpl.java
+/Users/lujunyu/Desktop/vos/src/main/java/com/lujy/vos/dao/TVideoMapper.java
+/Users/lujunyu/Desktop/vos/src/main/java/com/lujy/vos/bean/TVideo.java
+/Users/lujunyu/Desktop/vos/src/main/java/com/lujy/vos/utils/ListPageUtil.java

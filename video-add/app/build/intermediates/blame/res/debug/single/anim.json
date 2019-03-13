@@ -1,0 +1,142 @@
+[
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/ucrop_close.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/packaged_res/debug/anim/ucrop_close.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/photo_album_show.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/picture_library/build/intermediates/packaged_res/debug/anim/photo_album_show.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/91037f13ee576f40664381e112ec49b8/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/photo_album_dismiss.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/picture_library/build/intermediates/packaged_res/debug/anim/photo_album_dismiss.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/a3.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/picture_library/build/intermediates/packaged_res/debug/anim/a3.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/fade_in.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/picture_library/build/intermediates/packaged_res/debug/anim/fade_in.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/design-25.2.0.aar/54045cf43feb24861721fabca693dc27/res/anim/design_snackbar_in.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/modal_out.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/picture_library/build/intermediates/packaged_res/debug/anim/modal_out.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/photo_overshoot_interpolator.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/picture_library/build/intermediates/packaged_res/debug/anim/photo_overshoot_interpolator.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/design-25.2.0.aar/54045cf43feb24861721fabca693dc27/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/photo_anticipate_interpolator.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/picture_library/build/intermediates/packaged_res/debug/anim/photo_anticipate_interpolator.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/91037f13ee576f40664381e112ec49b8/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/a5.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/picture_library/build/intermediates/packaged_res/debug/anim/a5.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/modal_in.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/picture_library/build/intermediates/packaged_res/debug/anim/modal_in.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/91037f13ee576f40664381e112ec49b8/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/window_in.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/app/src/main/res/anim/window_in.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/91037f13ee576f40664381e112ec49b8/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/down_out.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/picture_library/build/intermediates/packaged_res/debug/anim/down_out.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/design-25.2.0.aar/54045cf43feb24861721fabca693dc27/res/anim/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/ucrop_loader_circle_scale.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/packaged_res/debug/anim/ucrop_loader_circle_scale.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/91037f13ee576f40664381e112ec49b8/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/91037f13ee576f40664381e112ec49b8/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/91037f13ee576f40664381e112ec49b8/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/actionsheet_dialog_out.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/app/src/main/res/anim/actionsheet_dialog_out.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/91037f13ee576f40664381e112ec49b8/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/up_in.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/picture_library/build/intermediates/packaged_res/debug/anim/up_in.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/window_out.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/app/src/main/res/anim/window_out.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/91037f13ee576f40664381e112ec49b8/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.2.0.aar/91037f13ee576f40664381e112ec49b8/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/design-25.2.0.aar/54045cf43feb24861721fabca693dc27/res/anim/design_fab_out.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/design-25.2.0.aar/54045cf43feb24861721fabca693dc27/res/anim/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/ucrop_loader_circle_path.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/ucrop/build/intermediates/packaged_res/debug/anim/ucrop_loader_circle_path.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
+        "source": "/Users/lujunyu/.gradle/caches/transforms-1/files-1.1/design-25.2.0.aar/54045cf43feb24861721fabca693dc27/res/anim/design_fab_in.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/fade_out.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/picture_library/build/intermediates/packaged_res/debug/anim/fade_out.xml"
+    },
+    {
+        "merged": "/Users/lujunyu/Desktop/video-add/app/build/intermediates/res/merged/debug/anim/actionsheet_dialog_in.xml",
+        "source": "/Users/lujunyu/Desktop/video-add/app/src/main/res/anim/actionsheet_dialog_in.xml"
+    }
+]

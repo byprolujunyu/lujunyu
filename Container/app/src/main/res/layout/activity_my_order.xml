@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <include
+                android:id="@+id/topbar"
+                layout="@layout/topbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <com.flyco.tablayout.CommonTabLayout
+                xmlns:tl="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/tab"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff"
+                tl:tl_iconVisible="false"
+                tl:tl_indicator_color="@color/colorPrimary"
+                tl:tl_textSelectColor="@color/colorPrimary"
+                tl:tl_textUnselectColor="@color/black"
+                tl:tl_textsize="@dimen/text_3"
+                tl:tl_underline_color="@color/white"
+                tl:tl_underline_gravity="BOTTOM"
+                tl:tl_underline_height="2dp"/>
+
+
+        <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background">
+
+
+            <ListView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+
+</layout>
