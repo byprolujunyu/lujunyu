@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_button/model/address.dart';
+import 'package:flutter_button/utils/loading_progress.dart';
 import 'package:flutter_button/widget/my_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_button/address/add_address.dart';
+import 'package:flutter_button/db/db_helper_address.dart';
 
 class PayPage extends StatefulWidget {
   final Map map;
@@ -12,44 +16,138 @@ class PayPage extends StatefulWidget {
 }
 
 class _PayPageState extends State<PayPage> {
+  var db = DataBaseHelper_address();
+
+  @override
+  void initState() {
+    super.initState();
+    getAddress();
+  }
+
+  Future getAddress() async {
+    var result = await db.getDefAdd();
+    print(result);
+    Map map = result;
+    var address = Address.fromMap(map);
+    setState(() {
+      add = address;
+      init = true;
+    });
+  }
+
+  Address add;
+
+  bool init = false;
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          '订单确认',
+        appBar: AppBar(
+          title: Text(
+            '订单确认',
+          ),
+          elevation: 0.0,
         ),
-        elevation: 0.0,
-      ),
-      body: Container(
-        child: SingleChildScrollView(
-          child: Column(
+        body: Container(
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                getAddressW(),
+                MyDivider(
+                  height: ScreenUtil().setHeight(20),
+                  color: Color.fromARGB(255, 240, 238, 238),
+                ),
+                ProductInfo(
+                  pic: widget.map['image'],
+                  name: widget.map['goodsName'],
+                  price: widget.map['presentPrice'],
+                  count: 1,
+                ),
+                MyDivider(
+                  height: ScreenUtil().setHeight(20),
+                  color: Color.fromARGB(255, 240, 238, 238),
+                ),
+                PayList(price: widget.map['presentPrice']),
+              ],
+            ),
+          ),
+        ));
+  }
+
+  Widget getAddressW() {
+    return add != null
+        ? AddressInfo(
+            address: add,
+          )
+        : Container();
+  }
+}
+
+class AddressInfo extends StatelessWidget {
+  final Address address;
+
+  AddressInfo({Key key, @required this.address}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.black12,
+      width: ScreenUtil.screenWidth,
+   
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Row(
             children: <Widget>[
-              MyDivider(
-                height: ScreenUtil().setHeight(20),
-                color: Color.fromARGB(255, 240, 238, 238),
+              Container(
+                margin: EdgeInsets.all(10.0),
+                child: Icon(Icons.add_location),
               ),
-              ProductInfo(
-                pic: widget.map['image'],
-                name: widget.map['goodsName'],
-                price: widget.map['presentPrice'],
-                count: 1,
+              Container(
+                margin: EdgeInsets.all(10.0),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Container(
+                          child: Text(address.name),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 10.0),
+                          child: Text(address.phone),
+                        ),
+                      ],
+                    ),
+                    SingleChildScrollView(
+                      child: Container(
+                        margin: EdgeInsets.all(10.0),
+                        child:Row(
+                          children: <Widget>[
+                            Container(
+                              child: Text('${address.address}'),
+                            ),
+                            Container(
+                              child: Text('${address.num}'),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              MyDivider(
-                height: ScreenUtil().setHeight(20),
-                color: Color.fromARGB(255, 240, 238, 238),
-              ),
-              PayList(price: widget.map['presentPrice']),
             ],
           ),
-        ),
+          Container(
+            margin:EdgeInsets.all(10.0),
+            child: Icon(Icons.arrow_forward_ios),
+          ),
+        ],
       ),
     );
   }
 }
-
-
 
 class ProductInfo extends StatelessWidget {
   final String pic;

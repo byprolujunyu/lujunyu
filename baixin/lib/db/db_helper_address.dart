@@ -69,6 +69,12 @@ class DataBaseHelper_address {
     return result.toList();
   }
 
+  Future<Map<String, dynamic>> getDefAdd() async {
+    var dbClient = await db;
+    var result = await dbClient.query(tableUser, where: "$columnIsSelected = ?", whereArgs: [1]);
+    return result.toList()[0];
+  }
+
   Future<int> deleteAdd(int id) async {
     var dbClient = await db;
     return await dbClient
