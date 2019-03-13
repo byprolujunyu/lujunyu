@@ -21,8 +21,6 @@ class _AddAddressPageState extends State<AddAddressPage> {
   TextEditingController _phoneController = TextEditingController();
   TextEditingController _numController = TextEditingController();
 
-
-
   String _address = "";
 
   bool isSelected = false;
@@ -178,29 +176,49 @@ class _AddAddressPageState extends State<AddAddressPage> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 100, left: 20, right: 20),
-                    child: Container(
-                      height: ScreenUtil().setHeight(60),
-                      width: ScreenUtil().setWidth(500),
-                      color: Colors.red,
-                      child: Center(
-                        child: InkWell(
-                          child: Text(
-                            !isUpdate ? '提交地址' : '修改地址',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          onTap: ()  {
-                              if (!isUpdate) {
-                                 _add();
-                              } else {
-                                 _update(widget.id);
-                              }
-
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => NewAddressPage()));
-
-                          },
+                    child: GestureDetector(
+                      child: Container(
+                        height: ScreenUtil().setHeight(60),
+                        width: ScreenUtil().setWidth(500),
+                        color: Colors.red,
+                        alignment: Alignment.center,
+                        child: Text(
+                          !isUpdate ? '提交地址' : '修改地址',
+                          style: TextStyle(color: Colors.white),
                         ),
                       ),
+                      onTap: () {
+                        if (widget.id == null) {
+                          var name = _nameController.text;
+                          var ohone = _phoneController.text;
+                          var num = _numController.text;
+                          _add(Address(
+                            name: name,
+                            phone: ohone,
+                            address: '上海市浦东新区',
+                            num: num,
+                            isSelected: isSelected ? 1 : 0,
+                          )).then((onvalue) {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => NewAddressPage()));
+                          });
+                        } else {
+                          var name = _nameController.text;
+                          var ohone = _phoneController.text;
+                          var num = _numController.text;
+                          _update(Address(
+                            name: name,
+                            phone: ohone,
+                            address: '上海市黄浦区',
+                            id: widget.id,
+                            num: num,
+                            isSelected: isSelected ? 1 : 0,
+                          )).then((onValue) {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => NewAddressPage()));
+                          });
+                        }
+                      },
                     ),
                   ),
                 ],
@@ -212,33 +230,12 @@ class _AddAddressPageState extends State<AddAddressPage> {
     );
   }
 
-  Future _add() async {
-    var name = _nameController.text;
-    var ohone = _phoneController.text;
-    var num = _numController.text;
-    await db.saveAddress(Address(
-      name: name,
-      phone: ohone,
-      address: '上海市浦东新区',
-      num: num,
-      isSelected: isSelected ? 1 : 0,
-    ));
+  Future _add(address) async {
+    await db.saveAddress(address);
   }
 
-
-
-  Future _update(id) async {
-    var name = _nameController.text;
-    var ohone = _phoneController.text;
-    var num = _numController.text;
-    await db.updateAdd(Address(
-      name: name,
-      phone: ohone,
-      address: '上海市黄浦区',
-      id: id,
-      num: num,
-      isSelected: isSelected ? 1 : 0,
-    ));
+  Future _update(address) async {
+    await db.updateAdd(address);
   }
 
   @override
