@@ -63,15 +63,10 @@ class DataBaseHelper_address {
         await dbClient.rawQuery("SELECT COUNT(*) from $tableUser"));
   }
 
-  Future<List<Address>> getUser() async {
+  Future<List<Map<String, dynamic>>> getAdd(int id) async {
     var dbClient = await db;
-    var result = await dbClient.rawQuery("SELECT * FROM $tableUser ");
-    List<Address> us = List();
-    for (var add in result) {
-      Address u = Address.fromMap(add);
-      us.add(u);
-    }
-    return us;
+    var result = await dbClient.query(tableUser, where: "$columnID = ?", whereArgs: [id]);
+    return result.toList();
   }
 
   Future<int> deleteAdd(int id) async {

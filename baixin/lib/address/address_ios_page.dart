@@ -93,11 +93,9 @@ class _NewAddressPageState extends State<NewAddressPage> {
 
   Future _jump() async {
     print('setAddress');
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (BuildContext ctx) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext ctx) {
       return AddAddressPage();
     }));
-
   }
 
   Future _delete(id) async {
@@ -114,13 +112,15 @@ class _NewAddressPageState extends State<NewAddressPage> {
         ),
         elevation: 0.0,
         actions: <Widget>[
-          IconButton(onPressed: (){
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (BuildContext ctx) {
-              return AddAddressPage();
-            }));
-          },
-          icon: Icon(Icons.add),),
+          IconButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                return AddAddressPage();
+              }));
+            },
+            icon: Icon(Icons.add),
+          ),
         ],
       ),
       body: datas.length == 0
@@ -253,7 +253,17 @@ class HaveData extends StatelessWidget {
                             children: <Widget>[
                               Container(
                                 child: IconButton(
-                                    icon: Icon(Icons.edit), onPressed: () {}),
+                                  icon: Icon(Icons.edit),
+                                  onPressed: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (BuildContext ctx) {
+                                          return AddAddressPage(id: map.id,);
+                                        },
+                                      ),
+                                    );
+                                  },
+                                ),
                               ),
                               Container(
                                 child: Text('编辑'),

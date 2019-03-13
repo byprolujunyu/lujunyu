@@ -41,3 +41,4 @@ Map url2query(String url){
 Color randomColor(){
     return Color((math.Random().nextDouble() * 0xFFFFFF).toInt() << 0).withOpacity(1.0);
 }
+

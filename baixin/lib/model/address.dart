@@ -6,7 +6,7 @@ class Address {
   String num;
   int isSelected;
 
-  Address({this.name, this.phone, this.address, this.num, this.isSelected});
+  Address({this.name, this.phone, this.id,this.address, this.num, this.isSelected});
 
   Map<String, dynamic> toMap() {
     var map = new Map<String, dynamic>();

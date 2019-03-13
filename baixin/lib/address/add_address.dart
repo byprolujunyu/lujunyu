@@ -7,6 +7,10 @@ import 'package:flutter_button/utils/loading_progress.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddAddressPage extends StatefulWidget {
+  final int id;
+
+  AddAddressPage({Key key, this.id}) : super(key: key);
+
   @override
   _AddAddressPageState createState() => _AddAddressPageState();
 }
@@ -18,9 +22,44 @@ class _AddAddressPageState extends State<AddAddressPage> {
   TextEditingController _numController = TextEditingController();
 
   String _address = "";
+
   bool isSelected = false;
 
   bool init = true;
+
+  bool isUpdate = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _queryById();
+  }
+
+  Future _queryById() async {
+    try {
+      int id = widget.id;
+      if (id != null) {
+        var result = await db.getAdd(id);
+        print(result);
+        Map map = result[0];
+        String name = map['_name'];
+        String phone = map['_phone'];
+        String num = map['_num'];
+        String address = map['_address'];
+        bool isS=map['_isSelected']==1?true:false;
+        setState(() {
+          isUpdate= true;
+          isSelected = isS;
+          _address = address;
+          _nameController.text = name;
+          _phoneController.text = phone;
+          _numController.text = num;
+        });
+      }
+    }catch(e){
+      print(e);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,22 +104,32 @@ class _AddAddressPageState extends State<AddAddressPage> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 20, left: 20, right: 20),
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: InkWell(
-                        child: Text(
-                          '点击选择收货地址',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+                    child:Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+
+                          child: Text('$_address'),
+                          margin: EdgeInsets.only(left: 10.0,right: 10.0),
                         ),
-                        onTap: (){
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => AddressMap()));
-                        },
-                      ),
-                      height: ScreenUtil().setHeight(80),
-                      width: ScreenUtil().setWidth(300),
-                      color: Colors.pink,
+                        Container(
+                          alignment: Alignment.center,
+                          child: InkWell(
+                            child: Text(
+                              '点击选择收货地址',
+                              style: TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.bold),
+                            ),
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => AddressMap()));
+                            },
+                          ),
+                          height: ScreenUtil().setHeight(80),
+                          width: ScreenUtil().setWidth(300),
+                          color: Colors.pink,
+                        ),
+                      ],
                     ),
                   ),
                   Padding(
@@ -134,12 +183,13 @@ class _AddAddressPageState extends State<AddAddressPage> {
                       child: Center(
                         child: InkWell(
                           child: Text(
-                            '提交地址',
+                            !isUpdate?'提交地址':'修改地址',
                             style: TextStyle(color: Colors.white),
                           ),
                           onTap: () async {
                             try {
-                              _add();
+
+                              !isUpdate?_add():_update(widget.id);
 
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => NewAddressPage()));
@@ -161,17 +211,29 @@ class _AddAddressPageState extends State<AddAddressPage> {
   }
 
   Future _add() async {
-
     var name = _nameController.text;
     var ohone = _phoneController.text;
     var num = _numController.text;
-    await db
-        .saveAddress(Address(
-          name: name,
-          phone: ohone,
-          address: '上海市浦东新区',
-          num:num ,
-          isSelected: isSelected ? 1 : 0,
-        ));
+    await db.saveAddress(Address(
+      name: name,
+      phone: ohone,
+      address: '上海市浦东新区',
+      num: num,
+      isSelected: isSelected ? 1 : 0,
+    ));
+  }
+
+  Future _update(id) async {
+    var name = _nameController.text;
+    var ohone = _phoneController.text;
+    var num = _numController.text;
+    await db.updateAdd(Address(
+      name: name,
+      phone: ohone,
+      address: '上海市黄浦区',
+      id: id,
+      num: num,
+      isSelected: isSelected ? 1 : 0,
+    ));
   }
 }
