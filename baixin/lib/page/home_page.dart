@@ -165,9 +165,7 @@ class _HomePageState extends State<HomePage>
         children: listWidget,
       );
     } else {
-      return Center(
-        child: Loading(),
-      );
+      return Container();
     }
   }
 
@@ -274,6 +272,10 @@ class _HomePageState extends State<HomePage>
                     noMoreText: '',
                     moreInfo: '加载中',
                     loadReadyText: '上拉加载....'),
+                refreshHeader: ClassicsHeader(key: _headerKeyGrid, bgColor: Colors.white,
+                  textColor: Colors.pink,
+                  moreInfoColor: Colors.pink,),
+                onRefresh: () {},
                 loadMore: () async {
                   _getHotGoods();
                 },
