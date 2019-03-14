@@ -20,10 +20,8 @@ flutter-百姓生活
 ![Github](/snapshot/7.jpg "title")
 
 视频演示
+[![Watch the video](http://oss-toplu1015.oss-cn-hangzhou.aliyuncs.com/video/demo.mp4)](http://youtu.be/vt5fpE0bzSY)
 
-<video id="video" controls="" preload="none" >
-      <source id="mp4" src="http://oss-toplu1015.oss-cn-hangzhou.aliyuncs.com/video/demo.mp4" type="video/mp4">
-      </video>
 功能
 
 包含商品预览 订单 购物车 分类 等功能
