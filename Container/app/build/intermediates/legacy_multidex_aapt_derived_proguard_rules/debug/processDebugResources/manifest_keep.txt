@@ -1,2 +1,0 @@
-# Referenced at /Users/lujunyu/Desktop/Container/app/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:50
--keep class com.bm.container.module.BaseApplication { <init>(...); }

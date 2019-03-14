@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3">
+    <dataSet config="1.5.1">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/com.squareup.leakcanary/leakcanary-android/1.5.1/assets"/>
+    </dataSet>
+    <dataSet config="25.2.0">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.2.0/assets"/>
+    </dataSet>
+    <dataSet config="25.2.0">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.2.0/assets"/>
+    </dataSet>
+    <dataSet config="25.2.0">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/assets"/>
+    </dataSet>
+    <dataSet config="25.2.0">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.2.0/assets"/>
+    </dataSet>
+    <dataSet config="25.2.0">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/assets"/>
+    </dataSet>
+    <dataSet config="25.2.0">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.2.0/assets"/>
+    </dataSet>
+    <dataSet config="25.2.0">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.2.0/assets"/>
+    </dataSet>
+    <dataSet config="25.2.0">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.2.0/assets"/>
+    </dataSet>
+    <dataSet config="25.2.0">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.2.0/assets"/>
+    </dataSet>
+    <dataSet config="25.2.0">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/com.android.support/transition/25.2.0/assets"/>
+    </dataSet>
+    <dataSet config="25.2.0">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.2.0/assets"/>
+    </dataSet>
+    <dataSet config="25.2.0">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/com.android.support/design/25.2.0/assets"/>
+    </dataSet>
+    <dataSet config="2.0.1">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/io.reactivex.rxjava2/rxandroid/2.0.1/assets"/>
+    </dataSet>
+    <dataSet config="2.2.0-native">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/com.yalantis/ucrop/2.2.0-native/assets"/>
+    </dataSet>
+    <dataSet config="2.2.0-native">
+        <source path="/Users/lujunyu/video-add/app/build/intermediates/exploded-aar/com.yalantis/picture_library/2.2.0-native/assets"/>
+    </dataSet>
+    <dataSet config="main">
+        <source path="/Users/lujunyu/video-add/app/src/main/assets"/>
+        <source path="/Users/lujunyu/video-add/app/build/generated/assets/shaders/debug"/>
+    </dataSet>
+    <dataSet config="debug">
+        <source path="/Users/lujunyu/video-add/app/src/debug/assets"/>
+    </dataSet>
+</merger>

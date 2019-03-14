@@ -240,6 +240,8 @@ class LoveUI extends StatelessWidget {
     );
   }
 
+  final String iconName = 'images/backgrey.png';
+
   Widget _getListUi(BuildContext context, int index) {
     return Container(
       child: InkWell(
@@ -264,9 +266,11 @@ class LoveUI extends StatelessWidget {
               ],
             ),
             Container(
+                width: ScreenUtil().setWidth(30),
+                height: ScreenUtil().setHeight(30),
               margin: EdgeInsets.only(right: 10.0),
               alignment: Alignment.center,
-              child: Icon(Icons.arrow_forward_ios),
+              child: Image.asset('$iconName',fit: BoxFit.fill,)
             ),
           ],
         ),

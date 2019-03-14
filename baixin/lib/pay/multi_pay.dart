@@ -87,7 +87,7 @@ class _MutliPayPageState extends State<MutliPayPage> {
               child: PList(
                 ms: widget.model.items,
               ),
-            ),
+              ),
             CountWidget(
               model: widget.model,
             ),

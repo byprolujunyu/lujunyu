@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/lujunyu/Desktop/Container/app/src/main/assets"><file name="containerno.txt" path="/Users/lujunyu/Desktop/Container/app/src/main/assets/containerno.txt"/></source><source path="/Users/lujunyu/Desktop/Container/app/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/Users/lujunyu/Desktop/Container/app/src/debug/assets"/></dataSet></merger>

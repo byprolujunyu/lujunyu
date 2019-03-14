@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                                   
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" android:tag="layout/activity_my_posting_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <include
+                android:id="@+id/topbar"
+                layout="@layout/topbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background">
+
+                <!--<ScrollView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="vertical">-->
+
+
+                <!--<com.bigkoo.convenientbanner.ConvenientBanner-->
+                <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                <!--android:id="@+id/banner"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="150dp"-->
+                <!--android:background="@drawable/banner1"-->
+                <!--app:canLoop="true"/>-->
+
+
+                <!--<com.bm.container.view.ExtraListView-->
+                <!--android:id="@+id/list"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:divider="@color/background"-->
+                <!--android:dividerHeight="1dp"/>-->
+
+
+                <!--</LinearLayout>-->
+
+
+                <!--</ScrollView>-->
+
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@color/background"
+                        android:dividerHeight="1dp"/>
+
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+
+            <LinearLayout
+                    android:id="@+id/model_reply"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                <View
+                        android:id="@+id/reply_empty"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/block_height"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="@dimen/margin_littile"
+                        android:paddingRight="@dimen/margin_littile"
+                        android:paddingTop="8dp">
+
+                    <View
+                            android:layout_width="1dp"
+                            android:layout_height="34dp"/>
+
+                    <EditText
+                            android:id="@+id/reply"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/round_corner_grey_border"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:textColor="@color/grey_deep"
+                            android:textSize="@dimen/text_3"/>
+
+                    <TextView
+                            android:id="@+id/send"
+                            android:layout_width="60dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/margin_littile"
+                            android:background="@drawable/round_corner_blue_gb"
+                            android:gravity="center"
+                            android:text="发送"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_3"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+         

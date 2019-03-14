@@ -149,7 +149,8 @@ flutter:
        - images/kefudianhua.png
        - images/guanyu.png
        - images/dizhi.png
-
+       - images/backchevronvcopy.png
+       - images/backgrey.png
        - images/member/order.png
        - images/member/daifukuan.png
        - images/member/daifahuo.png

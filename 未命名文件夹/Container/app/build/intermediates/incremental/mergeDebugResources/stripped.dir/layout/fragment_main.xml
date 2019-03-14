@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                                   
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" android:tag="layout/fragment_main_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <include
+                android:id="@+id/topbar"
+                layout="@layout/topbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        <com.bm.container.view.MySwipeRefreshLayout
+                android:id="@+id/refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background">
+
+            <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/background"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                    <com.bigkoo.convenientbanner.ConvenientBanner
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:background="@drawable/banner1"
+                            app:canLoop="true"/>
+
+                    <ImageView
+                            android:id="@+id/iv_iamgetop"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/banner1"
+                            android:visibility="gone"/>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_littile"
+                            android:background="@drawable/round_corner_white_bg"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+
+
+                        <LinearLayout
+                                android:id="@+id/i_want_to_buy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+
+                            <ImageView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/one_"/>
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_littile"
+                                    android:text="@string/main_buy"
+                                    android:textColor="@color/main_buy"
+                                    android:textSize="@dimen/text_3"/>
+
+                        </LinearLayout>
+
+                        <View
+                                android:layout_width="1dp"
+                                android:layout_height="30dp"
+                                android:background="@color/background"/>
+
+                        <LinearLayout
+                                android:id="@+id/i_want_to_sale"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                            <ImageView
+                                    android:id="@+id/imageView"
+                                    android:layout_width="29dp"
+                                    android:layout_height="30dp"
+                                    android:src="@drawable/two_"/>
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_littile"
+                                    android:text="@string/main_sale"
+                                    android:textColor="@color/main_sale"
+                                    android:textSize="@dimen/text_3"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_littile"
+                            android:layout_marginRight="@dimen/margin_littile"
+                            android:background="@drawable/round_corner_white_bg"
+                            android:orientation="vertical">
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/margin_littile">
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/main_buy_info"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_3"/>
+
+                        </LinearLayout>
+
+                        <!-- <android.support.v7.widget.RecyclerView
+                             android:id="@+id/list_buy"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginBottom="@dimen/margin_littile"
+                             android:background="@color/background"/>-->
+
+                        <com.bm.container.view.ListViewForScrollView
+                                android:id="@+id/list_buy"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:divider="@null"
+                                android:layout_marginBottom="@dimen/margin_littile"
+                                android:background="@color/background"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_littile"
+                            android:background="@drawable/round_corner_white_bg"
+                            android:orientation="vertical">
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/margin_littile">
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/main_sale_info"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_3"/>
+
+                        </LinearLayout>
+
+                        <android.support.v7.widget.RecyclerView
+                                android:id="@+id/list_sale"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/margin_littile"
+                                android:background="@color/background"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+        </com.bm.container.view.MySwipeRefreshLayout>
+
+
+    </LinearLayout>
+
+
+         

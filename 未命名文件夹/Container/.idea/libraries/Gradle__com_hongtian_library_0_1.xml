@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.hongtian:library-0.1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-0.1.aar/054ad455982063eadbf82e5b71aac713/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-0.1.aar/054ad455982063eadbf82e5b71aac713/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hongtian/library/0.1/64e6d0bbc2f9aec7916417fff6770269a2cf68b9/library-0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
