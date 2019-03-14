@@ -1,41 +1,84 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_button/address/address_ios_page.dart';
 import 'package:flutter_button/page/cart_test.dart';
+import 'package:flutter_button/widget/my_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MemberPage extends StatelessWidget {
+  final List<String> strs = ['领取优惠券', '已领取优惠券', '地址管理'];
+
+  final List<String> icons = [
+    'images/youhuiquan.png',
+    'images/youhuiquan.png',
+    'images/dizhi.png'
+  ];
+
+  final List<String> strs2 = ['客服电话', '关于商城'];
+
+  final List<String> icons2 = ['images/kefudianhua.png', 'images/guanyu.png'];
+
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(
           '会员中心',
         ),
+        elevation: 0.0,
       ),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            UserInfoDrawer(),
-            MyOrderUI(),
-            CashState(),
-            LoveUI(),
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              UserInfoDrawer(),
+              MyOrderUI(),
+              CashState(),
+              list(),
+            ],
+          ),
         ),
       ),
     );
+  }
+
+  Widget list() {
+    try {
+      return Column(
+        children: <Widget>[
+          MyDivider(
+            height: ScreenUtil().setHeight(20),
+            color: Color.fromARGB(255, 240, 238, 238),
+          ),
+          LoveUI(
+            names: strs,
+            icons: icons,
+          ),
+          MyDivider(
+            height: ScreenUtil().setHeight(20),
+            color: Color.fromARGB(255, 240, 238, 238),
+          ),
+          LoveUI(
+            names: strs2,
+            icons: icons2,
+          ),
+          MyDivider(
+            height: ScreenUtil().setHeight(20),
+            color: Color.fromARGB(255, 240, 238, 238),
+          ),
+        ],
+      );
+    } catch (e) {
+      print(e);
+    }
   }
 }
 
 class UserInfoDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
-
-    print('设备宽度:${ScreenUtil.screenWidth}');
-    print('设备高度:${ScreenUtil.screenHeight}');
-    print('设备像素密度:${ScreenUtil.pixelRatio}');
     return Container(
       height: ScreenUtil().setHeight(350),
-
       child: UserAccountsDrawerHeader(
         accountName: Text('计亚茹'),
         accountEmail: Text('prettyruru@outlook.com'),
@@ -45,9 +88,7 @@ class UserInfoDrawer extends StatelessWidget {
               backgroundImage: NetworkImage(
                   "http://oss-toplu1015.oss-cn-hangzhou.aliyuncs.com/flutter/1549681968817.jpg"),
             ),
-            onTap: (){
-
-            },
+            onTap: () {},
           ),
           width: ScreenUtil().setWidth(20),
           height: ScreenUtil().setHeight(20),
@@ -71,7 +112,6 @@ class MyOrderUI extends StatelessWidget {
     return Container(
       child: Column(
         children: <Widget>[
-
           Container(
             child: Row(
               children: <Widget>[
@@ -91,7 +131,6 @@ class MyOrderUI extends StatelessWidget {
             ),
             margin: EdgeInsets.only(bottom: ScreenUtil().setHeight(5)),
           ),
-
         ],
       ),
     );
@@ -102,6 +141,7 @@ class CashState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(bottom: 10.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
@@ -180,25 +220,64 @@ class CashState extends StatelessWidget {
 }
 
 class LoveUI extends StatelessWidget {
+  final List<String> names;
+  final List<String> icons;
+
+  LoveUI({Key key, @required this.names, @required this.icons})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        children: <Widget>[
-          ListTile(
-            title: Text('用户反馈', style: TextStyle(color: Colors.black)),
-            trailing: Icon(Icons.feedback, color: Colors.black),
-          ),
-          ListTile(
-            title: Text('系统设置', style: TextStyle(color: Colors.black)),
-            trailing: Icon(Icons.settings, color: Colors.black),
-          ),
-          ListTile(
-            title: Text('我要发布', style: TextStyle(color: Colors.black)),
-            trailing: Icon(Icons.send, color: Colors.black),
-          ),
-          Divider(color: Colors.black45),
-        ],
+      height: names.length == 3
+          ? ScreenUtil().setHeight(270)
+          : ScreenUtil().setHeight(180),
+      child: ListView.builder(
+        itemBuilder: _getListUi,
+        itemCount: names.length,
+        physics: new NeverScrollableScrollPhysics(),
+      ),
+    );
+  }
+
+  Widget _getListUi(BuildContext context, int index) {
+    return Container(
+      child: InkWell(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.all(10.0),
+                  width: ScreenUtil().setWidth(50),
+                  height: ScreenUtil().setHeight(50),
+                  child: Image.asset(
+                    icons[index],
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(bottom: 10.0, top: 10.0),
+                  child: Text(names[index]),
+                ),
+              ],
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 10.0),
+              alignment: Alignment.center,
+              child: Icon(Icons.arrow_forward_ios),
+            ),
+          ],
+        ),
+        onTap: () {
+          if (names[index] == '地址管理') {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (BuildContext ctx) {
+              return NewAddressPage();
+            }));
+          }
+        },
       ),
     );
   }

@@ -143,7 +143,13 @@ flutter:
        - images/fullplayer_icon_next_disable.png
        - images/player_pause_normal.png
        - images/cctv_9.png
+
        - images/location.png
+       - images/youhuiquan.png
+       - images/kefudianhua.png
+       - images/guanyu.png
+       - images/dizhi.png
+
        - images/member/order.png
        - images/member/daifukuan.png
        - images/member/daifahuo.png
