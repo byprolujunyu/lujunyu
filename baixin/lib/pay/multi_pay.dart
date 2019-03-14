@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_button/db/db_helper.dart';
+import 'package:flutter_button/db/db_helper_address.dart';
+import 'package:flutter_button/model/address.dart';
 import 'package:flutter_button/model/cart_model.dart';
 import 'package:flutter_button/model/cart_new.dart';
+import 'package:flutter_button/pay/pay_page.dart';
 import 'package:flutter_button/widget/my_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,12 +26,45 @@ class _MutliPayPageState extends State<MutliPayPage> {
     super.initState();
 
     _update();
-//    _getList();
+    _getAddress();
   }
 
-  List<CartItemModelNew> demodata = [
-    // http://images.baixingliangfan.cn/compressedPic/20190128183933_79.jpg
-  ];
+  Address add;
+
+  bool init = false;
+
+  var db = DataBaseHelper_address();
+
+  Widget getAddressW() {
+    return add != null
+        ? Column(
+            children: <Widget>[
+              MyDivider(
+                height: ScreenUtil().setHeight(20),
+                color: Color.fromARGB(255, 240, 238, 238),
+              ),
+              AddressInfo(
+                address: add,
+              ),
+              MyDivider(
+                height: ScreenUtil().setHeight(20),
+                color: Color.fromARGB(255, 240, 238, 238),
+              ),
+            ],
+          )
+        : Container();
+  }
+
+  Future _getAddress() async {
+    var result = await db.getDefAdd();
+    print(result);
+    Map map = result;
+    var address = Address.fromMap(map);
+    setState(() {
+      add = address;
+      init = true;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +82,7 @@ class _MutliPayPageState extends State<MutliPayPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            getAddressW(),
             Expanded(
               child: PList(
                 ms: widget.model.items,
@@ -60,12 +97,12 @@ class _MutliPayPageState extends State<MutliPayPage> {
     );
   }
 
-  var db = new DataBaseHelper();
+  var db1 = new DataBaseHelper();
 
   Future _update() async {
     var items = widget.model.items;
     await items.map((item) {
-      db.updateUser(get(item));
+      db1.updateUser(get(item));
     });
   }
 

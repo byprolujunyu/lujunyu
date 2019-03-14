@@ -78,8 +78,8 @@ class _PayPageState extends State<PayPage> {
   Widget getAddressW() {
     return add != null
         ? AddressInfo(
-            address: add,
-          )
+      address: add,
+    )
         : Container();
   }
 }
