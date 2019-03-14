@@ -91,10 +91,12 @@ class AddressInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return addressInfo();
+  }
+
+  Widget addressInfo() {
     return Container(
-      color: Colors.black12,
       width: ScreenUtil.screenWidth,
-   
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
