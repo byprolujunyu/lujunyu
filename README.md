@@ -21,7 +21,7 @@ flutter-百姓生活
 
 视频演示
 
-<video id="video" controls="" preload="none" poster="http://oss-toplu1015.oss-cn-hangzhou.aliyuncs.com/picture/1.jpg">
+<video id="video" controls="" preload="none" >
       <source id="mp4" src="http://oss-toplu1015.oss-cn-hangzhou.aliyuncs.com/video/demo.mp4" type="video/mp4">
       </video>
 功能
