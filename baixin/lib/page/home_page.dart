@@ -96,6 +96,7 @@ class _HomePageState extends State<HomePage>
     return newM;
   }
 
+//images/huobao.png
   Widget hotTitle = Container(
     margin: EdgeInsets.only(top: 10.0),
     padding: EdgeInsets.all(5.0),
@@ -103,9 +104,25 @@ class _HomePageState extends State<HomePage>
     decoration: BoxDecoration(
         color: Colors.white,
         border: Border(bottom: BorderSide(width: 0.5, color: Colors.black12))),
-    child: Text(
-      '火爆专区',
-      style: TextStyle(color: Colors.pink),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Container(
+           margin: EdgeInsets.all(5.0),
+            height: ScreenUtil().setHeight(50),
+            width: ScreenUtil().setWidth(50),
+            child: Image.asset(
+              'images/huobao.png',
+              fit: BoxFit.fill,
+            )),
+        Container(
+          margin: EdgeInsets.only(top: 5.0,bottom: 5.0),
+          child: Text(
+            '火爆专区',
+            style: TextStyle(color: Colors.pink),
+          ),
+        ),
+      ],
     ),
   );
   GlobalKey<RefreshHeaderState> _headerKeyGrid =
@@ -272,9 +289,12 @@ class _HomePageState extends State<HomePage>
                     noMoreText: '',
                     moreInfo: '加载中',
                     loadReadyText: '上拉加载....'),
-                refreshHeader: ClassicsHeader(key: _headerKeyGrid, bgColor: Colors.white,
+                refreshHeader: ClassicsHeader(
+                  key: _headerKeyGrid,
+                  bgColor: Colors.white,
                   textColor: Colors.pink,
-                  moreInfoColor: Colors.pink,),
+                  moreInfoColor: Colors.pink,
+                ),
                 onRefresh: () {},
                 loadMore: () async {
                   _getHotGoods();

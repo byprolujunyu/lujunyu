@@ -1,6 +1,8 @@
 import 'package:amap_base/amap_base.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_button/newsListItem2.dart';
+
 import 'package:flutter_button/widget/demo.dart';
 import 'package:flutter_button/widget/loading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,7 +15,6 @@ void main() async {
   await AMap.init('377b8601bba3d52ee19734f80c6829fa');
   runApp(MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   showLoadingPage() {
