@@ -4,6 +4,7 @@ import 'package:flutter_button/model/cart_model.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
+import '../service/service_method.dart';
 
 class DataBaseHelper {
   final String tableUser = "cartTable";
@@ -39,19 +40,31 @@ class DataBaseHelper {
 
   void _onCreate(Database db, int version) async {
     await db.execute(
-        "CREATE TABLE $tableUser($columnID INTEGER PRIMARY KEY, $columnName TEXT, $columnImage TEXT unique,$columnPrice DOUBLE ,$columnCount INTEGER )");
+        "CREATE TABLE $tableUser($columnID INTEGER PRIMARY KEY, $columnName TEXT, $columnImage TEXT UNIQUE,$columnPrice DOUBLE ,$columnCount INTEGER )");
   }
 
   Future<int> saveUser(User user) async {
     var dbClient = await db;
-    int result = await dbClient.insert("$tableUser", user.toMap());
+    var result = await dbClient.insert("$tableUser", user.toMap());
     return result;
+  }
+
+  Future saveNewUser(User user) async {
+    var dbClient = await db;
+    int result = await dbClient.insert("$tableUser", user.toMap());
   }
 
   Future<List> getAllUsers() async {
     var dbClient = await db;
     var result = await dbClient.rawQuery("SELECT * FROM $tableUser");
     return result.toList();
+  }
+
+  Future<bool> judge(String image) async {
+    var dbClient = await db;
+    var count = await dbClient.rawQuery(
+        "SELECT COUNT(*) from $tableUser where $columnImage = ?", [image]);
+    return (count == 0 && count == 1) ? false : true;
   }
 
   Future<int> getCount() async {
@@ -62,10 +75,9 @@ class DataBaseHelper {
 
   Future<List<User>> getUser() async {
     var dbClient = await db;
-    var result =
-    await dbClient.rawQuery("SELECT * FROM $tableUser ");
+    var result = await dbClient.rawQuery("SELECT * FROM $tableUser ");
     List<User> us = List();
-    for(var user in result){
+    for (var user in result) {
       User u = User.fromMap(user);
       us.add(u);
     }

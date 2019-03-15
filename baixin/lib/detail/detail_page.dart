@@ -189,8 +189,8 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
   static const update = const MethodChannel("cart/update");
 
   Future _add(User user) async {
-    int saveuser = await db.saveUser(user);
-    print(saveuser);
+    await db.saveUser(user).then((index){
+    });
   }
 
   @override

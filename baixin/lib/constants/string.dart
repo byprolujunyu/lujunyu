@@ -13,4 +13,6 @@ class KString {
   static const List<String> tabs = ['详情', '评论'];
   static const String leaderPhoneKey = "leaderPhone";
   static const String totalsumKey = "totalsumK";
+  static const String imageKey = "imageKey";
+  static const String countKey = "countKey";
 }
