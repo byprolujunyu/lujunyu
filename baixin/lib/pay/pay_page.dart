@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_button/model/address.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
+import 'package:flutter_button/widget/address_line.dart';
 import 'package:flutter_button/widget/my_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_button/address/add_address.dart';
@@ -77,10 +78,32 @@ class _PayPageState extends State<PayPage> {
 
   Widget getAddressW() {
     return add != null
-        ? AddressInfo(
-      address: add,
-    )
-        : Container();
+        ? Column(
+            children: <Widget>[
+              AddressLine(
+                height: ScreenUtil().setHeight(20),
+              ),
+              AddressInfo(
+                address: add,
+              ),
+              AddressLine(
+                height: ScreenUtil().setHeight(20),
+              ),
+            ],
+          )
+        : Column(
+            children: <Widget>[
+              AddressLine(
+                height: ScreenUtil().setHeight(20),
+              ),
+              Container(
+                height: 20,
+              ),
+              AddressLine(
+                height: ScreenUtil().setHeight(20),
+              ),
+            ],
+          );
   }
 }
 
@@ -124,7 +147,7 @@ class AddressInfo extends StatelessWidget {
                     SingleChildScrollView(
                       child: Container(
                         margin: EdgeInsets.all(10.0),
-                        child:Row(
+                        child: Row(
                           children: <Widget>[
                             Container(
                               child: Text('${address.address}'),
@@ -142,7 +165,7 @@ class AddressInfo extends StatelessWidget {
             ],
           ),
           Container(
-            margin:EdgeInsets.all(10.0),
+            margin: EdgeInsets.all(10.0),
             child: Icon(Icons.arrow_forward_ios),
           ),
         ],

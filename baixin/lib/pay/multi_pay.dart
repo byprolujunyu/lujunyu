@@ -5,6 +5,7 @@ import 'package:flutter_button/model/address.dart';
 import 'package:flutter_button/model/cart_model.dart';
 import 'package:flutter_button/model/cart_new.dart';
 import 'package:flutter_button/pay/pay_page.dart';
+import 'package:flutter_button/widget/address_line.dart';
 import 'package:flutter_button/widget/my_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -35,25 +36,7 @@ class _MutliPayPageState extends State<MutliPayPage> {
 
   var db = DataBaseHelper_address();
 
-  Widget getAddressW() {
-    return add != null
-        ? Column(
-            children: <Widget>[
-              MyDivider(
-                height: ScreenUtil().setHeight(20),
-                color: Color.fromARGB(255, 240, 238, 238),
-              ),
-              AddressInfo(
-                address: add,
-              ),
-              MyDivider(
-                height: ScreenUtil().setHeight(20),
-                color: Color.fromARGB(255, 240, 238, 238),
-              ),
-            ],
-          )
-        : Container();
-  }
+
 
   Future _getAddress() async {
     var result = await db.getDefAdd();
@@ -112,6 +95,36 @@ class _MutliPayPageState extends State<MutliPayPage> {
         image: item.imageUrl,
         count: item.count,
         price: item.price);
+  }
+
+  Widget getAddressW() {
+    return add != null
+        ? Column(
+      children: <Widget>[
+        AddressLine(
+          height: ScreenUtil().setHeight(20),
+        ),
+        AddressInfo(
+          address: add,
+        ),
+        AddressLine(
+          height: ScreenUtil().setHeight(20),
+        ),
+      ],
+    )
+        : Column(
+      children: <Widget>[
+        AddressLine(
+          height: ScreenUtil().setHeight(20),
+        ),
+        Container(
+          height: 20,
+        ),
+        AddressLine(
+          height: ScreenUtil().setHeight(20),
+        ),
+      ],
+    );
   }
 }
 
