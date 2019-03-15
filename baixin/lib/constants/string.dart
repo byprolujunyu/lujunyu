@@ -12,4 +12,5 @@ class KString {
   static const String searchHotTxt = '热门搜索';
   static const List<String> tabs = ['详情', '评论'];
   static const String leaderPhoneKey = "leaderPhone";
+  static const String totalsumKey = "totalsumK";
 }

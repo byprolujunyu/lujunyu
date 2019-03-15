@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_button/address/address_ios_page.dart';
 import 'package:flutter_button/model/address.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
 import 'package:flutter_button/widget/address_line.dart';
@@ -96,8 +97,16 @@ class _PayPageState extends State<PayPage> {
               AddressLine(
                 height: ScreenUtil().setHeight(20),
               ),
-              Container(
-                height: 20,
+              InkWell(
+                child: Container(
+                  height: 20,
+                ),
+                onTap: (){
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                    return NewAddressPage();
+                  }));
+                },
               ),
               AddressLine(
                 height: ScreenUtil().setHeight(20),

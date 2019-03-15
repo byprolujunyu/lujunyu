@@ -43,17 +43,17 @@ class _DetailPageState extends State<DetailPage> {
       appBar: AppBar(
         title: Text(widget.map['goodsName']),
         elevation: 0.0,
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.account_balance),
-            onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                return NewAddressPage();
-              }));
-            },
-          ),
-        ],
+//        actions: <Widget>[
+//          IconButton(
+//            icon: Icon(Icons.account_balance),
+//            onPressed: () {
+//              Navigator.of(context)
+//                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+//                return NewAddressPage();
+//              }));
+//            },
+//          ),
+//        ],
       ),
       body: SingleChildScrollView(
         child: Column(

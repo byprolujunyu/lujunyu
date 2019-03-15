@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_button/address/address_ios_page.dart';
 import 'package:flutter_button/db/db_helper.dart';
 import 'package:flutter_button/db/db_helper_address.dart';
 import 'package:flutter_button/model/address.dart';
@@ -8,7 +9,8 @@ import 'package:flutter_button/pay/pay_page.dart';
 import 'package:flutter_button/widget/address_line.dart';
 import 'package:flutter_button/widget/my_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import '../service/service_method.dart';
+import 'package:flutter_button/constants/index.dart';
 class MutliPayPage extends StatefulWidget {
   final CartListModelNew model;
 
@@ -117,8 +119,16 @@ class _MutliPayPageState extends State<MutliPayPage> {
         AddressLine(
           height: ScreenUtil().setHeight(20),
         ),
-        Container(
-          height: 20,
+        InkWell(
+          child: Container(
+            height: 20,
+          ),
+          onTap: (){
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (BuildContext ctx) {
+              return NewAddressPage();
+            }));
+          },
         ),
         AddressLine(
           height: ScreenUtil().setHeight(20),
@@ -315,7 +325,7 @@ class CountWidget extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(right: 10),
             child: Text(
-              '小计  : ￥${model.sumTotal}',
+              '小计  : ￥${model.sumTotal.floor()}',
               style: TextStyle(
                   color: Colors.white, fontSize: ScreenUtil().setSp(30)),
             ),
@@ -323,5 +333,11 @@ class CountWidget extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String get(){
+    getSp(key: KString.totalsumKey).then((value){
+      return value;
+    });
   }
 }

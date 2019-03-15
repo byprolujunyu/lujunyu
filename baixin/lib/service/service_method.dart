@@ -37,6 +37,16 @@ Future saveInSp(String leaderPhone) async {
   prefs.setString(KString.leaderPhoneKey, leaderPhone);
 }
 
+Future saveSp({@required String key,@required String str}) async {
+  final SharedPreferences prefs = await _prefs;
+  prefs.setString(key, str);
+}
+
+Future<String> getSp({@required String key}) async {
+  final SharedPreferences prefs = await _prefs;
+  return  prefs.getString(key);
+}
+
 Future<String> callLeaderPhone(BuildContext c) async {
   final SharedPreferences prefs = await _prefs;
   var string = prefs.getString(KString.leaderPhoneKey);

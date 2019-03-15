@@ -11,7 +11,7 @@ import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_button/pay/multi_pay.dart';
 import 'package:flutter_button/utils/screen_util.dart';
 import 'package:scoped_model/scoped_model.dart';
-
+import '../service/service_method.dart';
 class CartTest extends StatefulWidget {
   @override
   _CartTestState createState() => _CartTestState();
@@ -29,7 +29,7 @@ class _CartTestState extends State<CartTest> {
   @override
   void initState() {
     super.initState();
-
+    saveSp(key: KString.totalsumKey, str: dmoldel.sumTotal.toString());
     _query();
 //    query.setMethodCallHandler((MethodCall call) {
 //      var map = call.arguments;
