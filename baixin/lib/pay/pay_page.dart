@@ -100,6 +100,8 @@ class _PayPageState extends State<PayPage> {
               InkWell(
                 child: Container(
                   height: 20,
+                  margin: EdgeInsets.all(10.0),
+                  child: Text('需要默认地址>去添加!'),
                 ),
                 onTap: (){
                   Navigator.of(context)
