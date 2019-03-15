@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_button/address/add_address.dart';
 import 'package:flutter_button/db/db_helper_address.dart';
 import 'package:flutter_button/model/address.dart';
+import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NewAddressPage extends StatefulWidget {
@@ -106,32 +107,37 @@ class _NewAddressPageState extends State<NewAddressPage> {
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          '收货地址',
-        ),
-        elevation: 0.0,
-        actions: <Widget>[
-          IconButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                return AddAddressPage();
-              }));
-            },
-            icon: Icon(Icons.add),
+        appBar: AppBar(
+          title: Text(
+            '收货地址',
           ),
-        ],
-      ),
-      body: datas.length == 0
-          ? Empty(
-              add: _jump,
-            )
-          : HaveData(
-              datas: datas,
-              delete: _delete,
+          elevation: 0.0,
+          actions: <Widget>[
+            IconButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                  return AddAddressPage();
+                }));
+              },
+              icon: Icon(Icons.add),
             ),
-    );
+          ],
+        ),
+        body: WillPopScope(
+            child: datas.length == 0
+                ? Empty(
+                    add: _jump,
+                  )
+                : HaveData(
+                    datas: datas,
+                    delete: _delete,
+                  ),
+            onWillPop: () {
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => IndexPage()),
+                      (route) => route == null);
+            }));
   }
 
   List<Address> fromJson(List list) {
@@ -255,9 +261,15 @@ class HaveData extends StatelessWidget {
                                 Container(
                                   child: IconButton(
                                     icon: Icon(Icons.edit),
-                                    onPressed: () {
-
-                                    },
+                                    onPressed: () { Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (BuildContext ctx) {
+                                          return AddAddressPage(
+                                            id: map.id,
+                                          );
+                                        },
+                                      ),
+                                    );},
                                   ),
                                 ),
                                 Container(
@@ -265,8 +277,7 @@ class HaveData extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            onTap:
-                            (){
+                            onTap: () {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
                                   builder: (BuildContext ctx) {
@@ -287,7 +298,7 @@ class HaveData extends StatelessWidget {
                                   child: IconButton(
                                       icon:
                                           Image.asset('images/trash-gray.png'),
-                                      onPressed: () {}),
+                                      onPressed: () {  delete(map.id);}),
                                 ),
                                 Container(
                                   child: Text('删除'),

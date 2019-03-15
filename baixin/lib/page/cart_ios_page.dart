@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_button/db/db_helper.dart';
 import 'package:flutter_button/page/cart_test.dart';
 import 'package:flutter_button/model/cart_new.dart';
+import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_button/utils/screen_util.dart';
 import 'package:scoped_model/scoped_model.dart';
 
@@ -75,22 +76,26 @@ class _CartIosPageState extends State<CartIosPage> {
         title: Text('购物车'),
         elevation: 0.0,
       ),
-      body: dmoldel == null
+      body: WillPopScope(child: dmoldel == null
           ? Container()
           : dmoldel.itemsCount == 0
           ? EmptyWidget()
           : ScopedModel<CartListModelNew>(
-        model: dmoldel,
-        child: Column(
-          children: <Widget>[
-            CartListWidget(
-              refresh: _query,
-              context: context,
-            ),
-            CartBottomWidget(dmoldel),
-          ],
-        ),
-      ),
+          model: dmoldel,
+          child: Column(
+            children: <Widget>[
+              CartListWidget(
+                refresh: _query,
+                context: context,
+              ),
+              CartBottomWidget(dmoldel),
+            ],
+          ),), onWillPop: (){
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (context) => IndexPage()),
+                (route) => route == null);
+      })
+
     );
   }
 

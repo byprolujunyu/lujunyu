@@ -55,105 +55,113 @@ class _DetailPageState extends State<DetailPage> {
 //          ),
 //        ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              child: Center(
-                child: Image.network(widget.map['image']),
+      body: WillPopScope(child: detail(), onWillPop: (){
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (context) => IndexPage()),
+                (route) => route == null);
+      }),
+    );
+  }
+
+  Widget detail (){
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            child: Center(
+              child: Image.network(widget.map['image']),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(5.0),
+            child: Text(
+              widget.map['goodsName'],
+              style: TextStyle(fontSize: ScreenUtil().setSp(40)),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(5.0),
+            child: Text(
+              '编号: ' + widget.map['goodsId'],
+              style: TextStyle(
+                color: Colors.black45,
               ),
             ),
-            Container(
-              margin: EdgeInsets.all(5.0),
-              child: Text(
-                widget.map['goodsName'],
-                style: TextStyle(fontSize: ScreenUtil().setSp(40)),
-                textAlign: TextAlign.left,
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.all(5.0),
-              child: Text(
-                '编号: ' + widget.map['goodsId'],
-                style: TextStyle(
-                  color: Colors.black45,
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 5.0),
-              child: Row(
-                children: <Widget>[
-                  Container(
-                    child: Text(
-                      '￥ ' + widget.map['presentPrice'].toString(),
-                      style: TextStyle(fontSize: 20, color: Colors.red),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(20.0),
-                    child: Text('市场价:'),
-                  ),
-                  Container(
-                    child: Text(
-                      '￥' + widget.map['oriPrice'].toString(),
-                      style: TextStyle(
-                          decoration: TextDecoration.lineThrough,
-                          color: Colors.grey),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 5.0),
+            child: Row(
               children: <Widget>[
-                InkWell(
-                  onTap: () {
-                    showBottomWidget(
-                      context,
-                      SelectCountWidget(map: widget.map),
-                    );
-                  },
-                  child: Container(
-                    width: ScreenUtil().setHeight(180),
-                    height: ScreenUtil().setHeight(60),
-                    color: Colors.green,
-                    child: Center(
-                      child: Text(
-                        '加入购物车',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
+                Container(
+                  child: Text(
+                    '￥ ' + widget.map['presentPrice'].toString(),
+                    style: TextStyle(fontSize: 20, color: Colors.red),
                   ),
                 ),
-                InkWell(
-                  onTap: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                      return PayPage(
-                        map: widget.map,
-                      );
-                    }));
-                  },
-                  child: Container(
-                    width: ScreenUtil().setHeight(180),
-                    height: ScreenUtil().setHeight(60),
-                    color: Colors.red,
-                    child: Center(
-                      child: Text(
-                        '立即购买',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
+                Container(
+                  margin: EdgeInsets.all(20.0),
+                  child: Text('市场价:'),
+                ),
+                Container(
+                  child: Text(
+                    '￥' + widget.map['oriPrice'].toString(),
+                    style: TextStyle(
+                        decoration: TextDecoration.lineThrough,
+                        color: Colors.grey),
                   ),
-                )
+                ),
               ],
             ),
-          ],
-        ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              InkWell(
+                onTap: () {
+                  showBottomWidget(
+                    context,
+                    SelectCountWidget(map: widget.map),
+                  );
+                },
+                child: Container(
+                  width: ScreenUtil().setHeight(180),
+                  height: ScreenUtil().setHeight(60),
+                  color: Colors.green,
+                  child: Center(
+                    child: Text(
+                      '加入购物车',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                    return PayPage(
+                      map: widget.map,
+                    );
+                  }));
+                },
+                child: Container(
+                  width: ScreenUtil().setHeight(180),
+                  height: ScreenUtil().setHeight(60),
+                  color: Colors.red,
+                  child: Center(
+                    child: Text(
+                      '立即购买',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        ],
       ),
     );
   }

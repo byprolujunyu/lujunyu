@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_button/address/address_ios_page.dart';
 import 'package:flutter_button/model/address.dart';
+import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
 import 'package:flutter_button/widget/address_line.dart';
 import 'package:flutter_button/widget/my_widget.dart';
@@ -51,30 +52,36 @@ class _PayPageState extends State<PayPage> {
           ),
           elevation: 0.0,
         ),
-        body: Container(
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                getAddressW(),
-                MyDivider(
-                  height: ScreenUtil().setHeight(20),
-                  color: Color.fromARGB(255, 240, 238, 238),
+        body: WillPopScope(
+            child: Container(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: <Widget>[
+                    getAddressW(),
+                    MyDivider(
+                      height: ScreenUtil().setHeight(20),
+                      color: Color.fromARGB(255, 240, 238, 238),
+                    ),
+                    ProductInfo(
+                      pic: widget.map['image'],
+                      name: widget.map['goodsName'],
+                      price: widget.map['presentPrice'],
+                      count: 1,
+                    ),
+                    MyDivider(
+                      height: ScreenUtil().setHeight(20),
+                      color: Color.fromARGB(255, 240, 238, 238),
+                    ),
+                    PayList(price: widget.map['presentPrice']),
+                  ],
                 ),
-                ProductInfo(
-                  pic: widget.map['image'],
-                  name: widget.map['goodsName'],
-                  price: widget.map['presentPrice'],
-                  count: 1,
-                ),
-                MyDivider(
-                  height: ScreenUtil().setHeight(20),
-                  color: Color.fromARGB(255, 240, 238, 238),
-                ),
-                PayList(price: widget.map['presentPrice']),
-              ],
+              ),
             ),
-          ),
-        ));
+            onWillPop: () {
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => IndexPage()),
+                  (route) => route == null);
+            }));
   }
 
   Widget getAddressW() {
@@ -103,7 +110,7 @@ class _PayPageState extends State<PayPage> {
                   margin: EdgeInsets.all(10.0),
                   child: Text('需要默认地址>去添加!'),
                 ),
-                onTap: (){
+                onTap: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (BuildContext ctx) {
                     return NewAddressPage();

@@ -5,6 +5,7 @@ import 'package:flutter_button/db/db_helper_address.dart';
 import 'package:flutter_button/model/address.dart';
 import 'package:flutter_button/model/cart_model.dart';
 import 'package:flutter_button/model/cart_new.dart';
+import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_button/pay/pay_page.dart';
 import 'package:flutter_button/widget/address_line.dart';
 import 'package:flutter_button/widget/my_widget.dart';
@@ -61,7 +62,7 @@ class _MutliPayPageState extends State<MutliPayPage> {
         ),
         elevation: 0.0,
       ),
-      body: Container(
+      body:WillPopScope(child:  Container(
         margin: EdgeInsets.all(0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -72,13 +73,17 @@ class _MutliPayPageState extends State<MutliPayPage> {
               child: PList(
                 ms: widget.model.items,
               ),
-              ),
+            ),
             CountWidget(
               model: widget.model,
             ),
           ],
         ),
-      ),
+      ), onWillPop: (){
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (context) => IndexPage()),
+                (route) => route == null);
+      }),
     );
   }
 
