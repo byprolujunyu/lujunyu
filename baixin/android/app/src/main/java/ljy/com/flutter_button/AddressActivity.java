@@ -21,7 +21,7 @@ public class AddressActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_address);
-        Class
+
 
         name = (EditText) findViewById(R.id.name);
         phone = (EditText) findViewById(R.id.phone);

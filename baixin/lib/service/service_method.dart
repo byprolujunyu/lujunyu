@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import "package:dio/dio.dart";
+import 'package:flutter_button/constants/index.dart';
 import 'package:flutter_button/model/category_model.dart';
 import 'dart:async';
 import 'dart:io';
@@ -8,6 +9,9 @@ import '../config/service_url.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+
 
 Future getHomePageContent() async {
   try {
@@ -27,6 +31,19 @@ Future getHomePageContent() async {
     return print('ERROR:======>${e}');
   }
 }
+
+Future saveInSp(String leaderPhone) async {
+  final SharedPreferences prefs = await _prefs;
+  prefs.setString(KString.leaderPhoneKey, leaderPhone);
+}
+
+Future<String> callLeaderPhone(BuildContext c) async {
+  final SharedPreferences prefs = await _prefs;
+  var string = prefs.getString(KString.leaderPhoneKey);
+  String leaderP = 'tel:' + string;
+  alertDialog(c,'是否拨打店长电话',leaderP);
+}
+
 Future request(url,{formData})async{
   try{
     print('开始获取数据...............');

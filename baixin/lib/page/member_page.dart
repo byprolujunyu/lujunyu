@@ -3,6 +3,7 @@ import 'package:flutter_button/address/address_ios_page.dart';
 import 'package:flutter_button/page/cart_test.dart';
 import 'package:flutter_button/widget/my_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../service/service_method.dart';
 
 class MemberPage extends StatelessWidget {
   final List<String> strs = ['领取优惠券', '已领取优惠券', '地址管理'];
@@ -268,18 +269,24 @@ class LoveUI extends StatelessWidget {
             Container(
                 width: ScreenUtil().setWidth(30),
                 height: ScreenUtil().setHeight(30),
-              margin: EdgeInsets.only(right: 10.0),
-              alignment: Alignment.center,
-              child: Image.asset('$iconName',fit: BoxFit.fill,)
-            ),
+                margin: EdgeInsets.only(right: 10.0),
+                alignment: Alignment.center,
+                child: Image.asset(
+                  '$iconName',
+                  fit: BoxFit.fill,
+                )),
           ],
         ),
-        onTap: () {
+        onTap: () async {
           if (names[index] == '地址管理') {
             Navigator.of(context)
                 .push(MaterialPageRoute(builder: (BuildContext ctx) {
               return NewAddressPage();
             }));
+          }
+
+          if (names[index] == '客服电话') {
+            await callLeaderPhone(context);
           }
         },
       ),

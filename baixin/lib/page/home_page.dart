@@ -462,6 +462,7 @@ class LeaderView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    saveInSp(leaderInfo['leaderPhone']);
     return Container(
       child: InkWell(
         onTap: () {

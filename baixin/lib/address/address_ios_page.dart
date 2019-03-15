@@ -249,42 +249,54 @@ class HaveData extends StatelessWidget {
                     child: Row(
                       children: <Widget>[
                         Container(
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                child: IconButton(
-                                  icon: Icon(Icons.edit),
-                                  onPressed: () {
-                                    Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                        builder: (BuildContext ctx) {
-                                          return AddAddressPage(id: map.id,);
-                                        },
-                                      ),
+                          child: InkWell(
+                            child: Row(
+                              children: <Widget>[
+                                Container(
+                                  child: IconButton(
+                                    icon: Icon(Icons.edit),
+                                    onPressed: () {
+
+                                    },
+                                  ),
+                                ),
+                                Container(
+                                  child: Text('编辑'),
+                                ),
+                              ],
+                            ),
+                            onTap:
+                            (){
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (BuildContext ctx) {
+                                    return AddAddressPage(
+                                      id: map.id,
                                     );
                                   },
                                 ),
-                              ),
-                              Container(
-                                child: Text('编辑'),
-                              ),
-                            ],
+                              );
+                            },
                           ),
                         ),
                         Container(
-                          child: Row(
-                            children: <Widget>[
-                              Container(
-                                child: IconButton(
-                                    icon: Image.asset('images/trash-gray.png'),
-                                    onPressed: () {
-                                      delete(map.id);
-                                    }),
-                              ),
-                              Container(
-                                child: Text('删除'),
-                              ),
-                            ],
+                          child: InkWell(
+                            child: Row(
+                              children: <Widget>[
+                                Container(
+                                  child: IconButton(
+                                      icon:
+                                          Image.asset('images/trash-gray.png'),
+                                      onPressed: () {}),
+                                ),
+                                Container(
+                                  child: Text('删除'),
+                                ),
+                              ],
+                            ),
+                            onTap: () {
+                              delete(map.id);
+                            },
                           ),
                         ),
                       ],
