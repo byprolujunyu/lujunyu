@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage>
     alignment: Alignment.center,
     decoration: BoxDecoration(
         color: Colors.white,
-        border: Border(bottom: BorderSide(width: 0.5, color: Colors.black12))),
+        border: Border(bottom: BorderSide(width: 0.5, color: Colors.black45))),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
