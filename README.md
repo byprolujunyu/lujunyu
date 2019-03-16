@@ -9,7 +9,6 @@ flutter-百姓生活
 ![Github](/snapshot/11.jpg "title")
 ![Github](/snapshot/12.jpg "title")
 ![Github](/snapshot/13.jpg "title")
-![Github](/snapshot/14.jpg "title")
 ![Github](/snapshot/15.jpg "title")
 ![Github](/snapshot/16.jpg "title")
 ![Github](/snapshot/17.jpg "title")
