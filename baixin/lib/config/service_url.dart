@@ -7,5 +7,6 @@ const servicePath = {
   'getMallGoods': serviceUrl + 'wxmini/getMallGoods', //分类商品列表获取
   "shopGoodsDetailImg": serviceUrl + "wxmini/getGoodDetailById/", //商品详情
   'searachGoods': serviceUrl+ "wxmini/searchGoods", //商品搜索接口
-  'integralGoodsShops':serviceUrl+'wxmini/integralGoodsShops',//门店信息接口
+  'integralGoodsShops':serviceUrl+'wxmini/integralGoodsShops',//门店信息列表接口
+  'shopInfoDetail':serviceUrl + "wxmini/integralGoods",//门店信息详情接口
 };

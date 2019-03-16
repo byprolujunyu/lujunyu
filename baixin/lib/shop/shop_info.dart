@@ -8,6 +8,7 @@ import 'package:flutter_button/detail/datail_page_new.dart';
 import 'package:flutter_button/detail/detail_page.dart';
 import 'package:flutter_button/page/category_page.dart';
 import 'package:flutter_button/page/seracher.dart';
+import 'package:flutter_button/shop/shop_info_detail.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
 import 'package:flutter_button/widget/hot_below.dart';
 import 'package:flutter_button/widget/my_widget.dart';
@@ -94,6 +95,14 @@ class _ShopInfoPageState extends State<ShopInfoPage> {
     return Container(
       margin: EdgeInsets.all(5.0),
       child: InkWell(
+
+        onTap: (){
+          String shopId = map['shopID'];
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (BuildContext ctx) {
+            return ShopInfoDetailPage(shopId: shopId,);
+          }));
+        },
         child:Column(
           children: <Widget>[
             Row(
