@@ -55,35 +55,42 @@ class _ShopInfoDetailPageState extends State<ShopInfoDetailPage> {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('积分商城'),
-          elevation: 0.0,
-        ),
-        body: init
-            ? SingleChildScrollView(
-                child: Column(
-                  children: <Widget>[
-                    title(),
-                    MyDivider(
-                      height: ScreenUtil().setHeight(20),
-                      color: Color.fromARGB(255, 240, 238, 238),
-                    ),
-                    middlePic(),
-                    MyDivider(
-                      height: ScreenUtil().setHeight(20),
-                      color: Color.fromARGB(255, 240, 238, 238),
-                    ),
-                    MiddleOperation(),
-                    PurpleWidget(
-                      shopInfoDetail: _shopInfoDetail,
-                    ),
-                  ],
-                ),
-              )
-            : Center(
-                child: Loading(),
-              ));
+    try {
+      return Scaffold(
+          appBar: AppBar(
+            title: Text('积分商城'),
+            elevation: 0.0,
+          ),
+          body: init
+              ? SingleChildScrollView(
+                  child: Column(
+                    children: <Widget>[
+                      title(),
+                      MyDivider(
+                        height: ScreenUtil().setHeight(20),
+                        color: Color.fromARGB(255, 240, 238, 238),
+                      ),
+                      middlePic(),
+                      MyDivider(
+                        height: ScreenUtil().setHeight(20),
+                        color: Color.fromARGB(255, 240, 238, 238),
+                      ),
+                      MiddleOperation(),
+                      PurpleWidget(
+                        shopInfoDetail: _shopInfoDetail,
+                      ),
+                      BottomGoodsListWidget(
+                        shopInfoDetail: _shopInfoDetail,
+                      ),
+                    ],
+                  ),
+                )
+              : Center(
+                  child: Loading(),
+                ));
+    } catch (e) {
+      print(e);
+    }
   }
 
   Widget title() {
@@ -199,46 +206,132 @@ class PurpleWidget extends StatelessWidget {
           height: ScreenUtil().setHeight(110),
         ),
         Container(
-          alignment: Alignment.center,
-          height: ScreenUtil().setHeight(105),
-          child: Padding(
-            padding: EdgeInsets.all(5.0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(5),
+            alignment: Alignment.center,
+            height: ScreenUtil().setHeight(105),
+            child: Padding(
+              padding: EdgeInsets.all(5.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
+                      height: ScreenUtil().setHeight(65),
+                      width: ScreenUtil().setWidth(65),
+                      margin: EdgeInsets.all(5.0),
+                      child: Image.asset(
+                        'images/huodongzhuti.png',
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Container(
+                      width: ScreenUtil().setWidth(600),
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.only(left: 15.0),
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              '百姓量贩感恩月',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: ScreenUtil().setSp(25)),
+                            ),
+                          ),
+                          Container(
+                              alignment: Alignment.centerLeft,
+                              margin: EdgeInsets.only(left: 15.0),
+                              child: Text(
+                                  '从${shopInfoDetail.data.activityInfo.bEGINTIME2}到${shopInfoDetail.data.activityInfo.eNDTIME}')),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
+            )),
+      ],
+    );
+  }
+}
 
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+class BottomGoodsListWidget extends StatelessWidget {
+  final ShopDetail shopInfoDetail;
+
+  BottomGoodsListWidget({@required this.shopInfoDetail});
+
+  @override
+  Widget build(BuildContext context) {
+    try {
+      return Container(
+        height:
+            shopInfoDetail.data.goodsList.length * ScreenUtil().setHeight(220),
+        child: GridView.count(
+          crossAxisCount: 2,
+          physics: new NeverScrollableScrollPhysics(),
+          mainAxisSpacing: 5,
+          crossAxisSpacing: 5,
+          children: shopInfoDetail.data.goodsList.map((detail) {
+            return _getUi(context, detail);
+          }).toList(),
+        ),
+      );
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  Widget _getUi(BuildContext context, ShopDetail_GoodsList detail) {
+    return SingleChildScrollView(
+      //    physics: new NeverScrollableScrollPhysics(),
+      child: Column(
+        children: <Widget>[
+          Container(
+            height: ScreenUtil().setHeight(200),
+            child: Image.network(
+              detail.pICTURECOMPERSSPATH,
+              fit: BoxFit.fill,
+            ),
+          ),
+          Container(
+            child: Text(detail.nAME),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Row(
                 children: <Widget>[
                   Container(
-                    height: ScreenUtil().setHeight(65),
-                    width: ScreenUtil().setWidth(65),
-                    margin: EdgeInsets.all(5.0),
+                    margin: EdgeInsets.all(3.0),
+                    height: ScreenUtil().setHeight(50),
+                    width: ScreenUtil().setWidth(50),
                     child: Image.asset(
-                      'images/huodongzhuti.png',
+                      'images/jifen.png',
                       fit: BoxFit.fill,
                     ),
                   ),
                   Container(
-
-
-                    width: ScreenUtil().setWidth(600),
-                    child: Column(
-
-                      children: <Widget>[
-                        Container(margin: EdgeInsets.only(left:15.0),alignment: Alignment.centerLeft,child: Text('百姓量贩感恩月',style: TextStyle(fontWeight: FontWeight.bold,fontSize: ScreenUtil().setSp(25)),),),
-                        Container(alignment: Alignment.centerLeft,margin: EdgeInsets.only(left:15.0),child:Text('从${shopInfoDetail.data.activityInfo.bEGINTIME2}到${shopInfoDetail.data.activityInfo.eNDTIME}')),
-                      ],
-                    ),
-                  ),
+                    margin: EdgeInsets.all(3.0),
+                    child: Text('${detail.nEEDINTEGRAL}积分'),
+                  )
                 ],
               ),
-            ),
+              Container(
+                margin: EdgeInsets.all(3.0),
+                height: ScreenUtil().setHeight(50),
+                width: ScreenUtil().setWidth(50),
+                child: Image.asset(
+                  'images/squareadd.png',
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ],
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
