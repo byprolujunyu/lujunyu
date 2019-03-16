@@ -1,17 +1,10 @@
 import 'dart:convert';
-import 'dart:io';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_button/config/service_url.dart';
-import 'package:flutter_button/detail/datail_page_new.dart';
 import 'package:flutter_button/detail/detail_page.dart';
 import 'package:flutter_button/page/category_page.dart';
 import 'package:flutter_button/page/seracher.dart';
 import 'package:flutter_button/shop/shop_info.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
-import 'package:flutter_button/widget/hot_below.dart';
-import 'package:flutter_button/widget/my_widget.dart';
 import '../service/service_method.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
