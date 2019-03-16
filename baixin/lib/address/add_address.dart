@@ -88,6 +88,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
                           border: UnderlineInputBorder(),
                           labelText: "请输入收货人姓名",
                         ),
+
                       ),
                     ),
                     Padding(
@@ -102,6 +103,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
                           border: UnderlineInputBorder(),
                           labelText: "请输入11位手机号码",
                         ),
+                        autofocus: false,
                       ),
                     ),
                     Padding(
@@ -146,6 +148,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
                           border: UnderlineInputBorder(),
                           labelText: "请输入详细地址",
                         ),
+                        autofocus: false,
                       ),
                     ),
                     Padding(

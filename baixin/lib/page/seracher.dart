@@ -29,6 +29,7 @@ class _SearchPState extends State<SearchP> {
       new GlobalKey<RefreshHeaderState>();
   GlobalKey<RefreshFooterState> _footerKeyGrid =
       new GlobalKey<RefreshFooterState>();
+  TextEditingController _textController = TextEditingController();
 
   @override
   void initState() {
@@ -37,16 +38,24 @@ class _SearchPState extends State<SearchP> {
     _getSerachGoods();
   }
 
+  bool init = false;
+
   //火爆商品接口
   void _getSerachGoods() {
-    var formPage = {"text": "酒", "page": page, "category": ""};
+    var formPage = {"text": widget.text, "page": page, "category": ""};
     request('searachGoods', formData: formPage).then((val) {
       var data = json.decode(val.toString());
       List<Map> newGoodsList = (data['data'] as List).cast();
-      setState(() {
-        ms.addAll(newGoodsList);
-        page++;
-      });
+      if (newGoodsList.length == 0) {
+        setState(() {
+          init = true;
+        });
+      } else {
+        setState(() {
+          ms.addAll(newGoodsList);
+          page++;
+        });
+      }
     });
   }
 
@@ -110,9 +119,32 @@ class _SearchPState extends State<SearchP> {
         spacing: 2,
         children: listWidget,
       );
-    } else {
-
+    } else if (init == false) {
       return Loading();
+    } else if (init == true) {
+      return Container(
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.all(10.0),
+                height: ScreenUtil().setHeight(100),
+                width: ScreenUtil().setWidth(100),
+                child: Image.asset(
+                  'images/sousuobudao.png',
+                  fit: BoxFit.fill,
+                ),
+              ),
+              Container(
+                child: Text(
+                  '未找到结果',
+                  style: TextStyle(color: Colors.red),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
     }
   }
 
@@ -142,9 +174,6 @@ class _SearchPState extends State<SearchP> {
       body: EasyRefresh(
         child: ListView(
           children: <Widget>[
-            Center(
-              child: Text('搜索'),
-            ),
             _seracherGoods(),
           ],
         ),

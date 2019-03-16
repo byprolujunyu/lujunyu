@@ -122,8 +122,9 @@ Future shopGoodsDetailImg(@required String goodId) async {
 
 
 
-void showShortToast(str) {
+void showShortToast(str,{index = 2}) {
   Fluttertoast.showToast(
+      gravity:index == 1?ToastGravity.CENTER:index == 2?ToastGravity.BOTTOM:ToastGravity.TOP,
       msg: "${str}", toastLength: Toast.LENGTH_SHORT, timeInSecForIos: 1);
 }
 

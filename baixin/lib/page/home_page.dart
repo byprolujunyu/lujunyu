@@ -37,23 +37,31 @@ class _HomePageState extends State<HomePage>
   Widget searchBar() {
     try {
       return Container(
-        color: Colors.red,
-        child: Row(
+        color: Colors.white70,
+        child: SingleChildScrollView(scrollDirection:Axis.horizontal,child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
                     width: ScreenUtil().setWidth(50),
                     height: ScreenUtil().setHeight(50),
                     margin:
-                        EdgeInsets.only(top: 15.0, left: 15.0, bottom: 15.0),
-                    child: Image.asset('images/location.png')),
+                    EdgeInsets.only(top: 15.0, left: 15.0, bottom: 15.0),
+                    child: Image.asset('images/backgrey.png')),
                 Container(
-                  margin: EdgeInsets.only(top: 15.0, left: 15.0, bottom: 15.0),
-                  child: Text(
-                    '搜素喜欢的商品',
-                    style: TextStyle(color: Colors.white),
+                  width:
+                      ScreenUtil().setWidth(550),
+                  child: TextField(
+                    controller: _numController,
+                    maxLines: 1,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      filled: true,
+                      labelText: "请输入你要查询的商品",
+                    ),
+                    autofocus: false,
                   ),
                 ),
               ],
@@ -63,7 +71,7 @@ class _HomePageState extends State<HomePage>
                 alignment: Alignment.center,
                 margin: EdgeInsets.only(right: 15.0),
                 width: ScreenUtil().setWidth(80),
-                height: ScreenUtil().setHeight(60),
+                height: ScreenUtil().setHeight(50),
                 child: Text(
                   '搜索',
                   style: TextStyle(color: Colors.pink),
@@ -75,14 +83,20 @@ class _HomePageState extends State<HomePage>
                 ),
               ),
               onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                  return SearchP();
-                }));
+                var text = _numController.text;
+                if(text == null||text.length  == 0) {
+                  showShortToast('搜索为空',index: 1);
+                }else{
+
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                    return SearchP(text:text,);
+                  }));
+                }
               },
             ),
           ],
-        ),
+        ),),
       );
     } catch (e) {
       print(e);
