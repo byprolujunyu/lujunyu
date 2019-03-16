@@ -7,6 +7,8 @@ import 'package:flutter_button/config/service_url.dart';
 import 'package:flutter_button/detail/datail_page_new.dart';
 import 'package:flutter_button/detail/detail_page.dart';
 import 'package:flutter_button/page/category_page.dart';
+import 'package:flutter_button/page/seracher.dart';
+import 'package:flutter_button/shop/shop_info.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
 import 'package:flutter_button/widget/hot_below.dart';
 import 'package:flutter_button/widget/my_widget.dart';
@@ -63,20 +65,28 @@ class _HomePageState extends State<HomePage>
                 ),
               ],
             ),
-            Container(
-              alignment: Alignment.center,
-              margin: EdgeInsets.only(right: 15.0),
-              width: ScreenUtil().setWidth(80),
-              height: ScreenUtil().setHeight(60),
-              child: Text(
-                '搜索',
-                style: TextStyle(color: Colors.pink),
+            InkWell(
+              child: Container(
+                alignment: Alignment.center,
+                margin: EdgeInsets.only(right: 15.0),
+                width: ScreenUtil().setWidth(80),
+                height: ScreenUtil().setHeight(60),
+                child: Text(
+                  '搜索',
+                  style: TextStyle(color: Colors.pink),
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(3.0),
+                  border: Border.all(color: Colors.white, width: 1.0),
+                ),
               ),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(3.0),
-                border: Border.all(color: Colors.white, width: 1.0),
-              ),
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                  return SearchP();
+                }));
+              },
             ),
           ],
         ),
@@ -108,7 +118,7 @@ class _HomePageState extends State<HomePage>
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
-           margin: EdgeInsets.all(5.0),
+            margin: EdgeInsets.all(5.0),
             height: ScreenUtil().setHeight(50),
             width: ScreenUtil().setWidth(50),
             child: Image.asset(
@@ -116,7 +126,7 @@ class _HomePageState extends State<HomePage>
               fit: BoxFit.fill,
             )),
         Container(
-          margin: EdgeInsets.only(top: 5.0,bottom: 5.0),
+          margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
           child: Text(
             '火爆专区',
             style: TextStyle(color: Colors.pink),
@@ -684,6 +694,10 @@ class Floor extends StatelessWidget {
   }
 }
 
+//    Navigator.of(context)
+//                    .push(MaterialPageRoute(builder: (BuildContext ctx) {
+//                  return SearchP();
+//                }));
 class MiddleAd extends StatelessWidget {
   final String saoma;
 
@@ -699,18 +713,30 @@ class MiddleAd extends StatelessWidget {
     return Container(
       child: Row(
         children: <Widget>[
-          Container(
-              child: Expanded(
-            child: Image.network(saoma),
-          )),
-          Container(
-              child: Expanded(
-            child: Image.network(integralMallPic),
-          )),
-          Container(
-              child: Expanded(
-            child: Image.network(newUser),
-          )),
+          InkWell(
+            child: Container(
+              width: MediaQuery.of(context).size.width / 3,
+              child: Image.network(saoma),
+            ),
+          ),
+          InkWell(
+            child: Container(
+              width: MediaQuery.of(context).size.width / 3,
+              child: Image.network(integralMallPic),
+            ),
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                return ShopInfoPage();
+              }));
+            },
+          ),
+          InkWell(
+            child: Container(
+              width: MediaQuery.of(context).size.width / 3,
+              child: Image.network(newUser),
+            ),
+          ),
         ],
       ),
     );
