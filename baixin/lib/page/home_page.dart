@@ -194,11 +194,11 @@ class _HomePageState extends State<HomePage>
         return InkWell(
             onTap: () {
               Map newM = mapToMap2(val);
-
+              var id = val['goodsId'];
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                return DetailPage(
-                  map: newM,
+                return DetailPageNew(
+                  goodsId: id,
                 );
               }));
             },
