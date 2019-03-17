@@ -26,11 +26,15 @@ class _HomePageState extends State<HomePage>
 
   bool showAda = false;
 
+  OverlayEntry ov;
+
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     _getAdaData();
+
   }
 
   //火爆商品接口
@@ -303,6 +307,7 @@ class _HomePageState extends State<HomePage>
                       integralMallPic: integralMallPic,
                       newUser: newUser,
                       adaData: adaData,
+
                     ),
                     RecommendUI(
                       recommendList: recommendList,
@@ -351,6 +356,10 @@ class _HomePageState extends State<HomePage>
             }
           },
         ));
+  }
+
+  void _remove(context) {
+    ov.remove();
   }
 
   @override
@@ -743,6 +752,8 @@ class MiddleAd extends StatelessWidget {
 
   final Map adaData;
 
+  OverlayEntry ov;
+
   MiddleAd(
       {Key key,
       this.saoma,
@@ -754,6 +765,12 @@ class MiddleAd extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ov = new OverlayEntry(builder: (context) {
+      return AdaWidget(
+        remove: _remove,
+        map: adaData,
+      );
+    });
     return Container(
       child: Row(
         children: <Widget>[
@@ -782,11 +799,16 @@ class MiddleAd extends StatelessWidget {
             ),
             onTap: () {
 //              _show();
+              Overlay.of(context).insert(ov);
             },
           ),
         ],
       ),
     );
+  }
+
+  void _remove(context){
+    ov.remove();
   }
 
 //  _show() {

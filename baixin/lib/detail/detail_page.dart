@@ -195,8 +195,7 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      child: Container(
+    return  Container(
         child: SingleChildScrollView(
           child: Container(
             margin: EdgeInsets.all(20.0),
@@ -288,12 +287,6 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
             ),
           ),
         ),
-      ),
-      onWillPop: () {
-        Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => IndexPage()),
-            (route) => route == null);
-      },
     );
   }
 
