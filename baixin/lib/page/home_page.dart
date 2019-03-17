@@ -258,130 +258,135 @@ class _HomePageState extends State<HomePage>
           elevation: 0.0,
           actions: <Widget>[],
         ),
-        body: FutureBuilder(
-          future: getHomePageContent(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              var data = json.decode(snapshot.data.toString());
-              List<Map> swiperDataList =
-                  (data['data']['slides'] as List).cast();
-              List<Map> navigatorList =
-                  (data['data']['category'] as List).cast(); //类别列表
-              List<Map> recommendList =
-                  (data['data']['recommend'] as List).cast(); //推荐列表
-              List<Map> floor1 = (data['data']['floor1'] as List).cast(); //推荐列表
-              List<Map> floor2 = (data['data']['floor2'] as List).cast(); //推荐列表
-              List<Map> floor3 = (data['data']['floor3'] as List).cast(); //推荐列表
-              String adPicture =
-                  data['data']['advertesPicture']['PICTURE_ADDRESS'];
-              Map leaderInfo = data['data']['shopInfo'];
-              Map fp3 = data['data']['floor3Pic'];
-              Map fp2 = data['data']['floor2Pic'];
-              Map fp1 = data['data']['floor1Pic'];
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: FutureBuilder(
+              future: getHomePageContent(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  var data = json.decode(snapshot.data.toString());
+                  List<Map> swiperDataList =
+                      (data['data']['slides'] as List).cast();
+                  List<Map> navigatorList =
+                      (data['data']['category'] as List).cast(); //类别列表
+                  List<Map> recommendList =
+                      (data['data']['recommend'] as List).cast(); //推荐列表
+                  List<Map> floor1 = (data['data']['floor1'] as List).cast(); //推荐列表
+                  List<Map> floor2 = (data['data']['floor2'] as List).cast(); //推荐列表
+                  List<Map> floor3 = (data['data']['floor3'] as List).cast(); //推荐列表
+                  String adPicture =
+                      data['data']['advertesPicture']['PICTURE_ADDRESS'];
+                  Map leaderInfo = data['data']['shopInfo'];
+                  Map fp3 = data['data']['floor3Pic'];
+                  Map fp2 = data['data']['floor2Pic'];
+                  Map fp1 = data['data']['floor1Pic'];
 
-              String integralMallPic =
-                  data['data']['integralMallPic']['PICTURE_ADDRESS'];
-              String newUser = data['data']['newUser']['PICTURE_ADDRESS'];
-              String saoma = data['data']['saoma']['PICTURE_ADDRESS'];
+                  String integralMallPic =
+                      data['data']['integralMallPic']['PICTURE_ADDRESS'];
+                  String newUser = data['data']['newUser']['PICTURE_ADDRESS'];
+                  String saoma = data['data']['saoma']['PICTURE_ADDRESS'];
 
-              if (navigatorList.length > 10) {
-                navigatorList.removeRange(10, navigatorList.length);
-              }
+                  if (navigatorList.length > 10) {
+                    navigatorList.removeRange(10, navigatorList.length);
+                  }
 
-              getSp(key: KString.isKey).then((value){
-                if(value=='0') {
-                  showDialog<Null>(
-                      context: context,
-                      barrierDismissible: false,
-                      builder: (BuildContext context) {
-                        return AdaWidget(
-                          map: adaData,
-                          remove: (context) {
-                            Navigator.pop(context);
+                  getSp(key: KString.isKey).then((value){
+                    if(value=='0') {
+                      showDialog<Null>(
+                          context: context,
+                          barrierDismissible: false,
+                          builder: (BuildContext context) {
+                            return AdaWidget(
+                              map: adaData,
+                              remove: (context) {
+                                Navigator.pop(context);
 
-                            saveSp(key: KString.isKey,str:'1');
-                          },
-                        );
-                      });
+                                saveSp(key: KString.isKey,str:'1');
+                              },
+                            );
+                          });
 
 
+                    }
+
+
+                  });
+                  // 顶部轮播组件数
+                  //页面顶部轮播组件
+
+
+                  return EasyRefresh(
+                    child: ListView(
+                      children: <Widget>[
+                        searchBar(),
+                        SwiperDiy(
+                          swiperDataList: swiperDataList,
+                        ),
+                        TopNavigator(
+                          navigatorList: navigatorList,
+                        ),
+
+                        AdBanner(
+                          adPicture: adPicture,
+                        ),
+                        LeaderView(
+                          leaderInfo: leaderInfo,
+                        ),
+                        MiddleAd(
+                          saoma: saoma,
+                          integralMallPic: integralMallPic,
+                          newUser: newUser,
+                          adaData: adaData,
+                        ),
+                        RecommendUI(
+                          recommendList: recommendList,
+                        ),
+                        FloorPic(
+                          floorPic: fp1,
+                        ),
+                        Floor(floor: floor1),
+                        FloorPic(
+                          floorPic: fp2,
+                        ),
+                        Floor(floor: floor2),
+                        FloorPic(
+                          floorPic: fp3,
+                        ),
+                        Floor(floor: floor3),
+                        // HotUI(),
+                        // HotUI(),
+                        _hotGoods(),
+                      ],
+                    ),
+                    refreshFooter: ClassicsFooter(
+                        key: _footerKeyGrid,
+                        bgColor: Colors.white,
+                        textColor: Colors.pink,
+                        moreInfoColor: Colors.pink,
+                        showMore: true,
+                        noMoreText: '',
+                        moreInfo: '加载中',
+                        loadReadyText: '上拉加载....'),
+                    refreshHeader: ClassicsHeader(
+                      key: _headerKeyGrid,
+                      bgColor: Colors.white,
+                      textColor: Colors.pink,
+                      moreInfoColor: Colors.pink,
+                    ),
+                    onRefresh: () {},
+                    loadMore: () async {
+                      _getHotGoods();
+                    },
+                  );
+                } else {
+                  return Center(
+                    child: Loading(),
+                  );
                 }
-
-
-              });
-              // 顶部轮播组件数
-              //页面顶部轮播组件
-
-
-              return EasyRefresh(
-                child: ListView(
-                  children: <Widget>[
-                    searchBar(),
-                    SwiperDiy(
-                      swiperDataList: swiperDataList,
-                    ),
-                    TopNavigator(
-                      navigatorList: navigatorList,
-                    ),
-
-                    AdBanner(
-                      adPicture: adPicture,
-                    ),
-                    LeaderView(
-                      leaderInfo: leaderInfo,
-                    ),
-                    MiddleAd(
-                      saoma: saoma,
-                      integralMallPic: integralMallPic,
-                      newUser: newUser,
-                      adaData: adaData,
-                    ),
-                    RecommendUI(
-                      recommendList: recommendList,
-                    ),
-                    FloorPic(
-                      floorPic: fp1,
-                    ),
-                    Floor(floor: floor1),
-                    FloorPic(
-                      floorPic: fp2,
-                    ),
-                    Floor(floor: floor2),
-                    FloorPic(
-                      floorPic: fp3,
-                    ),
-                    Floor(floor: floor3),
-                    // HotUI(),
-                    // HotUI(),
-                    _hotGoods(),
-                  ],
-                ),
-                refreshFooter: ClassicsFooter(
-                    key: _footerKeyGrid,
-                    bgColor: Colors.white,
-                    textColor: Colors.pink,
-                    moreInfoColor: Colors.pink,
-                    showMore: true,
-                    noMoreText: '',
-                    moreInfo: '加载中',
-                    loadReadyText: '上拉加载....'),
-                refreshHeader: ClassicsHeader(
-                  key: _headerKeyGrid,
-                  bgColor: Colors.white,
-                  textColor: Colors.pink,
-                  moreInfoColor: Colors.pink,
-                ),
-                onRefresh: () {},
-                loadMore: () async {
-                  _getHotGoods();
-                },
-              );
-            } else {
-              return Center(
-                child: Loading(),
-              );
-            }
-          },
+              },
+            ),
+          ),
         ));
   }
 
