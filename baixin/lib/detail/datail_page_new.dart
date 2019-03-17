@@ -95,7 +95,7 @@ class _DetailPageNewState extends State<DetailPageNew> {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (BuildContext ctx) {
                 return PayPage(
-                  map: shopInfo,
+                  map1:goodDetail,
                 );
               }));
             },

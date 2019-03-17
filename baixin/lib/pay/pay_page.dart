@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_button/address/address_ios_page.dart';
 import 'package:flutter_button/model/address.dart';
+import 'package:flutter_button/model/good_detail.dart';
+import 'package:flutter_button/model/shop_detail.dart';
 import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
 import 'package:flutter_button/widget/address_line.dart';
@@ -10,9 +12,10 @@ import 'package:flutter_button/address/add_address.dart';
 import 'package:flutter_button/db/db_helper_address.dart';
 
 class PayPage extends StatefulWidget {
-  final Map map;
+  final  GoodDetail map1;
+  final  Map map;
 
-  PayPage({Key key, this.map}) : super(key: key);
+  PayPage({Key key, this.map1,this.map}) : super(key: key);
 
   @override
   _PayPageState createState() => _PayPageState();
@@ -63,16 +66,16 @@ class _PayPageState extends State<PayPage> {
                       color: Color.fromARGB(255, 240, 238, 238),
                     ),
                     ProductInfo(
-                      pic: widget.map['image'],
-                      name: widget.map['goodsName'],
-                      price: widget.map['presentPrice'],
+                      pic: widget.map1.image,
+                      name: widget.map1.name,
+                      price: widget.map1.price,
                       count: 1,
                     ),
                     MyDivider(
                       height: ScreenUtil().setHeight(20),
                       color: Color.fromARGB(255, 240, 238, 238),
                     ),
-                    PayList(price: widget.map['presentPrice']),
+                    PayList(price: widget.map1.price),
                   ],
                 ),
               ),
