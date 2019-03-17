@@ -195,7 +195,7 @@ class _HomePageState extends State<HomePage>
               }));
             },
             child: Container(
-              width: ScreenUtil().setWidth(372),
+              width: ScreenUtil().setWidth(350),
               color: Colors.white,
               padding: EdgeInsets.all(5.0),
               margin: EdgeInsets.only(bottom: 3.0),
@@ -203,7 +203,7 @@ class _HomePageState extends State<HomePage>
                 children: <Widget>[
                   Image.network(
                     val['image'],
-                    width: ScreenUtil().setWidth(375),
+                    width: ScreenUtil().setWidth(345),
                   ),
                   Text(
                     val['name'],
