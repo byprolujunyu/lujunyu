@@ -46,6 +46,7 @@ class _HomePageState extends State<HomePage>
         hotGoodsList.addAll(newGoodsList);
         page++;
       });
+
     });
   }
 
@@ -57,6 +58,17 @@ class _HomePageState extends State<HomePage>
       setState(() {
         adaData = fp3;
       });
+      showDialog<Null>(
+          context: context,
+          barrierDismissible: false,
+          builder: (BuildContext context) {
+            return AdaWidget(
+              map: adaData,
+              remove: (context) {
+                Navigator.pop(context);
+              },
+            );
+          });
     });
   }
 
