@@ -11,4 +11,5 @@ const servicePath = {
   'shopInfoDetail':serviceUrl + "wxmini/integralGoods",//门店信息详情接口
   'ada':serviceUrl+'wxmini/getHomePageTip',//广告页
   'aboutUs':serviceUrl+'wxmini/aboutUs',//关于商城
+  'fujiCouponsPic':serviceUrl+'wxmini/fujiCouponsPic',//优惠券图片接口
 };

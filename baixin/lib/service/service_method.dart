@@ -49,6 +49,23 @@ Future getAboutUsInfo() async {
   }
 }
 
+Future getyouhupicInfo() async {
+  try {
+    Response response;
+    Dio dio = new Dio();
+    dio.options.contentType =
+        ContentType.parse("application/x-www-form-urlencoded");
+    response = await dio.post(servicePath['fujiCouponsPic']);
+    if (response.statusCode == 200) {
+      return response.data;
+    } else {
+      throw Exception('后端接口出现异常，请检测代码和服务器情况.........');
+    }
+  } catch (e) {
+    return print('ERROR:======>${e}');
+  }
+}
+
 Future saveInSp(String leaderPhone) async {
   final SharedPreferences prefs = await _prefs;
   prefs.setString(KString.leaderPhoneKey, leaderPhone);

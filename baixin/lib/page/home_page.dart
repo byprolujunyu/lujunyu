@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_button/constants/index.dart';
 import 'package:flutter_button/detail/datail_page_new.dart';
 import 'package:flutter_button/detail/detail_page.dart';
+import 'package:flutter_button/fuji/youhui_pic.dart';
 import 'package:flutter_button/page/category_page.dart';
 import 'package:flutter_button/page/seracher.dart';
 import 'package:flutter_button/shop/shop_info.dart';
@@ -49,10 +50,7 @@ class _HomePageState extends State<HomePage>
         hotGoodsList.addAll(newGoodsList);
         page++;
       });
-
     });
-
-
   }
 
   void _getAdaData() {
@@ -272,9 +270,12 @@ class _HomePageState extends State<HomePage>
                       (data['data']['category'] as List).cast(); //类别列表
                   List<Map> recommendList =
                       (data['data']['recommend'] as List).cast(); //推荐列表
-                  List<Map> floor1 = (data['data']['floor1'] as List).cast(); //推荐列表
-                  List<Map> floor2 = (data['data']['floor2'] as List).cast(); //推荐列表
-                  List<Map> floor3 = (data['data']['floor3'] as List).cast(); //推荐列表
+                  List<Map> floor1 =
+                      (data['data']['floor1'] as List).cast(); //推荐列表
+                  List<Map> floor2 =
+                      (data['data']['floor2'] as List).cast(); //推荐列表
+                  List<Map> floor3 =
+                      (data['data']['floor3'] as List).cast(); //推荐列表
                   String adPicture =
                       data['data']['advertesPicture']['PICTURE_ADDRESS'];
                   Map leaderInfo = data['data']['shopInfo'];
@@ -291,8 +292,8 @@ class _HomePageState extends State<HomePage>
                     navigatorList.removeRange(10, navigatorList.length);
                   }
 
-                  getSp(key: KString.isKey).then((value){
-                    if(value=='0') {
+                  getSp(key: KString.isKey).then((value) {
+                    if (value == '0') {
                       showDialog<Null>(
                           context: context,
                           barrierDismissible: false,
@@ -302,19 +303,14 @@ class _HomePageState extends State<HomePage>
                               remove: (context) {
                                 Navigator.pop(context);
 
-                                saveSp(key: KString.isKey,str:'1');
+                                saveSp(key: KString.isKey, str: '1');
                               },
                             );
                           });
-
-
                     }
-
-
                   });
                   // 顶部轮播组件数
                   //页面顶部轮播组件
-
 
                   return EasyRefresh(
                     child: ListView(
@@ -607,6 +603,7 @@ class RecommendUI extends StatelessWidget {
         }));
       },
       child: SingleChildScrollView(
+        physics: new NeverScrollableScrollPhysics(),
         child: Column(
           children: <Widget>[
             Image.network(
@@ -827,57 +824,56 @@ class MiddleAd extends StatelessWidget {
       );
     });
     return Container(
-      child: Row(
-        children: <Widget>[
-          InkWell(
-            child: Container(
-              width: MediaQuery.of(context).size.width / 3,
-              child: Image.network(saoma),
-            ),
-          ),
-          InkWell(
-            child: Container(
-              width: MediaQuery.of(context).size.width / 3,
-              child: Image.network(integralMallPic),
-            ),
-            onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                return ShopInfoPage();
-              }));
-            },
-          ),
-          InkWell(
-            child: Container(
-              width: MediaQuery.of(context).size.width / 3,
-              child: Image.network(newUser),
-            ),
-            onTap: () {
-//              _show();
-
-              //   Overlay.of(context).insert(ov);
-              showDialog<Null>(
-                  context: context,
-                  barrierDismissible: false,
-                  builder: (BuildContext context) {
-                    return AdaWidget(
-                      map: adaData,
-                      remove: (context) {
-                        Navigator.pop(context);
-                      },
-                    );
-                  });
-
-//              showBottomWidget(
-//                context,
-//                AdaWidget(
-//                  map: adaData,
-//                ),
-//              );
-            },
-          ),
-        ],
-      ),
+      child: SingleChildScrollView(
+          physics: new NeverScrollableScrollPhysics(),
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: <Widget>[
+              InkWell(
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                    return FujiPicPage();
+                  }));
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 3,
+                  child: Image.network(saoma),
+                ),
+              ),
+              InkWell(
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 3,
+                  child: Image.network(integralMallPic),
+                ),
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                    return ShopInfoPage();
+                  }));
+                },
+              ),
+              InkWell(
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 3,
+                  child: Image.network(newUser),
+                ),
+                onTap: () {
+                  showDialog<Null>(
+                      context: context,
+                      barrierDismissible: false,
+                      builder: (BuildContext context) {
+                        return AdaWidget(
+                          map: adaData,
+                          remove: (context) {
+                            Navigator.pop(context);
+                          },
+                        );
+                      });
+                },
+              ),
+            ],
+          )),
     );
   }
 
