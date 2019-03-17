@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_button/detail/datail_page_new.dart';
 import 'package:flutter_button/detail/detail_page.dart';
 import 'package:flutter_button/page/category_page.dart';
 import 'package:flutter_button/page/seracher.dart';
@@ -28,13 +29,11 @@ class _HomePageState extends State<HomePage>
 
   OverlayEntry ov;
 
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     _getAdaData();
-
   }
 
   //火爆商品接口
@@ -190,6 +189,8 @@ class _HomePageState extends State<HomePage>
                   map: newM,
                 );
               }));
+
+
             },
             child: Container(
               width: ScreenUtil().setWidth(372),
@@ -307,7 +308,6 @@ class _HomePageState extends State<HomePage>
                       integralMallPic: integralMallPic,
                       newUser: newUser,
                       adaData: adaData,
-
                     ),
                     RecommendUI(
                       recommendList: recommendList,
@@ -380,8 +380,16 @@ class SwiperDiy extends StatelessWidget {
       width: ScreenUtil().setWidth(750),
       child: Swiper(
         itemBuilder: (BuildContext context, int index) {
-          return Image.network("${swiperDataList[index]['image']}",
-              fit: BoxFit.fill);
+          return InkWell(
+            child: Image.network("${swiperDataList[index]['image']}",
+                fit: BoxFit.fill),
+            onTap: (){
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                return DetailPageNew(goodsId: swiperDataList[index]['goodsId'],);
+              }));
+            },
+          );
         },
         itemCount: swiperDataList.length,
         pagination: new SwiperPagination(),
@@ -555,7 +563,13 @@ class RecommendUI extends StatelessWidget {
 
   Widget _gridViewItemUI(BuildContext context, item) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        //todo
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (BuildContext ctx) {
+          return DetailPageNew(goodsId: item['goodsId'],);
+        }));
+      },
       child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -799,7 +813,17 @@ class MiddleAd extends StatelessWidget {
             ),
             onTap: () {
 //              _show();
+
+
               Overlay.of(context).insert(ov);
+
+
+//              showBottomWidget(
+//                context,
+//                AdaWidget(
+//                  map: adaData,
+//                ),
+//              );
             },
           ),
         ],
@@ -807,7 +831,7 @@ class MiddleAd extends StatelessWidget {
     );
   }
 
-  void _remove(context){
+  void _remove(context) {
     ov.remove();
   }
 

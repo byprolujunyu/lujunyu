@@ -204,14 +204,14 @@ class _CategoryPageState extends State<CategoryPage> {
       physics: new NeverScrollableScrollPhysics(),
       child: InkWell(
         onTap: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (BuildContext ctx) {
-            return DetailPage(map: goodsItem,);
-          }));
 //          Navigator.of(context)
 //              .push(MaterialPageRoute(builder: (BuildContext ctx) {
-//            return DetailPageNew(goodsId: goodsItem['goodsId'],);
+//            return DetailPage(map: goodsItem,goodId: goodsItem['goodsId'],);
 //          }));
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (BuildContext ctx) {
+            return DetailPageNew(goodsId: goodsItem['goodsId'],);
+          }));
         },
         child: Container(
           color: Colors.white,

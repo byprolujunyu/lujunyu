@@ -11,12 +11,13 @@ class AdaWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return new Material(
+      //theme: Theme.of(context, shadowThemeOnly: true),
       //创建透明层
       type: MaterialType.transparency,
       //透明类型
-        shadowColor:Colors.black12,
       child: new Center(
         //保证控件居中效果
+        child: Opacity(opacity:1,
         child: Container(
           child: SizedBox(
             width: ScreenUtil().setWidth(700),
@@ -41,7 +42,7 @@ class AdaWidget extends StatelessWidget {
               ],
             ),
           ),
-        ),
+        ),),
       ),
     );
   }
