@@ -15,4 +15,5 @@ class KString {
   static const String totalsumKey = "totalsumK";
   static const String imageKey = "imageKey";
   static const String countKey = "countKey";
+  static const String isKey = "isFirstKey";
 }

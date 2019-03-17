@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_button/constants/index.dart';
 import 'package:flutter_button/detail/datail_page_new.dart';
 import 'package:flutter_button/detail/detail_page.dart';
 import 'package:flutter_button/page/category_page.dart';
@@ -36,6 +37,8 @@ class _HomePageState extends State<HomePage>
     _getAdaData();
   }
 
+  bool init = true;
+
   //火爆商品接口
   void _getHotGoods() {
     var formPage = {'page': page};
@@ -48,6 +51,8 @@ class _HomePageState extends State<HomePage>
       });
 
     });
+
+
   }
 
   void _getAdaData() {
@@ -58,17 +63,6 @@ class _HomePageState extends State<HomePage>
       setState(() {
         adaData = fp3;
       });
-      showDialog<Null>(
-          context: context,
-          barrierDismissible: false,
-          builder: (BuildContext context) {
-            return AdaWidget(
-              map: adaData,
-              remove: (context) {
-                Navigator.pop(context);
-              },
-            );
-          });
     });
   }
 
@@ -293,8 +287,25 @@ class _HomePageState extends State<HomePage>
               if (navigatorList.length > 10) {
                 navigatorList.removeRange(10, navigatorList.length);
               }
+
+              saveSp(key: KString.isKey, str: '0');
               // 顶部轮播组件数
               //页面顶部轮播组件
+              if(getSp(key: KString.isKey) == '0') {
+                showDialog<Null>(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (BuildContext context) {
+                      return AdaWidget(
+                        map: adaData,
+                        remove: (context) {
+                          Navigator.pop(context);
+                        },
+                      );
+                    });
+              }
+
+              saveSp(key: KString.isKey,str:'1');
 
               return EasyRefresh(
                 child: ListView(
