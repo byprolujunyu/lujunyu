@@ -189,8 +189,6 @@ class _HomePageState extends State<HomePage>
                   map: newM,
                 );
               }));
-
-
             },
             child: Container(
               width: ScreenUtil().setWidth(372),
@@ -383,10 +381,12 @@ class SwiperDiy extends StatelessWidget {
           return InkWell(
             child: Image.network("${swiperDataList[index]['image']}",
                 fit: BoxFit.fill),
-            onTap: (){
+            onTap: () {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                return DetailPageNew(goodsId: swiperDataList[index]['goodsId'],);
+                return DetailPageNew(
+                  goodsId: swiperDataList[index]['goodsId'],
+                );
               }));
             },
           );
@@ -567,7 +567,9 @@ class RecommendUI extends StatelessWidget {
         //todo
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (BuildContext ctx) {
-          return DetailPageNew(goodsId: item['goodsId'],);
+          return DetailPageNew(
+            goodsId: item['goodsId'],
+          );
         }));
       },
       child: SingleChildScrollView(
@@ -669,8 +671,7 @@ class Floor extends StatelessWidget {
 //      );
 //    }));
 
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (BuildContext ctx) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext ctx) {
       return DetailPageNew(goodsId: goodsid);
     }));
   }
@@ -788,6 +789,7 @@ class MiddleAd extends StatelessWidget {
       return AdaWidget(
         remove: _remove,
         map: adaData,
+        appC: context,
       );
     });
     return Container(
@@ -819,9 +821,18 @@ class MiddleAd extends StatelessWidget {
             onTap: () {
 //              _show();
 
-
-              Overlay.of(context).insert(ov);
-
+              //   Overlay.of(context).insert(ov);
+              showDialog<Null>(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (BuildContext context) {
+                    return AdaWidget(
+                      map: adaData,
+                      remove: (context) {
+                        Navigator.pop(context);
+                      },
+                    );
+                  });
 
 //              showBottomWidget(
 //                context,
