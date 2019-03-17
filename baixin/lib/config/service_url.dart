@@ -9,4 +9,5 @@ const servicePath = {
   'searachGoods': serviceUrl+ "wxmini/searchGoods", //商品搜索接口
   'integralGoodsShops':serviceUrl+'wxmini/integralGoodsShops',//门店信息列表接口
   'shopInfoDetail':serviceUrl + "wxmini/integralGoods",//门店信息详情接口
+  'ada':serviceUrl+'wxmini/getHomePageTip',//广告页
 };

@@ -5,6 +5,7 @@ import 'package:flutter_button/page/category_page.dart';
 import 'package:flutter_button/page/seracher.dart';
 import 'package:flutter_button/shop/shop_info.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
+import 'package:flutter_button/widget/ada_widget.dart';
 import '../service/service_method.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -21,6 +22,17 @@ class _HomePageState extends State<HomePage>
   List<Map> hotGoodsList = [];
   TextEditingController _numController = TextEditingController();
 
+  Map adaData;
+
+  bool showAda = false;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _getAdaData();
+  }
+
   //火爆商品接口
   void _getHotGoods() {
     var formPage = {'page': page};
@@ -34,69 +46,83 @@ class _HomePageState extends State<HomePage>
     });
   }
 
+  void _getAdaData() {
+    request('ada').then((val) {
+      var data = json.decode(val.toString());
+      print(data);
+      Map fp3 = data['data'];
+      setState(() {
+        adaData = fp3;
+      });
+    });
+  }
+
   Widget searchBar() {
     try {
       return Container(
         color: Colors.white70,
-        child: SingleChildScrollView(scrollDirection:Axis.horizontal,child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Container(
-                    width: ScreenUtil().setWidth(50),
-                    height: ScreenUtil().setHeight(50),
-                    margin:
-                    EdgeInsets.only(top: 15.0, left: 15.0, bottom: 15.0),
-                    child: Image.asset('images/backgrey.png')),
-                Container(
-                  width:
-                      ScreenUtil().setWidth(550),
-                  child: TextField(
-                    controller: _numController,
-                    maxLines: 1,
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      filled: true,
-                      labelText: "请输入你要查询的商品",
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Container(
+                      width: ScreenUtil().setWidth(50),
+                      height: ScreenUtil().setHeight(50),
+                      margin:
+                          EdgeInsets.only(top: 15.0, left: 15.0, bottom: 15.0),
+                      child: Image.asset('images/backgrey.png')),
+                  Container(
+                    width: ScreenUtil().setWidth(550),
+                    child: TextField(
+                      controller: _numController,
+                      maxLines: 1,
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                        filled: true,
+                        labelText: "请输入你要查询的商品",
+                      ),
+                      autofocus: false,
                     ),
-                    autofocus: false,
+                  ),
+                ],
+              ),
+              InkWell(
+                child: Container(
+                  alignment: Alignment.center,
+                  margin: EdgeInsets.only(right: 15.0),
+                  width: ScreenUtil().setWidth(80),
+                  height: ScreenUtil().setHeight(50),
+                  child: Text(
+                    '搜索',
+                    style: TextStyle(color: Colors.pink),
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(3.0),
+                    border: Border.all(color: Colors.white, width: 1.0),
                   ),
                 ),
-              ],
-            ),
-            InkWell(
-              child: Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.only(right: 15.0),
-                width: ScreenUtil().setWidth(80),
-                height: ScreenUtil().setHeight(50),
-                child: Text(
-                  '搜索',
-                  style: TextStyle(color: Colors.pink),
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(3.0),
-                  border: Border.all(color: Colors.white, width: 1.0),
-                ),
+                onTap: () {
+                  var text = _numController.text;
+                  if (text == null || text.length == 0) {
+                    showShortToast('搜索为空', index: 1);
+                  } else {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                      return SearchP(
+                        text: text,
+                      );
+                    }));
+                  }
+                },
               ),
-              onTap: () {
-                var text = _numController.text;
-                if(text == null||text.length  == 0) {
-                  showShortToast('搜索为空',index: 1);
-                }else{
-
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                    return SearchP(text:text,);
-                  }));
-                }
-              },
-            ),
-          ],
-        ),),
+            ],
+          ),
+        ),
       );
     } catch (e) {
       print(e);
@@ -276,6 +302,7 @@ class _HomePageState extends State<HomePage>
                       saoma: saoma,
                       integralMallPic: integralMallPic,
                       newUser: newUser,
+                      adaData: adaData,
                     ),
                     RecommendUI(
                       recommendList: recommendList,
@@ -712,7 +739,17 @@ class MiddleAd extends StatelessWidget {
 
   final String newUser;
 
-  MiddleAd({Key key, this.saoma, this.integralMallPic, this.newUser})
+  final Function show;
+
+  final Map adaData;
+
+  MiddleAd(
+      {Key key,
+      this.saoma,
+      this.integralMallPic,
+      this.newUser,
+      this.show,
+      this.adaData})
       : super(key: key);
 
   @override
@@ -743,11 +780,24 @@ class MiddleAd extends StatelessWidget {
               width: MediaQuery.of(context).size.width / 3,
               child: Image.network(newUser),
             ),
+            onTap: () {
+//              _show();
+            },
           ),
         ],
       ),
     );
   }
+
+//  _show() {
+//    if (adaData != null) {
+//      return Center(
+//        child: AdaWidget(
+//          map: adaData,
+//        ),
+//      );
+//    }
+//  }
 }
 
 class HotGoods extends StatefulWidget {
