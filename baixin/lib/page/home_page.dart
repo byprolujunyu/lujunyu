@@ -560,8 +560,14 @@ class AdBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return InkWell(
       child: Image.network(adPicture),
+      onTap: (){
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (BuildContext ctx) {
+          return FujiPicPage();
+        }));
+      },
     );
   }
 }
