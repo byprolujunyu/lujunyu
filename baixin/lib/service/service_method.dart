@@ -10,8 +10,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
+Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
 Future getHomePageContent() async {
   try {
@@ -32,35 +32,52 @@ Future getHomePageContent() async {
   }
 }
 
+Future getAboutUsInfo() async {
+  try {
+    Response response;
+    Dio dio = new Dio();
+    dio.options.contentType =
+        ContentType.parse("application/x-www-form-urlencoded");
+    response = await dio.post(servicePath['aboutUs']);
+    if (response.statusCode == 200) {
+      return response.data;
+    } else {
+      throw Exception('后端接口出现异常，请检测代码和服务器情况.........');
+    }
+  } catch (e) {
+    return print('ERROR:======>${e}');
+  }
+}
+
 Future saveInSp(String leaderPhone) async {
   final SharedPreferences prefs = await _prefs;
   prefs.setString(KString.leaderPhoneKey, leaderPhone);
 }
 
-Future saveSp({@required String key,@required String str}) async {
+Future saveSp({@required String key, @required String str}) async {
   final SharedPreferences prefs = await _prefs;
   prefs.setString(key, str);
 }
 
 Future<String> getSp({@required String key}) async {
   final SharedPreferences prefs = await _prefs;
-  return  prefs.getString(key);
+  return prefs.getString(key);
 }
 
 Future<String> callLeaderPhone(BuildContext c) async {
   final SharedPreferences prefs = await _prefs;
   var string = prefs.getString(KString.leaderPhoneKey);
   String leaderP = 'tel:' + string;
-  alertDialog(c,'是否拨打店长电话',leaderP);
+  alertDialog(c, '是否拨打店长电话', leaderP);
 }
 
-Future getSearchPageContent(int page,String text) async{
+Future getSearchPageContent(int page, String text) async {
   try {
     Response response;
     Dio dio = new Dio();
     dio.options.contentType =
         ContentType.parse("application/x-www-form-urlencoded");
-    var formData = {"text":text,"page":page,"category":""};
+    var formData = {"text": text, "page": page, "category": ""};
     response = await dio.post(servicePath['searachGoods'], data: formData);
     if (response.statusCode == 200) {
       return response.data;
@@ -72,44 +89,18 @@ Future getSearchPageContent(int page,String text) async{
   }
 }
 
-Future request(url,{formData})async{
-  try{
-    print('开始获取数据...............');
-    Response response;
-    Dio dio = new Dio();
-    dio.options.contentType=ContentType.parse("application/x-www-form-urlencoded");
-    if(formData==null){
-      response = await dio.post(servicePath[url]);
-    }else{
-      response = await dio.post(servicePath[url],data:formData);
-    }
-    if(response.statusCode==200){
-      return response.data;
-    }else{
-      throw Exception('后端接口出现异常，请检测代码和服务器情况.........');
-    }
-  }catch(e){
-    return print('ERROR:======>${e}');
-  }
-}
-
-void _getCategory()async{
-  await request('getCategory').then((val){
-    var data = json.decode(val.toString());
-    CategoryBigListModel list = CategoryBigListModel.formJson(data['data']);
-    list.data.forEach((item)=>print(item.mallCategoryName));
-  });
-}
-
-Future shopGoodsDetailImg(@required String goodId) async {
+Future request(url, {formData}) async {
   try {
-
+    print('开始获取数据...............');
     Response response;
     Dio dio = new Dio();
     dio.options.contentType =
         ContentType.parse("application/x-www-form-urlencoded");
-    var formData = {'goodId':goodId};
-    response = await dio.post(servicePath['shopGoodsDetailImg'], data: formData);
+    if (formData == null) {
+      response = await dio.post(servicePath[url]);
+    } else {
+      response = await dio.post(servicePath[url], data: formData);
+    }
     if (response.statusCode == 200) {
       return response.data;
     } else {
@@ -120,12 +111,41 @@ Future shopGoodsDetailImg(@required String goodId) async {
   }
 }
 
+void _getCategory() async {
+  await request('getCategory').then((val) {
+    var data = json.decode(val.toString());
+    CategoryBigListModel list = CategoryBigListModel.formJson(data['data']);
+    list.data.forEach((item) => print(item.mallCategoryName));
+  });
+}
 
+Future shopGoodsDetailImg(@required String goodId) async {
+  try {
+    Response response;
+    Dio dio = new Dio();
+    dio.options.contentType =
+        ContentType.parse("application/x-www-form-urlencoded");
+    var formData = {'goodId': goodId};
+    response =
+        await dio.post(servicePath['shopGoodsDetailImg'], data: formData);
+    if (response.statusCode == 200) {
+      return response.data;
+    } else {
+      throw Exception('后端接口出现异常，请检测代码和服务器情况.........');
+    }
+  } catch (e) {
+    return print('ERROR:======>${e}');
+  }
+}
 
-void showShortToast(str,{index = 2}) {
+void showShortToast(str, {index = 2}) {
   Fluttertoast.showToast(
-      gravity:index == 1?ToastGravity.CENTER:index == 2?ToastGravity.BOTTOM:ToastGravity.TOP,
-      msg: "${str}", toastLength: Toast.LENGTH_SHORT, timeInSecForIos: 1);
+      gravity: index == 1
+          ? ToastGravity.CENTER
+          : index == 2 ? ToastGravity.BOTTOM : ToastGravity.TOP,
+      msg: "${str}",
+      toastLength: Toast.LENGTH_SHORT,
+      timeInSecForIos: 1);
 }
 
 void showLongToast(str) {

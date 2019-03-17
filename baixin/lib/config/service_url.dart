@@ -10,4 +10,5 @@ const servicePath = {
   'integralGoodsShops':serviceUrl+'wxmini/integralGoodsShops',//门店信息列表接口
   'shopInfoDetail':serviceUrl + "wxmini/integralGoods",//门店信息详情接口
   'ada':serviceUrl+'wxmini/getHomePageTip',//广告页
+  'aboutUs':serviceUrl+'wxmini/aboutUs',//关于商城
 };

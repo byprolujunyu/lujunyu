@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_button/address/address_ios_page.dart';
 import 'package:flutter_button/page/cart_test.dart';
+import 'package:flutter_button/shop/about_us.dart';
 import 'package:flutter_button/widget/my_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../service/service_method.dart';
@@ -287,6 +288,13 @@ class LoveUI extends StatelessWidget {
 
           if (names[index] == '客服电话') {
             await callLeaderPhone(context);
+          }
+
+          if (names[index] == '关于商城') {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (BuildContext ctx) {
+              return AboutPage();
+            }));
           }
         },
       ),
