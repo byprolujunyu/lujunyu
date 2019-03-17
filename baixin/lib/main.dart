@@ -1,7 +1,9 @@
 import 'package:amap_base/amap_base.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_button/constants/index.dart';
 import 'package:flutter_button/newsListItem2.dart';
+import 'package:flutter_button/service/service_method.dart';
 
 import 'package:flutter_button/widget/demo.dart';
 import 'package:flutter_button/widget/loading.dart';
@@ -13,6 +15,7 @@ void main() async {
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   await AMap.init('377b8601bba3d52ee19734f80c6829fa');
+  saveSp(key: KString.isKey, str: '0');
   runApp(MyApp());
 }
 

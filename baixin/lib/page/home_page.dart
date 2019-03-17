@@ -288,24 +288,30 @@ class _HomePageState extends State<HomePage>
                 navigatorList.removeRange(10, navigatorList.length);
               }
 
-              saveSp(key: KString.isKey, str: '0');
+              getSp(key: KString.isKey).then((value){
+                if(value=='0') {
+                  showDialog<Null>(
+                      context: context,
+                      barrierDismissible: false,
+                      builder: (BuildContext context) {
+                        return AdaWidget(
+                          map: adaData,
+                          remove: (context) {
+                            Navigator.pop(context);
+
+                            saveSp(key: KString.isKey,str:'1');
+                          },
+                        );
+                      });
+
+
+                }
+
+
+              });
               // 顶部轮播组件数
               //页面顶部轮播组件
-              if(getSp(key: KString.isKey) == '0') {
-                showDialog<Null>(
-                    context: context,
-                    barrierDismissible: false,
-                    builder: (BuildContext context) {
-                      return AdaWidget(
-                        map: adaData,
-                        remove: (context) {
-                          Navigator.pop(context);
-                        },
-                      );
-                    });
-              }
 
-              saveSp(key: KString.isKey,str:'1');
 
               return EasyRefresh(
                 child: ListView(
