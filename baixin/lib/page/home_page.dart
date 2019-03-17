@@ -668,6 +668,11 @@ class Floor extends StatelessWidget {
 //        goodsId: goodsid,
 //      );
 //    }));
+
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (BuildContext ctx) {
+      return DetailPageNew(goodsId: goodsid);
+    }));
   }
 
 //DetailPageNew
