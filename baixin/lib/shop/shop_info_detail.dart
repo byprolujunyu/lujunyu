@@ -275,7 +275,7 @@ class BottomGoodsListWidget extends StatelessWidget {
     try {
       return Container(
         height:
-            shopInfoDetail.data.goodsList.length * ScreenUtil().setHeight(220),
+            shopInfoDetail.data.goodsList.length * ScreenUtil().setHeight(350),
         child: GridView.count(
           crossAxisCount: 2,
           physics: new NeverScrollableScrollPhysics(),
