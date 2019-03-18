@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bilibili/page/demo.dart';
 import 'package:flutter_bilibili/page/index_page.dart';
+import 'package:flutter_bilibili/page/my_page.dart';
 
 void main() {
 
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: IndexPage(),
+      home: MyPage(),
       theme: ThemeData(primaryColor: Colors.pink),
     );
   }
