@@ -12,6 +12,7 @@ import 'package:flutter_button/page/cart_ios_page.dart';
 import 'package:flutter_button/pay/pay_page.dart';
 import 'package:flutter_button/tabbar.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
+import 'package:flutter_button/widget/detail_info.dart';
 import 'package:flutter_button/widget/my_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/services.dart';
@@ -52,6 +53,10 @@ class _DetailPageNewState extends State<DetailPageNew> {
                 child: Column(
                   children: <Widget>[
                     DetailPageInfo(detail: goodDetail),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 12, 0, 12),
+                      child: DetailADDWidget(),
+                    ),
                     getCashWidget(),
                   ],
                 ),

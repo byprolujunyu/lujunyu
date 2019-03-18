@@ -12,6 +12,7 @@ import 'package:flutter_button/constants/color.dart';
 import 'package:flutter_button/page/cart_page.dart';
 import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_button/pay/pay_page.dart';
+import 'package:flutter_button/widget/detail_info.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/services.dart';
 import '../service/service_method.dart';
@@ -125,6 +126,10 @@ class _DetailPageState extends State<DetailPage> {
                 ),
               ],
             ),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(0, 12, 0, 12),
+            child: DetailADDWidget(),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
