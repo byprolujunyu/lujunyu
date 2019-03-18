@@ -562,7 +562,7 @@ class AdBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       child: Image.network(adPicture),
-      onTap: (){
+      onTap: () {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (BuildContext ctx) {
           return FujiPicPage();
@@ -610,20 +610,28 @@ class RecommendUI extends StatelessWidget {
       },
       child: SingleChildScrollView(
         physics: new NeverScrollableScrollPhysics(),
-        child: Column(
-          children: <Widget>[
-            Image.network(
-              item['image'],
-              width: ScreenUtil().setWidth(180),
-              fit: BoxFit.fill,
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              Image.network(
+                item['image'],
+                width: ScreenUtil().setWidth(180),
+                fit: BoxFit.fill,
+              ),
+              Text(
+                '￥ ' + item['mallPrice'].toString() + '0',
+                style: TextStyle(fontSize: ScreenUtil().setSp(25)),
+              ),
+              Text('￥ ' + item['price'].toString() + '0',
+                  style: TextStyle(fontSize: ScreenUtil().setSp(18))),
+            ],
+          ),
+          decoration: BoxDecoration(
+            border: Border(
+              left: BorderSide(color: Colors.black12, width: 1),
+              right: BorderSide(color: Colors.black12, width: 1),
             ),
-            Text(
-              '￥ ' + item['mallPrice'].toString() + '0',
-              style: TextStyle(fontSize: ScreenUtil().setSp(25)),
-            ),
-            Text('￥ ' + item['price'].toString() + '0',
-                style: TextStyle(fontSize: ScreenUtil().setSp(18))),
-          ],
+          ),
         ),
       ),
     );
