@@ -21,6 +21,7 @@ class AboutPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('关于商城'),
+        elevation: 0.0,
       ),
       body: FutureBuilder(
           future: getAboutUsInfo(),
