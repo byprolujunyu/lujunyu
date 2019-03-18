@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_button/address/address_ios_page.dart';
+import 'package:flutter_button/fuji/youhui_pic.dart';
 import 'package:flutter_button/page/cart_test.dart';
 import 'package:flutter_button/shop/about_us.dart';
 import 'package:flutter_button/widget/my_widget.dart';
@@ -247,57 +248,59 @@ class LoveUI extends StatelessWidget {
   Widget _getListUi(BuildContext context, int index) {
     return Container(
       child: InkWell(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                Container(
-                  margin: EdgeInsets.all(10.0),
-                  width: ScreenUtil().setWidth(50),
-                  height: ScreenUtil().setHeight(50),
-                  child: Image.asset(
-                    icons[index],
-                    fit: BoxFit.fill,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.all(10.0),
+                    width: ScreenUtil().setWidth(50),
+                    height: ScreenUtil().setHeight(50),
+                    child: Image.asset(
+                      icons[index],
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 10.0, top: 10.0),
-                  child: Text(names[index]),
-                ),
-              ],
-            ),
-            Container(
-                width: ScreenUtil().setWidth(30),
-                height: ScreenUtil().setHeight(30),
-                margin: EdgeInsets.only(right: 10.0),
-                alignment: Alignment.center,
-                child: Image.asset(
-                  '$iconName',
-                  fit: BoxFit.fill,
-                )),
-          ],
-        ),
-        onTap: () async {
-          if (names[index] == '地址管理') {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (BuildContext ctx) {
-              return NewAddressPage();
-            }));
-          }
-
-          if (names[index] == '客服电话') {
-            await callLeaderPhone(context);
-          }
-
-          if (names[index] == '关于商城') {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (BuildContext ctx) {
-              return AboutPage();
-            }));
-          }
-        },
-      ),
+                  Container(
+                    margin: EdgeInsets.only(bottom: 10.0, top: 10.0),
+                    child: Text(names[index]),
+                  ),
+                ],
+              ),
+              Container(
+                  width: ScreenUtil().setWidth(30),
+                  height: ScreenUtil().setHeight(30),
+                  margin: EdgeInsets.only(right: 10.0),
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    '$iconName',
+                    fit: BoxFit.fill,
+                  )),
+            ],
+          ),
+          onTap: () async {
+            if (names[index] == '地址管理') {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                return NewAddressPage();
+              }));
+            } else if (names[index] == '客服电话') {
+              await callLeaderPhone(context);
+            } else if (names[index] == '关于商城') {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                return AboutPage();
+              }));
+            } else if (names[index] == '领取优惠券') {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                return FujiPicPage();
+              }));
+            }else if (names[index] == '已领取优惠券') {
+             
+            }
+          }),
     );
   }
 }
