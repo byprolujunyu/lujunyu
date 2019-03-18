@@ -54,7 +54,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
           _address = address;
           _nameController.text = name;
           _phoneController.text = phone;
-          _numController.text = num;
+          _numController.text = address;
         });
       }
     } catch (e) {
@@ -106,36 +106,36 @@ class _AddAddressPageState extends State<AddAddressPage> {
                         autofocus: false,
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 20, left: 20, right: 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            child: Text('$_address'),
-                            margin: EdgeInsets.only(left: 10.0, right: 10.0),
-                          ),
-                          Container(
-                            alignment: Alignment.center,
-                            child: InkWell(
-                              child: Text(
-                                '点击选择收货地址',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => AddressMap()));
-                              },
-                            ),
-                            height: ScreenUtil().setHeight(80),
-                            width: ScreenUtil().setWidth(300),
-                            color: Colors.pink,
-                          ),
-                        ],
-                      ),
-                    ),
+//                    Padding(
+//                      padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+//                      child: Row(
+//                        mainAxisAlignment: MainAxisAlignment.center,
+//                        children: <Widget>[
+//                          Container(
+//                            child: Text('$_address'),
+//                            margin: EdgeInsets.only(left: 10.0, right: 10.0),
+//                          ),
+//                          Container(
+//                            alignment: Alignment.center,
+//                            child: InkWell(
+//                              child: Text(
+//                                '点击选择收货地址',
+//                                style: TextStyle(
+//                                    color: Colors.white,
+//                                    fontWeight: FontWeight.bold),
+//                              ),
+//                              onTap: () {
+//                                Navigator.of(context).push(MaterialPageRoute(
+//                                    builder: (context) => AddressMap()));
+//                              },
+//                            ),
+//                            height: ScreenUtil().setHeight(80),
+//                            width: ScreenUtil().setWidth(300),
+//                            color: Colors.pink,
+//                          ),
+//                        ],
+//                      ),
+//                    ),
                     Padding(
                       padding: EdgeInsets.only(top: 20, left: 20, right: 20),
                       child: TextField(
@@ -146,7 +146,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
                           icon: Icon(Icons.add_location),
                           filled: true,
                           border: UnderlineInputBorder(),
-                          labelText: "请输入详细地址",
+                          labelText: "请输入地址",
                         ),
                         autofocus: false,
                       ),
@@ -200,8 +200,8 @@ class _AddAddressPageState extends State<AddAddressPage> {
                             _add(Address(
                               name: name,
                               phone: ohone,
-                              address: '上海市浦东新区',
-                              num: num,
+                              address: num,
+                              num: '',
                               isSelected: isSelected ? 1 : 0,
                             )).then((onvalue) {
                               Navigator.of(context).push(MaterialPageRoute(
@@ -214,9 +214,9 @@ class _AddAddressPageState extends State<AddAddressPage> {
                             _update(Address(
                               name: name,
                               phone: ohone,
-                              address: '上海市黄浦区',
+                              address: num,
                               id: widget.id,
-                              num: num,
+                              num: '',
                               isSelected: isSelected ? 1 : 0,
                             )).then((onValue) {
                               Navigator.of(context).push(MaterialPageRoute(
