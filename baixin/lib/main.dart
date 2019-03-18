@@ -2,7 +2,7 @@ import 'package:amap_base/amap_base.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_button/constants/index.dart';
-import 'package:flutter_button/newsListItem2.dart';
+
 import 'package:flutter_button/service/service_method.dart';
 
 import 'package:flutter_button/widget/demo.dart';

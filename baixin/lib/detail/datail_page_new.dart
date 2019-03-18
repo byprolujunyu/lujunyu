@@ -12,7 +12,7 @@ import 'package:flutter_button/page/command_bottom.dart';
 import 'package:flutter_button/page/detail_bottom.dart';
 
 import 'package:flutter_button/pay/pay_page.dart';
-import 'package:flutter_button/tabbar.dart';
+import 'package:flutter_button/widget/tabbar.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
 import 'package:flutter_button/widget/detail_info.dart';
 import 'package:flutter_button/widget/my_widget.dart';
