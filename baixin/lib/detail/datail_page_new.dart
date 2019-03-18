@@ -8,6 +8,8 @@ import 'package:flutter_button/detail/detail_page.dart';
 import 'package:flutter_button/model/cart_model.dart';
 import 'package:flutter_button/model/good_detail.dart';
 import 'package:flutter_button/page/cart_ios_page.dart';
+import 'package:flutter_button/page/command_bottom.dart';
+import 'package:flutter_button/page/detail_bottom.dart';
 
 import 'package:flutter_button/pay/pay_page.dart';
 import 'package:flutter_button/tabbar.dart';
@@ -31,6 +33,7 @@ class DetailPageNew extends StatefulWidget {
 class _DetailPageNewState extends State<DetailPageNew> {
   Map shopInfo;
   GoodDetail goodDetail;
+  Map map;
 
   @override
   Widget build(BuildContext context) {
@@ -39,28 +42,19 @@ class _DetailPageNewState extends State<DetailPageNew> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             var data = json.decode(snapshot.data.toString());
+            print(data);
+            map = data['data'];
 
             shopInfo = data['data']['goodInfo'];
 
             goodDetail = GoodDetail.fromMap(shopInfo);
-            print(goodDetail);
+
             return Scaffold(
               appBar: AppBar(
                 title: Text(shopInfo['goodsName']),
                 elevation: 0.0,
               ),
-              body: SingleChildScrollView(
-                child: Column(
-                  children: <Widget>[
-                    DetailPageInfo(detail: goodDetail),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(0, 12, 0, 12),
-                      child: DetailADDWidget(),
-                    ),
-                    getCashWidget(),
-                  ],
-                ),
-              ),
+              body: getMainWidget(),
             );
           } else {
             return Center(
@@ -70,55 +64,22 @@ class _DetailPageNewState extends State<DetailPageNew> {
         });
   }
 
-  Widget getCashWidget() {
-    return Container(
-      margin: EdgeInsets.only(top: ScreenUtil().setHeight(100)),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          InkWell(
-            onTap: () {
-              showBottomWidget(
-                context,
-                SelectCountWidget(detail: goodDetail),
-              );
-            },
-            child: Container(
-              width: ScreenUtil().setHeight(180),
-              height: ScreenUtil().setHeight(60),
-              color: Colors.green,
-              child: Center(
-                child: Text(
-                  '加入购物车',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
+  Widget getMainWidget() {
+    try {
+      return SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            DetailPageInfo(detail: goodDetail),
+            MiddleWidget(map),
+            CountWidget(
+              goodDetail: goodDetail,
             ),
-          ),
-          InkWell(
-            onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                return PayPage(
-                  map1:goodDetail,
-                );
-              }));
-            },
-            child: Container(
-              width: ScreenUtil().setHeight(180),
-              height: ScreenUtil().setHeight(60),
-              color: Colors.red,
-              child: Center(
-                child: Text(
-                  '立即购买',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-    );
+          ],
+        ),
+      );
+    } catch (e) {
+      print(e);
+    }
   }
 }
 
@@ -129,73 +90,73 @@ class DetailPageInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-                child: Center(
-              child: Image.network(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Container(
+            child: Center(
+          child: Image.network(
             detail.image,
-              ),
-            )),
-            Container(
-              margin: EdgeInsets.all(20),
-              child: Text(
-               detail.name,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: ScreenUtil().setSp(30)),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 1, left: 20),
-              child: Text(
-                "编号 ${detail.goodsSerialNumber}",
-                style: TextStyle(
-                    color: Colors.black26, fontSize: ScreenUtil().setSp(25)),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 8, left: 20),
-              child: Row(
-                children: <Widget>[
-                  Container(
-                    child: Text(
-                      '￥${detail.price}0',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: ScreenUtil().setSp(30)),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 10),
-                    child: Text('市场价:'),
-                  ),
-                  Container(
-                    child: Text(
-                      '￥${detail.shopPrice}0',
-                      style: TextStyle(
-                          color: Colors.black45,
-                          decoration: TextDecoration.lineThrough,
-                          fontSize: ScreenUtil().setSp(30)),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+          ),
+        )),
+        Container(
+          margin: EdgeInsets.all(20),
+          child: Text(
+            detail.name,
+            style: TextStyle(
+                fontWeight: FontWeight.bold, fontSize: ScreenUtil().setSp(30)),
+          ),
         ),
-      ),
+        Container(
+          margin: EdgeInsets.only(top: 1, left: 20),
+          child: Text(
+            "编号 ${detail.goodsSerialNumber}",
+            style: TextStyle(
+                color: Colors.black26, fontSize: ScreenUtil().setSp(25)),
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(top: 8, left: 20),
+          child: Row(
+            children: <Widget>[
+              Container(
+                child: Text(
+                  '￥${detail.price}0',
+                  style: TextStyle(
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold,
+                      fontSize: ScreenUtil().setSp(30)),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 10),
+                child: Text('市场价:'),
+              ),
+              Container(
+                child: Text(
+                  '￥${detail.shopPrice}0',
+                  style: TextStyle(
+                      color: Colors.black45,
+                      decoration: TextDecoration.lineThrough,
+                      fontSize: ScreenUtil().setSp(30)),
+                ),
+              ),
+            ],
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.fromLTRB(0, 12, 0, 12),
+          child: DetailADDWidget(),
+        ),
+      ],
     );
   }
 }
 
 class SelectCountWidget extends StatefulWidget {
   final GoodDetail detail;
+
   SelectCountWidget({Key key, @required this.detail}) : super(key: key);
 
   @override
@@ -216,8 +177,6 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
     return Container(
       child: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.all(20.0),
-          height: ScreenUtil().setHeight(150),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -338,5 +297,124 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
 
   _getAddbuttonColor() {
     return KColorConstant.cartItemCountTxtColor;
+  }
+}
+
+class CountWidget extends StatelessWidget {
+  final goodDetail;
+
+  CountWidget({this.goodDetail});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: ScreenUtil().setHeight(100)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          InkWell(
+            onTap: () {
+              showBottomWidget(
+                context,
+                SelectCountWidget(detail: goodDetail),
+              );
+            },
+            child: Container(
+              width: ScreenUtil().setHeight(180),
+              height: ScreenUtil().setHeight(60),
+              color: Colors.green,
+              child: Center(
+                child: Text(
+                  '加入购物车',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                return PayPage(
+                  map1: goodDetail,
+                );
+              }));
+            },
+            child: Container(
+              width: ScreenUtil().setHeight(180),
+              height: ScreenUtil().setHeight(60),
+              color: Colors.red,
+              child: Center(
+                child: Text(
+                  '立即购买',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class MiddleWidget extends StatelessWidget {
+  final Map map;
+
+  MiddleWidget(this.map);
+
+  List<Widget> _pagelist = [];
+  List<Widget> _tabs = [
+    Tab(
+      text: '正在热映',
+      icon: Icon(Icons.movie_filter),
+    ),
+    Tab(
+      text: '即将上映',
+      icon: Icon(Icons.movie_creation),
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    try {
+      return get();
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  Widget get() {
+    var m = map['goodInfo']['goodsDetail'];
+    print(m);
+    try {
+      return Container(
+        height: 400,
+        child: DefaultTabController(
+          length: 2,
+          initialIndex: 0,
+          child: Column(
+            children: <Widget>[
+              KTabBarWidget(),
+              Expanded(
+                child: TabBarView(
+                  children: <Widget>[
+                    DetailTabWidget(
+                      map: m,
+                    ),
+                    CommTabWidget(
+                      ms: map['goodComments'],
+                      map: map['advertesPicture'],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    } catch (e) {
+      print(e);
+    }
   }
 }

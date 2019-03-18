@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CommTabWidget extends StatefulWidget {
-  CommTabWidget({Key key}):super(key:key);
+  final Map map;
+  final List ms;
+
+  CommTabWidget({Key key, this.map, this.ms}) : super(key: key);
+
   @override
   _CommTabWidgetState createState() => _CommTabWidgetState();
 }
@@ -9,12 +13,57 @@ class CommTabWidget extends StatefulWidget {
 class _CommTabWidgetState extends State<CommTabWidget> {
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      height: 200,
-      width: MediaQuery.of(context).size.width,
-      child: Center(
-        child: Text('评论'),
+    return SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          Container(
+            child: getCommendsList(),
+            margin: EdgeInsets.all(5.0),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Image.network(widget.map['PICTURE_ADDRESS']),
+          ),
+        ],
       ),
+    );
+  }
+
+  Widget getCommendsList() {
+    if (widget.ms != null) {
+      return Container(
+        height: widget.ms.length * MediaQuery.of(context).size.height / 10,
+        child: ListView.builder(
+          itemBuilder: (context, index) {
+            return getUi(context, widget.ms[index]);
+          },
+       itemCount: widget.ms.length, ),
+      );
+    }
+  }
+
+//comments
+  //userName
+  //discussTime
+  Widget getUi(BuildContext context, m) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Container(
+          margin: EdgeInsets.all(5.0),
+          child: Text('${m['userName']}'),
+        ),
+        Container(
+          margin: EdgeInsets.all(5.0),
+          child: Text('${m['comments']}'),
+        ),
+        Container(
+          margin: EdgeInsets.all(5.0),
+          child: Text('${m['discussTime']}'),
+        ),
+      ],
     );
   }
 }

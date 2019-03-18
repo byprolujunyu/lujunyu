@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_button/widget/web_view.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 class DetailTabWidget extends StatefulWidget {
-  final String uri;
+  final String map;
 
-  DetailTabWidget({Key key, this.uri}) : super(key: key);
+  DetailTabWidget({Key key, this.map}) : super(key: key);
 
   @override
   _DetailTabWidgetState createState() => _DetailTabWidgetState();
@@ -12,12 +13,22 @@ class DetailTabWidget extends StatefulWidget {
 
 class _DetailTabWidgetState extends State<DetailTabWidget> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        child: NewsWebPage(news_url: widget.uri,),
-      ),
-    );
+    try {
+      return SingleChildScrollView(
+          child: Container(
+            child: Html(
+              data: widget.map,
+            ),
+          ));
+    }catch(e){
+      print(e);
+    }
   }
 }
