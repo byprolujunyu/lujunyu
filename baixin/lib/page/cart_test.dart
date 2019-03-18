@@ -181,7 +181,7 @@ class CartListWidget extends StatelessWidget {
   static const delete = const MethodChannel("cart/delete");
   static const queryResult = const MethodChannel("cart/queryResult");
 
-  show(id) {
+  show(id,item) {
     showDialog<Null>(
       context: context,
       barrierDismissible: false,
@@ -192,7 +192,7 @@ class CartListWidget extends StatelessWidget {
             new FlatButton(
               child: new Text('确定'),
               onPressed: () {
-                _delete(id);
+                _delete(id,item);
 
               },
             ),
@@ -210,11 +210,19 @@ class CartListWidget extends StatelessWidget {
 
   var db = new DataBaseHelper();
 
-  Future _delete(id) async {
+  Future _delete(id,item) async {
     //await delete.invokeMethod("delete", id);
-    await db.deleteUser(id);
-    refresh();
-    Navigator.pop(context);
+    await db.deleteUser(id).then((onvalue){
+      Scaffold.of(context).showSnackBar(SnackBar(
+        content: Text("${item.productName}   成功移除"),
+        backgroundColor: KColorConstant.themeColor,
+        duration: Duration(seconds: 1),
+      ));
+
+      refresh();
+      Navigator.pop(context);
+    });
+
   }
 
   @override
@@ -234,12 +242,8 @@ class CartListWidget extends StatelessWidget {
                 key: Key(item.productName),
                 onDismissed: (direction) {
                   model.removeItem(index);
-                  show(item.id);
-                  Scaffold.of(context).showSnackBar(SnackBar(
-                    content: Text("${item.productName}   成功移除"),
-                    backgroundColor: KColorConstant.themeColor,
-                    duration: Duration(seconds: 1),
-                  ));
+                  show(item.id,item);
+
                 },
                 background: Container(color: KColorConstant.themeColor),
                 child: CartItemWidget(model.items[index],
