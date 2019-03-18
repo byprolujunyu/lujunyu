@@ -90,6 +90,12 @@ class DataBaseHelper {
         .delete(tableUser, where: "$columnID = ?", whereArgs: [id]);
   }
 
+  Future<int> deleteAll() async {
+    var dbClient = await db;
+    return await dbClient
+        .delete(tableUser);
+  }
+
   Future<int> updateUser(User user) async {
     var dbClient = await db;
     return await dbClient.update(tableUser, user.toMap(),

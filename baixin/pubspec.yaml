@@ -83,6 +83,7 @@ flutter:
        - images/ic_show.png
        - images/seekbar_bg.9.png
        - images/dark_dot.png
+       - images/delete.png
        - images/cctv_6.png
        - images/favorite_selected.png
        - images/volume_normal.png

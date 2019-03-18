@@ -298,7 +298,7 @@ class LoveUI extends StatelessWidget {
                 return FujiPicPage();
               }));
             }else if (names[index] == '已领取优惠券') {
-             
+
             }
           }),
     );

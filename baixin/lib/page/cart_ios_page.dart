@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_button/db/db_helper.dart';
 import 'package:flutter_button/page/cart_test.dart';
@@ -6,7 +5,6 @@ import 'package:flutter_button/model/cart_new.dart';
 import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_button/utils/screen_util.dart';
 import 'package:scoped_model/scoped_model.dart';
-
 
 class CartIosPage extends StatefulWidget {
   @override
@@ -35,7 +33,7 @@ class _CartIosPageState extends State<CartIosPage> {
       setState(() {
         dmoldel = model;
       });
-    }catch (e) {
+    } catch (e) {
       return print('ERROR:======>${e}');
     }
   }
@@ -44,10 +42,7 @@ class _CartIosPageState extends State<CartIosPage> {
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-
-
   }
-
 
   CartListModelNew fromJson(List<Map> list) {
     List<CartItemModelNew> items = [];
@@ -72,33 +67,70 @@ class _CartIosPageState extends State<CartIosPage> {
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text('购物车'),
-        elevation: 0.0,
-      ),
-      body: WillPopScope(child: dmoldel == null
-          ? Container()
-          : dmoldel.itemsCount == 0
-          ? EmptyWidget()
-          : ScopedModel<CartListModelNew>(
-          model: dmoldel,
-          child: Column(
-            children: <Widget>[
-              CartListWidget(
-                refresh: _query,
-                context: context,
-              ),
-              CartBottomWidget(dmoldel),
-            ],
-          ),), onWillPop: (){
-        Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => IndexPage()),
-                (route) => route == null);
-      })
-
-    );
+        appBar: AppBar(
+          title: Text('购物车'),
+          elevation: 0.0,
+          actions: <Widget>[
+            Container(
+              child: IconButton(
+                  icon: Image.asset('images/delete.png'), onPressed: () {
+                    _deleteAll();
+              }),
+              width: ScreenUtil().setWidth(100),
+              height: ScreenUtil().setHeight(100),
+            )
+          ],
+        ),
+        body: WillPopScope(
+            child: dmoldel == null
+                ? Container()
+                : dmoldel.itemsCount == 0
+                    ? EmptyWidget()
+                    : ScopedModel<CartListModelNew>(
+                        model: dmoldel,
+                        child: Column(
+                          children: <Widget>[
+                            CartListWidget(
+                              refresh: _query,
+                              context: context,
+                            ),
+                            CartBottomWidget(dmoldel),
+                          ],
+                        ),
+                      ),
+            onWillPop: () {
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => IndexPage()),
+                  (route) => route == null);
+            }));
   }
 
+  Future _deleteAll() async {
+    showDialog<Null>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return new AlertDialog(
+          title: new Text('是否清空购物车'),
+          actions: <Widget>[
+            new FlatButton(
+              child: new Text('确定'),
+              onPressed: () async {
+                await db.deleteAll();
+                _query();
+                Navigator.pop(context);
+              },
+            ),
+            new FlatButton(
+              child: new Text('取消'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        );
+      },
+    ).then((val) {});
+
+  }
 }
-
-
