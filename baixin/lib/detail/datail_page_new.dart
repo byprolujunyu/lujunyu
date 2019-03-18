@@ -178,10 +178,11 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
       child: SingleChildScrollView(
         child: Container(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Container(
-                margin: EdgeInsets.all(1.0),
+                margin: EdgeInsets.all(5.0),
                 child: Text(
                   '购买数量',
                 ),
