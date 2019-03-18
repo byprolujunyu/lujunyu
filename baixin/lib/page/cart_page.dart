@@ -6,7 +6,6 @@ import 'package:flutter_button/constants/index.dart';
 import 'package:flutter_button/model/cart_new.dart';
 import 'package:flutter_button/model/cart_new.dart';
 import '../service/service_method.dart';
-import 'package:flutter_button/data/cart.dart';
 import 'package:flutter_button/model/count.dart';
 import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_button/utils/screen_util.dart';
