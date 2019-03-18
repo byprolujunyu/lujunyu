@@ -4,8 +4,9 @@ import 'package:flutter_html/flutter_html.dart';
 
 class DetailTabWidget extends StatefulWidget {
   final String map;
+  final Map m;
 
-  DetailTabWidget({Key key, this.map}) : super(key: key);
+  DetailTabWidget({Key key, this.map, this.m}) : super(key: key);
 
   @override
   _DetailTabWidgetState createState() => _DetailTabWidgetState();
@@ -23,11 +24,21 @@ class _DetailTabWidgetState extends State<DetailTabWidget> {
     try {
       return SingleChildScrollView(
           child: Container(
-            child: Html(
+        child: Column(
+          children: <Widget>[
+            Html(
               data: widget.map,
             ),
-          ));
-    }catch(e){
+
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: Image.network(widget.m['PICTURE_ADDRESS']),
+            ),
+          ],
+        ),
+      ));
+    } catch (e) {
       print(e);
     }
   }

@@ -33,13 +33,15 @@ class _CommTabWidgetState extends State<CommTabWidget> {
   Widget getCommendsList() {
     if (widget.ms != null) {
       return Container(
-        height: widget.ms.length * MediaQuery.of(context).size.height / 10,
+        height: widget.ms.length * MediaQuery.of(context).size.height / 7,
         child: ListView.builder(
           itemBuilder: (context, index) {
             return getUi(context, widget.ms[index]);
           },
        itemCount: widget.ms.length, ),
       );
+    }else if(widget.ms == null||widget.ms.length==0){
+      return Text('暂时还没有评论噢!');
     }
   }
 

@@ -401,6 +401,7 @@ class MiddleWidget extends StatelessWidget {
                   children: <Widget>[
                     DetailTabWidget(
                       map: m,
+                      m: map['advertesPicture'],
                     ),
                     CommTabWidget(
                       ms: map['goodComments'],
