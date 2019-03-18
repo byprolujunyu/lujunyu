@@ -144,7 +144,7 @@ class _ShopInfoPageState extends State<ShopInfoPage> {
                       ),
                       Container(
                         margin: EdgeInsets.all(5.0),
-                        child: Text('700KM'),
+                        child: Text('${map['distance'].toString()}'),
                       ),
                     ],
                   ),

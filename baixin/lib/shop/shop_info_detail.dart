@@ -166,6 +166,13 @@ class MiddleOperation extends StatelessWidget {
                 ],
               ),
             ),
+//            Container(
+//              height: ScreenUtil().setHeight(300),
+//              margin: EdgeInsets.fromLTRB(30, 0, 0, 40),
+//              decoration: BoxDecoration(
+//                border: Border(right: BorderSide(color: Colors.black45,width: 3)),
+//              ),
+//            ),
             Container(
               margin: EdgeInsets.all(5.0),
               child: Row(
@@ -286,51 +293,54 @@ class BottomGoodsListWidget extends StatelessWidget {
 
   Widget _getUi(BuildContext context, ShopDetail_GoodsList detail) {
     return SingleChildScrollView(
-      //    physics: new NeverScrollableScrollPhysics(),
-      child: Column(
-        children: <Widget>[
-          Container(
-            height: ScreenUtil().setHeight(200),
-            child: Image.network(
-              detail.pICTURECOMPERSSPATH,
-              fit: BoxFit.fill,
+         physics: new NeverScrollableScrollPhysics(),
+      child: Container(
+        height: ScreenUtil().setHeight(500),
+        child: Column(
+          children: <Widget>[
+            Container(
+              height: ScreenUtil().setHeight(180),
+              child: Image.network(
+                detail.pICTURECOMPERSSPATH,
+                fit: BoxFit.fill,
+              ),
             ),
-          ),
-          Container(
-            child: Text(detail.nAME),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.all(3.0),
-                    height: ScreenUtil().setHeight(50),
-                    width: ScreenUtil().setWidth(50),
-                    child: Image.asset(
-                      'images/jifen.png',
-                      fit: BoxFit.fill,
+            Container(
+              child: Text(detail.nAME),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.all(3.0),
+                      height: ScreenUtil().setHeight(50),
+                      width: ScreenUtil().setWidth(50),
+                      child: Image.asset(
+                        'images/jifen.png',
+                        fit: BoxFit.fill,
+                      ),
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(3.0),
-                    child: Text('${detail.nEEDINTEGRAL}积分'),
-                  )
-                ],
-              ),
-              Container(
-                margin: EdgeInsets.all(3.0),
-                height: ScreenUtil().setHeight(50),
-                width: ScreenUtil().setWidth(50),
-                child: Image.asset(
-                  'images/squareadd.png',
-                  fit: BoxFit.fill,
+                    Container(
+                      margin: EdgeInsets.all(3.0),
+                      child: Text('${detail.nEEDINTEGRAL}积分'),
+                    )
+                  ],
                 ),
-              ),
-            ],
-          ),
-        ],
+                Container(
+                  margin: EdgeInsets.all(3.0),
+                  height: ScreenUtil().setHeight(50),
+                  width: ScreenUtil().setWidth(50),
+                  child: Image.asset(
+                    'images/add.png',
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
