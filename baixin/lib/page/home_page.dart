@@ -5,6 +5,7 @@ import 'package:flutter_button/detail/datail_page_new.dart';
 import 'package:flutter_button/detail/detail_page.dart';
 import 'package:flutter_button/fuji/youhui_pic.dart';
 import 'package:flutter_button/page/category_page.dart';
+import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_button/page/seracher.dart';
 import 'package:flutter_button/shop/shop_info.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
@@ -470,84 +471,94 @@ class TopNavigator extends StatelessWidget {
   void jump(str, BuildContext context) {
     switch (str) {
       case "白酒":
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (BuildContext ctx) {
-          return CategoryPage(
-            item: 0,
-          );
-        }));
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+                builder: (context) => IndexPage(
+                      item: 0,
+                      index: 1,
+                    )),
+            (route) => route == null);
         break;
       case "啤酒":
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (BuildContext ctx) {
-          return CategoryPage(
-            item: 1,
-          );
-        }));
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+                builder: (context) => IndexPage(
+                  item: 1,
+                  index: 1,
+                )),
+                (route) => route == null);
         break;
       case "葡萄酒":
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (BuildContext ctx) {
-          return CategoryPage(
-            item: 2,
-          );
-        }));
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+                builder: (context) => IndexPage(
+                  item: 2,
+                  index: 1,
+                )),
+                (route) => route == null);
         break;
       case "清酒洋酒":
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (BuildContext ctx) {
-          return CategoryPage(
-            item: 3,
-          );
-        }));
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+                builder: (context) => IndexPage(
+                  item: 3,
+                  index: 1,
+                )),
+                (route) => route == null);
         break;
       case "保健酒":
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (BuildContext ctx) {
-          return CategoryPage(
-            item: 4,
-          );
-        }));
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+                builder: (context) => IndexPage(
+                  item: 4,
+                  index: 1,
+                )),
+                (route) => route == null);
         break;
       case "预调酒":
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (BuildContext ctx) {
-          return CategoryPage(
-            item: 5,
-          );
-        }));
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+                builder: (context) => IndexPage(
+                  item: 5,
+                  index: 1,
+                )),
+                (route) => route == null);
         break;
       case "下酒小菜":
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (BuildContext ctx) {
-          return CategoryPage(
-            item: 6,
-          );
-        }));
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+                builder: (context) => IndexPage(
+                  item: 6,
+                  index: 1,
+                )),
+                (route) => route == null);
         break;
       case "饮料":
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (BuildContext ctx) {
-          return CategoryPage(
-            item: 7,
-          );
-        }));
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+                builder: (context) => IndexPage(
+                  item: 7,
+                  index: 1,
+                )),
+                (route) => route == null);
         break;
       case "乳制品":
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (BuildContext ctx) {
-          return CategoryPage(
-            item: 8,
-          );
-        }));
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+                builder: (context) => IndexPage(
+                  item: 8,
+                  index: 1,
+                )),
+                (route) => route == null);
         break;
       case "休闲零食":
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (BuildContext ctx) {
-          return CategoryPage(
-            item: 9,
-          );
-        }));
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(
+                builder: (context) => IndexPage(
+                  item:9,
+                  index: 1,
+                )),
+                (route) => route == null);
         break;
     }
   }

@@ -13,20 +13,35 @@ class IndexPage extends StatefulWidget {
   _IndexPageState createState() => _IndexPageState();
 
   int index = 0;
+  int item = 0;
 
-  IndexPage({Key key,this.index}):super(key:key);
+  IndexPage({Key key, this.index=0, this.item=0}) : super(key: key);
 }
 
 class _IndexPageState extends State<IndexPage> {
-  final List tabBodies = [HomePage(), CategoryPage(), CartIosPage(), MemberPage()];
+  List tabBodies = [];
 
   int currentIndex = 0;
   var currentPage;
 
   @override
   void initState() {
-    widget.index = currentIndex;
-    currentPage = tabBodies[currentIndex];
+    try {
+      currentIndex = widget.index;
+      var item = widget.item;
+
+      tabBodies = [
+        HomePage(),
+        CategoryPage(
+          item: item,
+        ),
+        CartIosPage(),
+        MemberPage()
+      ];
+      currentPage = tabBodies[currentIndex];
+    } catch (e) {
+      print(e);
+    }
     super.initState();
   }
 
@@ -42,22 +57,24 @@ class _IndexPageState extends State<IndexPage> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(child: Scaffold(
-      backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: currentIndex,
-        items: bottomTabs,
-        onTap: (index) {
-          setState(() {
-            currentIndex = index;
-            currentPage = tabBodies[currentIndex];
-          });
-        },
-      ),
-      body: currentPage,
-    ), onWillPop: (){
-      print("pop");
-    });
+    return WillPopScope(
+        child: Scaffold(
+          backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
+          bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            currentIndex: currentIndex,
+            items: bottomTabs,
+            onTap: (index) {
+              setState(() {
+                currentIndex = index;
+                currentPage = tabBodies[currentIndex];
+              });
+            },
+          ),
+          body: currentPage,
+        ),
+        onWillPop: () {
+          print("pop");
+        });
   }
 }

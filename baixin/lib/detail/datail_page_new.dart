@@ -10,6 +10,7 @@ import 'package:flutter_button/model/good_detail.dart';
 import 'package:flutter_button/page/cart_ios_page.dart';
 import 'package:flutter_button/page/command_bottom.dart';
 import 'package:flutter_button/page/detail_bottom.dart';
+import 'package:flutter_button/page/index_main.dart';
 
 import 'package:flutter_button/pay/pay_page.dart';
 import 'package:flutter_button/widget/tabbar.dart';
@@ -242,13 +243,13 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
                               image: widget.detail.image,
                               count: count,
                               price: widget.detail.price));
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (BuildContext ctx) {
-                                return CartIosPage();
-                              },
-                            ),
-                          );
+                          Navigator.of(context).pushAndRemoveUntil(
+                              MaterialPageRoute(
+                                  builder: (context) => IndexPage(
+                                    item:0,
+                                    index: 2,
+                                  )),
+                                  (route) => route == null);
                         },
                         child: Text(
                           '确认加入购物车',
