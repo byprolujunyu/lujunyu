@@ -11,6 +11,7 @@ import 'package:flutter_button/pay/multi_pay.dart';
 import 'package:flutter_button/utils/screen_util.dart';
 import 'package:scoped_model/scoped_model.dart';
 import '../service/service_method.dart';
+
 class CartTest extends StatefulWidget {
   @override
   _CartTestState createState() => _CartTestState();
@@ -70,7 +71,7 @@ class _CartTestState extends State<CartTest> {
       setState(() {
         dmoldel = model;
       });
-    }catch (e) {
+    } catch (e) {
       return print('ERROR:======>${e}');
     }
   }
@@ -113,13 +114,15 @@ class EmptyWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
-              width: ScreenUtil().setWidth(100), margin: EdgeInsets.all(10.0),
+              width: ScreenUtil().setWidth(100),
+              margin: EdgeInsets.all(10.0),
               height: ScreenUtil().setHeight(100),
               child: Image.network(
                 'http://116.62.168.251:8090/empty_cart.png',
               ),
             ),
-            Container( margin: EdgeInsets.all(10.0),
+            Container(
+              margin: EdgeInsets.all(10.0),
               child: Text(
                 '购物车还是空的,快去挑选商品吧',
               ),
@@ -140,7 +143,7 @@ class EmptyWidget extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).pushAndRemoveUntil(
                       MaterialPageRoute(builder: (context) => IndexPage()),
-                          (route) => route == null);
+                      (route) => route == null);
                 },
               ),
             ),
@@ -181,7 +184,7 @@ class CartListWidget extends StatelessWidget {
   static const delete = const MethodChannel("cart/delete");
   static const queryResult = const MethodChannel("cart/queryResult");
 
-  show(id,item) {
+  show(id, item) {
     showDialog<Null>(
       context: context,
       barrierDismissible: false,
@@ -192,8 +195,7 @@ class CartListWidget extends StatelessWidget {
             new FlatButton(
               child: new Text('确定'),
               onPressed: () {
-                _delete(id,item);
-
+                _delete(id, item);
               },
             ),
             new FlatButton(
@@ -211,19 +213,22 @@ class CartListWidget extends StatelessWidget {
 
   var db = new DataBaseHelper();
 
-  Future _delete(id,item) async {
+  Future _delete(id, item) async {
     //await delete.invokeMethod("delete", id);
-    await db.deleteUser(id).then((onvalue){
-      Scaffold.of(context).showSnackBar(SnackBar(
-        content: Text("${item.productName}   成功移除"),
-        backgroundColor: KColorConstant.themeColor,
-        duration: Duration(seconds: 1),
-      ));
+    await db.deleteUser(id).then(
+      (onvalue) {
+        Scaffold.of(context).showSnackBar(
+          SnackBar(
+            content: Text("${item.productName}   成功移除"),
+            backgroundColor: KColorConstant.themeColor,
+            duration: Duration(seconds: 1),
+          ),
 
-      refresh();
-      Navigator.pop(context);
-    });
-
+        );
+        refresh();
+        Navigator.pop(context);
+      },
+    );
   }
 
   @override
@@ -243,8 +248,7 @@ class CartListWidget extends StatelessWidget {
                 key: Key(item.productName),
                 onDismissed: (direction) {
                   model.removeItem(index);
-                  show(item.id,item);
-
+                  show(item.id, item);
                 },
                 background: Container(color: KColorConstant.themeColor),
                 child: CartItemWidget(model.items[index],
