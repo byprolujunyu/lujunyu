@@ -200,6 +200,7 @@ class CartListWidget extends StatelessWidget {
               child: new Text('取消'),
               onPressed: () {
                 Navigator.pop(context);
+                refresh();
               },
             ),
           ],
