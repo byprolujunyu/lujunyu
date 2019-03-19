@@ -83,13 +83,13 @@ class UserInfoDrawer extends StatelessWidget {
     return Container(
       height: ScreenUtil().setHeight(350),
       child: UserAccountsDrawerHeader(
-        accountName: Text('计亚茹'),
-        accountEmail: Text('prettyruru@outlook.com'),
+        accountName: Text('技术胖'),
+        accountEmail: Text('https://jspang.com/'),
         currentAccountPicture: Container(
           child: InkWell(
             child: CircleAvatar(
               backgroundImage: NetworkImage(
-                  "http://oss-toplu1015.oss-cn-hangzhou.aliyuncs.com/flutter/1549681968817.jpg"),
+                  "https://jspang.com/static/myimg/blogtouxiang.jpg"),
             ),
             onTap: () {},
           ),
