@@ -85,6 +85,7 @@ flutter:
        - images/dark_dot.png
        - images/delete.png
        - images/add.png
+       - images/shanchuremove.png
        - images/cctv_6.png
        - images/favorite_selected.png
        - images/volume_normal.png

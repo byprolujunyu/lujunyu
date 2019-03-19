@@ -246,6 +246,7 @@ class CartListWidget extends StatelessWidget {
                   addCount: _addCount,
                   downCount: _downCount,
                   index: index,
+                  refresh: refresh,
                   switchChaned: _switchChanged);
             },
           ),
@@ -273,9 +274,64 @@ class CartItemWidget extends StatelessWidget {
   final Function(int i) switchChaned;
   final Function(int i) addCount;
   final Function(int i) downCount;
+  final BuildContext context;
+  final Function refresh;
 
   CartItemWidget(this.data,
-      {this.switchChaned, this.index, this.addCount, this.downCount});
+      {this.switchChaned,
+      this.index,
+      this.addCount,
+      this.downCount,
+      this.context,
+      this.refresh});
+
+  show(id, item, context) {
+    try {
+      showDialog<Null>(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return new AlertDialog(
+            title: new Text("是否删除该商品"),
+            actions: <Widget>[
+              new FlatButton(
+                child: new Text('确定'),
+                onPressed: () {
+                  _delete(id, item, context);
+                },
+              ),
+              new FlatButton(
+                child: new Text('取消'),
+                onPressed: () {
+                  Navigator.pop(context);
+                  refresh;
+                },
+              ),
+            ],
+          );
+        },
+      ).then((val) {});
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  var db = new DataBaseHelper();
+
+  Future _delete(id, item, context) async {
+    //await delete.invokeMethod("delete", id);
+    try {
+      await db.deleteUser(id).then(
+        (onvalue) {
+          showShortToast('${item} 已删除', index: 1);
+          refresh();
+          Navigator.pop(context);
+        },
+      );
+    } catch (e) {
+      print(e);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -312,9 +368,29 @@ class CartItemWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Container(
-                  margin: EdgeInsets.only(top: 15.0),
-                  child: Text(data.productName),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Container(
+                      width: ScreenUtil().setWidth(300),
+                      margin: EdgeInsets.only(top: 15.0),
+                      child: Text(data.productName),
+                    ),
+                    GestureDetector(
+                      child: Container(
+                        margin: EdgeInsets.only(top: 10.0, right: 25.0),
+                        width: ScreenUtil().setWidth(50),
+                        height: ScreenUtil().setWidth(50),
+                        child: Image.asset(
+                          'images/shanchuremove.png',
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      onTap: () {
+                        show(data.id, data.productName, context);
+                      },
+                    ),
+                  ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
