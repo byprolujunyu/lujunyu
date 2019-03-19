@@ -223,7 +223,6 @@ class CartListWidget extends StatelessWidget {
             backgroundColor: KColorConstant.themeColor,
             duration: Duration(seconds: 1),
           ),
-
         );
         refresh();
         Navigator.pop(context);
@@ -243,20 +242,11 @@ class CartListWidget extends StatelessWidget {
             itemExtent: 93,
             itemBuilder: (BuildContext context, int index) {
               CartItemModelNew item = model.items[index];
-              return Dismissible(
-                resizeDuration: Duration(milliseconds: 100),
-                key: Key(item.productName),
-                onDismissed: (direction) {
-                  model.removeItem(index);
-                  show(item.id, item);
-                },
-                background: Container(color: KColorConstant.themeColor),
-                child: CartItemWidget(model.items[index],
-                    addCount: _addCount,
-                    downCount: _downCount,
-                    index: index,
-                    switchChaned: _switchChanged),
-              );
+              return CartItemWidget(model.items[index],
+                  addCount: _addCount,
+                  downCount: _downCount,
+                  index: index,
+                  switchChaned: _switchChanged);
             },
           ),
         );
