@@ -483,82 +483,82 @@ class TopNavigator extends StatelessWidget {
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
                 builder: (context) => IndexPage(
-                  item: 1,
-                  index: 1,
-                )),
-                (route) => route == null);
+                      item: 1,
+                      index: 1,
+                    )),
+            (route) => route == null);
         break;
       case "葡萄酒":
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
                 builder: (context) => IndexPage(
-                  item: 2,
-                  index: 1,
-                )),
-                (route) => route == null);
+                      item: 2,
+                      index: 1,
+                    )),
+            (route) => route == null);
         break;
       case "清酒洋酒":
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
                 builder: (context) => IndexPage(
-                  item: 3,
-                  index: 1,
-                )),
-                (route) => route == null);
+                      item: 3,
+                      index: 1,
+                    )),
+            (route) => route == null);
         break;
       case "保健酒":
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
                 builder: (context) => IndexPage(
-                  item: 4,
-                  index: 1,
-                )),
-                (route) => route == null);
+                      item: 4,
+                      index: 1,
+                    )),
+            (route) => route == null);
         break;
       case "预调酒":
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
                 builder: (context) => IndexPage(
-                  item: 5,
-                  index: 1,
-                )),
-                (route) => route == null);
+                      item: 5,
+                      index: 1,
+                    )),
+            (route) => route == null);
         break;
       case "下酒小菜":
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
                 builder: (context) => IndexPage(
-                  item: 6,
-                  index: 1,
-                )),
-                (route) => route == null);
+                      item: 6,
+                      index: 1,
+                    )),
+            (route) => route == null);
         break;
       case "饮料":
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
                 builder: (context) => IndexPage(
-                  item: 7,
-                  index: 1,
-                )),
-                (route) => route == null);
+                      item: 7,
+                      index: 1,
+                    )),
+            (route) => route == null);
         break;
       case "乳制品":
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
                 builder: (context) => IndexPage(
-                  item: 8,
-                  index: 1,
-                )),
-                (route) => route == null);
+                      item: 8,
+                      index: 1,
+                    )),
+            (route) => route == null);
         break;
       case "休闲零食":
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
                 builder: (context) => IndexPage(
-                  item:9,
-                  index: 1,
-                )),
-                (route) => route == null);
+                      item: 9,
+                      index: 1,
+                    )),
+            (route) => route == null);
         break;
     }
   }
@@ -700,15 +700,16 @@ class FloorPic extends StatelessWidget {
           floorPic['PICTURE_ADDRESS'],
         ),
         onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (BuildContext ctx) {
-              return CategoryPage(
-                item: floorPic['TO_PLACE'] == '4'
-                    ? 0
-                    : floorPic['TO_PLACE'] != '4' ? 0 : 1,
-              );
-            }),
-          );
+
+          Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(
+                  builder: (context) => IndexPage(
+                    item:floorPic['TO_PLACE'] == '4'
+                        ? 0
+                        : floorPic['TO_PLACE'] != '4' ? 0 : 1,
+                    index: 1,
+                  )),
+                  (route) => route == null);
         },
       ),
     );
