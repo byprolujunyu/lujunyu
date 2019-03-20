@@ -15,7 +15,7 @@ class IndexPage extends StatefulWidget {
   int index = 0;
   int item = 0;
 
-  IndexPage({Key key, this.index=0, this.item=0}) : super(key: key);
+  IndexPage({Key key, this.index = 0, this.item = 0}) : super(key: key);
 }
 
 class _IndexPageState extends State<IndexPage> {
@@ -28,27 +28,26 @@ class _IndexPageState extends State<IndexPage> {
 
   @override
   void initState() {
+    currentIndex = widget.index;
+    var item = widget.item;
 
-      currentIndex = widget.index;
-      var item = widget.item;
-
-      _pagelist = [
-        HomePage(),
-        CategoryPage(
-          item: item,
-        ),
-        CartIosPage(),
-        MemberPage()
-      ];
-      currentPage = _pagelist[currentIndex];
-      _pageController=new PageController()
-        ..addListener(() {
-          if (currentPage != _pageController.page.round()) {
-            setState(() {
-              currentPage = _pageController.page.round();
-            });
-          }
-        });
+    _pagelist = [
+      HomePage(),
+      CategoryPage(
+        item: item,
+      ),
+      CartIosPage(),
+      MemberPage()
+    ];
+    currentPage = _pagelist[currentIndex];
+    _pageController = new PageController()
+      ..addListener(() {
+        if (currentPage != _pageController.page.round()) {
+          setState(() {
+            currentPage = _pageController.page.round();
+          });
+        }
+      });
     super.initState();
   }
 
@@ -66,13 +65,16 @@ class _IndexPageState extends State<IndexPage> {
     Tab(
       text: '首页',
       icon: Icon(CupertinoIcons.home),
-    ),Tab(
+    ),
+    Tab(
       text: '分类',
       icon: Icon(CupertinoIcons.search),
-    ),Tab(
+    ),
+    Tab(
       text: '购物车',
       icon: Icon(CupertinoIcons.shopping_cart),
-    ),Tab(
+    ),
+    Tab(
       text: '会员中心',
       icon: Icon(CupertinoIcons.profile_circled),
     ),
@@ -102,23 +104,22 @@ class _IndexPageState extends State<IndexPage> {
   Widget build(BuildContext context) {
     return WillPopScope(
         child: Scaffold(
-          backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
-          bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            currentIndex: currentIndex,
-            items: bottomTabs,
-            onTap: (index) {
-              setState(() {
-                currentIndex = index;
-                currentPage = _pagelist[currentIndex];
-              });
-            },
-          ),
-          body: IndexedStack(
+            backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
+            bottomNavigationBar: BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              currentIndex: currentIndex,
+              items: bottomTabs,
+              onTap: (index) {
+                setState(() {
+                  currentIndex = index;
+                  currentPage = _pagelist[currentIndex];
+                });
+              },
+            ),
+            body: IndexedStack(
               index: currentIndex,
               children: _pagelist,
-          )
-        ),
+            )),
         onWillPop: () {
           print("pop");
         });
