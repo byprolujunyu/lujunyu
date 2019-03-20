@@ -19,7 +19,7 @@ class IndexPage extends StatefulWidget {
 }
 
 class _IndexPageState extends State<IndexPage> {
-  List tabBodies = [];
+  List<Widget> _pagelist = [];
 
   int currentIndex = 0;
   var currentPage;
@@ -30,7 +30,7 @@ class _IndexPageState extends State<IndexPage> {
       currentIndex = widget.index;
       var item = widget.item;
 
-      tabBodies = [
+      _pagelist = [
         HomePage(),
         CategoryPage(
           item: item,
@@ -38,7 +38,7 @@ class _IndexPageState extends State<IndexPage> {
         CartIosPage(),
         MemberPage()
       ];
-      currentPage = tabBodies[currentIndex];
+      currentPage = _pagelist[currentIndex];
     } catch (e) {
       print(e);
     }
@@ -55,6 +55,42 @@ class _IndexPageState extends State<IndexPage> {
         icon: Icon(CupertinoIcons.profile_circled), title: Text('会员中心')),
   ];
 
+  List<Widget> _tabs = [
+    Tab(
+      text: '首页',
+      icon: Icon(CupertinoIcons.home),
+    ),Tab(
+      text: '分类',
+      icon: Icon(CupertinoIcons.search),
+    ),Tab(
+      text: '购物车',
+      icon: Icon(CupertinoIcons.shopping_cart),
+    ),Tab(
+      text: '会员中心',
+      icon: Icon(CupertinoIcons.profile_circled),
+    ),
+  ];
+
+//   WillPopScope(
+//          child: Scaffold(
+//            backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
+//            bottomNavigationBar: BottomNavigationBar(
+//              type: BottomNavigationBarType.fixed,
+//              currentIndex: currentIndex,
+//              items: bottomTabs,
+//              onTap: (index) {
+//                setState(() {
+//                  currentIndex = index;
+//                  currentPage = _pagelist[currentIndex];
+//                });
+//              },
+//            ),
+//            body: currentPage,
+//          ),
+//          onWillPop: () {
+//            print("pop");
+//          });
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -67,7 +103,7 @@ class _IndexPageState extends State<IndexPage> {
             onTap: (index) {
               setState(() {
                 currentIndex = index;
-                currentPage = tabBodies[currentIndex];
+                currentPage = _pagelist[currentIndex];
               });
             },
           ),
