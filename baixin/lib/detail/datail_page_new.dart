@@ -72,6 +72,13 @@ class _DetailPageNewState extends State<DetailPageNew> {
           children: <Widget>[
             DetailPageInfo(detail: goodDetail),
             MiddleWidget(map),
+            Container(
+              child: MyDivider(
+                height: 5,
+                color: Colors.black12,
+              ),
+              margin: EdgeInsets.only(top: 5, bottom: 5),
+            ),
             CountWidget(
               goodDetail: goodDetail,
             ),
@@ -246,10 +253,10 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
                           Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(
                                   builder: (context) => IndexPage(
-                                    item:0,
-                                    index: 2,
-                                  )),
-                                  (route) => route == null);
+                                        item: 0,
+                                        index: 2,
+                                      )),
+                              (route) => route == null);
                         },
                         child: Text(
                           '确认加入购物车',
@@ -310,50 +317,52 @@ class CountWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: ScreenUtil().setHeight(100)),
+      width: ScreenUtil.screenWidth,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          InkWell(
-            onTap: () {
-              showBottomWidget(
-                context,
-                SelectCountWidget(detail: goodDetail),
-              );
-            },
-            child: Container(
-              width: ScreenUtil().setHeight(180),
-              height: ScreenUtil().setHeight(60),
-              color: Colors.green,
-              child: Center(
-                child: Text(
-                  '加入购物车',
-                  style: TextStyle(color: Colors.white),
+          Expanded(
+            child: InkWell(
+              onTap: () {
+                showBottomWidget(
+                  context,
+                  SelectCountWidget(detail: goodDetail),
+                );
+              },
+              child: Container(
+                height: ScreenUtil().setHeight(100),
+                color: Colors.green,
+                child: Center(
+                  child: Text(
+                    '加入购物车',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
             ),
           ),
-          InkWell(
-            onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                return PayPage(
-                  map1: goodDetail,
-                );
-              }));
-            },
-            child: Container(
-              width: ScreenUtil().setHeight(180),
-              height: ScreenUtil().setHeight(60),
-              color: Colors.red,
-              child: Center(
-                child: Text(
-                  '立即购买',
-                  style: TextStyle(color: Colors.white),
+          Expanded(
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                  return PayPage(
+                    map1: goodDetail,
+                  );
+                }));
+              },
+              child: Container(
+                height: ScreenUtil().setHeight(100),
+                color: Colors.red,
+                child: Center(
+                  child: Text(
+                    '立即购买',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
