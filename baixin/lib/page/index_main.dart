@@ -24,9 +24,11 @@ class _IndexPageState extends State<IndexPage> {
   int currentIndex = 0;
   var currentPage;
 
+  PageController _pageController;
+
   @override
   void initState() {
-    try {
+
       currentIndex = widget.index;
       var item = widget.item;
 
@@ -39,9 +41,14 @@ class _IndexPageState extends State<IndexPage> {
         MemberPage()
       ];
       currentPage = _pagelist[currentIndex];
-    } catch (e) {
-      print(e);
-    }
+      _pageController=new PageController()
+        ..addListener(() {
+          if (currentPage != _pageController.page.round()) {
+            setState(() {
+              currentPage = _pageController.page.round();
+            });
+          }
+        });
     super.initState();
   }
 
@@ -107,7 +114,10 @@ class _IndexPageState extends State<IndexPage> {
               });
             },
           ),
-          body: currentPage,
+          body: IndexedStack(
+              index: currentIndex,
+              children: _pagelist,
+          )
         ),
         onWillPop: () {
           print("pop");
