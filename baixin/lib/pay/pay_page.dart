@@ -62,7 +62,7 @@ class _PayPageState extends State<PayPage> {
                   children: <Widget>[
                     getAddressW(),
                     MyDivider(
-                      height: ScreenUtil().setHeight(20),
+                      height: ScreenUtil().setHeight(5),
                       color: Color.fromARGB(255, 240, 238, 238),
                     ),
                     ProductInfo(
@@ -72,7 +72,7 @@ class _PayPageState extends State<PayPage> {
                       count: 1,
                     ),
                     MyDivider(
-                      height: ScreenUtil().setHeight(20),
+                      height: ScreenUtil().setHeight(5),
                       color: Color.fromARGB(255, 240, 238, 238),
                     ),
                     PayList(price: widget.map1.price),
@@ -92,25 +92,25 @@ class _PayPageState extends State<PayPage> {
         ? Column(
             children: <Widget>[
               AddressLine(
-                height: ScreenUtil().setHeight(20),
+                height: ScreenUtil().setHeight(5),
               ),
               AddressInfo(
                 address: add,
               ),
               AddressLine(
-                height: ScreenUtil().setHeight(20),
+                height: ScreenUtil().setHeight(5),
               ),
             ],
           )
         : Column(
             children: <Widget>[
               AddressLine(
-                height: ScreenUtil().setHeight(20),
+                height: ScreenUtil().setHeight(5),
               ),
               InkWell(
                 child: Container(
                   height: 20,
-                  margin: EdgeInsets.all(10.0),
+                  margin: EdgeInsets.all(5.0),
                   child: Text('需要默认地址>去添加!'),
                 ),
                 onTap: () {
@@ -121,7 +121,7 @@ class _PayPageState extends State<PayPage> {
                 },
               ),
               AddressLine(
-                height: ScreenUtil().setHeight(20),
+                height: ScreenUtil().setHeight(5),
               ),
             ],
           );

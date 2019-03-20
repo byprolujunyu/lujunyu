@@ -109,20 +109,20 @@ class _MutliPayPageState extends State<MutliPayPage> {
         ? Column(
       children: <Widget>[
         AddressLine(
-          height: ScreenUtil().setHeight(20),
+          height: ScreenUtil().setHeight(5),
         ),
         AddressInfo(
           address: add,
         ),
         AddressLine(
-          height: ScreenUtil().setHeight(20),
+          height: ScreenUtil().setHeight(5),
         ),
       ],
     )
         : Column(
       children: <Widget>[
         AddressLine(
-          height: ScreenUtil().setHeight(20),
+          height: ScreenUtil().setHeight(5),
         ),
         InkWell(
           child: Container(
@@ -138,7 +138,7 @@ class _MutliPayPageState extends State<MutliPayPage> {
           },
         ),
         AddressLine(
-          height: ScreenUtil().setHeight(20),
+          height: ScreenUtil().setHeight(5),
         ),
       ],
     );
