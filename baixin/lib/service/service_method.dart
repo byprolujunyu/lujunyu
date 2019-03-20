@@ -157,7 +157,7 @@ Future shopGoodsDetailImg(@required String goodId) async {
 
 void showShortToast(str, {index = 2}) {
   Fluttertoast.showToast(
-      backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.black45,
       gravity: index == 1
           ? ToastGravity.CENTER
           : index == 2 ? ToastGravity.BOTTOM : ToastGravity.TOP,
@@ -168,14 +168,14 @@ void showShortToast(str, {index = 2}) {
 
 void showLongToast(str) {
   Fluttertoast.showToast(
-      backgroundColor: Colors.redAccent,
+      backgroundColor: Colors.black45,
       msg: "${str}", toastLength: Toast.LENGTH_LONG, timeInSecForIos: 1);
 }
 
 void showToast(str, int i) {
   Fluttertoast.showToast(
       msg: "${str}",
-      backgroundColor: Colors.redAccent,
+      backgroundColor: Colors.black45,
       toastLength: i == 0 ? Toast.LENGTH_SHORT : Toast.LENGTH_LONG,
       timeInSecForIos: 1);
 }

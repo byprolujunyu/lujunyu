@@ -285,7 +285,7 @@ class CartItemWidget extends StatelessWidget {
       this.context,
       this.refresh});
 
-  show(id, item, context) {
+  show(id, item, context, Function delete) {
     try {
       showDialog<Null>(
         context: context,
@@ -298,6 +298,7 @@ class CartItemWidget extends StatelessWidget {
                 child: new Text('确定'),
                 onPressed: () {
                   _delete(id, item, context);
+                  delete();
                 },
               ),
               new FlatButton(
@@ -323,7 +324,6 @@ class CartItemWidget extends StatelessWidget {
     try {
       await db.deleteUser(id).then(
         (onvalue) {
-          showShortToast('${item} 已删除', index: 1);
           refresh();
           Navigator.pop(context);
         },
@@ -387,7 +387,14 @@ class CartItemWidget extends StatelessWidget {
                         ),
                       ),
                       onTap: () {
-                        show(data.id, data.productName, context);
+                        show(data.id, data.productName, context, () {
+                          final snackBar = new SnackBar(
+                            content: new Text('${data.productName} 已删除'),
+                            backgroundColor: KColorConstant.themeColor,
+                            duration: Duration(seconds: 1),
+                          );
+                          Scaffold.of(context).showSnackBar(snackBar);
+                        });
                       },
                     ),
                   ],
