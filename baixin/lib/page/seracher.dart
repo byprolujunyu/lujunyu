@@ -77,8 +77,8 @@ class _SearchPState extends State<SearchP> {
               var map = mapToMap2(val);
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                return DetailPage(
-                  map: map,
+                return DetailPageNew(
+                  goodsId: val['goodsId'],
                 );
               }));
             },
