@@ -1,0 +1,206 @@
+[
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_borderless_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/picture_sb_thumb.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/picture_sb_thumb.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_textfield_search_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/btn_left_bottom_selector.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/btn_left_bottom_selector.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/btn_left_false.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/btn_left_false.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_item_background_holo_dark.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_check_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/ucrop_shadow_upside.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.yalantis/ucrop/2.2.0-native/res/drawable/ucrop_shadow_upside.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/btn_right_false.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/btn_right_false.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_seekbar_track_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/dialog_shadow.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/dialog_shadow.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/audio_placeholder.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/audio_placeholder.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/ucrop_vector_loader.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.yalantis/ucrop/2.2.0-native/res/drawable/ucrop_vector_loader.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_list_selector_holo_dark.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_seekbar_thumb_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_ratingbar_indicator_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_list_selector_holo_light.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_light.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_dialog_material_background_light.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/picture_checkbox_selector.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/picture_checkbox_selector.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_cab_background_top_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_item_background_holo_light.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/dialog_custom_bg.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/dialog_custom_bg.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/ucrop_oval_true.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.yalantis/ucrop/2.2.0-native/res/drawable/ucrop_oval_true.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/orange_oval.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/orange_oval.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_spinner_textfield_background_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_dark.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_dialog_material_background_dark.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/ucrop_vector_loader_animated.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.yalantis/ucrop/2.2.0-native/res/drawable/ucrop_vector_loader_animated.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_edit_text_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_tab_indicator_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/num_oval.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/num_oval.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/p_seekbar_thumb_normal.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/p_seekbar_thumb_normal.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/picture_btn_music_shape.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/picture_btn_music_shape.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/btn_right_true.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/btn_right_true.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/p_seekbar_thumb_pressed.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/p_seekbar_thumb_pressed.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_colored_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/btn_left_true.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/btn_left_true.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_cab_background_internal_bg.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_ratingbar_full_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_ratingbar_full_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/ucrop_vector_ic_crop.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.yalantis/ucrop/2.2.0-native/res/drawable/ucrop_vector_ic_crop.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_text_cursor_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/item_select_bg.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/item_select_bg.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/btn_right_bottom_selector.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/btn_right_bottom_selector.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_ratingbar_small_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_radio_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/image_placeholder.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/image_placeholder.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_default_mtrl_shape.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_switch_thumb_material.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/gif_tag.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/gif_tag.xml"
+  },
+  {
+    "merged": "/Users/lujunyu/video-add/picture_library/build/intermediates/res/merged/debug/drawable/picture_layer_progress.xml",
+    "source": "/Users/lujunyu/video-add/picture_library/src/main/res/drawable/picture_layer_progress.xml"
+  }
+]

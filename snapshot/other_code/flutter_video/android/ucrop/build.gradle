@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion cfgs.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion cfgs.minSdkVersion
+        targetSdkVersion cfgs.targetSdkVersion
+        versionCode cfgs.ucropVersionCode
+        versionName cfgs.ucropVersionName
+
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    resourcePrefix 'ucrop_'
+
+}
+
+dependencies {
+    //noinspection GradleCompatible
+    api "com.android.support:appcompat-v7:${cfgs.androidSupportVersion}"
+    //noinspection GradleCompatible
+    api "com.android.support:recyclerview-v7:${cfgs.androidSupportVersion}"
+    implementation "com.github.bumptech.glide:glide:${cfgs.glide}"
+}

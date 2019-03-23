@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/lllayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_littile">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corner_grey_border"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="@dimen/margin_littile"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
+
+                <TextView
+                    android:id="@+id/car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:paddingBottom="5dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:text="车队"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_4"/>
+
+                <TextView
+                    android:id="@+id/delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/round_corner_blue_border"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="@dimen/margin_littile"
+                    android:paddingRight="@dimen/margin_littile"
+                    android:paddingTop="5dp"
+                    android:text="添加"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_3"/>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/margin_littile"
+                android:layout_marginRight="@dimen/margin_littile"
+                android:background="@color/background"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/margin_littile"
+                android:paddingRight="@dimen/margin_littile"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/billoflading_input10"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_3" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_littile"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_corner_grey_border"
+                    android:gravity="right"
+                    android:hint="@string/billoflading_hint10"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:inputType="text"
+                    android:textColor="@color/grey_light"
+                    android:textSize="@dimen/text_3" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/margin_littile"
+                android:paddingRight="@dimen/margin_littile"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/billoflading_input11"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_3"/>
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_littile"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_corner_grey_border"
+                    android:gravity="right"
+                    android:hint="@string/billoflading_hint11"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:inputType="text"
+                    android:textColor="@color/grey_deep"
+                    android:textColorHint="@color/grey_light"
+                    android:textSize="@dimen/text_3"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/margin_littile"
+                android:paddingRight="@dimen/margin_littile">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/billoflading_input12"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_3"/>
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_littile"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_corner_grey_border"
+                    android:gravity="right"
+                    android:hint="@string/billoflading_hint12"
+                    android:padding="10dp"
+                    android:inputType="phone"
+                    android:singleLine="true"
+                    android:textColor="@color/grey_deep"
+                    android:textColorHint="@color/grey_light"
+                    android:textSize="@dimen/text_3"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/margin_littile"
+                android:paddingRight="@dimen/margin_littile">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/billoflading_input13"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_3"/>
+
+                <EditText
+                    android:id="@+id/number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_littile"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_corner_grey_border"
+                    android:gravity="right"
+                    android:hint="@string/billoflading_hint13"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:textColor="@color/grey_deep"
+                    android:textColorHint="@color/grey_light"
+                    android:textSize="@dimen/text_3"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/margin_littile"
+                android:paddingRight="@dimen/margin_littile">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/billoflading_input14"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_3"/>
+
+                 <TextView
+                     android:id="@+id/time"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_marginLeft="@dimen/margin_littile"
+                     android:layout_weight="1"
+                     android:background="@drawable/round_corner_grey_border"
+                     android:gravity="right"
+                     android:padding="10dp"
+                     android:hint="请选择提箱日期"
+                     android:textColor="@color/grey_deep"
+                     android:textColorHint="@color/grey_light"
+                     android:textSize="@dimen/text_3"/>
+
+               <!-- <EditText
+                    android:id="@+id/time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_littile"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_corner_grey_border"
+                    android:gravity="right"
+                    android:hint="请输入预计提箱日期"
+                    android:padding="10dp"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@color/grey_light"
+                    android:textSize="@dimen/text_3"/>-->
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/margin_littile"
+                android:paddingRight="@dimen/margin_littile">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/billoflading_input15"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_3"/>
+
+                <EditText
+                    android:id="@+id/carno"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_littile"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_corner_grey_border"
+                    android:gravity="right"
+                    android:hint="@string/billoflading_hint15"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textColor="@color/grey_deep"
+                    android:textColorHint="@color/grey_light"
+                    android:textSize="@dimen/text_3" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/margin_littile"
+                android:paddingRight="@dimen/margin_littile"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/billoflading_input16"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_2" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_littile"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_corner_grey_border"
+                    android:gravity="right"
+                    android:hint="@string/billoflading_hint16"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/grey_light"
+                    android:textSize="@dimen/text_3" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</layout>

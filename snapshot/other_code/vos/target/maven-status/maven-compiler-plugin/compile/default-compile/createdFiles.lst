@@ -1,0 +1,15 @@
+com/lujy/vos/VosApplication.class
+com/lujy/vos/controller/VideoController.class
+com/lujy/vos/bean/Role_List.class
+com/lujy/vos/utils/ListPageUtil.class
+com/lujy/vos/service/VideoServiceImpl.class
+com/lujy/vos/bean/TVideoExample.class
+com/lujy/vos/service/IVideoService.class
+com/lujy/vos/bean/PageBean.class
+com/lujy/vos/bean/TVideoExample$GeneratedCriteria.class
+com/lujy/vos/bean/TVideoExample$Criterion.class
+com/lujy/vos/bean/TVideoExample$Criteria.class
+com/lujy/vos/dao/TVideoMapper.class
+com/lujy/vos/bean/TVideo.class
+com/lujy/vos/result/CodeMsg.class
+com/lujy/vos/result/Result.class

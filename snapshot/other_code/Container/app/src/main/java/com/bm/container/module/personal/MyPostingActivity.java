@@ -1,0 +1,190 @@
+package com.bm.container.module.personal;
+
+import android.content.Context;
+import android.databinding.DataBindingUtil;
+import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Toast;
+
+import com.bm.container.R;
+import com.bm.container.Tools.Block;
+import com.bm.container.Tools.SpUtil;
+import com.bm.container.databinding.ActivityMyPostingBinding;
+import com.bm.container.http.Collection;
+import com.bm.container.module.BaseActivity;
+import com.bm.container.module.discuss.adapter.DiscussAdapter;
+import com.bm.container.module.discuss.adapter.DiscussRecyclerAdapter;
+import com.bm.container.module.discuss.bean.BannerBean;
+import com.bm.container.module.discuss.bean.DiscussListBean;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * P7_2 我的帖子
+ */
+public class MyPostingActivity extends BaseActivity {
+    private ActivityMyPostingBinding binding;
+    private Context context;
+    private DiscussRecyclerAdapter adapter;
+    private ArrayList<DiscussListBean.DataBean> col = new ArrayList<>();
+    private List<BannerBean.DataBean> bannerCol = new ArrayList<>();
+    private int page = 1;
+    private String id = "";
+    private String targetId = "";
+    private String targetName = "";
+    private Boolean isEnd = false;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_my_posting);
+        context = this;
+        setTopbar();
+        setLoading();
+        setList();
+        setReply();
+        setRefresh();
+        getList(page);
+    }
+
+    /**
+     * 下拉刷新
+     */
+    private void setRefresh() {
+        binding.refresh.setOnRefreshListener(() -> {
+            isEnd = false;
+            page = 1;
+            getList(page);
+            binding.refresh.setRefreshing(false);
+        });
+        binding.list.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                if (!binding.list.canScrollVertically(1) && !isEnd) {// 手指不能向上滑动了
+                    // TODO 这里有个注意的地方，如果你刚进来时没有数据，但是设置了适配器，这个时候就会触发加载更多，需要开发者判断下是否有数据，如果有数据才去加载更多。
+//					binding.refresh.setRefreshing(true);
+//					binding.refresh.postDelayed(() -> binding.refresh.setRefreshing(false), 2000);
+                    page++;
+                    getList(page);
+                }
+            }
+        });
+    }
+
+    /**
+     * 反馈
+     */
+    private void setReply() {
+        binding.replyEmpty.setOnClickListener(v -> {
+            binding.reply.setText("");
+            binding.reply.setHint("");
+            binding.modelReply.setVisibility(View.GONE);
+        });
+        binding.send.setOnClickListener(v -> {
+            if (binding.reply.getText().toString().isEmpty()) {
+                toast("请输入内容");
+            } else {
+                Collection.reply(this, id, targetId, targetName, binding.reply.getText().toString(), baseBean -> {
+                    binding.reply.setText("");
+                    binding.reply.setHint("");
+                    binding.modelReply.setVisibility(View.GONE);
+                    page = 1;
+                    getList(page);
+                    dialog("评论成功");
+                });
+            }
+        });
+    }
+
+    private void setList() {
+        binding.list.setLayoutManager(new LinearLayoutManager(context));
+        adapter = new DiscussRecyclerAdapter(context, col, bannerCol, false);
+        adapter.setReplyCallback(new DiscussAdapter.ReplyCallback() {
+            @Override
+            public void reply(String id1, String targetId1, String targetName1, String careteUser) {
+
+                String userId = SpUtil.getString(SpUtil.USERID);
+                if (!TextUtils.isEmpty(userId) && userId.equals(careteUser)) {
+                    Toast.makeText(context, "自己不能回复自己!", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                if (Block.checkLogin(MyPostingActivity.this)) {
+                    id = id1;
+                    targetId = targetId1;
+                    targetName = targetName1;
+                    binding.reply.setText("");
+                    if (!targetId.isEmpty()) {
+                        binding.reply.setHint("回复: " + targetName1);
+                    } else {
+                        binding.reply.setHint("");
+                    }
+                    binding.modelReply.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+        adapter.setZanCallback((id12, position, wantToZan) -> {
+            if (Block.checkLogin(this)) {
+                if (wantToZan) {
+                    Collection.zan(this, id12, baseBean -> {
+                        col.get(position).setIsZan("1");
+                        col.get(position).setZanCount(Block.zanAdd(col.get(position).getZanCount()));
+                        adapter.notifyDataSetChanged();
+                    });
+                } else {
+                    Collection.zanCancel(this, id12, baseBean -> {
+                        col.get(position).setIsZan("0");
+                        col.get(position).setZanCount(Block.zanDelete(col.get(position).getZanCount()));
+                        adapter.notifyDataSetChanged();
+                    });
+                }
+            }
+        });
+        binding.list.setAdapter(adapter);
+    }
+
+    private void setLoading() {
+        setLoading(binding.refresh);
+        binding.refresh.setEnabled(true);
+        binding.refresh.setColorSchemeColors(loadingColors);
+    }
+
+    private void setTopbar() {
+        binding.topbar.toolbar.setTitle("");
+        binding.topbar.toolbar.setNavigationIcon(R.drawable.toolbar_back);
+        binding.topbar.title.setText(R.string.myposting_title);
+        setSupportActionBar(binding.topbar.toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        binding.topbar.toolbar.setNavigationOnClickListener(view -> finishAc());
+    }
+
+    /**
+     * 获取列表信息
+     */
+    private void getList(int page) {
+        Collection.myDiscussList(this, page, bean -> {
+            if (page == 1) {
+                col.clear();
+            }
+            if (bean.getData().size() == 0) {
+                isEnd = true;
+            } else {
+                col.addAll(bean.getData());
+                adapter.notifyDataSetChanged();
+            }
+        });
+    }
+
+    /**
+     * 无需刷新标识
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SpUtil.setBoolean(SpUtil.DONTNEEDREFRESH, false);
+    }
+}

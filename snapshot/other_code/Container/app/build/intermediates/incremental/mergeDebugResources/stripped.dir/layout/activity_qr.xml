@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                                   
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" android:tag="layout/activity_qr_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <include
+                android:id="@+id/topbar"
+                layout="@layout/topbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white"
+                        android:gravity="center_horizontal">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:gravity="center"
+                            android:text="请下载提货单二维码:"
+                            android:textColor="@color/black"/>
+
+                    <ImageView
+                            android:id="@+id/qRCodeUrl"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="@dimen/margin_littile"
+                            android:src="@drawable/rq"
+                            android:layout_marginBottom="@dimen/margin_littile"/>
+
+                </LinearLayout>
+
+
+                <Button
+                        android:id="@+id/button"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/block_height"
+                        android:layout_marginLeft="@dimen/margin_littile"
+                        android:layout_marginRight="@dimen/margin_littile"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/round_corner_blue_gb"
+                        android:text="@string/qr_download"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_5"/>
+
+            </LinearLayout>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+
+         

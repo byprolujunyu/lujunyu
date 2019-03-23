@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bm.container">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- 极光推送权限 -->
+    <permission
+        android:name="com.bm.container.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.bm.container.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!--支付宝-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />3
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 微信支付权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <!--截图所需权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+    <application
+        android:name=".module.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- 导入集装箱编号的txt文件为realm数据库 -->
+        <service
+            android:name=".service.ContainerNo"
+            android:exported="false" />
+
+        <!-- P1启动页 -->
+        <activity
+            android:name=".module.base.StartUpActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- P2引导页 -->
+        <activity
+            android:name=".module.base.SplashActivity"
+            android:screenOrientation="portrait" />
+        <!-- P3登录 -->
+        <activity
+            android:name=".module.login.LoginActivity"
+            android:screenOrientation="portrait" />
+        <!-- P3_1注册 -->
+        <activity
+            android:name=".module.login.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <!-- P3_2注册协议 -->
+        <activity
+            android:name=".module.login.AgreementActivity"
+            android:screenOrientation="portrait" />
+        <!-- P3_3身份认证 -->
+        <activity
+            android:name=".module.login.IdentificationActivity"
+            android:screenOrientation="portrait" />
+        <!-- 城市选择 -->
+        <activity
+            android:name=".module.login.CityActivity"
+            android:screenOrientation="portrait" />
+        <!-- P3_4忘记密码 -->
+        <activity
+            android:name=".module.login.ForgetPwdActivity"
+            android:screenOrientation="portrait" />
+        <!-- P4首页 -->
+        <activity
+            android:name=".module.base.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <!-- P5_1发布信息(求购) -->
+        <activity
+            android:name=".module.market.SendBuyInfoActivity"
+            android:screenOrientation="portrait" />
+        <!-- P5_1发布信息(出售) -->
+        <activity
+            android:name=".module.market.SendSaleInfoActivity"
+            android:screenOrientation="portrait" />
+        <!-- P5_4 选择支付方式 -->
+        <!--<activity-->
+        <!--android:name=".module.market.PayActivity"-->
+        <!--android:screenOrientation="portrait"></activity>-->
+        <!-- P5_5 支付成功 -->
+        <activity
+            android:name=".module.market.PaySuccessActivity"
+            android:screenOrientation="portrait" />
+        <!-- P6_1 发帖 -->
+        <activity
+            android:name=".module.discuss.SendImageActivity"
+            android:screenOrientation="portrait" />
+        <!-- P6_2 纯文本贴 -->
+        <activity
+            android:name=".module.discuss.SendTextActivity"
+            android:screenOrientation="portrait" />
+        <!-- P7_1 修改个人信息(个人) -->
+        <activity
+            android:name=".module.personal.ChangePersonalInfoActivity"
+            android:screenOrientation="portrait" />
+        <!-- P7_1 修改公司信息(公司) -->
+        <activity
+            android:name=".module.personal.ChangeCompanyInfoActivity"
+            android:screenOrientation="portrait" />
+        <!-- P7_2 我的帖子 -->
+        <activity
+            android:name=".module.personal.MyPostingActivity"
+            android:screenOrientation="portrait" />
+        <!-- P7_3 我的订单 -->
+        <activity
+            android:name=".module.personal.MyOrderActivity"
+            android:screenOrientation="portrait" />
+        <!-- P7_3_1 待付款订单详情 -->
+        <!-- P7_3_2 已付款订单详情 -->
+        <!-- P7_3_3 待提货订单详情 -->
+        <!-- P7_3_4 已完成订单详情 -->
+        <!-- P7_4_1 已付款订单详情 -->
+        <!-- P7_4_2 待提货订单详情 -->
+        <activity
+            android:name=".module.personal.OrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <!-- P7_3_3_1 填写提货单 -->
+        <!-- P7_3_4_1 查看提货单 -->
+        <!-- P7_4_1_1 填写提货单 -->
+        <!-- P7_4_2_1 查看提货单 -->
+        <activity
+            android:name=".module.personal.BillOfLadingActivity"
+            android:screenOrientation="portrait" />
+        <!-- P7_3_3_2 提货单二维码界面 -->
+        <activity
+            android:name=".module.personal.QRActivity"
+            android:screenOrientation="portrait" />
+        <!--&lt;!&ndash; P7_4 卖家提货单 &ndash;&gt;-->
+        <activity
+            android:name=".module.personal.SalerOrderActivity"
+            android:screenOrientation="portrait" />
+        <!-- P7_4 卖家提货单 -->
+        <activity
+            android:name=".module.personal.DeliveryOrderActivity"
+            android:screenOrientation="portrait" />
+        <!-- P7_5 我的买箱信息 -->
+        <activity
+            android:name=".module.personal.BuyerInfoActivity"
+            android:screenOrientation="portrait" />
+        <!-- P7_6 我的卖箱信息 -->
+        <activity
+            android:name=".module.personal.SalerInfoActivity"
+            android:screenOrientation="portrait" />
+        <!-- P7_7 系统消息 -->
+        <activity
+            android:name=".module.personal.MessageActivity"
+            android:screenOrientation="portrait" />
+        <!-- P7_8 意见反馈 -->
+        <activity
+            android:name=".module.personal.FeedbackActivity"
+            android:screenOrientation="portrait" />
+        <!-- P7_8_1 意见反馈历史 -->
+        <activity
+            android:name=".module.personal.FeedbackHistoryActivity"
+            android:screenOrientation="portrait" />
+        <!-- P8 设置 -->
+        <activity
+            android:name=".module.setting.SettingActivity"
+            android:screenOrientation="portrait" />
+        <!-- P8_1 修改密码 -->
+        <activity
+            android:name=".module.setting.ChangePwdActivity"
+            android:screenOrientation="portrait" />
+        <!-- P8_2 APP介绍及声明 -->
+        <activity
+            android:name=".module.setting.IntroductionActivity"
+            android:screenOrientation="portrait" />
+        <!--
+         * P5_2_1 商品出价界面(求购模块)正在进行（卖家出价界面）
+         * 以上界面定义为a版，不用看了
+         *
+         * 根据接口和新的需求
+         * 现合并为买家自己进入看到的信息和别人进入看到的信息
+         -->
+        <activity
+            android:name=".module.market.PurchaseAActivity"
+            android:screenOrientation="portrait" />
+        <!--
+         ＊P5_2_2 商品出价界面(求购模块)正在进行 (买家自己发布信息后选择界面)
+         ＊废弃废弃废弃废弃废弃废弃废弃
+         -->
+        <activity
+            android:name=".module.market.PurchaseBActivity"
+            android:screenOrientation="portrait" />
+        <!--
+         ＊P5_2_5 商品详情界面(求购模块)正在进行
+         ＊选择出价后进入的界面
+         -->
+        <activity
+            android:name=".module.market.PurchaseEActivity"
+            android:screenOrientation="portrait" />
+        <!--
+         * P5_3_1 商品详情界面(出售)正在进行(含价格界面)
+         * 以上界面定义为a版，不用看了
+         *
+         * 根据接口和新的需求
+         * 现合并为卖家自己进入看到的信息和别人进入看到的信息
+         -->
+        <activity
+            android:name=".module.market.SaleAActivity"
+            android:screenOrientation="portrait" />
+        <!--
+         * P5_3_2 商品详情界面(出售)正在进行 (未含价格[买家出价界面])
+         * 以上界面定义为a版，不用看了
+         *
+         * 根据接口和新的需求
+         * 现合并为卖家自己进入看到的信息和别人进入看到的信息-->
+        <activity
+            android:name=".module.market.SaleBActivity"
+            android:screenOrientation="portrait" />
+        <!--
+        * P5_3_3 商品详情界面(出售)正在进行 (未含价格[卖家自己发布信息后选择界面])
+        * 废弃废弃废弃废弃废弃废弃废弃
+        -->
+        <activity
+            android:name=".module.market.SaleCActivity"
+            android:screenOrientation="portrait" />
+        <!-- 网页 -->
+        <activity
+            android:name=".module.base.WebActivity"
+            android:screenOrientation="portrait" />
+        <!-- 放大图 -->
+        <activity
+            android:name=".module.base.FangDaImgActivity"
+            android:screenOrientation="portrait" />
+        <!-- 极光推送 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.bm.container" />
+            </intent-filter>
+        </activity>
+
+        <!--p7_4_卖家提货单-->
+        <activity
+            android:name=".module.personal.DeliveryOrderDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+
+        <!-- since 3.0.9 Required SDK 核心功能-->
+        <provider
+            android:authorities="com.bm.container.DataProvider"
+            android:name="cn.jpush.android.service.DataProvider"
+            android:exported="false"
+            />
+
+
+        <!-- 可选项 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+
+                <category android:name="com.bm.container" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+                <category android:name="com.bm.container" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:exported="false" />
+
+        <!-- 极光推送 自定义的广播接收器 -->
+        <receiver
+            android:name=".receiver.MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" /> <!-- Required  用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.UNREGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> <!-- Required  用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!-- Required  用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!-- Required  用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK" /> <!-- Optional 用户接受Rich Push Javascript 回调函数的intent -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" /> <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="com.bm.container" />
+            </intent-filter>
+        </receiver>
+        <!-- 极光推送key -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="9df0dae1044a3320ef69d65c" />
+
+        <!--支付宝-->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".module.market.PayActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="wx082bb9065793eab1" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".module.personal.FillInTheMailboxActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <activity
+            android:name=".module.personal.DownloadBillActivity"
+            android:screenOrientation="portrait" />
+
+        <!--合格使用方法-->
+        <activity
+            android:name=".module.setting.UsageActivity"
+            android:screenOrientation="portrait" />
+
+        <receiver android:name=".wxapi.AppRegister">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

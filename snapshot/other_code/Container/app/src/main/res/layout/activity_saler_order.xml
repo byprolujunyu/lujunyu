@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <include
+                android:id="@+id/topbar"
+                layout="@layout/topbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+
+                    <RelativeLayout
+                            android:id="@+id/tab1_model"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/block_height"
+                            android:layout_weight="1">
+
+                        <TextView
+                                android:id="@+id/tab1_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/salerorder_tab1"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/text_3"/>
+
+
+                        <ImageView
+                                android:id="@+id/tab1_line"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/colorPrimary"/>
+
+                        <TextView
+                                android:id="@+id/tab1_num"
+                                android:layout_width="13dp"
+                                android:layout_height="13dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="10dp"
+                                android:layout_toRightOf="@id/tab1_text"
+                                android:background="@drawable/circle_red"
+                                android:gravity="center"
+                                android:padding="2dp"
+                                android:text="22"
+                                android:textColor="@color/white"
+                                android:textSize="8sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                            android:id="@+id/tab2_model"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/block_height"
+                            android:layout_weight="1">
+
+                        <TextView
+                                android:id="@+id/tab2_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/salerorder_tab2"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_3"/>
+
+
+                        <ImageView
+                                android:id="@+id/tab2_line"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/transparent"/>
+
+                        <TextView
+                                android:id="@+id/tab2_num"
+                                android:layout_width="13dp"
+                                android:layout_height="13dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="10dp"
+                                android:layout_toRightOf="@id/tab2_text"
+                                android:background="@drawable/circle_red"
+                                android:gravity="center"
+                                android:padding="2dp"
+                                android:text="22"
+                                android:textColor="@color/white"
+                                android:textSize="8sp"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                            android:id="@+id/tab3_model"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/block_height"
+                            android:layout_weight="1">
+
+                        <TextView
+                                android:id="@+id/tab3_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/salerorder_tab3"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_3"/>
+
+
+                        <ImageView
+                                android:id="@+id/tab3_line"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@color/transparent"/>
+
+                        <TextView
+                                android:id="@+id/tab3_num"
+                                android:layout_width="13dp"
+                                android:layout_height="13dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="10dp"
+                                android:layout_toRightOf="@id/tab3_text"
+                                android:background="@drawable/circle_red"
+                                android:gravity="center"
+                                android:padding="2dp"
+                                android:text="22"
+                                android:textColor="@color/white"
+                                android:textSize="8sp"/>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+                <ListView
+                        android:id="@+id/list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,2 +1,0 @@
-- images/txt.txt
-- images/ablum.png
