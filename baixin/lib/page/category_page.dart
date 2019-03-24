@@ -100,11 +100,13 @@ class _CategoryPageState extends State<CategoryPage> {
       );
     }
   }
+
   static const MethodChannel jump = MethodChannel("detail/jump");
 
-  Future _jumpFun (json) async {
+  Future _jumpFun(json) async {
     await jump.invokeMethod('jump', json);
   }
+
   //得到商品列表数据的方法
   void _getGoodsList() {
     _refreshController.sendBack(true, RefreshStatus.idle);
@@ -186,16 +188,16 @@ class _CategoryPageState extends State<CategoryPage> {
     );
   }
 
-
   Future netWork(String goodId) async {
     Response response;
     Dio dio = new Dio();
     dio.options.contentType =
         ContentType.parse("application/x-www-form-urlencoded");
-    var formData = {'goodId':goodId};
-    response = await dio.post(servicePath['shopGoodsDetailImg'], data: formData);
+    var formData = {'goodId': goodId};
+    response =
+        await dio.post(servicePath['shopGoodsDetailImg'], data: formData);
     if (response.statusCode == 200) {
-     return json.decode(response.data);
+      return json.decode(response.data);
     }
   }
 
@@ -210,14 +212,20 @@ class _CategoryPageState extends State<CategoryPage> {
 //          }));
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (BuildContext ctx) {
-            return DetailPageNew(goodsId: goodsItem['goodsId'],);
+            return DetailPageNew(
+              goodsId: goodsItem['goodsId'],
+            );
           }));
         },
         child: Container(
           color: Colors.white,
           child: Column(
             children: <Widget>[
-              Image.network("${goodsItem['image']}"),
+              Container(
+                width: ScreenUtil().setWidth(280),
+                height: ScreenUtil().setHeight(280),
+                child: Image.network("${goodsItem['image']}",fit: BoxFit.fill,),
+              ),
               Container(
                   padding: EdgeInsets.all(5.0),
                   height: ScreenUtil().setHeight(80),
