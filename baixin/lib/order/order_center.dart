@@ -80,11 +80,12 @@ class KTabBarWidget extends StatelessWidget implements PreferredSizeWidget {
           indicatorColor: KColorConstant.themeColor,
           indicatorSize: TabBarIndicatorSize.label,
           isScrollable: true,
-          labelColor: KColorConstant.themeColor,
+          labelColor: Colors.black,
           tabs: KString.ordertabs
               .map((i) => Container(
+              padding: EdgeInsets.all(10),
                     width: MediaQuery.of(context).size.width / 5,
-                    height: 30.0,
+                    height: 50.0,
                     child: new Tab(text: i),
                   ))
               .toList()),
