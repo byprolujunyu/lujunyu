@@ -190,7 +190,8 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Container(
-                margin: EdgeInsets.all(5.0),
+                alignment: Alignment.centerLeft,
+                margin: EdgeInsets.all(10.0),
                 child: Text(
                   '购买数量',
                 ),
@@ -199,70 +200,84 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
                 child: Divider(),
               ),
               Container(
+                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   // mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    GestureDetector(
-                      onTap: () => {_dix_count()},
-                      child: Container(
-                        width: ScreenUtil().setWidth(50),
-                        height: ScreenUtil().setHeight(50),
-                        decoration: BoxDecoration(border: _getRemoveBtBorder()),
-                        child:
-                            Icon(Icons.remove, color: _getRemovebuttonColor()),
-                      ),
-                    ),
-                    Container(
-                        alignment: Alignment.center,
-                        width: ScreenUtil().setWidth(50),
-                        height: ScreenUtil().setHeight(50),
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                color: KColorConstant.cartItemCountTxtColor,
-                                width: 1)),
-                        child: Text(
-                          '${count}',
-                          style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.bold,
-                              color: KColorConstant.cartItemCountTxtColor),
-                        )),
-                    GestureDetector(
-                      onTap: () => {_add_count()},
-                      child: Container(
-                        alignment: Alignment.center,
-                        width: ScreenUtil().setWidth(50),
-                        height: ScreenUtil().setHeight(50),
-                        decoration: BoxDecoration(border: _getAddBtBorder()),
-                        child: Icon(Icons.add, color: _getAddbuttonColor()),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 10.0),
-                      width: ScreenUtil().setWidth(210),
-                      height: ScreenUtil().setHeight(60),
-                      alignment: Alignment.center,
-                      color: Colors.green,
-                      child: InkWell(
-                        onTap: () {
-                          _add(new User(
-                              name: widget.detail.name,
-                              image: widget.detail.image,
-                              count: count,
-                              price: widget.detail.price));
-                          Navigator.of(context).pushAndRemoveUntil(
-                              MaterialPageRoute(
-                                  builder: (context) => IndexPage(
-                                        item: 0,
-                                        index: 2,
-                                      )),
-                              (route) => route == null);
-                        },
-                        child: Text(
-                          '确认加入购物车',
-                          style: TextStyle(color: Colors.white),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        GestureDetector(
+                          onTap: () => {_dix_count()},
+                          child: Container(
+                            width: ScreenUtil().setWidth(50),
+                            height: ScreenUtil().setHeight(50),
+                            decoration:
+                                BoxDecoration(border: _getRemoveBtBorder()),
+                            child: Icon(Icons.remove,
+                                color: _getRemovebuttonColor()),
+                          ),
                         ),
-                      ),
+                        Container(
+                            alignment: Alignment.center,
+                            width: ScreenUtil().setWidth(50),
+                            height: ScreenUtil().setHeight(50),
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: KColorConstant.cartItemCountTxtColor,
+                                    width: 1)),
+                            child: Text(
+                              '${count}',
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                  color: KColorConstant.cartItemCountTxtColor),
+                            )),
+                        GestureDetector(
+                          onTap: () => {_add_count()},
+                          child: Container(
+                            alignment: Alignment.center,
+                            width: ScreenUtil().setWidth(50),
+                            height: ScreenUtil().setHeight(50),
+                            decoration:
+                                BoxDecoration(border: _getAddBtBorder()),
+                            child: Icon(Icons.add, color: _getAddbuttonColor()),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(left: 10.0),
+                          width: ScreenUtil().setWidth(210),
+                          height: ScreenUtil().setHeight(60),
+                          alignment: Alignment.center,
+                          color: Colors.green,
+                          child: InkWell(
+                            onTap: () {
+                              _add(new User(
+                                  name: widget.detail.name,
+                                  image: widget.detail.image,
+                                  count: count,
+                                  price: widget.detail.price));
+                              Navigator.of(context).pushAndRemoveUntil(
+                                  MaterialPageRoute(
+                                      builder: (context) => IndexPage(
+                                            item: 0,
+                                            index: 2,
+                                          )),
+                                  (route) => route == null);
+                            },
+                            child: Text(
+                              '确认加入购物车',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
