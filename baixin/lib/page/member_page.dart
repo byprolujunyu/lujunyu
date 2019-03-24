@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_button/address/address_ios_page.dart';
 import 'package:flutter_button/fuji/youhui_pic.dart';
+import 'package:flutter_button/order/order_center.dart';
 import 'package:flutter_button/page/cart_test.dart';
 import 'package:flutter_button/shop/about_us.dart';
 import 'package:flutter_button/widget/my_widget.dart';
@@ -148,73 +149,113 @@ class CashState extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Container(
-            child: Column(
-              children: <Widget>[
-                Container(
-                  width: ScreenUtil().setWidth(55),
-                  height: ScreenUtil().setHeight(55),
-                  child: Image.asset(
-                    'images/member/daifukuan.png',
-                    fit: BoxFit.fill,
+          InkWell(
+            child: Container(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    width: ScreenUtil().setWidth(55),
+                    height: ScreenUtil().setHeight(55),
+                    child: Image.asset(
+                      'images/member/daifukuan.png',
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-                Container(
-                  child: Text('待付款'),
-                ),
-              ],
+                  Container(
+                    child: Text('待付款'),
+                  ),
+                ],
+              ),
             ),
+            onTap: (){
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                return OrderCenterPage(
+                  index: 1,
+                );
+              }));
+            },
           ),
-          Container(
-            child: Column(
-              children: <Widget>[
-                Container(
-                  width: ScreenUtil().setWidth(55),
-                  height: ScreenUtil().setHeight(55),
-                  child: Image.asset(
-                    'images/member/daifahuo.png',
-                    fit: BoxFit.fill,
+          InkWell(
+            child: Container(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    width: ScreenUtil().setWidth(55),
+                    height: ScreenUtil().setHeight(55),
+                    child: Image.asset(
+                      'images/member/daifahuo.png',
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-                Container(
-                  child: Text('待发货'),
-                ),
-              ],
+                  Container(
+                    child: Text('待发货'),
+                  ),
+                ],
+              ),
             ),
+            onTap: (){
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                return OrderCenterPage(
+                  index: 2,
+                );
+              }));
+            },
           ),
-          Container(
-            child: Column(
-              children: <Widget>[
-                Container(
-                  width: ScreenUtil().setWidth(55),
-                  height: ScreenUtil().setHeight(55),
-                  child: Image.asset(
-                    'images/member/daishouhuo.png',
-                    fit: BoxFit.fill,
+          InkWell(
+            child: Container(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    width: ScreenUtil().setWidth(55),
+                    height: ScreenUtil().setHeight(55),
+                    child: Image.asset(
+                      'images/member/daishouhuo.png',
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-                Container(
-                  child: Text('待收货'),
-                ),
-              ],
+                  Container(
+                    child: Text('待收货'),
+                  ),
+                ],
+              ),
             ),
+            onTap: (){
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                return OrderCenterPage(
+                  index: 3,
+                );
+              }));
+            },
           ),
-          Container(
-            child: Column(
-              children: <Widget>[
-                Container(
-                  width: ScreenUtil().setWidth(55),
-                  height: ScreenUtil().setHeight(55),
-                  child: Image.asset(
-                    'images/member/daipingjia.png',
-                    fit: BoxFit.fill,
+          InkWell(
+            child: Container(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    width: ScreenUtil().setWidth(55),
+                    height: ScreenUtil().setHeight(55),
+                    child: Image.asset(
+                      'images/member/daipingjia.png',
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-                Container(
-                  child: Text('待评价'),
-                ),
-              ],
+                  Container(
+                    child: Text('待评价'),
+                  ),
+                ],
+              ),
             ),
+            onTap: (){
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                return OrderCenterPage(
+                  index: 4,
+                );
+              }));
+            },
           ),
         ],
       ),
@@ -297,9 +338,7 @@ class LoveUI extends StatelessWidget {
                   .push(MaterialPageRoute(builder: (BuildContext ctx) {
                 return FujiPicPage();
               }));
-            }else if (names[index] == '已领取优惠券') {
-
-            }
+            } else if (names[index] == '已领取优惠券') {}
           }),
     );
   }
