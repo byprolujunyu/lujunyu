@@ -88,6 +88,7 @@ class LoadingPageState extends State<LoadingPage>
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Image.asset(
+
             'images/bg_loading.jpg',
             fit: BoxFit.fill,
           ),

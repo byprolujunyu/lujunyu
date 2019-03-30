@@ -339,14 +339,7 @@ class CartItemWidget extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          InkWell(
-              onTap: () => switchChaned(index),
-              child: Icon(
-                data.isSelected
-                    ? Icons.check_circle_outline
-                    : Icons.radio_button_unchecked,
-                color: KColorConstant.themeColor,
-              )),
+
           Container(
             margin: EdgeInsets.only(
                 left: ScreenUtil().setWidth(10),

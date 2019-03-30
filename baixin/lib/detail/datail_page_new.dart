@@ -220,20 +220,22 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
                           ),
                         ),
                         Container(
-                            alignment: Alignment.center,
-                            width: ScreenUtil().setWidth(50),
-                            height: ScreenUtil().setHeight(50),
-                            decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: KColorConstant.cartItemCountTxtColor,
-                                    width: 1)),
-                            child: Text(
-                              '${count}',
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.bold,
-                                  color: KColorConstant.cartItemCountTxtColor),
-                            )),
+                          alignment: Alignment.center,
+                          width: ScreenUtil().setWidth(50),
+                          height: ScreenUtil().setHeight(50),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                                color: KColorConstant.cartItemCountTxtColor,
+                                width: 1),
+                          ),
+                          child: Text(
+                            '${count}',
+                            style: TextStyle(
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                                color: KColorConstant.cartItemCountTxtColor),
+                          ),
+                        ),
                         GestureDetector(
                           onTap: () => {_add_count()},
                           child: Container(
