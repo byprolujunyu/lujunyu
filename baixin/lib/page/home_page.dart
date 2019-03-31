@@ -19,7 +19,7 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 jump(@required context, @required goodid) {
   Application.router.navigateTo(context, '/detail?id=$goodid',
-      transition: TransitionType.fadeIn);
+      transition: TransitionType.nativeModal);
 }
 
 class HomePage extends StatefulWidget {

@@ -3,6 +3,7 @@ import 'package:flutter_button/address/address_ios_page.dart';
 import 'package:flutter_button/fuji/youhui_pic.dart';
 import 'package:flutter_button/order/order_center.dart';
 import 'package:flutter_button/page/cart_test.dart';
+import 'package:flutter_button/routers/application.dart';
 import 'package:flutter_button/shop/about_us.dart';
 import 'package:flutter_button/widget/my_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -338,7 +339,9 @@ class LoveUI extends StatelessWidget {
                   .push(MaterialPageRoute(builder: (BuildContext ctx) {
                 return FujiPicPage();
               }));
-            } else if (names[index] == '已领取优惠券') {}
+            } else if (names[index] == '已领取优惠券') {
+              Application.router.navigateTo(context, '/panel');
+            }
           }),
     );
   }

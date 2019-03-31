@@ -4,6 +4,7 @@ import 'package:flutter_button/detail/datail_page_new.dart';
 import 'package:flutter_button/order/order_center.dart';
 import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_button/pay/multi_pay.dart';
+import 'package:flutter_button/widget/panel.dart';
 
 
 Handler detailsHandler = Handler(
@@ -28,3 +29,8 @@ Handler rootHandler = Handler(
   },
 );
 
+Handler panelHandler = Handler(
+  handlerFunc: (context,params){
+    return Panel();
+  }
+);
