@@ -189,13 +189,6 @@ class _HomePageState extends State<HomePage>
             onTap: () {
               Map newM = mapToMap2(val);
               var id = val['goodsId'];
-//              Navigator.of(context)
-//                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
-//                return DetailPageNew(
-//                  goodsId: id,
-//                );
-//              }));
-
               Application.router.navigateTo(context, '/detail?id=$id');
             },
             child: Container(

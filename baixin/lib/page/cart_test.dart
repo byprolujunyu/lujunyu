@@ -8,6 +8,7 @@ import 'package:flutter_button/model/cart_new.dart';
 import 'package:flutter_button/model/count.dart';
 import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_button/pay/multi_pay.dart';
+import 'package:flutter_button/routers/application.dart';
 import 'package:flutter_button/utils/screen_util.dart';
 import 'package:scoped_model/scoped_model.dart';
 import '../service/service_method.dart';
@@ -339,7 +340,6 @@ class CartItemWidget extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-
           Container(
             margin: EdgeInsets.only(
                 left: ScreenUtil().setWidth(10),
@@ -552,6 +552,9 @@ class CartBottomWidget extends StatelessWidget {
                     .push(MaterialPageRoute(builder: (BuildContext ctx) {
                   return MutliPayPage(model: model);
                 }));
+
+//                Application.router
+//                    .navigateTo(context, '/mutlipay?model=${model}');
               },
             ),
           ],

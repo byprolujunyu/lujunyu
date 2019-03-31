@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_button/detail/datail_page_new.dart';
 import 'package:flutter_button/detail/detail_page.dart';
+import 'package:flutter_button/routers/application.dart';
 import 'dart:async';
 import 'dart:convert';
 import "package:pull_to_refresh/pull_to_refresh.dart";
@@ -206,12 +207,8 @@ class _CategoryPageState extends State<CategoryPage> {
       physics: new NeverScrollableScrollPhysics(),
       child: InkWell(
         onTap: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (BuildContext ctx) {
-            return DetailPageNew(
-              goodsId: goodsItem['goodsId'],
-            );
-          }));
+          var id = goodsItem['goodsId'];
+          Application.router.navigateTo(context, '/detail?id=$id');
         },
         child: Container(
           color: Colors.white,

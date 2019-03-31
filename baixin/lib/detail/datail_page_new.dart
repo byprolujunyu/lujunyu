@@ -67,23 +67,30 @@ class _DetailPageNewState extends State<DetailPageNew> {
 
   Widget getMainWidget() {
     try {
-      return SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            DetailPageInfo(detail: goodDetail),
-            MiddleWidget(map),
-            Container(
-              child: MyDivider(
-                height: 5,
-                color: Colors.black12,
+      return Column(
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              height: ScreenUtil().setHeight(1000),
+              child: ListView(
+                children: <Widget>[
+                  DetailPageInfo(detail: goodDetail),
+                  MiddleWidget(map),
+                  Container(
+                    child: MyDivider(
+                      height: 5,
+                      color: Colors.black12,
+                    ),
+                    margin: EdgeInsets.only(top: 5, bottom: 5),
+                  ),
+                ],
               ),
-              margin: EdgeInsets.only(top: 5, bottom: 5),
             ),
-            CountWidget(
-              goodDetail: goodDetail,
-            ),
-          ],
-        ),
+          ),
+          CountWidget(
+            goodDetail: goodDetail,
+          ),
+        ],
       );
     } catch (e) {
       print(e);
