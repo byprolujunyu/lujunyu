@@ -341,6 +341,24 @@ class CartItemWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
+            margin: EdgeInsets.all(5),
+            child: InkWell(
+              onTap: () => switchChaned(index),
+              child: Row(
+
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    data.isSelected
+                        ? Icons.check_circle_outline
+                        : Icons.radio_button_unchecked,
+                    color: KColorConstant.themeColor,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Container(
             margin: EdgeInsets.only(
                 left: ScreenUtil().setWidth(10),
                 right: ScreenUtil().setWidth(8)),
@@ -498,12 +516,13 @@ class CartBottomWidget extends StatelessWidget {
       // this.model = model;
       return Container(
         height: ScreenUtil().setWidth(100),
+
         decoration: BoxDecoration(
             color: KColorConstant.cartBottomBgColor,
             border: Border(
                 top: BorderSide(
                     width: 1, color: KColorConstant.divideLineColor))),
-        padding: EdgeInsets.only(left: ScreenUtil().setWidth(60)),
+        //    padding: EdgeInsets.only(left: ScreenUtil().setWidth(60)),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -512,21 +531,22 @@ class CartBottomWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   InkWell(
-                      onTap: () => model.switchAllCheck(),
-                      child: Row(
-                        children: <Widget>[
-                          Icon(
-                            model.isAllchecked
-                                ? Icons.check_circle_outline
-                                : Icons.radio_button_unchecked,
-                            color: KColorConstant.themeColor,
-                          ),
-                          Text(
-                            KString.allSelectedTxt,
-                            style: TextStyle(letterSpacing: 2),
-                          )
-                        ],
-                      )),
+                    onTap: () => model.switchAllCheck(),
+                    child: Row(
+                      children: <Widget>[
+                        Icon(
+                          model.isAllchecked
+                              ? Icons.check_circle_outline
+                              : Icons.radio_button_unchecked,
+                          color: KColorConstant.themeColor,
+                        ),
+                        Text(
+                          KString.allSelectedTxt,
+                          style: TextStyle(letterSpacing: 2),
+                        )
+                      ],
+                    ),
+                  ),
                   Expanded(
                     child: _TotalWidget(
                       totalPrice: model.sumTotal,
