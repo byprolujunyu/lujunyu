@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_button/constants/index.dart';
 import 'package:flutter_button/detail/datail_page_new.dart';
@@ -189,7 +190,8 @@ class _HomePageState extends State<HomePage>
             onTap: () {
               Map newM = mapToMap2(val);
               var id = val['goodsId'];
-              Application.router.navigateTo(context, '/detail?id=$id');
+              final tansitionType = TransitionType.fadeIn;
+              Application.router.navigateTo(context, '/detail?id=$id',transition: tansitionType);
             },
             child: Container(
               width: ScreenUtil().setWidth(350),
@@ -409,12 +411,24 @@ class SwiperDiy extends StatelessWidget {
             child: Image.network("${swiperDataList[index]['image']}",
                 fit: BoxFit.fill),
             onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                return DetailPageNew(
-                  goodsId: swiperDataList[index]['goodsId'],
+              var transition = (BuildContext context,
+                  Animation<double> animation,
+                  Animation<double> secondaryAnimation,
+                  Widget child) {
+                return new ScaleTransition(
+                  scale: animation,
+                  child: new RotationTransition(
+                    turns: animation,
+                    child: child,
+                  ),
                 );
-              }));
+              };
+
+              Application.router.navigateTo(
+                  context, '/detail?id=${swiperDataList[index]['goodsId']}',
+                  transition: TransitionType.custom,
+                  transitionBuilder: transition,
+                  transitionDuration: const Duration(milliseconds: 600));
             },
           );
         },
