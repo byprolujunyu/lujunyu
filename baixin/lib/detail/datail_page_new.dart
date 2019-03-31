@@ -346,6 +346,30 @@ class CountWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Expanded(
+            flex: 3,
+            child: InkWell(
+              child: Container(
+                color: Colors.white,
+                alignment: Alignment.center,
+                child: Container(
+                  height: ScreenUtil().setHeight(50),
+                  width: ScreenUtil().setWidth(50),
+                  child: Image.asset('images/icon_detai;_page_cart.png'),
+                ),
+              ),
+              onTap: () {
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(
+                        builder: (context) => IndexPage(
+                              item: 0,
+                              index: 2,
+                            )),
+                    (route) => route == null);
+              },
+            ),
+          ),
+          Expanded(
+            flex: 7,
             child: InkWell(
               onTap: () {
                 showBottomWidget(
@@ -366,6 +390,7 @@ class CountWidget extends StatelessWidget {
             ),
           ),
           Expanded(
+            flex: 7,
             child: InkWell(
               onTap: () {
                 Navigator.of(context)
@@ -397,18 +422,6 @@ class MiddleWidget extends StatelessWidget {
   final Map map;
 
   MiddleWidget(this.map);
-
-  List<Widget> _pagelist = [];
-  List<Widget> _tabs = [
-    Tab(
-      text: '正在热映',
-      icon: Icon(Icons.movie_filter),
-    ),
-    Tab(
-      text: '即将上映',
-      icon: Icon(Icons.movie_creation),
-    ),
-  ];
 
   @override
   Widget build(BuildContext context) {
