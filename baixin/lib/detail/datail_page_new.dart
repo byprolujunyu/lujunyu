@@ -201,6 +201,9 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
                 margin: EdgeInsets.all(10.0),
                 child: Text(
                   '购买数量',
+                  style: TextStyle(
+                    fontSize: ScreenUtil().setSp(30),
+                  ),
                 ),
               ),
               Container(
@@ -218,8 +221,8 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
                         GestureDetector(
                           onTap: () => {_dix_count()},
                           child: Container(
-                            width: ScreenUtil().setWidth(50),
-                            height: ScreenUtil().setHeight(50),
+                            width: ScreenUtil().setWidth(80),
+                            height: ScreenUtil().setHeight(80),
                             decoration:
                                 BoxDecoration(border: _getRemoveBtBorder()),
                             child: Icon(Icons.remove,
@@ -228,8 +231,8 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
                         ),
                         Container(
                           alignment: Alignment.center,
-                          width: ScreenUtil().setWidth(50),
-                          height: ScreenUtil().setHeight(50),
+                          width: ScreenUtil().setWidth(80),
+                          height: ScreenUtil().setHeight(80),
                           decoration: BoxDecoration(
                             border: Border.all(
                                 color: KColorConstant.cartItemCountTxtColor,
@@ -238,7 +241,7 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
                           child: Text(
                             '${count}',
                             style: TextStyle(
-                                fontSize: 13,
+                                fontSize: ScreenUtil().setSp(30),
                                 fontWeight: FontWeight.bold,
                                 color: KColorConstant.cartItemCountTxtColor),
                           ),
@@ -247,8 +250,8 @@ class _SelectCountWidgetState extends State<SelectCountWidget> {
                           onTap: () => {_add_count()},
                           child: Container(
                             alignment: Alignment.center,
-                            width: ScreenUtil().setWidth(50),
-                            height: ScreenUtil().setHeight(50),
+                            width: ScreenUtil().setWidth(80),
+                            height: ScreenUtil().setHeight(80),
                             decoration:
                                 BoxDecoration(border: _getAddBtBorder()),
                             child: Icon(Icons.add, color: _getAddbuttonColor()),

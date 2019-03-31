@@ -43,6 +43,8 @@ dependencies:
   flutter_html: ^0.9.6
   common_utils: ^1.0.9
   flip_panel: ^1.0.0
+  flutter_spinkit: ^3.1.0
+  flutter_villains: ^1.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
