@@ -2,6 +2,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_button/detail/datail_page_new.dart';
 import 'package:flutter_button/order/order_center.dart';
+import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_button/pay/multi_pay.dart';
 
 
@@ -18,6 +19,12 @@ Handler orderHandler = Handler(
 Handler mutliPayHandler = Handler(
   handlerFunc: (BuildContext context, Map<String, dynamic> params) {
     return MutliPayPage(model: params['model'][0],);
+  },
+);
+
+Handler rootHandler = Handler(
+  handlerFunc: (context,params) {
+    return IndexPage();
   },
 );
 

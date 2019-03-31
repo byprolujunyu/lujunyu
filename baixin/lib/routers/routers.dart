@@ -18,5 +18,7 @@ class Routers{
     router.define(orderPage, handler: orderHandler);
 
     router.define(mutliPayPage, handler: mutliPayHandler);
+
+    router.define(root, handler: rootHandler);
   }
 }

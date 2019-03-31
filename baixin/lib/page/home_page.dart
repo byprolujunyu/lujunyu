@@ -17,6 +17,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 
+jump(@required context, @required goodid) {
+  Application.router.navigateTo(context, '/detail?id=$goodid',
+      transition: TransitionType.fadeIn);
+}
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -190,8 +195,7 @@ class _HomePageState extends State<HomePage>
             onTap: () {
               Map newM = mapToMap2(val);
               var id = val['goodsId'];
-              final tansitionType = TransitionType.fadeIn;
-              Application.router.navigateTo(context, '/detail?id=$id',transition: tansitionType);
+              jump(context, id);
             },
             child: Container(
               width: ScreenUtil().setWidth(350),
@@ -411,24 +415,9 @@ class SwiperDiy extends StatelessWidget {
             child: Image.network("${swiperDataList[index]['image']}",
                 fit: BoxFit.fill),
             onTap: () {
-              var transition = (BuildContext context,
-                  Animation<double> animation,
-                  Animation<double> secondaryAnimation,
-                  Widget child) {
-                return new ScaleTransition(
-                  scale: animation,
-                  child: new RotationTransition(
-                    turns: animation,
-                    child: child,
-                  ),
-                );
-              };
-
               Application.router.navigateTo(
                   context, '/detail?id=${swiperDataList[index]['goodsId']}',
-                  transition: TransitionType.custom,
-                  transitionBuilder: transition,
-                  transitionDuration: const Duration(milliseconds: 600));
+                  transition: TransitionType.fadeIn);
             },
           );
         },
@@ -622,12 +611,8 @@ class RecommendUI extends StatelessWidget {
     return InkWell(
       onTap: () {
         //todo
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (BuildContext ctx) {
-          return DetailPageNew(
-            goodsId: item['goodsId'],
-          );
-        }));
+        var goodid = item['goodsId'];
+        jump(context, goodid);
       },
       child: SingleChildScrollView(
         physics: new NeverScrollableScrollPhysics(),
@@ -731,15 +716,7 @@ class Floor extends StatelessWidget {
   Floor({Key key, this.floor}) : super(key: key);
 
   void jumpDetail(context, String goodsid) {
-//    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext ctx) {
-//      return DetailPageNew(
-//        goodsId: goodsid,
-//      );
-//    }));
-
-    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext ctx) {
-      return DetailPageNew(goodsId: goodsid);
-    }));
+    jump(context, goodsid);
   }
 
 //DetailPageNew
@@ -823,10 +800,7 @@ class Floor extends StatelessWidget {
   }
 }
 
-//    Navigator.of(context)
-//                    .push(MaterialPageRoute(builder: (BuildContext ctx) {
-//                  return SearchP();
-//                }));
+
 class MiddleAd extends StatelessWidget {
   final String saoma;
 
