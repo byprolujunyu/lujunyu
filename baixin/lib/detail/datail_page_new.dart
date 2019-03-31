@@ -437,7 +437,7 @@ class MiddleWidget extends StatelessWidget {
     print(m);
     try {
       return Container(
-        height: 400,
+        height: ScreenUtil().setHeight(1000),
         child: DefaultTabController(
           length: 2,
           initialIndex: 0,
