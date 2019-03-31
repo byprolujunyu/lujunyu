@@ -7,6 +7,7 @@ import 'package:flutter_button/fuji/youhui_pic.dart';
 import 'package:flutter_button/page/category_page.dart';
 import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_button/page/seracher.dart';
+import 'package:flutter_button/routers/application.dart';
 import 'package:flutter_button/shop/shop_info.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
 import 'package:flutter_button/widget/ada_widget.dart';
@@ -188,12 +189,14 @@ class _HomePageState extends State<HomePage>
             onTap: () {
               Map newM = mapToMap2(val);
               var id = val['goodsId'];
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                return DetailPageNew(
-                  goodsId: id,
-                );
-              }));
+//              Navigator.of(context)
+//                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+//                return DetailPageNew(
+//                  goodsId: id,
+//                );
+//              }));
+
+              Application.router.navigateTo(context, '/detail?id=$id');
             },
             child: Container(
               width: ScreenUtil().setWidth(350),
@@ -700,16 +703,15 @@ class FloorPic extends StatelessWidget {
           floorPic['PICTURE_ADDRESS'],
         ),
         onTap: () {
-
           Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(
                   builder: (context) => IndexPage(
-                    item:floorPic['TO_PLACE'] == '4'
-                        ? 0
-                        : floorPic['TO_PLACE'] != '4' ? 0 : 1,
-                    index: 1,
-                  )),
-                  (route) => route == null);
+                        item: floorPic['TO_PLACE'] == '4'
+                            ? 0
+                            : floorPic['TO_PLACE'] != '4' ? 0 : 1,
+                        index: 1,
+                      )),
+              (route) => route == null);
         },
       ),
     );

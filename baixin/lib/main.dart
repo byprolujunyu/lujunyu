@@ -1,7 +1,10 @@
 import 'package:amap_base/amap_base.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_button/constants/index.dart';
+import 'package:flutter_button/routers/application.dart';
+import 'package:flutter_button/routers/routers.dart';
 
 import 'package:flutter_button/service/service_method.dart';
 
@@ -28,7 +31,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final router = new Router();
+    Routers.configuerRouters(router);
+    Application.router = router;
+
     return MaterialApp(
+      onGenerateRoute: Application.router.generator,
       debugShowCheckedModeBanner: false,
       home: showLoadingPage(),
       theme: ThemeData(primaryColor: Colors.pink),

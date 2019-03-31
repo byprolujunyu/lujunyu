@@ -42,6 +42,7 @@ dependencies:
   path_provider: ^0.4.0
   flutter_html: ^0.9.6
   common_utils: ^1.0.9
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
