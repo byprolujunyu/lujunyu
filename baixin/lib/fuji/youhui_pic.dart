@@ -21,7 +21,6 @@ class FujiPicPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           '领取优惠券',
-          
         ),
         elevation: 0.0,
       ),
@@ -32,34 +31,39 @@ class FujiPicPage extends StatelessWidget {
               var data = json.decode(snapshot.data.toString());
               print(data);
               Map map = data['data'];
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Container(
-                    height: MediaQuery.of(context).size.height / 4,
-                    width: MediaQuery.of(context).size.width,
-                    child: Image.network(
-                      map['PICTURE_ADDRESS'],
-                      fit: BoxFit.fill,
+              return SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
+                      height: MediaQuery.of(context).size.height / 4,
+                      width: MediaQuery.of(context).size.width,
+                      child: Image.network(
+                        map['PICTURE_ADDRESS'],
+                        fit: BoxFit.fill,
+                      ),
                     ),
-                  ),
-                  
-                 Row(
-                   mainAxisAlignment: MainAxisAlignment.end,
-                   children: <Widget>[
-                   Container(
-                     decoration: BoxDecoration(
-                       color: Colors.pink,
-                       borderRadius: BorderRadius.circular(8),
-                     ),
-                     alignment: Alignment.center,
-                     width: ScreenUtil().setWidth(200),
-                     height: ScreenUtil().setHeight(80),
-                     margin: EdgeInsets.all(5.0),
-                     child: Text('使用优惠券',style: TextStyle(color: Colors.white),),
-                   ),
-                 ],),
-                ],
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.pink,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          alignment: Alignment.center,
+                          width: ScreenUtil().setWidth(200),
+                          height: ScreenUtil().setHeight(80),
+                          margin: EdgeInsets.all(5.0),
+                          child: Text(
+                            '使用优惠券',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               );
             } else {
               return Center(

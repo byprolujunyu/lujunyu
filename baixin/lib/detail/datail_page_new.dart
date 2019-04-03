@@ -7,6 +7,7 @@ import 'package:flutter_button/db/db_helper.dart';
 import 'package:flutter_button/detail/detail_page.dart';
 import 'package:flutter_button/model/cart_model.dart';
 import 'package:flutter_button/model/good_detail.dart';
+import 'package:flutter_button/model/new_details.dart';
 import 'package:flutter_button/page/cart_ios_page.dart';
 import 'package:flutter_button/page/command_bottom.dart';
 import 'package:flutter_button/page/detail_bottom.dart';
@@ -36,14 +37,21 @@ class _DetailPageNewState extends State<DetailPageNew> {
   GoodDetail goodDetail;
   Map map;
 
+  NewDetailModel detailModel;
+
   @override
   Widget build(BuildContext context) {
+    String ID = widget.goodsId;
     return FutureBuilder(
         future: shopGoodsDetailImg(widget.goodsId),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             var data = json.decode(snapshot.data.toString());
             print(data);
+
+            detailModel = NewDetailModel.fromJson(data);
+            print(detailModel);
+
             map = data['data'];
 
             shopInfo = data['data']['goodInfo'];
@@ -354,10 +362,31 @@ class CountWidget extends StatelessWidget {
               child: Container(
                 color: Colors.white,
                 alignment: Alignment.center,
-                child: Container(
-                  height: ScreenUtil().setHeight(50),
-                  width: ScreenUtil().setWidth(50),
-                  child: Image.asset('images/icon_detai;_page_cart.png'),
+                child: Stack(
+                  children: <Widget>[
+                    Container(
+                      height: ScreenUtil().setHeight(50),
+                      width: ScreenUtil().setWidth(50),
+                      child: Image.asset('images/icon_detai;_page_cart.png'),
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      width: ScreenUtil().setWidth(30),
+                      height: ScreenUtil().setHeight(30),
+                      child: Text(
+                        '99',
+                        style: TextStyle(
+                          fontSize: ScreenUtil().setSp(10),
+                          color: Colors.white,
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                    ),
+                  ],
+                  alignment: FractionalOffset(0.999, 0.001),
                 ),
               ),
               onTap: () {

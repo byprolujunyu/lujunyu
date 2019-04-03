@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_button/constants/index.dart';
@@ -142,9 +143,12 @@ class EmptyWidget extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute(builder: (context) => IndexPage()),
-                      (route) => route == null);
+//                  Navigator.of(context).pushAndRemoveUntil(
+//                      MaterialPageRoute(builder: (context) => IndexPage()),
+//                      (route) => route == null);
+
+                  Application.router.navigateTo(context, '/',
+                      replace: true, transition: TransitionType.nativeModal);
                 },
               ),
             ),
@@ -345,7 +349,6 @@ class CartItemWidget extends StatelessWidget {
             child: InkWell(
               onTap: () => switchChaned(index),
               child: Row(
-
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Icon(

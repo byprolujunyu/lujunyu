@@ -6,6 +6,7 @@ import 'package:flutter_button/page/cart_test.dart';
 import 'package:flutter_button/routers/application.dart';
 import 'package:flutter_button/shop/about_us.dart';
 import 'package:flutter_button/widget/my_widget.dart';
+import 'package:flutter_button/widget/panel.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../service/service_method.dart';
 
@@ -340,7 +341,11 @@ class LoveUI extends StatelessWidget {
                 return FujiPicPage();
               }));
             } else if (names[index] == '已领取优惠券') {
-              Application.router.navigateTo(context, '/panel');
+      //        Application.router.navigateTo(context, '/panel');
+              Navigator.of(context)
+                  .push(MaterialPageRoute(fullscreenDialog: true,builder: (BuildContext ctx) {
+                return Panel();
+              }));
             }
           }),
     );
