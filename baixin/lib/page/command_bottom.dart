@@ -99,8 +99,8 @@ class _CommTabWidgetState extends State<CommTabWidget> {
 
   String convert(int date) {
     var def = DateFormat.DEFAULT;
-    var dateTime = DateTime.fromMicrosecondsSinceEpoch(date);
-    var zhWeekDayByMs = DateUtil.getDateStrByDateTime(dateTime,format: DateFormat.HOUR_MINUTE_SECOND);
+    var dateTime = DateTime.fromMillisecondsSinceEpoch(date);
+    var zhWeekDayByMs = DateUtil.getDateStrByDateTime(dateTime,format: DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE);
     return zhWeekDayByMs;
   }
 }
