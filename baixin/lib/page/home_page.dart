@@ -260,8 +260,8 @@ class _HomePageState extends State<HomePage>
           actions: <Widget>[],
         ),
         body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
+          child: Container(
+           // padding: const EdgeInsets.all(8.0),
             child: FutureBuilder(
               future: getHomePageContent(),
               builder: (context, snapshot) {

@@ -56,13 +56,8 @@ class _CommTabWidgetState extends State<CommTabWidget> {
   Widget getCommendsList() {
     if (widget.ms.length != 0) {
       return Container(
-        height: widget.ms.length * MediaQuery.of(context).size.height / 7,
-        child: ListView.builder(
-          itemBuilder: (context, index) {
-            return getUi(context, widget.ms[index], index);
-          },
-          itemCount: widget.ms.length,
-        ),
+        height: widget.ms.length * MediaQuery.of(context).size.height / 12,
+        child: list(),
       );
     } else {
       return Container(
@@ -70,6 +65,20 @@ class _CommTabWidgetState extends State<CommTabWidget> {
         margin: EdgeInsets.only(top: 15.0),
       );
     }
+  }
+
+  Widget list() {
+    List<Widget> listWidget = widget.ms.map((val) {
+      return getUi(context, val, 0);
+    }).toList();
+    return ListView.builder(
+          physics: new NeverScrollableScrollPhysics(),
+          itemBuilder: (context, index) {
+            return getUi(context, widget.ms[index], index);
+          },
+          itemCount: widget.ms.length,
+//      children: listWidget,
+    );
   }
 
 //comments
@@ -100,7 +109,8 @@ class _CommTabWidgetState extends State<CommTabWidget> {
   String convert(int date) {
     var def = DateFormat.DEFAULT;
     var dateTime = DateTime.fromMillisecondsSinceEpoch(date);
-    var zhWeekDayByMs = DateUtil.getDateStrByDateTime(dateTime,format: DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE);
+    var zhWeekDayByMs = DateUtil.getDateStrByDateTime(dateTime,
+        format: DateFormat.YEAR_MONTH_DAY_HOUR_MINUTE);
     return zhWeekDayByMs;
   }
 }
