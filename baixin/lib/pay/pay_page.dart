@@ -12,10 +12,10 @@ import 'package:flutter_button/address/add_address.dart';
 import 'package:flutter_button/db/db_helper_address.dart';
 
 class PayPage extends StatefulWidget {
-  final  GoodDetail map1;
-  final  Map map;
+  final GoodDetail map1;
+  final Map map;
 
-  PayPage({Key key, this.map1,this.map}) : super(key: key);
+  PayPage({Key key, this.map1, this.map}) : super(key: key);
 
   @override
   _PayPageState createState() => _PayPageState();
@@ -49,42 +49,187 @@ class _PayPageState extends State<PayPage> {
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            '订单确认',
-          ),
-          elevation: 0.0,
+      appBar: AppBar(
+        title: Text(
+          '订单确认',
         ),
-        body: WillPopScope(
-            child: Container(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: <Widget>[
-                    getAddressW(),
-                    MyDivider(
-                      height: ScreenUtil().setHeight(5),
-                      color: Color.fromARGB(255, 240, 238, 238),
+        elevation: 0.0,
+      ),
+      backgroundColor: Color.fromARGB(255, 248, 247, 246),
+      body: WillPopScope(
+        child: Container(
+          height: ScreenUtil.screenHeight,
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                child: list(),
+              ),
+              buttom(),
+            ],
+          ),
+        ),
+        onWillPop: () {
+//          Navigator.of(context).pushAndRemoveUntil(
+//              MaterialPageRoute(builder: (context) => IndexPage()),
+//              (route) => route == null);
+          Navigator.pop(context);
+        },
+      ),
+    );
+  }
+
+  Widget buttom() {
+    return Container(
+      height: ScreenUtil().setHeight(130),
+      color: Color.fromARGB(255, 240, 238, 240),
+      child: Container(
+        padding: EdgeInsets.all(5),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(left: 8),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    child: Text(
+                      '合计:',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: ScreenUtil().setSp(30)),
                     ),
-                    ProductInfo(
-                      pic: widget.map1.image,
-                      name: widget.map1.name,
-                      price: widget.map1.price,
-                      count: 1,
+                  ),
+                  Container(
+                    child: Text(
+                      '￥ ${widget.map1.price}',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.red),
                     ),
-                    MyDivider(
-                      height: ScreenUtil().setHeight(5),
-                      color: Color.fromARGB(255, 240, 238, 238),
-                    ),
-                    PayList(price: widget.map1.price),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
-            onWillPop: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => IndexPage()),
-                  (route) => route == null);
-            }));
+            Container(
+              margin: EdgeInsets.only(right: 8),
+              height: ScreenUtil().setHeight(80),
+              width: ScreenUtil().setWidth(180),
+              alignment: Alignment.center,
+              child: Text(
+                '去付款',
+                style: TextStyle(color: Colors.white),
+              ),
+              decoration: BoxDecoration(
+                  color: Colors.red, borderRadius: BorderRadius.circular(5)),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  //images/icon_weixinzhifu.png
+
+  Widget tip() {
+    return SingleChildScrollView(
+      child: Container(
+        color: Colors.white,
+        child: Wrap(
+         
+          children: <Widget>[
+            Text(
+              '温馨提示',
+              style: TextStyle(
+                  color: Color.fromARGB(255, 179, 49, 114),
+                  fontWeight: FontWeight.bold),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width-ScreenUtil().setWidth(10),
+              child: Text(
+                ' 普通商品，订单满10.00元免配送费;最快15分钟送达;晚上8:30以后下的订单，第二天早晨8点开始统-配送，给您带来的不便敬请谅解，祝您购物愉快:)预购商品会根据活动规则及时为你配送',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                maxLines: 4,
+              ),
+
+            ),
+          ],
+        ),
+      ),
+      scrollDirection: Axis.horizontal,
+    );
+  }
+
+  Widget zhifu() {
+    return Container(
+      height: ScreenUtil().setHeight(140),
+      padding: EdgeInsets.all(9),
+      alignment: Alignment.center,
+      color: Colors.white,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            height: ScreenUtil().setHeight(80),
+            width: ScreenUtil().setWidth(80),
+            child: Image.asset(
+              'images/icon_weixinzhifu.png',
+              fit: BoxFit.fill,
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 5),
+            child: Text(
+              '微信支付',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget list() {
+    return Container(
+      height: ScreenUtil.screenHeight,
+      child: ListView(
+        children: <Widget>[
+          getAddressW(),
+          MyDivider(
+            height: ScreenUtil().setHeight(5),
+            color: Color.fromARGB(255, 240, 238, 238),
+          ),
+          ProductInfo(
+            pic: widget.map1.image,
+            name: widget.map1.name,
+            price: widget.map1.price,
+            count: 1,
+          ),
+          MyDivider(
+            height: ScreenUtil().setHeight(5),
+            color: Color.fromARGB(255, 240, 238, 238),
+          ),
+          PayList(price: widget.map1.price),
+          MyDivider(
+            height: ScreenUtil().setHeight(5),
+            color: Color.fromARGB(255, 240, 238, 238),
+          ),
+          tip(),
+          MyDivider(
+            height: ScreenUtil().setHeight(5),
+            color: Colors.grey,
+          ),
+          zhifu(),
+          MyDivider(
+            height: ScreenUtil().setHeight(5),
+            color: Colors.grey,
+          ),
+        ],
+      ),
+    );
   }
 
   Widget getAddressW() {
@@ -215,8 +360,8 @@ class ProductInfo extends StatelessWidget {
         children: <Widget>[
           Container(
             margin: EdgeInsets.only(left: 10.0),
-            width: ScreenUtil().setWidth(90),
-            height: ScreenUtil().setHeight(90),
+            width: ScreenUtil().setWidth(150),
+            height: ScreenUtil().setHeight(150),
             child: Image.network(pic),
             decoration: BoxDecoration(
               border: Border(
@@ -292,26 +437,6 @@ class PayList extends StatelessWidget {
             child: ListTile(
               title: Text("实付金额"),
               trailing: Text('￥ ${price * 2}0'),
-            ),
-          ),
-          Divider(),
-          Container(
-            margin: EdgeInsets.only(top: ScreenUtil().setHeight(140)),
-            child: Center(
-              child: InkWell(
-                onTap: () {},
-                child: Container(
-                  width: ScreenUtil().setHeight(180),
-                  height: ScreenUtil().setHeight(60),
-                  color: Colors.red,
-                  child: Center(
-                    child: Text(
-                      '去付款',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
             ),
           ),
         ],
