@@ -286,6 +286,10 @@ class _HomePageState extends State<HomePage>
                   Map fp2 = data['data']['floor2Pic'];
                   Map fp1 = data['data']['floor1Pic'];
 
+                  String floor1Title =data['data']['floor1Pic']['PICTURE_ADDRESS'];//楼层1的标题图片
+                  String floor2Title =data['data']['floor2Pic']['PICTURE_ADDRESS'];//楼层1的标题图片
+                  String floor3Title =data['data']['floor3Pic']['PICTURE_ADDRESS'];//楼层1的标题图片
+
                   String integralMallPic =
                       data['data']['integralMallPic']['PICTURE_ADDRESS'];
                   String newUser = data['data']['newUser']['PICTURE_ADDRESS'];
@@ -344,15 +348,15 @@ class _HomePageState extends State<HomePage>
                         FloorPic(
                           floorPic: fp1,
                         ),
-                        Floor(floor: floor1),
+                        FloorContent(floorGoodsList: floor1),
                         FloorPic(
                           floorPic: fp2,
                         ),
-                        Floor(floor: floor2),
+                        FloorContent(floorGoodsList: floor2),
                         FloorPic(
                           floorPic: fp3,
                         ),
-                        Floor(floor: floor3),
+                        FloorContent(floorGoodsList: floor3),
                         // HotUI(),
                         // HotUI(),
                         _hotGoods(),
@@ -901,14 +905,58 @@ class MiddleAd extends StatelessWidget {
 //  }
 }
 
-class HotGoods extends StatefulWidget {
-  @override
-  _HotGoodsState createState() => _HotGoodsState();
-}
+//楼层商品组件
+class FloorContent extends StatelessWidget {
+  final List floorGoodsList;
 
-class _HotGoodsState extends State<HotGoods> {
+  FloorContent({Key key, this.floorGoodsList}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Column(
+        children: <Widget>[
+          _firstRow(context),
+          _otherGoods(context)
+        ],
+      ),
+    );
   }
+
+  Widget _firstRow(context){
+    return Row(
+      children: <Widget>[
+        _goodsItem(context,floorGoodsList[0]),
+        Column(
+          children: <Widget>[
+            _goodsItem(context,floorGoodsList[1]),
+            _goodsItem(context,floorGoodsList[2]),
+          ],
+        )
+      ],
+    );
+  }
+
+  Widget _otherGoods(context){
+    return Row(
+      children: <Widget>[
+        _goodsItem(context,floorGoodsList[3]),
+        _goodsItem(context,floorGoodsList[4]),
+      ],
+    );
+  }
+
+  Widget _goodsItem(context,Map goods){
+
+    return Container(
+      width:ScreenUtil().setWidth(375),
+      child: InkWell(
+        onTap:(){
+          Application.router.navigateTo(context, "/detail?id=${goods['goodsId']}");
+        },
+        child: Image.network(goods['image']),
+      ),
+    );
+  }
+
 }
