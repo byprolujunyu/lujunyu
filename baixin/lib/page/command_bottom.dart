@@ -44,8 +44,6 @@ class _CommTabWidgetState extends State<CommTabWidget> {
             child: getCommendsList(),
           ),
           Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
             child: Image.network(widget.map['PICTURE_ADDRESS']),
           ),
         ],
@@ -56,8 +54,7 @@ class _CommTabWidgetState extends State<CommTabWidget> {
   Widget getCommendsList() {
     if (widget.ms.length != 0) {
       return Container(
-        height: widget.ms.length * MediaQuery.of(context).size.height / 12,
-        child: list(),
+        height: MediaQuery.of(context).size.width/2,       child: list(),
       );
     } else {
       return Container(
@@ -91,14 +88,15 @@ class _CommTabWidgetState extends State<CommTabWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Container(
+          width: MediaQuery.of(context).size.width,
           margin: EdgeInsets.all(5.0),
           child: Text('${m['userName']}'),
         ),
-        Container(
+        Container(  width: MediaQuery.of(context).size.width,
           margin: EdgeInsets.all(5.0),
           child: Text('${m['comments']}'),
         ),
-        Container(
+        Container(  width: MediaQuery.of(context).size.width,
           margin: EdgeInsets.all(5.0),
           child: Text('${c}'),
         ),

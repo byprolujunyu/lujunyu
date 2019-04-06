@@ -261,7 +261,7 @@ class _HomePageState extends State<HomePage>
         ),
         body: Center(
           child: Container(
-           // padding: const EdgeInsets.all(8.0),
+            // padding: const EdgeInsets.all(8.0),
             child: FutureBuilder(
               future: getHomePageContent(),
               builder: (context, snapshot) {
@@ -286,9 +286,12 @@ class _HomePageState extends State<HomePage>
                   Map fp2 = data['data']['floor2Pic'];
                   Map fp1 = data['data']['floor1Pic'];
 
-                  String floor1Title =data['data']['floor1Pic']['PICTURE_ADDRESS'];//楼层1的标题图片
-                  String floor2Title =data['data']['floor2Pic']['PICTURE_ADDRESS'];//楼层1的标题图片
-                  String floor3Title =data['data']['floor3Pic']['PICTURE_ADDRESS'];//楼层1的标题图片
+                  String floor1Title =
+                      data['data']['floor1Pic']['PICTURE_ADDRESS']; //楼层1的标题图片
+                  String floor2Title =
+                      data['data']['floor2Pic']['PICTURE_ADDRESS']; //楼层1的标题图片
+                  String floor3Title =
+                      data['data']['floor3Pic']['PICTURE_ADDRESS']; //楼层1的标题图片
 
                   String integralMallPic =
                       data['data']['integralMallPic']['PICTURE_ADDRESS'];
@@ -439,19 +442,23 @@ class TopNavigator extends StatelessWidget {
   TopNavigator({Key key, this.navigatorList}) : super(key: key);
 
   Widget _gridViewItemUI(BuildContext context, item) {
-    return InkWell(
-      onTap: () {
-        jump(item['mallCategoryName'], context);
-      },
-      child: Column(
-        children: <Widget>[
-          Image.network(
-            item['image'],
-            width: ScreenUtil().setWidth(95),
-            fit: BoxFit.fill,
-          ),
-          Text(item['mallCategoryName'])
-        ],
+    return Container(
+      padding: EdgeInsets.all(5),
+      width: MediaQuery.of(context).size.width/5,
+      child: InkWell(
+        onTap: () {
+          jump(item['mallCategoryName'], context);
+        },
+        child: Column(
+          children: <Widget>[
+            Image.network(
+              item['image'],
+               width: ScreenUtil().setWidth(95),
+              fit: BoxFit.fill,
+            ),
+            Text(item['mallCategoryName'])
+          ],
+        ),
       ),
     );
   }
@@ -459,11 +466,11 @@ class TopNavigator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenUtil().setHeight(320),
-      child: GridView.count(
-        physics: new NeverScrollableScrollPhysics(),
-        crossAxisCount: 5,
-        padding: EdgeInsets.all(4.0),
+     // height: ScreenUtil().setHeight(320),
+      child: Wrap(
+      //  physics: new NeverScrollableScrollPhysics(),
+       // crossAxisCount: 5,
+        //padding: EdgeInsets.all(4.0),
         children: navigatorList.map((item) {
           return _gridViewItemUI(context, item);
         }).toList(),
@@ -621,11 +628,11 @@ class RecommendUI extends StatelessWidget {
       child: SingleChildScrollView(
         physics: new NeverScrollableScrollPhysics(),
         child: Container(
+          width: MediaQuery.of(context).size.width / 3,
           child: Column(
             children: <Widget>[
               Image.network(
                 item['image'],
-                width: ScreenUtil().setWidth(180),
                 fit: BoxFit.fill,
               ),
               Text(
@@ -654,7 +661,7 @@ class RecommendUI extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Container(
-          margin: EdgeInsets.all(ScreenUtil().setWidth(30)),
+          margin: EdgeInsets.only(left: 5),
           child: Text(
             '商品推荐',
             style: TextStyle(
@@ -672,14 +679,14 @@ class RecommendUI extends StatelessWidget {
           margin: EdgeInsets.all(ScreenUtil().setHeight(15)),
         ),
         Container(
-          child: GridView.count(
-            physics: new NeverScrollableScrollPhysics(),
-            crossAxisCount: 3,
+          child: Wrap(
+            //     physics: new NeverScrollableScrollPhysics(),
+            //        crossAxisCount: 3,
             children: recommendList.map((item) {
               return _gridViewItemUI(context, item);
             }).toList(),
           ),
-          height: ScreenUtil().setHeight(300),
+          //        height: ScreenUtil().setHeight(300),
         ),
       ],
     );
@@ -804,7 +811,6 @@ class Floor extends StatelessWidget {
   }
 }
 
-
 class MiddleAd extends StatelessWidget {
   final String saoma;
 
@@ -915,48 +921,44 @@ class FloorContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        children: <Widget>[
-          _firstRow(context),
-          _otherGoods(context)
-        ],
+        children: <Widget>[_firstRow(context), _otherGoods(context)],
       ),
     );
   }
 
-  Widget _firstRow(context){
+  Widget _firstRow(context) {
     return Row(
       children: <Widget>[
-        _goodsItem(context,floorGoodsList[0]),
+        _goodsItem(context, floorGoodsList[0]),
         Column(
           children: <Widget>[
-            _goodsItem(context,floorGoodsList[1]),
-            _goodsItem(context,floorGoodsList[2]),
+            _goodsItem(context, floorGoodsList[1]),
+            _goodsItem(context, floorGoodsList[2]),
           ],
         )
       ],
     );
   }
 
-  Widget _otherGoods(context){
+  Widget _otherGoods(context) {
     return Row(
       children: <Widget>[
-        _goodsItem(context,floorGoodsList[3]),
-        _goodsItem(context,floorGoodsList[4]),
+        _goodsItem(context, floorGoodsList[3]),
+        _goodsItem(context, floorGoodsList[4]),
       ],
     );
   }
 
-  Widget _goodsItem(context,Map goods){
-
+  Widget _goodsItem(context, Map goods) {
     return Container(
-      width:ScreenUtil().setWidth(375),
+      width: ScreenUtil().setWidth(375),
       child: InkWell(
-        onTap:(){
-          Application.router.navigateTo(context, "/detail?id=${goods['goodsId']}");
+        onTap: () {
+          Application.router
+              .navigateTo(context, "/detail?id=${goods['goodsId']}");
         },
         child: Image.network(goods['image']),
       ),
     );
   }
-
 }
