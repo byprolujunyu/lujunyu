@@ -101,8 +101,9 @@ class _PayPageState extends State<PayPage> {
                     ),
                   ),
                   Container(
+                    margin: EdgeInsets.only(left: 5),
                     child: Text(
-                      '￥ ${widget.map1.price}',
+                      '￥ ${widget.map1.price}0',
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.red),
                     ),
@@ -135,7 +136,6 @@ class _PayPageState extends State<PayPage> {
       child: Container(
         color: Colors.white,
         child: Wrap(
-         
           children: <Widget>[
             Text(
               '温馨提示',
@@ -144,14 +144,14 @@ class _PayPageState extends State<PayPage> {
                   fontWeight: FontWeight.bold),
             ),
             Container(
-              width: MediaQuery.of(context).size.width-ScreenUtil().setWidth(10),
+              width:
+                  MediaQuery.of(context).size.width - ScreenUtil().setWidth(10),
               child: Text(
                 ' 普通商品，订单满10.00元免配送费;最快15分钟送达;晚上8:30以后下的订单，第二天早晨8点开始统-配送，给您带来的不便敬请谅解，祝您购物愉快:)预购商品会根据活动规则及时为你配送',
                 style:
                     TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                 maxLines: 4,
               ),
-
             ),
           ],
         ),
@@ -171,8 +171,8 @@ class _PayPageState extends State<PayPage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
-            height: ScreenUtil().setHeight(80),
-            width: ScreenUtil().setWidth(80),
+            height: 30,
+            width: 30,
             child: Image.asset(
               'images/icon_weixinzhifu.png',
               fit: BoxFit.fill,
@@ -198,78 +198,75 @@ class _PayPageState extends State<PayPage> {
       child: ListView(
         children: <Widget>[
           getAddressW(),
-          MyDivider(
-            height: ScreenUtil().setHeight(5),
-            color: Color.fromARGB(255, 240, 238, 238),
-          ),
+          line(),
           ProductInfo(
             pic: widget.map1.image,
             name: widget.map1.name,
             price: widget.map1.price,
             count: 1,
           ),
-          MyDivider(
-            height: ScreenUtil().setHeight(5),
-            color: Color.fromARGB(255, 240, 238, 238),
-          ),
+          line(),
           PayList(price: widget.map1.price),
-          MyDivider(
-            height: ScreenUtil().setHeight(5),
-            color: Color.fromARGB(255, 240, 238, 238),
-          ),
+          line(),
           tip(),
-          MyDivider(
-            height: ScreenUtil().setHeight(5),
-            color: Colors.grey,
-          ),
+          line(),
           zhifu(),
-          MyDivider(
-            height: ScreenUtil().setHeight(5),
-            color: Colors.grey,
-          ),
+          line(),
         ],
       ),
     );
   }
 
+  Widget line() {
+    return MyDivider(
+      height: ScreenUtil().setHeight(15),
+      color: Color.fromARGB(255, 238, 237, 236),
+    );
+  }
+
   Widget getAddressW() {
     return add != null
-        ? Column(
-            children: <Widget>[
-              AddressLine(
-                height: ScreenUtil().setHeight(5),
-              ),
-              AddressInfo(
-                address: add,
-              ),
-              AddressLine(
-                height: ScreenUtil().setHeight(5),
-              ),
-            ],
-          )
-        : Column(
-            children: <Widget>[
-              AddressLine(
-                height: ScreenUtil().setHeight(5),
-              ),
-              InkWell(
-                child: Container(
-                  height: 20,
-                  margin: EdgeInsets.all(5.0),
-                  child: Text('需要默认地址>去添加!'),
+        ? Container(
+            color: Colors.white,
+            child: Column(
+              children: <Widget>[
+                AddressLine(
+                  height: ScreenUtil().setHeight(5),
                 ),
-                onTap: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                    return NewAddressPage();
-                  }));
-                },
-              ),
-              AddressLine(
-                height: ScreenUtil().setHeight(5),
-              ),
-            ],
-          );
+                AddressInfo(
+                  address: add,
+                ),
+                AddressLine(
+                  height: ScreenUtil().setHeight(5),
+                ),
+              ],
+            ),
+          )
+        : Container(
+            color: Colors.white,
+            child: Column(
+              children: <Widget>[
+                AddressLine(
+                  height: ScreenUtil().setHeight(5),
+                ),
+                InkWell(
+                  child: Container(
+                    height: 20,
+                    margin: EdgeInsets.all(5.0),
+                    child: Text('需要默认地址>去添加!'),
+                  ),
+                  onTap: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                      return NewAddressPage();
+                    }));
+                  },
+                ),
+                AddressLine(
+                  height: ScreenUtil().setHeight(5),
+                ),
+              ],
+            ));
   }
 }
 
@@ -353,6 +350,7 @@ class ProductInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = ScreenUtil.screenWidth;
     return Container(
+      color: Colors.white,
       margin: EdgeInsets.only(top: 3.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -417,6 +415,7 @@ class PayList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.white,
       child: Column(
         children: <Widget>[
           Container(

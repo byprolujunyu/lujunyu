@@ -12,6 +12,7 @@ import 'package:flutter_button/widget/my_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../service/service_method.dart';
 import 'package:flutter_button/constants/index.dart';
+
 class MutliPayPage extends StatefulWidget {
   final CartListModelNew model;
 
@@ -39,8 +40,6 @@ class _MutliPayPageState extends State<MutliPayPage> {
 
   var db = DataBaseHelper_address();
 
-
-
   Future _getAddress() async {
     var result = await db.getDefAdd();
     print(result);
@@ -52,39 +51,220 @@ class _MutliPayPageState extends State<MutliPayPage> {
     });
   }
 
+  Widget line() {
+    return MyDivider(
+      height: ScreenUtil().setHeight(15),
+      color: Color.fromARGB(255, 238, 237, 236),
+    );
+  }
+
+  Widget zhifu() {
+    return Container(
+      height: ScreenUtil().setHeight(140),
+      padding: EdgeInsets.all(9),
+      alignment: Alignment.center,
+      color: Colors.white,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            height: 30,
+            width: 30,
+            child: Image.asset(
+              'images/icon_weixinzhifu.png',
+              fit: BoxFit.fill,
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 5),
+            child: Text(
+              '微信支付',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget tip() {
+    return SingleChildScrollView(
+      child: Container(
+        color: Colors.white,
+        child: Wrap(
+          children: <Widget>[
+            Text(
+              '温馨提示',
+              style: TextStyle(
+                  color: Color.fromARGB(255, 179, 49, 114),
+                  fontWeight: FontWeight.bold),
+            ),
+            Container(
+              width:
+                  MediaQuery.of(context).size.width - ScreenUtil().setWidth(10),
+              child: Text(
+                ' 普通商品，订单满10.00元免配送费;最快15分钟送达;晚上8:30以后下的订单，第二天早晨8点开始统-配送，给您带来的不便敬请谅解，祝您购物愉快:)预购商品会根据活动规则及时为你配送',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                maxLines: 4,
+              ),
+            ),
+          ],
+        ),
+      ),
+      scrollDirection: Axis.horizontal,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 248, 247, 246),
       appBar: AppBar(
         title: Text(
           '订单确认',
         ),
         elevation: 0.0,
       ),
-      body:WillPopScope(child:  Container(
-        margin: EdgeInsets.all(0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+      body: WillPopScope(
+          child: Container(
+            margin: EdgeInsets.all(0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Expanded(
+                  child: list(),
+                ),
+                buttom(),
+              ],
+            ),
+          ),
+          onWillPop: () {
+            Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => IndexPage()),
+                (route) => route == null);
+          }),
+    );
+  }
+
+  Widget buttom() {
+    return Container(
+      height: ScreenUtil().setHeight(130),
+      color: Color.fromARGB(255, 240, 238, 240),
+      child: Container(
+        padding: EdgeInsets.all(5),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            getAddressW(),
-            Expanded(
-              child: PList(
-                ms: widget.model.items,
+            Container(
+              margin: EdgeInsets.only(left: 8),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    child: Text(
+                      '合计:',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: ScreenUtil().setSp(30)),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 5),
+                    child: Text(
+                      '￥ ${widget.model.sumTotal.floor()}.00',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.red),
+                    ),
+                  ),
+                ],
               ),
             ),
-            CountWidget(
-              model: widget.model,
+            Container(
+              margin: EdgeInsets.only(right: 8),
+              height: ScreenUtil().setHeight(80),
+              width: ScreenUtil().setWidth(180),
+              alignment: Alignment.center,
+              child: Text(
+                '去付款',
+                style: TextStyle(color: Colors.white),
+              ),
+              decoration: BoxDecoration(
+                  color: Colors.red, borderRadius: BorderRadius.circular(5)),
             ),
           ],
         ),
-      ), onWillPop: (){
-        Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => IndexPage()),
-                (route) => route == null);
-      }),
+      ),
     );
+  }
+
+  Widget list() {
+    return Container(
+      height: ScreenUtil.screenHeight,
+      child: ListView(
+        children: <Widget>[
+          getAddressW(),
+          line(),
+          PList(
+            ms: widget.model.items,
+          ),
+          line(),
+          PayList(price: widget.model.sumTotal.floor().toDouble(),),
+          line(),
+          tip(),
+          line(),
+          zhifu(),
+        ],
+      ),
+    );
+  }  Widget getAddressW() {
+    return add != null
+        ? Container(
+      color: Colors.white,
+      child: Column(
+        children: <Widget>[
+          AddressLine(
+            height: ScreenUtil().setHeight(5),
+          ),
+          AddressInfo(
+            address: add,
+          ),
+          AddressLine(
+            height: ScreenUtil().setHeight(5),
+          ),
+        ],
+      ),
+    )
+        : Container(
+        color: Colors.white,
+        child: Column(
+          children: <Widget>[
+            AddressLine(
+              height: ScreenUtil().setHeight(5),
+            ),
+            InkWell(
+              child: Container(
+                height: 20,
+                margin: EdgeInsets.all(5.0),
+                child: Text('需要默认地址>去添加!'),
+              ),
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                  return NewAddressPage();
+                }));
+              },
+            ),
+            AddressLine(
+              height: ScreenUtil().setHeight(5),
+            ),
+          ],
+        ));
   }
 
   var db1 = new DataBaseHelper();
@@ -104,45 +284,6 @@ class _MutliPayPageState extends State<MutliPayPage> {
         price: item.price);
   }
 
-  Widget getAddressW() {
-    return add != null
-        ? Column(
-      children: <Widget>[
-        AddressLine(
-          height: ScreenUtil().setHeight(5),
-        ),
-        AddressInfo(
-          address: add,
-        ),
-        AddressLine(
-          height: ScreenUtil().setHeight(5),
-        ),
-      ],
-    )
-        : Column(
-      children: <Widget>[
-        AddressLine(
-          height: ScreenUtil().setHeight(5),
-        ),
-        InkWell(
-          child: Container(
-            height: 20,
-            margin: EdgeInsets.all(10.0),
-            child: Text('需要默认地址>去添加!'),
-          ),
-          onTap: (){
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (BuildContext ctx) {
-              return NewAddressPage();
-            }));
-          },
-        ),
-        AddressLine(
-          height: ScreenUtil().setHeight(5),
-        ),
-      ],
-    );
-  }
 }
 
 class ProductListInfo extends StatelessWidget {
@@ -165,64 +306,6 @@ class ProductListInfo extends StatelessWidget {
   }
 }
 
-class PayList extends StatelessWidget {
-  final double price;
-
-  PayList({Key key, this.price}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Container(
-            child: ListTile(
-              title: Text("商品金额"),
-              trailing:
-                  Text('￥ ${price.toString().split(".")[1].substring(0, 1)}0'),
-            ),
-          ),
-          Divider(),
-          Container(
-            child: ListTile(
-              title: Text("运费"),
-              trailing:
-                  Text('￥ ${price.toString().split(".")[1].substring(0, 1)}0'),
-            ),
-          ),
-          Divider(),
-          Container(
-            child: ListTile(
-              title: Text("实付金额"),
-              trailing:
-                  Text('￥ ${price.toString().split(".")[1].substring(0, 1)}0'),
-            ),
-          ),
-          Divider(),
-          Container(
-            margin: EdgeInsets.only(top: ScreenUtil().setHeight(140)),
-            child: Center(
-              child: InkWell(
-                onTap: () {},
-                child: Container(
-                  width: ScreenUtil().setHeight(180),
-                  height: ScreenUtil().setHeight(60),
-                  color: Colors.red,
-                  child: Center(
-                    child: Text(
-                      '去付款',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 class PList extends StatelessWidget {
   final List<CartItemModelNew> ms;
@@ -233,7 +316,8 @@ class PList extends StatelessWidget {
     var c;
     try {
       c = Container(
-        margin: EdgeInsets.only(top: 20),
+        margin: EdgeInsets.all(8),
+        //margin: EdgeInsets.only(top: 20),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -285,7 +369,10 @@ class PList extends StatelessWidget {
                 ],
               ),
             ),
-            Divider(),
+            Divider(
+              height: 5,
+              color: Colors.black26,
+            ),
           ],
         ),
       );
@@ -298,7 +385,8 @@ class PList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: ListView(
+      color: Colors.white,
+      child: Wrap(
         children: ms.map((map) {
           return getItemUi(context, map);
         }).toList(),
@@ -342,8 +430,8 @@ class CountWidget extends StatelessWidget {
     );
   }
 
-  String get(){
-    getSp(key: KString.totalsumKey).then((value){
+  String get() {
+    getSp(key: KString.totalsumKey).then((value) {
       return value;
     });
   }
