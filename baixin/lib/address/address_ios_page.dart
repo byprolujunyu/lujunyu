@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_button/address/add_address.dart';
+import 'package:flutter_button/address/add_address_new.dart';
 import 'package:flutter_button/db/db_helper_address.dart';
 import 'package:flutter_button/model/address.dart';
 import 'package:flutter_button/page/index_main.dart';
@@ -95,7 +96,7 @@ class _NewAddressPageState extends State<NewAddressPage> {
   Future _jump() async {
     print('setAddress');
     Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext ctx) {
-      return AddAddressPage();
+      return AddAddressPage2();
     }));
   }
 
@@ -117,7 +118,7 @@ class _NewAddressPageState extends State<NewAddressPage> {
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                  return AddAddressPage();
+                  return AddAddressPage2();
                 }));
               },
               icon: Icon(Icons.add),
@@ -264,7 +265,7 @@ class HaveData extends StatelessWidget {
                                     onPressed: () { Navigator.of(context).push(
                                       MaterialPageRoute(
                                         builder: (BuildContext ctx) {
-                                          return AddAddressPage(
+                                          return AddAddressPage2(
                                             id: map.id,
                                           );
                                         },
@@ -281,7 +282,7 @@ class HaveData extends StatelessWidget {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
                                   builder: (BuildContext ctx) {
-                                    return AddAddressPage(
+                                    return AddAddressPage2(
                                       id: map.id,
                                     );
                                   },
