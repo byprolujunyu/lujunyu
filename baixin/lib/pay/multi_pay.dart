@@ -145,9 +145,10 @@ class _MutliPayPageState extends State<MutliPayPage> {
             ),
           ),
           onWillPop: () {
-            Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => IndexPage()),
-                (route) => route == null);
+//            Navigator.of(context).pushAndRemoveUntil(
+//                MaterialPageRoute(builder: (context) => IndexPage()),
+//                (route) => route == null);
+          Navigator.pop(context);
           }),
     );
   }

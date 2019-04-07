@@ -120,29 +120,29 @@ class _SearchPState extends State<SearchP> {
         children: listWidget,
       );
     } else if (init == false) {
-      return Loading();
+      return Center(
+        child: Loading(),
+      );
     } else if (init == true) {
-      return Container(
-        child: Center(
-          child: Column(
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.all(10.0),
-                height: ScreenUtil().setHeight(100),
-                width: ScreenUtil().setWidth(100),
-                child: Image.asset(
-                  'images/sousuobudao.png',
-                  fit: BoxFit.fill,
-                ),
+      return Center(
+        child: Column(
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.all(10.0),
+              height: ScreenUtil().setHeight(100),
+              width: ScreenUtil().setWidth(100),
+              child: Image.asset(
+                'images/sousuobudao.png',
+                fit: BoxFit.fill,
               ),
-              Container(
-                child: Text(
-                  '未找到结果',
-                  style: TextStyle(color: Colors.red),
-                ),
+            ),
+            Container(
+              child: Text(
+                '未找到结果',
+                style: TextStyle(color: Colors.red),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       );
     }
@@ -154,7 +154,7 @@ class _SearchPState extends State<SearchP> {
 
   //火爆专区组合
   Widget _seracherGoods() {
-    return Container(
+    return Center(
         child: Column(
       children: <Widget>[
         _wrapList(),
