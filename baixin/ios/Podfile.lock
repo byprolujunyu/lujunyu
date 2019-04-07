@@ -1,20 +1,6 @@
 PODS:
-  - AMap3DMap (6.6.0):
-    - AMapFoundation (~> 1.5)
-  - amap_base (0.1.8):
-    - AMapLocation
-    - AMapNavi
-    - AMapSearch
+  - city_pickers (0.0.1):
     - Flutter
-    - MJExtension
-  - AMapFoundation (1.5.6)
-  - AMapLocation (2.6.1):
-    - AMapFoundation (~> 1.4)
-  - AMapNavi (6.5.0):
-    - AMap3DMap (~> 6.4)
-    - AMapFoundation (~> 1.5)
-  - AMapSearch (6.6.0):
-    - AMapFoundation (~> 1.4)
   - Flutter (1.0.0)
   - flutter_webview_plugin (0.0.1):
     - Flutter
@@ -23,7 +9,6 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - MJExtension (3.0.15.1)
   - path_provider (0.0.1):
     - Flutter
   - shared_preferences (0.0.1):
@@ -35,7 +20,7 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
-  - amap_base (from `.symlinks/plugins/amap_base/ios`)
+  - city_pickers (from `.symlinks/plugins/city_pickers/ios`)
   - Flutter (from `.symlinks/flutter/ios`)
   - flutter_webview_plugin (from `.symlinks/plugins/flutter_webview_plugin/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
@@ -46,17 +31,11 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - AMap3DMap
-    - AMapFoundation
-    - AMapLocation
-    - AMapNavi
-    - AMapSearch
     - FMDB
-    - MJExtension
 
 EXTERNAL SOURCES:
-  amap_base:
-    :path: ".symlinks/plugins/amap_base/ios"
+  city_pickers:
+    :path: ".symlinks/plugins/city_pickers/ios"
   Flutter:
     :path: ".symlinks/flutter/ios"
   flutter_webview_plugin:
@@ -73,22 +52,16 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/url_launcher/ios"
 
 SPEC CHECKSUMS:
-  AMap3DMap: 37425c7d47420cbfaee88328be3dc3781814b999
-  amap_base: 00f37acf64d3e55cf7bcdd350a93f2b04d696f6f
-  AMapFoundation: 20fce2a12cd152e1092afdd04379cdac21932185
-  AMapLocation: cf024b53dc03663efb4ea4bcce27d4cce58bb97a
-  AMapNavi: b3084406c074bdc2f6f6e80474fa6aa80f4ec0d0
-  AMapSearch: def5983c8ca1a6d7430970046dc814f6e337621d
+  city_pickers: d6a9e81ec99140576f5adf29c75b7080ca9a9f99
   Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
   flutter_webview_plugin: 0b491d31c34ab5c86a71c9f1a57ac000dd1b75e9
   fluttertoast: 0a20dcbbb8ecfd1a61b6285651ff2d5989d033fb
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   path_provider: 09407919825bfe3c2deae39453b7a5b44f467873
   shared_preferences: 5a1d487c427ee18fcd3ea1f2a131569481834b53
   sqflite: d1612813fa7db7c667bed9f1d1b508deffc56999
   url_launcher: 92b89c1029a0373879933c21642958c874539095
 
-PODFILE CHECKSUM: aff02bfeed411c636180d6812254b2daeea14d09
+PODFILE CHECKSUM: 730a1fc2b05b5a9e43849abeab09024ef0ccdccf
 
 COCOAPODS: 1.5.3

@@ -31,8 +31,6 @@ class _DetailTabWidgetState extends State<DetailTabWidget> {
             ),
 
             Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
               child: Image.network(widget.m['PICTURE_ADDRESS']),
             ),
           ],
