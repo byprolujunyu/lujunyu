@@ -263,6 +263,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.5.0"
+  provide:
+    dependency: "direct main"
+    description:
+      name: provide
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.2"
   pull_to_refresh:
     dependency: "direct main"
     description:

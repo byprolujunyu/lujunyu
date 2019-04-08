@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_button/constants/index.dart';
 import 'package:flutter_button/detail/datail_page_new.dart';
 import 'package:flutter_button/detail/detail_page.dart';
-import 'package:flutter_button/fuji/youhui_pic.dart';
+import 'package:flutter_button/fuji/fuji_page.dart';
 import 'package:flutter_button/page/category_page.dart';
 import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_button/page/seracher.dart';
@@ -586,7 +586,7 @@ class AdBanner extends StatelessWidget {
       onTap: () {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (BuildContext ctx) {
-          return FujiPicPage();
+          return FujiPage();
         }));
       },
     );
@@ -852,7 +852,7 @@ class MiddleAd extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (BuildContext ctx) {
-                    return FujiPicPage();
+                    return FujiPage();
                   }));
                 },
                 child: Container(

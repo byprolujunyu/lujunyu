@@ -12,4 +12,6 @@ const servicePath = {
   'ada':serviceUrl+'wxmini/getHomePageTip',//广告页
   'aboutUs':serviceUrl+'wxmini/aboutUs',//关于商城
   'fujiCouponsPic':serviceUrl+'wxmini/fujiCouponsPic',//优惠券图片接口
+
+ 'fujiCouponsGetByself':serviceUrl+'wxmini/fujiCouponsGetByself',//优惠券图片接口byid
 };

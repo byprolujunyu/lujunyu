@@ -4,7 +4,14 @@ import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_button/detail/datail_page_new.dart';
 import 'package:flutter_button/detail/detail_page.dart';
+import 'package:flutter_button/model/categoryGoods.dart';
+import 'package:flutter_button/provide/category_goods_list.dart';
+import 'package:flutter_button/provide/child_category.dart';
 import 'package:flutter_button/routers/application.dart';
+import 'package:flutter_button/service/service_method.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provide/provide.dart';
 import 'dart:async';
 import 'dart:convert';
 import "package:pull_to_refresh/pull_to_refresh.dart";
@@ -177,11 +184,7 @@ class _CategoryPageState extends State<CategoryPage> {
           onRefresh: _onRefresh,
           onOffsetChange: _onOffsetCallback,
           enableOverScroll: isLoad,
-          child: GridView.count(
-            crossAxisCount: 2,
-            mainAxisSpacing: 2.0,
-            crossAxisSpacing: 2.0,
-            childAspectRatio: 0.65,
+          child: ListView(
             children: goodList.map((item) {
               return _goodsItem(item);
             }).toList(),
@@ -203,8 +206,9 @@ class _CategoryPageState extends State<CategoryPage> {
   }
 
   Widget _goodsItem(Map goodsItem) {
-    return SingleChildScrollView(
-      physics: new NeverScrollableScrollPhysics(),
+    return Container(
+      // height: ScreenUtil().setHeight(200),
+
       child: InkWell(
         onTap: () {
           var id = goodsItem['goodsId'];
@@ -214,41 +218,63 @@ class _CategoryPageState extends State<CategoryPage> {
           color: Colors.white,
           child: Column(
             children: <Widget>[
-              Container(
-                width: ScreenUtil().setWidth(280),
-                height: ScreenUtil().setHeight(280),
-                child: Image.network("${goodsItem['image']}",fit: BoxFit.fill,),
-              ),
-              Container(
-                  padding: EdgeInsets.all(5.0),
-                  height: ScreenUtil().setHeight(80),
-                  child: ListView(
-                    children: <Widget>[
-                      Text(
-                        goodsItem['goodsName'],
-                        textAlign: TextAlign.left,
-                        style:
-                            TextStyle(color: Color.fromARGB(255, 225, 80, 157)),
-                        maxLines: 2,
-                      ),
-                    ],
-                  )),
-              Container(
-                padding: EdgeInsets.all(5.0),
+              SingleChildScrollView(
                 child: Row(
                   children: <Widget>[
-                    Text('￥${goodsItem['presentPrice']}'),
                     Container(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Text(
-                        '￥${goodsItem['oriPrice']}',
-                        style: TextStyle(
-                            color: Colors.black26,
-                            decoration: TextDecoration.lineThrough),
+                      margin: EdgeInsets.only(left: 10),
+                      width: ScreenUtil().setWidth(180),
+                      height: ScreenUtil().setHeight(180),
+                      child: Image.network(
+                        '${goodsItem['image']}',
+                        fit: BoxFit.fill,
                       ),
-                    )
+                    ),
+                    Container(
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            width: ScreenUtil().setWidth(300),
+                            child: Text(
+                              goodsItem['goodsName'],
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style:
+                                  TextStyle(fontSize: ScreenUtil().setSp(30)),
+                            ),
+                          ),
+                          Container(
+                            width: ScreenUtil().setWidth(370),
+                            margin: EdgeInsets.only(
+                              top: 20,
+                            ),
+                            child: Row(
+                              children: <Widget>[
+                                Text(
+                                  "价格：￥${goodsItem['presentPrice']}",
+                                  style: TextStyle(
+                                      color: Colors.pink,
+                                      fontSize: ScreenUtil().setSp(30)),
+                                ),
+                                Text(
+                                  "￥${goodsItem['oriPrice']}",
+                                  style: TextStyle(
+                                      color: Colors.black26,
+                                      decoration: TextDecoration.lineThrough),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
+                scrollDirection:Axis.horizontal,
+              ),
+              Divider(
+                height: 5,
+                color: Colors.black26,
               )
             ],
           ),
@@ -418,6 +444,169 @@ class _CategoryPageState extends State<CategoryPage> {
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+// 商品列表
+class CatrgoryGoods extends StatefulWidget {
+  _CatrgoryGoodsState createState() => _CatrgoryGoodsState();
+}
+
+class _CatrgoryGoodsState extends State<CatrgoryGoods> {
+  GlobalKey<RefreshFooterState> _footerKey = GlobalKey<RefreshFooterState>();
+
+  var scrollController = new ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Provide<CategoryGoodsProvide>(
+      builder: (context, child, data) {
+        try {
+          if (Provide.value<ChildCategory>(context).page == 1) {
+            // 列表位置置顶
+            scrollController.jumpTo(0.0);
+          }
+        } catch (e) {
+          // 第一次进入页面加载.......
+          print("第一次初始化....${e}");
+        }
+
+        if (data.goodslist.length > 0) {
+          return Expanded(
+              child: Container(
+                  width: ScreenUtil().setWidth(570),
+                  child: EasyRefresh(
+                    refreshFooter: ClassicsFooter(
+                        key: _footerKey,
+                        bgColor: Colors.white,
+                        textColor: Colors.pink,
+                        moreInfoColor: Colors.pink,
+                        showMore: true,
+                        noMoreText:
+                            Provide.value<ChildCategory>(context).nomoreText,
+                        moreInfo: '加载中',
+                        loadReadyText: '上拉加载....'),
+                    child: ListView.builder(
+                      controller: scrollController,
+                      itemCount: data.goodslist.length,
+                      itemBuilder: (context, index) {
+                        return _listItem(data.goodslist, index);
+                      },
+                    ),
+                    loadMore: () async {
+                      print("上拉加载更多.....");
+                      _getMoreList();
+                    },
+                  )));
+        } else {
+          return Text("暂时没有数据......");
+        }
+      },
+    );
+  }
+
+  void _getMoreList() async {
+    Provide.value<ChildCategory>(context).addPage();
+
+    var data = {
+      'categoryId': Provide.value<ChildCategory>(context).categoryId,
+      'categorySubId': Provide.value<ChildCategory>(context).subId,
+      'page': Provide.value<ChildCategory>(context).page
+    };
+
+    await request('getMallGoods', formData: data).then((res) {
+      var data = json.decode(res.toString());
+      CategoryGoddsModel goodsList = CategoryGoddsModel.fromJson(data);
+      if (goodsList.data == null) {
+        Fluttertoast.showToast(
+            msg: "已经到底了.",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.BOTTOM,
+            backgroundColor: Colors.pink,
+            textColor: Colors.white);
+        Provide.value<ChildCategory>(context).changeNomore("没有更多了.....");
+      } else {
+        Provide.value<CategoryGoodsProvide>(context)
+            .getMoreList(goodsList.data);
+      }
+    });
+  }
+
+  Widget _goodsImage(List newList, int index) {
+    return Container(
+      width: ScreenUtil().setWidth(200),
+      child: Image.network(newList[index].image),
+    );
+  }
+
+  Widget _goodsName(List newList, int index) {
+    return Container(
+      padding: EdgeInsets.all(5.0),
+      width: ScreenUtil().setWidth(370),
+      child: Text(
+        newList[index].goodsName,
+        maxLines: 2,
+        overflow: TextOverflow.ellipsis,
+        style: TextStyle(fontSize: ScreenUtil().setSp(28)),
+      ),
+    );
+  }
+
+  Widget _goodsPrise(List newList, int index) {
+    return Container(
+        width: ScreenUtil().setWidth(370),
+        margin: EdgeInsets.only(
+          top: 20,
+        ),
+        child: Row(
+          children: <Widget>[
+            Text(
+              "价格：￥${newList[index].presentPrice}",
+              style: TextStyle(
+                  color: Colors.pink, fontSize: ScreenUtil().setSp(30)),
+            ),
+            Text(
+              "￥${newList[index].oriPrice}",
+              style: TextStyle(
+                  color: Colors.black26,
+                  decoration: TextDecoration.lineThrough),
+            )
+          ],
+        ));
+  }
+
+  Widget _listItem(List newList, int index) {
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            border:
+                Border(bottom: BorderSide(width: 1.0, color: Colors.black12))),
+        child: InkWell(
+          child: Row(
+            children: <Widget>[
+              _goodsImage(newList, index),
+              Column(
+                children: <Widget>[
+                  _goodsName(newList, index),
+                  _goodsPrise(newList, index)
+                ],
+              )
+            ],
+          ),
+          onTap: () {
+            // jumpDetail(context, newList[index].goodsId);
+          },
         ),
       ),
     );
