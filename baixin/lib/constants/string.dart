@@ -18,4 +18,5 @@ class KString {
   static const String imageKey = "imageKey";
   static const String countKey = "countKey";
   static const String isKey = "isFirstKey";
+
 }
