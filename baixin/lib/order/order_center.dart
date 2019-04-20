@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_button/order/order_all_page.dart';
 import '../constants/index.dart';
 
 class OrderCenterPage extends StatefulWidget {
@@ -25,24 +26,15 @@ class _OrderCenterPageState extends State<OrderCenterPage> {
         child: Column(
           children: <Widget>[
             KTabBarWidget(),
+            Divider(height:5,color: Colors.black26,),
             Expanded(
               child: TabBarView(
                 children: <Widget>[
-                  Center(
-                    child: Text('全部'),
-                  ),
-                  Center(
-                    child: Text('待付款'),
-                  ),
-                  Center(
-                    child: Text('待发货'),
-                  ),
-                  Center(
-                    child: Text('待收货'),
-                  ),
-                  Center(
-                    child: Text('待评价'),
-                  ),
+                  OrderAllPage(orderlx: '-1',),
+                  OrderAllPage(orderlx: '1',),
+                  OrderAllPage(orderlx: '2',),
+                  OrderAllPage(orderlx: '3',),
+                  OrderAllPage(orderlx: '4',),
                 ],
               ),
             )

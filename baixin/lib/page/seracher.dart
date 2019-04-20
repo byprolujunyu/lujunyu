@@ -120,30 +120,32 @@ class _SearchPState extends State<SearchP> {
         children: listWidget,
       );
     } else if (init == false) {
-      return Center(
-        child: Loading(),
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:<Widget>[
+          Loading(),
+        ]
       );
     } else if (init == true) {
-      return Center(
-        child: Column(
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.all(10.0),
-              height: ScreenUtil().setHeight(100),
-              width: ScreenUtil().setWidth(100),
-              child: Image.asset(
-                'images/sousuobudao.png',
-                fit: BoxFit.fill,
-              ),
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.all(10.0),
+            height: ScreenUtil().setHeight(100),
+            width: ScreenUtil().setWidth(100),
+            child: Image.asset(
+              'images/sousuobudao.png',
+              fit: BoxFit.fill,
             ),
-            Container(
-              child: Text(
-                '未找到结果',
-                style: TextStyle(color: Colors.red),
-              ),
+          ),
+          Container(
+            child: Text(
+              '未找到结果',
+              style: TextStyle(color: Colors.red),
             ),
-          ],
-        ),
+          ),
+        ],
       );
     }
   }

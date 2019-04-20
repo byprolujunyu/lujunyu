@@ -8,6 +8,7 @@ import 'package:flutter_button/fuji/fuji_page.dart';
 import 'package:flutter_button/page/category_page.dart';
 import 'package:flutter_button/page/index_main.dart';
 import 'package:flutter_button/page/seracher.dart';
+import 'package:flutter_button/page/speak_page.dart';
 import 'package:flutter_button/routers/application.dart';
 import 'package:flutter_button/shop/shop_info.dart';
 import 'package:flutter_button/utils/loading_progress.dart';
@@ -90,19 +91,34 @@ class _HomePageState extends State<HomePage>
                       margin:
                           EdgeInsets.only(top: 15.0, left: 15.0, bottom: 15.0),
                       child: Image.asset('images/backgrey.png')),
-                  Container(
-                    width: ScreenUtil().setWidth(550),
-                    child: TextField(
-                      controller: _numController,
-                      maxLines: 1,
-                      keyboardType: TextInputType.text,
-                      decoration: InputDecoration(
-                        filled: true,
-                        labelText: "请输入你要查询的商品",
+//                  Expanded(
+//                    child: Container(
+//                     // width: ScreenUtil().setWidth(550),
+//                      child: TextField(
+//                        controller: _numController,
+//                        maxLines: 1,
+//                        keyboardType: TextInputType.text,
+//                        decoration: InputDecoration(
+//                          filled: true,
+//                          labelText: "请输入你要查询的商品",
+//                        ),
+//                        autofocus: false,
+//                      ),
+//                    ),
+//                  ),
+                  _wrapTap(
+                      Container(
+                        margin: EdgeInsets.all(8),
+                        child: Icon(
+                          Icons.mic,
+                          size: 22,
+                          color: Colors.blue,
+                        ),
                       ),
-                      autofocus: false,
-                    ),
-                  ),
+                      () {  Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                        return SpeakPage();
+                      }));})
                 ],
               ),
               InkWell(
@@ -142,6 +158,15 @@ class _HomePageState extends State<HomePage>
     } catch (e) {
       print(e);
     }
+  }
+
+  _wrapTap(Widget child, void Function() callback) {
+    return GestureDetector(
+      onTap: () {
+        if (callback != null) callback();
+      },
+      child: child,
+    );
   }
 
   Map mapToMap2(Map m) {
@@ -444,7 +469,7 @@ class TopNavigator extends StatelessWidget {
   Widget _gridViewItemUI(BuildContext context, item) {
     return Container(
       padding: EdgeInsets.all(5),
-      width: MediaQuery.of(context).size.width/5,
+      width: MediaQuery.of(context).size.width / 5,
       child: InkWell(
         onTap: () {
           jump(item['mallCategoryName'], context);
@@ -453,7 +478,7 @@ class TopNavigator extends StatelessWidget {
           children: <Widget>[
             Image.network(
               item['image'],
-               width: ScreenUtil().setWidth(95),
+              width: ScreenUtil().setWidth(95),
               fit: BoxFit.fill,
             ),
             Text(item['mallCategoryName'])
@@ -466,10 +491,10 @@ class TopNavigator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-     // height: ScreenUtil().setHeight(320),
+      // height: ScreenUtil().setHeight(320),
       child: Wrap(
-      //  physics: new NeverScrollableScrollPhysics(),
-       // crossAxisCount: 5,
+        //  physics: new NeverScrollableScrollPhysics(),
+        // crossAxisCount: 5,
         //padding: EdgeInsets.all(4.0),
         children: navigatorList.map((item) {
           return _gridViewItemUI(context, item);

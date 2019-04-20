@@ -98,6 +98,7 @@ class DataBaseHelper {
 
   Future<int> updateUser(User user) async {
     var dbClient = await db;
+
     return await dbClient.update(tableUser, user.toMap(),
         where: "$columnID=?", whereArgs: [user.id]);
   }

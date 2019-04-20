@@ -185,10 +185,6 @@ class CartListWidget extends StatelessWidget {
 
   CartListWidget({Key key, this.context, this.refresh}) : super(key: key);
 
-  static const query = const MethodChannel("cart/query");
-  static const delete = const MethodChannel("cart/delete");
-  static const queryResult = const MethodChannel("cart/queryResult");
-
   show(id, item) {
     showDialog<Null>(
       context: context,
@@ -237,26 +233,28 @@ class CartListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScopedModelDescendant<CartListModelNew>(
-      builder: (context, child, model) {
-        this.model = model;
-        return Expanded(
-          child: ListView.builder(
-            padding: EdgeInsets.all(0),
-            itemCount: model.itemsCount,
-            itemExtent: 93,
-            itemBuilder: (BuildContext context, int index) {
-              CartItemModelNew item = model.items[index];
-              return CartItemWidget(model.items[index],
-                  addCount: _addCount,
-                  downCount: _downCount,
-                  index: index,
-                  refresh: refresh,
-                  switchChaned: _switchChanged);
-            },
-          ),
-        );
-      },
+    return Container(
+      child: ScopedModelDescendant<CartListModelNew>(
+        builder: (context, child, model) {
+          this.model = model;
+          return Expanded(
+            child: ListView.builder(
+              padding: EdgeInsets.all(0),
+              itemCount: model.itemsCount,
+              itemExtent: 93,
+              itemBuilder: (BuildContext context, int index) {
+                CartItemModelNew item = model.items[index];
+                return CartItemWidget(model.items[index],
+                    addCount: _addCount,
+                    downCount: _downCount,
+                    index: index,
+                    refresh: refresh,
+                    switchChaned: _switchChanged);
+              },
+            ),
+          );
+        },
+      ),
     );
   }
 
@@ -537,11 +535,14 @@ class CartBottomWidget extends StatelessWidget {
                     onTap: () => model.switchAllCheck(),
                     child: Row(
                       children: <Widget>[
-                        Icon(
-                          model.isAllchecked
-                              ? Icons.check_circle_outline
-                              : Icons.radio_button_unchecked,
-                          color: KColorConstant.themeColor,
+                        Container(
+                          margin: EdgeInsets.all(5),
+                          child: Icon(
+                            model.isAllchecked
+                                ? Icons.check_circle_outline
+                                : Icons.radio_button_unchecked,
+                            color: KColorConstant.themeColor,
+                          ),
                         ),
                         Text(
                           KString.allSelectedTxt,

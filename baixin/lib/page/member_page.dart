@@ -3,6 +3,7 @@ import 'package:flutter_button/address/address_ios_page.dart';
 import 'package:flutter_button/fuji/fuji_page.dart';
 import 'package:flutter_button/order/order_center.dart';
 import 'package:flutter_button/page/cart_test.dart';
+import 'package:flutter_button/page/speak_page.dart';
 import 'package:flutter_button/routers/application.dart';
 import 'package:flutter_button/shop/about_us.dart';
 import 'package:flutter_button/widget/my_widget.dart';
@@ -329,7 +330,11 @@ class LoveUI extends StatelessWidget {
                 return NewAddressPage();
               }));
             } else if (names[index] == '客服电话') {
-              await callLeaderPhone(context);
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext ctx) {
+                return SpeakPage();
+              }));
+              //await callLeaderPhone(context);
             } else if (names[index] == '关于商城') {
               Navigator.of(context)
                   .push(MaterialPageRoute(builder: (BuildContext ctx) {

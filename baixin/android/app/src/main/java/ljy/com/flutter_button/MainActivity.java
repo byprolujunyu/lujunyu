@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 
+import org.devio.flutter.plugin.asr.AsrPlugin;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,11 +38,14 @@ public class MainActivity extends FlutterActivity {
     private MethodChannel jumptoAddress;
 
     private MethodChannel jump;
-
+    private void registerSelfPlugin() {
+        AsrPlugin.registerWith(registrarFor("org.devio.flutter.plugin.asr.AsrPlugin"));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         GeneratedPluginRegistrant.registerWith(this);
+        registerSelfPlugin();
         jump = new MethodChannel(getFlutterView(), "detail/jump");
         jump.setMethodCallHandler(new MethodChannel.MethodCallHandler() {
             @Override

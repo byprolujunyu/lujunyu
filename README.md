@@ -15,6 +15,8 @@ flutter-百姓生活
 ![Github](/snapshot/12.jpg "title")
 ![Github](/snapshot/23.jpg "title")
 ![Github](/snapshot/24.jpg "title")
+![Github](/snapshot/25.jpg "title")
+新功能 ai语音识别![Github](/snapshot/26.jpg "title")
 ![Github](/snapshot/15.jpg "title")
 ![Github](/snapshot/16.jpg "title")
 ![Github](/snapshot/17.jpg "title")
@@ -27,4 +29,4 @@ flutter-百姓生活
 
 功能
 
-共22个功能
+共23个功能
